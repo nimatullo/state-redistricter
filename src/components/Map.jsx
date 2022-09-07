@@ -16,9 +16,10 @@ const Map = () => {
 
     layer.setStyle({
       weight: 3,
-      color: "#666",
+      color: "#f38613",
       dashArray: "",
-      fillOpacity: 0.7,
+      fillOpacity: 0.5,
+      fillColor: "#f9cb9c",
     });
   };
 
@@ -36,6 +37,25 @@ const Map = () => {
     });
   };
 
+  const isAmazingState = (state) => {
+    return (
+      state === "New York" || state === "Florida" || state === "South Carolina"
+    );
+  };
+
+  const style = (feature) => {
+    return {
+      fillColor: isAmazingState(feature.properties.name)
+        ? "#ffd966"
+        : "#bcbcbc",
+      weight: 3,
+      opacity: 1,
+      color: "#666",
+      dashArray: "",
+      fillOpacity: 0.5,
+    };
+  };
+
   return (
     <div className="map">
       <MapContainer center={[40.9048, -73.124]} zoom={5} scrollWheelZoom={true}>
@@ -46,9 +66,10 @@ const Map = () => {
         <GeoJSON
           ref={geoJsonRef}
           data={geodata}
+          style={style}
           onEachFeature={onEachFeature}
         />
-        <InfoBox data={selectedState} />
+        <InfoBox state={selectedState} />
       </MapContainer>
     </div>
   );
