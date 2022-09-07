@@ -58,7 +58,11 @@ const Map = () => {
 
   return (
     <div className="map">
-      <MapContainer center={[40.9048, -73.124]} zoom={5} scrollWheelZoom={true}>
+      <MapContainer
+        center={[40.8312778554, -73.4564453081]}
+        zoom={20}
+        scrollWheelZoom={true}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Puffer Labs, LLC.'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
