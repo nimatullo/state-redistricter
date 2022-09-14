@@ -1,15 +1,13 @@
-// React Imports
+// Base
 import React from "react";
+import { Heading } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-// Assets
+// Custom
 import ArkansasIcon from "../../assets/img/ArkansasIcon.jsx";
 import FloridaIcon from "../../assets/img/FloridaIcon.jsx";
 import NorthCarolinaIcon from "../../assets/img/NorthCarolinaIcon.jsx";
 import "../../assets/styles/homepage.css";
-
-// Components
-import { Heading } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const navigation = useNavigate();

@@ -1,13 +1,5 @@
 import {
-  Box,
   Heading,
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-  Text,
-  HStack,
-  Icon,
   Tabs,
   TabList,
   Tab,
@@ -18,11 +10,10 @@ import {
   BreadcrumbLink,
   Stack,
 } from "@chakra-ui/react";
-import { BsChevronRight, BsFillPersonFill } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
 import React from "react";
-import DataJSON from "../../dummy_json/data.json";
 import RaceInformation from "./maps/RaceInformation";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const InfoBox = ({ district }) => {
   const params = useParams();
