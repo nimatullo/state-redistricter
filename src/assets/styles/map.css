@@ -1,9 +1,3 @@
-/* All Map related styling */
-/* .leaflet-container {
-  width: 100vh;
-  height: 100vh;
-} */
-
 .map {
   position: relative;
   height: 100vh;
@@ -13,5 +7,9 @@
 .info-box {
   width: 100%;
   height: 100vh;
+}
+
+.district-information-container {
+  width: 50vw;
   overflow: auto;
 }

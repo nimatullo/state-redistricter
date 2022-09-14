@@ -22,10 +22,23 @@ const RaceInformation = ({ district }) => {
     setRaceData(FloridaJSON.Race);
   }, []);
 
+  const getTextIfParanethesis = (text) => {
+    if (text.includes("(")) {
+      return text.split("(")[0];
+    }
+    return text;
+  };
+
+  const getTextBetweenParanethesis = (text) => {
+    return text.split("(")[1].split(")")[0];
+  };
+
   return (
     <Box className="info-box">
       <div className="info-box-content">
-        <Heading size="lg">Race breakdown for district {district}</Heading>
+        <Heading size="lg">
+          Race breakdown for district {district.split("-")[1]}
+        </Heading>
         {raceData &&
           raceData.map((item) => {
             return (
@@ -33,7 +46,7 @@ const RaceInformation = ({ district }) => {
                 <StatLabel>
                   <HStack>
                     <Icon as={BsFillPersonFill} />
-                    <Text>{item.title}</Text>
+                    <Text>{getTextIfParanethesis(item.title)}</Text>
                   </HStack>
                 </StatLabel>
                 <StatNumber>
@@ -41,6 +54,11 @@ const RaceInformation = ({ district }) => {
                     item.districts[Number(district.split("-")[1])]
                   ).toLocaleString()}
                 </StatNumber>
+                {item.title.includes("(") && (
+                  <StatHelpText>
+                    {getTextBetweenParanethesis(item.title)}
+                  </StatHelpText>
+                )}
               </Stat>
             );
           })}

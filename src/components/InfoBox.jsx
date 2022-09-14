@@ -12,8 +12,10 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronRight } from "react-icons/bs";
 import React from "react";
-import RaceInformation from "./maps/RaceInformation";
+import RaceInformation from "./districtbreakdown/RaceInformation";
 import { useParams, Link } from "react-router-dom";
+import EducationInformation from "./districtbreakdown/EducationInformation";
+import SexAndAgeInformation from "./districtbreakdown/AgeInformation";
 
 const InfoBox = ({ district }) => {
   const params = useParams();
@@ -32,40 +34,42 @@ const InfoBox = ({ district }) => {
   };
 
   return (
-    <Stack>
-      <Breadcrumb
-        pt="1em"
-        pl="1em"
-        spacing="8px"
-        separator={<BsChevronRight color="gray.500" />}
-      >
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/">
-            Home
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href="#">
-            {getFullStateName(params.state)}
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
+    <div className="district-information-container">
+      <div className="breadcrumbs">
+        <Breadcrumb
+          pt="1em"
+          pl="1em"
+          spacing="8px"
+          separator={<BsChevronRight color="gray.500" />}
+        >
+          <BreadcrumbItem>
+            <BreadcrumbLink as={Link} to="/">
+              Home
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink href="#">
+              {getFullStateName(params.state)}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+      </div>
       {district ? (
         <Tabs variant={"soft-rounded"} colorScheme={"blue"} p="1em">
           <TabList>
             <Tab>Race Information</Tab>
-            <Tab>Single-member District</Tab>
-            <Tab>Multi-member District</Tab>
+            <Tab>Education Information</Tab>
+            <Tab>Sex and Age Information</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
               <RaceInformation district={district} />
             </TabPanel>
             <TabPanel>
-              <h1>Deez</h1>
+              <EducationInformation district={district} />
             </TabPanel>
             <TabPanel>
-              <h1>Nuts</h1>
+              <SexAndAgeInformation district={district} />
             </TabPanel>
           </TabPanels>
         </Tabs>
@@ -74,7 +78,7 @@ const InfoBox = ({ district }) => {
           Select a district
         </Heading>
       )}
-    </Stack>
+    </div>
   );
 };
 
