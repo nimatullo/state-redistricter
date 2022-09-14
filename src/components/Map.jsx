@@ -1,13 +1,46 @@
 import { React, useRef, useState } from "react";
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
+import DistrictsService from "../services/districtsService";
 
 import InfoBox from "./InfoBox";
 
-import geodata from "../assets/geo.json";
 import "../styles/map.css";
+import { useEffect } from "react";
+
+const OUR_STATES = [
+  {
+    abrv: "FL",
+    districts: 27,
+  },
+  {
+    abrv: "NC",
+    districts: 13,
+  },
+  {
+    abrv: "AR",
+    districts: 4,
+  },
+];
 
 const Map = () => {
   const [selectedState, setSelectedState] = useState(null);
+  const [geoData, setGeoData] = useState();
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    let geojson = [];
+    for (const state of OUR_STATES) {
+      const stateDistricts = await DistrictsService.getGeoJSONForState(
+        state.abrv,
+        state.districts
+      );
+      geojson = geojson.concat(stateDistricts);
+    }
+    setGeoData(geojson);
+  };
 
   const geoJsonRef = useRef();
 
@@ -37,15 +70,9 @@ const Map = () => {
     });
   };
 
-  const isAmazingState = (state) => {
-    return (
-      state === "New York" || state === "Florida" || state === "South Carolina"
-    );
-  };
-
   const style = (feature) => {
     return {
-      fillColor: isAmazingState(feature.properties.name)
+      fillColor: OUR_STATES.includes(feature.properties.name)
         ? "#ffd966"
         : "#bcbcbc",
       weight: 3,
@@ -57,25 +84,27 @@ const Map = () => {
   };
 
   return (
-    <div className="map">
-      <MapContainer
-        center={[40.8312778554, -73.4564453081]}
-        zoom={20}
-        scrollWheelZoom={true}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Puffer Labs, LLC.'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <GeoJSON
-          ref={geoJsonRef}
-          data={geodata}
-          style={style}
-          onEachFeature={onEachFeature}
-        />
-        <InfoBox state={selectedState} />
-      </MapContainer>
-    </div>
+    geoData && (
+      <div className="map">
+        <MapContainer
+          center={[40.8312778554, -73.4564453081]}
+          zoom={5}
+          scrollWheelZoom={true}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Puffer Labs, LLC.'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <GeoJSON
+            ref={geoJsonRef}
+            data={geoData}
+            style={style}
+            onEachFeature={onEachFeature}
+          />
+          <InfoBox state={selectedState} />
+        </MapContainer>
+      </div>
+    )
   );
 };
 
