@@ -10,28 +10,40 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { BsFillPersonFill } from "react-icons/bs";
-import React from "react";
+import React, { useEffect } from "react";
+
 import DataJSON from "../../../dummy_json/data.json";
+import FloridaJSON from "../../../dummy_json/FL/data.json";
 
 const RaceInformation = ({ district }) => {
+  const [raceData, setRaceData] = React.useState(null);
+
+  useEffect(() => {
+    setRaceData(FloridaJSON.Race);
+  }, []);
+
   return (
     <Box className="info-box">
       <div className="info-box-content">
         <Heading size="lg">Race breakdown for district {district}</Heading>
-        {DataJSON.map((item) => {
-          return (
-            <Stat mt={5}>
-              <StatLabel>
-                <HStack>
-                  <Icon as={BsFillPersonFill} />
-                  <Text>{item.Race} Population</Text>
-                </HStack>
-              </StatLabel>
-              <StatNumber>{item.Population.toLocaleString()}</StatNumber>
-              <StatHelpText>{item.Percentage}% of population</StatHelpText>
-            </Stat>
-          );
-        })}
+        {raceData &&
+          raceData.map((item) => {
+            return (
+              <Stat mt={5}>
+                <StatLabel>
+                  <HStack>
+                    <Icon as={BsFillPersonFill} />
+                    <Text>{item.title}</Text>
+                  </HStack>
+                </StatLabel>
+                <StatNumber>
+                  {Number(
+                    item.districts[Number(district.split("-")[1])]
+                  ).toLocaleString()}
+                </StatNumber>
+              </Stat>
+            );
+          })}
       </div>
     </Box>
   );

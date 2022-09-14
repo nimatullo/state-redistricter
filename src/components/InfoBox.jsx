@@ -34,7 +34,8 @@ const InfoBox = ({ district }) => {
   return (
     <Stack>
       <Breadcrumb
-        p="1em"
+        pt="1em"
+        pl="1em"
         spacing="8px"
         separator={<BsChevronRight color="gray.500" />}
       >

@@ -62,32 +62,37 @@ const Map = () => {
   return (
     geoData && (
       <div className="map">
-        <Stack direction={"row"}>
-          <MapContainer
-            center={stateCoordinates}
-            zoom={7}
-            scrollWheelZoom={true}
-            whenReady={() => {
-              setLoading(false);
-            }}
-          >
-            {loading ? (
-              <Spinner />
-            ) : (
-              <>
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Puffer Labs, LLC.'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <MapContents
-                  geoData={geoData}
-                  setDistrict={setSelectedDistrict}
-                />
-              </>
-            )}
-          </MapContainer>
-          <InfoBox district={selectedDistrict} />
-        </Stack>
+        {/* <Stack direction={"row"}> */}
+        <MapContainer
+          style={{
+            height: "100%",
+            width: "50%",
+            // overflow: "hidden",
+          }}
+          center={stateCoordinates}
+          zoom={7}
+          scrollWheelZoom={true}
+          whenReady={() => {
+            setLoading(false);
+          }}
+        >
+          {loading ? (
+            <Spinner />
+          ) : (
+            <>
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Puffer Labs, LLC.'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <MapContents
+                geoData={geoData}
+                setDistrict={setSelectedDistrict}
+              />
+            </>
+          )}
+        </MapContainer>
+        <InfoBox district={selectedDistrict} />
+        {/* </Stack> */}
       </div>
     )
   );
