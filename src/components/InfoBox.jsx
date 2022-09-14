@@ -1,5 +1,5 @@
 import React from "react";
-import allData from "../../dummy_json/all_cd.json";
+// import allData from "../../dummy_json/all_cd.json";
 
 const InfoBox = ({ state }) => {
   const getDistrictData = (key) => {
