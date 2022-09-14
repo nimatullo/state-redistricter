@@ -1,56 +1,88 @@
+import {
+  Box,
+  Heading,
+  Stat,
+  StatLabel,
+  StatNumber,
+  StatHelpText,
+  Text,
+  HStack,
+  Icon,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanel,
+  TabPanels,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Stack,
+} from "@chakra-ui/react";
+import { BsChevronRight, BsFillPersonFill } from "react-icons/bs";
 import React from "react";
-import { useEffect } from "react";
 import DataJSON from "../../dummy_json/data.json";
-import DistrictService from "../services/districtsService";
+import RaceInformation from "./maps/RaceInformation";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
-const InfoBox = ({ state }) => {
-  const getDistrictData = (key) => {
-    // const stateData = allData[state][key];
-    // // Iterate over all keys in the state data
-    // return Object.keys(stateData)
-    //   .map((key) => {
-    //     if (key.includes("Estimate")) {
-    //       return stateData[key];
-    //     }
-    //   })
-    //   .filter((item) => item !== undefined);
+const InfoBox = ({ district }) => {
+  const params = useParams();
+
+  const getFullStateName = (state) => {
+    switch (state.toUpperCase()) {
+      case "FL":
+        return "Florida";
+      case "NC":
+        return "North Carolina";
+      case "AR":
+        return "Arkansas";
+      default:
+        return "State";
+    }
   };
 
   return (
-    <div className="info-box leaflet-top leaflet-right">
-      {state ? (
-        <>
-          <h1>Race breakdown</h1>
-          {DataJSON.map((item) => {
-            return (
-              <div>
-                <h2>{item.Race}</h2>
-                <p>Population: {item.Population.toLocaleString()}</p>
-                <p>% of population: {item.Percentage}</p>
-              </div>
-            );
-          })}
-        </>
+    <Stack>
+      <Breadcrumb
+        p="1em"
+        spacing="8px"
+        separator={<BsChevronRight color="gray.500" />}
+      >
+        <BreadcrumbItem>
+          <BreadcrumbLink as={Link} to="/">
+            Home
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink href="#">
+            {getFullStateName(params.state)}
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+      {district ? (
+        <Tabs variant={"soft-rounded"} colorScheme={"blue"} p="1em">
+          <TabList>
+            <Tab>Race Information</Tab>
+            <Tab>Single-member District</Tab>
+            <Tab>Multi-member District</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <RaceInformation district={district} />
+            </TabPanel>
+            <TabPanel>
+              <h1>Deez</h1>
+            </TabPanel>
+            <TabPanel>
+              <h1>Nuts</h1>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       ) : (
-        <h2>Select a state</h2>
+        <Heading size="lg" p="1em">
+          Select a district
+        </Heading>
       )}
-
-      {/* {state && allData[state] ? (
-        <>
-          <div>
-            <h2>{state}</h2>
-            <b>People {allData[state]["People"]["Title"]}</b>
-            {getDistrictData("People").map((item, i) => (
-              <p key={i}>
-                District {i + 1}: {item}
-              </p>
-            ))}
-          </div>
-        </>
-      ) : (
-        <h2>Select a state</h2>
-      )} */}
-    </div>
+    </Stack>
   );
 };
 

@@ -1,0 +1,26 @@
+.states {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1em;
+}
+
+.state h2 {
+  color: var(--chakra-colors-blue-500);
+}
+
+.state svg {
+  width: 250px;
+  height: auto;
+  fill: transparent;
+  stroke: var(--chakra-colors-blackAlpha-800);
+  stroke-width: 0.8;
+}
+
+.state svg:hover {
+  fill: var(--chakra-colors-blue-500);
+  /* stroke: transparent; */
+  cursor: pointer;
+}

@@ -25,8 +25,9 @@ class DistrictsService {
 
     return {
       type: "Feature",
+      id: district,
       properties: {
-        name: state + district,
+        name: `${state}-${district}`,
       },
       geometry: districtGeoJSON,
     };

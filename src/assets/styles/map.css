@@ -1,0 +1,13 @@
+/* All Map related styling */
+.leaflet-container {
+  width: 100vh;
+  height: 100vh;
+}
+
+.map {
+  position: relative;
+}
+
+.info-box {
+  width: 100%;
+}
