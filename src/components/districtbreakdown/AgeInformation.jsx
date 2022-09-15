@@ -12,14 +12,24 @@ import {
 import { FaTransgenderAlt } from "react-icons/fa";
 import React, { useEffect } from "react";
 
-import DataJSON from "../../../dummy_json/data.json";
 import FloridaJSON from "../../../dummy_json/FL/data.json";
+import ArkansasJSON from "../../../dummy_json/arkansas/data.json";
 
-const SexAndAgeInformation = ({ district }) => {
+const SexAndAgeInformation = ({ district, state }) => {
   const [sexAndAgeData, setSexAndAgeData] = React.useState(null);
 
   useEffect(() => {
-    setSexAndAgeData(FloridaJSON.SexandAge);
+    switch (state.toLowerCase()) {
+      case "fl":
+        setSexAndAgeData(FloridaJSON.SexandAge);
+        console.log("FLorida");
+        break;
+      case "ar":
+        setSexAndAgeData(ArkansasJSON.SexandAge);
+        console.log("Arkansas");
+      default:
+        break;
+    }
   }, []);
 
   const getTextIfParanethesis = (text) => {
@@ -51,7 +61,7 @@ const SexAndAgeInformation = ({ district }) => {
                 </StatLabel>
                 <StatNumber>
                   {Number(
-                    item.districts[Number(district.split("-")[1])]
+                    item.districts[Number(district.split("-")[1]) - 1]
                   ).toLocaleString()}
                 </StatNumber>
                 {item.title.includes("(") && (

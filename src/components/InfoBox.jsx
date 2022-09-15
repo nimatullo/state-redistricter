@@ -63,13 +63,13 @@ const InfoBox = ({ district }) => {
           </TabList>
           <TabPanels>
             <TabPanel>
-              <RaceInformation district={district} />
+              <RaceInformation district={district} state={params.state} />
             </TabPanel>
             <TabPanel>
-              <EducationInformation district={district} />
+              <EducationInformation district={district} state={params.state} />
             </TabPanel>
             <TabPanel>
-              <SexAndAgeInformation district={district} />
+              <SexAndAgeInformation district={district} state={params.state} />
             </TabPanel>
           </TabPanels>
         </Tabs>

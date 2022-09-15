@@ -12,14 +12,22 @@ import {
 import { BsFillPersonFill } from "react-icons/bs";
 import React, { useEffect } from "react";
 
-import DataJSON from "../../../dummy_json/data.json";
 import FloridaJSON from "../../../dummy_json/FL/data.json";
+import ArkansasJSON from "../../../dummy_json/arkansas/data.json";
 
-const RaceInformation = ({ district }) => {
+const RaceInformation = ({ district, state }) => {
   const [raceData, setRaceData] = React.useState(null);
 
   useEffect(() => {
-    setRaceData(FloridaJSON.Race);
+    switch (state.toLowerCase()) {
+      case "fl":
+        setRaceData(FloridaJSON.Race);
+        break;
+      case "ar":
+        setRaceData(ArkansasJSON.Race);
+      default:
+        break;
+    }
   }, []);
 
   const getTextIfParanethesis = (text) => {
@@ -51,7 +59,7 @@ const RaceInformation = ({ district }) => {
                 </StatLabel>
                 <StatNumber>
                   {Number(
-                    item.districts[Number(district.split("-")[1])]
+                    item.districts[Number(district.split("-")[1] - 1)]
                   ).toLocaleString()}
                 </StatNumber>
                 {item.title.includes("(") && (

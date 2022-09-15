@@ -13,12 +13,21 @@ import { FaGraduationCap } from "react-icons/fa";
 import React, { useEffect } from "react";
 
 import FloridaJSON from "../../../dummy_json/FL/data.json";
+import ArkansasJSON from "../../../dummy_json/arkansas/data.json";
 
-const EducationInformation = ({ district }) => {
+const EducationInformation = ({ district, state }) => {
   const [educationData, setEducationData] = React.useState(null);
 
   useEffect(() => {
-    setEducationData(FloridaJSON.SchoolEnrollment);
+    switch (state.toLowerCase()) {
+      case "fl":
+        setEducationData(FloridaJSON.SchoolEnrollment);
+        break;
+      case "ar":
+        setEducationData(ArkansasJSON.SchoolEnrollment);
+      default:
+        break;
+    }
   }, []);
 
   const getTextIfParanethesis = (text) => {
@@ -50,7 +59,7 @@ const EducationInformation = ({ district }) => {
                 </StatLabel>
                 <StatNumber>
                   {Number(
-                    item.districts[Number(district.split("-")[1])]
+                    item.districts[Number(district.split("-")[1] - 1)]
                   ).toLocaleString()}
                 </StatNumber>
                 {item.title.includes("(") && (
