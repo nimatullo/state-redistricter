@@ -12,7 +12,7 @@ import {
 import { BsFillPersonFill } from "react-icons/bs";
 import React, { useEffect } from "react";
 
-import FloridaJSON from "../../../dummy_json/FL/data.json";
+import FloridaJSON from "../../../dummy_json/florida/data.json";
 import ArkansasJSON from "../../../dummy_json/arkansas/data.json";
 import NorthCarolinaJSON from "../../../dummy_json/north_carolina/data.json";
 
