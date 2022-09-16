@@ -15,7 +15,7 @@ const _getAllJSONFromPath = (path) => {
 
 const getDistrictData = () => {
   const thisPath = fileURLToPath(import.meta.url);
-  const path = dirname(thisPath) + "/../../dummy_json/arkansas";
+  const path = dirname(thisPath) + "/../dummy_json/north_carolina";
   const files = _getAllJSONFromPath(path);
 
   const result = {};
@@ -25,7 +25,9 @@ const getDistrictData = () => {
       const data = {
         title: info.Title,
       };
-      const districts = Object.values(info).slice(2);
+      const districts = Object.values(info)
+        .slice(2)
+        .map((district) => district.replace(/,/g, ""));
       return { ...data, districts };
     });
   }

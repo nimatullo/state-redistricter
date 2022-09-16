@@ -59,7 +59,7 @@ const ArkansasBreakdown = () => {
               </TableContainer>
             </GridItem>
             <GridItem>
-              <Card image={ArkansasIcon} state="ak" />
+              <Card image={ArkansasIcon} state="ar" />
             </GridItem>
           </Grid>
         </Box>

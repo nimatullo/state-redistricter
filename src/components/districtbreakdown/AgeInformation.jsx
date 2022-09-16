@@ -14,6 +14,7 @@ import React, { useEffect } from "react";
 
 import FloridaJSON from "../../../dummy_json/FL/data.json";
 import ArkansasJSON from "../../../dummy_json/arkansas/data.json";
+import NorthCarolinaJSON from "../../../dummy_json/north_carolina/data.json";
 
 const SexAndAgeInformation = ({ district, state }) => {
   const [sexAndAgeData, setSexAndAgeData] = React.useState(null);
@@ -22,11 +23,11 @@ const SexAndAgeInformation = ({ district, state }) => {
     switch (state.toLowerCase()) {
       case "fl":
         setSexAndAgeData(FloridaJSON.SexandAge);
-        console.log("FLorida");
         break;
       case "ar":
         setSexAndAgeData(ArkansasJSON.SexandAge);
-        console.log("Arkansas");
+      case "nc":
+        setSexAndAgeData(NorthCarolinaJSON.SexandAge);
       default:
         break;
     }

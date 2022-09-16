@@ -38,7 +38,7 @@ const Map = () => {
 
   useEffect(() => {
     const stateFromDict = OUR_STATES.find(
-      (state) => state.abrv.toLowerCase() === params.state.toLowerCase()
+      (state) => state.abrv.toLowerCase() == params.state.toLowerCase()
     );
     setCoordinates(stateFromDict.coordinates);
     getData(stateFromDict);

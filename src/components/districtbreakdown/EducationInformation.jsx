@@ -14,6 +14,7 @@ import React, { useEffect } from "react";
 
 import FloridaJSON from "../../../dummy_json/FL/data.json";
 import ArkansasJSON from "../../../dummy_json/arkansas/data.json";
+import NorthCarolinaJSON from "../../../dummy_json/north_carolina/data.json";
 
 const EducationInformation = ({ district, state }) => {
   const [educationData, setEducationData] = React.useState(null);
@@ -25,6 +26,8 @@ const EducationInformation = ({ district, state }) => {
         break;
       case "ar":
         setEducationData(ArkansasJSON.SchoolEnrollment);
+      case "nc":
+        setEducationData(NorthCarolinaJSON.SchoolEnrollment);
       default:
         break;
     }

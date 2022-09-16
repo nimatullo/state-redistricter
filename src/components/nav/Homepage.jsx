@@ -12,7 +12,7 @@ import NorthCarolinaBreakdown from "../statebreakdown/NorthCarolina.jsx";
 import Sidebar from "./Sidebar.jsx";
 
 const Homepage = () => {
-  const [page, setPage] = React.useState("ak");
+  const [page, setPage] = React.useState("ar");
 
   const renderPage = () => {
     switch (page) {

@@ -14,6 +14,7 @@ import React, { useEffect } from "react";
 
 import FloridaJSON from "../../../dummy_json/FL/data.json";
 import ArkansasJSON from "../../../dummy_json/arkansas/data.json";
+import NorthCarolinaJSON from "../../../dummy_json/north_carolina/data.json";
 
 const RaceInformation = ({ district, state }) => {
   const [raceData, setRaceData] = React.useState(null);
@@ -25,6 +26,8 @@ const RaceInformation = ({ district, state }) => {
         break;
       case "ar":
         setRaceData(ArkansasJSON.Race);
+      case "nc":
+        setRaceData(NorthCarolinaJSON.Race);
       default:
         break;
     }
