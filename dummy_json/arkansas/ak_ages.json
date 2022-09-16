@@ -1,0 +1,163 @@
+[
+	{
+		"Subject": "Sex and Age",
+		"Title": "Total population",
+		"District 01 Estimate": "719048",
+		"District 02 Estimate": "767662",
+		"District 03 Estimate": "829149",
+		"District 04 Estimate": "701945"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "Male",
+		"District 01 Estimate": "355908",
+		"District 02 Estimate": "369928",
+		"District 03 Estimate": "407497",
+		"District 04 Estimate": "341372"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "Female",
+		"District 01 Estimate": "363140",
+		"District 02 Estimate": "397734",
+		"District 03 Estimate": "421652",
+		"District 04 Estimate": "360573"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "Under 5 years",
+		"District 01 Estimate": "43668",
+		"District 02 Estimate": "47263",
+		"District 03 Estimate": "53326",
+		"District 04 Estimate": "39070"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "5 to 9 years",
+		"District 01 Estimate": "42374",
+		"District 02 Estimate": "48636",
+		"District 03 Estimate": "56086",
+		"District 04 Estimate": "45193"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "5 to 9 years",
+		"District 01 Estimate": "42374",
+		"District 02 Estimate": "48636",
+		"District 03 Estimate": "56086",
+		"District 04 Estimate": "45193"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "10 to 14 years",
+		"District 01 Estimate": "48605",
+		"District 02 Estimate": "50413",
+		"District 03 Estimate": "57866",
+		"District 04 Estimate": "45492"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "15 to 19 years",
+		"District 01 Estimate": "46120",
+		"District 02 Estimate": "50268",
+		"District 03 Estimate": "61403",
+		"District 04 Estimate": "47655"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "20 to 24 years",
+		"District 01 Estimate": "42287",
+		"District 02 Estimate": "54236",
+		"District 03 Estimate": "59931",
+		"District 04 Estimate": "41456"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "25 to 34 years",
+		"District 01 Estimate": "89980",
+		"District 02 Estimate": "103052",
+		"District 03 Estimate": "114900",
+		"District 04 Estimate": "78670"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "35 to 44 years",
+		"District 01 Estimate": "90309",
+		"District 02 Estimate": "98092",
+		"District 03 Estimate": "107510",
+		"District 04 Estimate": "81273"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "45 to 54 years",
+		"District 01 Estimate": "87424",
+		"District 02 Estimate": "91455",
+		"District 03 Estimate": "96878",
+		"District 04 Estimate": "86627"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "55 to 59 years",
+		"District 01 Estimate": "47701",
+		"District 02 Estimate": "48365",
+		"District 03 Estimate": "51131",
+		"District 04 Estimate": "45280"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "60 to 64 years",
+		"District 01 Estimate": "48238",
+		"District 02 Estimate": "47630",
+		"District 03 Estimate": "45116",
+		"District 04 Estimate": "52588"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "65 to 74 years",
+		"District 01 Estimate": "74758",
+		"District 02 Estimate": "75850",
+		"District 03 Estimate": "72961",
+		"District 04 Estimate": "79853"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "75 to 84 years",
+		"District 01 Estimate": "42165",
+		"District 02 Estimate": "36708",
+		"District 03 Estimate": "38628",
+		"District 04 Estimate": "44742"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "85 years and over",
+		"District 01 Estimate": "15419",
+		"District 02 Estimate": "15694",
+		"District 03 Estimate": "13413",
+		"District 04 Estimate": "14046"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "Median age (years)",
+		"District 01 Estimate": "40.1",
+		"District 02 Estimate": "38.0",
+		"District 03 Estimate": "36.2",
+		"District 04 Estimate": "41.4"
+	},
+	{
+		"Subject": "Sex and Age",
+		"Title": "18 years and over",
+		"District 01 Estimate": "555824",
+		"District 02 Estimate": "592142",
+		"District 03 Estimate": "625792",
+		"District 04 Estimate": "545034"
+	},
+	{
+		"Topic": "People",
+		"Subject": "Sex and Age",
+		"Title": "65 years and over",
+		"District 01 Estimate": "132342",
+		"District 02 Estimate": "128252",
+		"District 03 Estimate": "125002",
+		"District 04 Estimate": "138641"
+	}
+]

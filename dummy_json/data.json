@@ -1,0 +1,37 @@
+[
+  {
+    "Race": "White",
+    "Population": 15199588,
+    "Percentage": "0.7164"
+  },
+  {
+    "Race": "Black or African American",
+    "Population": 3381061,
+    "Percentage": "0.1594"
+  },
+  {
+    "Race": "Two or More Races",
+    "Population": 1277017,
+    "Percentage": "0.0602"
+  },
+  {
+    "Race": "Some Other Race",
+    "Population": 699596,
+    "Percentage": "0.0330"
+  },
+  {
+    "Race": "Asian",
+    "Population": 590668,
+    "Percentage": "0.0278"
+  },
+  {
+    "Race": "American Indian and Alaska Native",
+    "Population": 55655,
+    "Percentage": "0.0026"
+  },
+  {
+    "Race": "Native Hawaiian and Other Pacific Islander",
+    "Population": 13339,
+    "Percentage": "0.0006"
+  }
+]
