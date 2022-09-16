@@ -10,23 +10,7 @@ import InfoBox from "../InfoBox";
 import MapContents from "./MapContents";
 import "../../assets/styles/map.css";
 
-const OUR_STATES = [
-  {
-    abrv: "FL",
-    districts: 27,
-    coordinates: [28.5383355, -81.3792365],
-  },
-  {
-    abrv: "NC",
-    districts: 13,
-    coordinates: [35.7595731, -79.0192997],
-  },
-  {
-    abrv: "AR",
-    districts: 4,
-    coordinates: [34.7464809, -92.2895948],
-  },
-];
+import OUR_STATES from "../../assets/ourStates";
 
 const Map = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
@@ -37,9 +21,7 @@ const Map = () => {
   const params = useParams();
 
   useEffect(() => {
-    const stateFromDict = OUR_STATES.find(
-      (state) => state.abrv.toLowerCase() == params.state.toLowerCase()
-    );
+    const stateFromDict = OUR_STATES[params.state];
     setCoordinates(stateFromDict.coordinates);
     getData(stateFromDict);
   }, []);

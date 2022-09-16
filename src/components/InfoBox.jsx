@@ -16,6 +16,7 @@ import RaceInformation from "./districtbreakdown/RaceInformation";
 import { useParams, Link } from "react-router-dom";
 import EducationInformation from "./districtbreakdown/EducationInformation";
 import SexAndAgeInformation from "./districtbreakdown/AgeInformation";
+import SocioeconomicInformation from "./districtbreakdown/SocioeconomicInformation";
 
 const InfoBox = ({ district }) => {
   const params = useParams();
@@ -60,6 +61,7 @@ const InfoBox = ({ district }) => {
             <Tab>Race Information</Tab>
             <Tab>Education Information</Tab>
             <Tab>Sex and Age Information</Tab>
+            <Tab>Socioeconomic Information</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -70,6 +72,12 @@ const InfoBox = ({ district }) => {
             </TabPanel>
             <TabPanel>
               <SexAndAgeInformation district={district} state={params.state} />
+            </TabPanel>
+            <TabPanel>
+              <SocioeconomicInformation
+                district={district}
+                state={params.state}
+              />
             </TabPanel>
           </TabPanels>
         </Tabs>

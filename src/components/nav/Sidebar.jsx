@@ -8,15 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import ArkansasIcon from "../../assets/img/ArkansasIcon";
-import FloridaIcon from "../../assets/img/FloridaIcon";
-import NorthCarolinaIcon from "../../assets/img/NorthCarolinaIcon";
-
-const LinkItems = [
-  { name: "Arkansas", icon: ArkansasIcon },
-  { name: "Florida", icon: FloridaIcon },
-  { name: "North Carolina", icon: NorthCarolinaIcon },
-];
+import OUR_STATES from "../../assets/ourStates";
 
 export default function Sidebar({ setPage }) {
   return (
@@ -38,25 +30,28 @@ const SidebarContent = ({ setPage }) => {
           States
         </Text>
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem
-          key={link.name}
-          link={link}
-          setPage={setPage}
-          setActive={setActive}
-          active={active}
-        >
-          {link.name}
-        </NavItem>
-      ))}
+      {Object.keys(OUR_STATES).map((state) => {
+        const stateInfo = OUR_STATES[state];
+        return (
+          <NavItem
+            key={stateInfo.name}
+            state={stateInfo}
+            setPage={setPage}
+            setActive={setActive}
+            active={active}
+          >
+            {stateInfo.name}
+          </NavItem>
+        );
+      })}
     </>
   );
 };
 
-const NavItem = ({ link, children, setPage, setActive, active, ...rest }) => {
+const NavItem = ({ state, children, setPage, setActive, active, ...rest }) => {
   const handleClick = () => {
-    setPage(link.name);
-    setActive(link.name);
+    setPage(state.abrv);
+    setActive(state.name);
   };
   return (
     <Link
@@ -77,7 +72,7 @@ const NavItem = ({ link, children, setPage, setActive, active, ...rest }) => {
           color: "white",
         }}
         style={
-          active === link.name
+          active === state.name
             ? {
                 backgroundColor: "var(--chakra-colors-blue-400)",
                 color: "white",
@@ -86,14 +81,14 @@ const NavItem = ({ link, children, setPage, setActive, active, ...rest }) => {
         }
         {...rest}
       >
-        {link.icon && (
+        {state.icon && (
           <Icon
             mr="4"
             fontSize="35"
             _groupHover={{
               color: "white",
             }}
-            as={link.icon}
+            as={state.icon}
           />
         )}
         {children}
