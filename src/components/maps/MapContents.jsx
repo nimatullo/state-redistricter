@@ -46,6 +46,17 @@ const MapContents = ({ geoData, setDistrict }) => {
     });
   };
 
+  const styleBasedOnParty = (feature) => {
+    return {
+      fillColor: Math.random() < 0.5 ? "#E53E3E" : "#2C5282",
+      weight: 3,
+      opacity: 1,
+      color: "#666",
+      dashArray: "",
+      fillOpacity: 0.5,
+    };
+  };
+
   const onClick = (e) => {
     map.fitBounds(e.target.getBounds());
 
@@ -63,7 +74,7 @@ const MapContents = ({ geoData, setDistrict }) => {
     <GeoJSON
       ref={geoJsonRef}
       data={geoData}
-      style={DEFAULT_STYLE}
+      style={styleBasedOnParty}
       onEachFeature={onEachFeature}
     />
   );

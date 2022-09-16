@@ -24,3 +24,12 @@
   /* stroke: transparent; */
   cursor: pointer;
 }
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.state-icon {
+  fill: var(--chakra-colors-blue-500);
+}

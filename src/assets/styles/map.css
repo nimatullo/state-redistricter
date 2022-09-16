@@ -13,3 +13,11 @@
   width: 50vw;
   overflow: auto;
 }
+
+.multi-member-view {
+  position: absolute !important;
+  bottom: 0;
+  left: 15vw;
+  margin: 1em;
+  z-index: 10000;
+}

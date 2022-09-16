@@ -1,7 +1,7 @@
 // Base
 import { React, useState, useEffect } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { Stack, Spinner } from "@chakra-ui/react";
+import { Box, Text, Spinner, Button, Switch, HStack } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 // Custom
@@ -54,20 +54,13 @@ const Map = () => {
     setGeoData(geojson);
   };
 
-  const handleDistrictClick = (e) => {
-    setSelectedDistrict(e.target.feature.properties.name);
-    map.fitBounds(e.target.getBounds());
-  };
-
   return (
     geoData && (
       <div className="map">
-        {/* <Stack direction={"row"}> */}
         <MapContainer
           style={{
             height: "100%",
             width: "50%",
-            // overflow: "hidden",
           }}
           center={stateCoordinates}
           zoom={7}
@@ -92,7 +85,17 @@ const Map = () => {
           )}
         </MapContainer>
         <InfoBox district={selectedDistrict} />
-        {/* </Stack> */}
+        <HStack
+          bg="blue.500"
+          color={"white"}
+          className="multi-member-view"
+          shadow={"md"}
+          borderRadius={"md"}
+          padding={"1rem"}
+        >
+          <Text>Switch to MMD view</Text>
+          <Switch colorScheme="green" />
+        </HStack>
       </div>
     )
   );

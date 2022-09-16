@@ -1,37 +1,36 @@
 // Base
 import React from "react";
-import { Heading } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
 
 // Custom
 import ArkansasIcon from "../../assets/img/ArkansasIcon.jsx";
 import FloridaIcon from "../../assets/img/FloridaIcon.jsx";
 import NorthCarolinaIcon from "../../assets/img/NorthCarolinaIcon.jsx";
 import "../../assets/styles/homepage.css";
+import ArkansasBreakdown from "../statebreakdown/ArkansasBreakdown.jsx";
+import FloridaBreakdown from "../statebreakdown/FloridaBreakdown.jsx";
+import NorthCarolinaBreakdown from "../statebreakdown/NorthCarolina.jsx";
+import Sidebar from "./Sidebar.jsx";
 
 const Homepage = () => {
-  const navigation = useNavigate();
+  const [page, setPage] = React.useState("ak");
 
-  const goTo = (state) => {
-    navigation(`/map/${state}`);
+  const renderPage = () => {
+    switch (page) {
+      case "Arkansas":
+        return <ArkansasBreakdown />;
+      case "Florida":
+        return <FloridaBreakdown />;
+      case "North Carolina":
+        return <NorthCarolinaBreakdown />;
+      default:
+        return <ArkansasBreakdown />;
+    }
   };
 
   return (
     <div className="main">
-      <div className="states">
-        <div className="state">
-          <Heading>Arkansas</Heading>
-          <ArkansasIcon onClick={() => goTo("ar")} />
-        </div>
-        <div className="state">
-          <Heading>Florida</Heading>
-          <FloridaIcon onClick={() => goTo("fl")} />
-        </div>
-        <div className="state">
-          <Heading>North Carolina</Heading>
-          <NorthCarolinaIcon onClick={() => goTo("nc")} />
-        </div>
-      </div>
+      <Sidebar setPage={setPage} />
+      {renderPage()}
     </div>
   );
 };
