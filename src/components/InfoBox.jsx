@@ -8,30 +8,24 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  Stack,
 } from "@chakra-ui/react";
 import { BsChevronRight } from "react-icons/bs";
-import React from "react";
+import React, { useContext } from "react";
 import RaceInformation from "./districtbreakdown/RaceInformation";
 import { useParams, Link } from "react-router-dom";
 import EducationInformation from "./districtbreakdown/EducationInformation";
 import SexAndAgeInformation from "./districtbreakdown/AgeInformation";
 import SocioeconomicInformation from "./districtbreakdown/SocioeconomicInformation";
+import MapContext from "../services/mapContext";
+
+import OUR_STATES from "../assets/ourStates";
 
 const InfoBox = ({ district }) => {
   const params = useParams();
+  const mapContext = useContext(MapContext);
 
-  const getFullStateName = (state) => {
-    switch (state.toUpperCase()) {
-      case "FL":
-        return "Florida";
-      case "NC":
-        return "North Carolina";
-      case "AR":
-        return "Arkansas";
-      default:
-        return "State";
-    }
+  const resetZoom = () => {
+    mapContext.resetZoom();
   };
 
   return (
@@ -48,9 +42,14 @@ const InfoBox = ({ district }) => {
               Home
             </BreadcrumbLink>
           </BreadcrumbItem>
+          <BreadcrumbItem onClick={resetZoom}>
+            <BreadcrumbLink href="#">
+              {OUR_STATES[params.state].name}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
             <BreadcrumbLink href="#">
-              {getFullStateName(params.state)}
+              {district ? `District ${district.split("-")[1]}` : "District"}
             </BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>

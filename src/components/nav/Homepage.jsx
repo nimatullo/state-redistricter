@@ -5,7 +5,7 @@ import React from "react";
 import "../../assets/styles/homepage.css";
 import Sidebar from "./Sidebar.jsx";
 
-import OUR_STATES from "../../assets/ourStates.js";
+import OUR_STATES from "../../assets/ourStates";
 import StateBreakdown from "../data display/StateBreakdown.jsx";
 
 const Homepage = () => {
