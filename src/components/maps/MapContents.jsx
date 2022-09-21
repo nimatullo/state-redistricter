@@ -1,8 +1,8 @@
-import { React, useRef } from "react";
+import { React, useContext, useEffect, useRef } from "react";
 import { useMap, GeoJSON } from "react-leaflet";
+import MapContext from "../../services/mapContext";
 
 const DEFAULT_STYLE = {
-  fillColor: "#bcbcbc",
   weight: 3,
   opacity: 1,
   color: "#666",
@@ -23,9 +23,20 @@ const MapContents = ({ geoData, setDistrict }) => {
   const map = useMap();
   let selectedDistrict = null;
 
+  const mapContext = useContext(MapContext);
+
+  useEffect(() => {
+    mapContext.resetZoom = () => {
+      map.fitBounds(geoJsonRef.current.getBounds());
+      setDistrict(null);
+    };
+  });
+
   const hightlight = (e) => {
     const layer = e.target;
     layer.setStyle(HIGHLIGHT_STYLE);
+    const districtNumber = layer.feature.properties.name.split("-")[1];
+    layer.bindTooltip(`District ${districtNumber}`).openTooltip();
   };
 
   const resetHighlight = (e) => {
@@ -47,14 +58,9 @@ const MapContents = ({ geoData, setDistrict }) => {
   };
 
   const styleBasedOnParty = (feature) => {
-    return {
-      fillColor: Math.random() < 0.5 ? "#E53E3E" : "#2C5282",
-      weight: 3,
-      opacity: 1,
-      color: "#666",
-      dashArray: "",
-      fillOpacity: 0.5,
-    };
+    DEFAULT_STYLE.fillColor = Math.random() < 0.5 ? "#E53E3E" : "#2C5282";
+
+    return DEFAULT_STYLE;
   };
 
   const onClick = (e) => {

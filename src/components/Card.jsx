@@ -1,8 +1,6 @@
 import {
   Box,
-  Center,
   useColorModeValue,
-  Heading,
   Text,
   Stack,
   Image,
@@ -60,7 +58,7 @@ export default function Card({ image, state }) {
         />
       </Box>
       <Stack pt={10} align={"center"}>
-        <LinkComponent as={Link} to={`/map/${state}`}>
+        <LinkComponent as={Link} to={`/map/${state.toLowerCase()}`}>
           <HStack>
             <Text
               color={"gray.500"}

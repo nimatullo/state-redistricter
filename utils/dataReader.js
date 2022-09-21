@@ -15,7 +15,7 @@ const _getAllJSONFromPath = (path) => {
 
 const getDistrictData = () => {
   const thisPath = fileURLToPath(import.meta.url);
-  const path = dirname(thisPath) + "/../dummy_json/north_carolina";
+  const path = dirname(thisPath) + "/../dummy_json/florida";
   const files = _getAllJSONFromPath(path);
 
   const result = {};
