@@ -21,3 +21,9 @@
   margin: 1em;
   z-index: 10000;
 }
+
+.leaflet-tooltip {
+  background-color: var(--chakra-colors-gray-300);
+  border: 1px solid var(--chakra-colors-gray-500);
+  font-size: 14px;
+}
