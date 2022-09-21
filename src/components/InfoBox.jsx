@@ -8,8 +8,11 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Image,
+  Center,
+  Stack,
 } from "@chakra-ui/react";
-import { BsChevronRight } from "react-icons/bs";
+import { BiChevronRight } from "react-icons/bi";
 import React, { useContext } from "react";
 import RaceInformation from "./districtbreakdown/RaceInformation";
 import { useParams, Link } from "react-router-dom";
@@ -35,7 +38,7 @@ const InfoBox = ({ district }) => {
           pt="1em"
           pl="1em"
           spacing="8px"
-          separator={<BsChevronRight color="gray.500" />}
+          separator={<BiChevronRight color="gray.300" />}
         >
           <BreadcrumbItem>
             <BreadcrumbLink as={Link} to="/">
@@ -47,7 +50,7 @@ const InfoBox = ({ district }) => {
               {OUR_STATES[params.state].name}
             </BreadcrumbLink>
           </BreadcrumbItem>
-          <BreadcrumbItem isCurrentPage>
+          <BreadcrumbItem isCurrentPage fontWeight="bold">
             <BreadcrumbLink href="#">
               {district ? `District ${district.split("-")[1]}` : "District"}
             </BreadcrumbLink>
@@ -57,10 +60,11 @@ const InfoBox = ({ district }) => {
       {district ? (
         <Tabs variant={"soft-rounded"} colorScheme={"blue"} p="1em">
           <TabList>
-            <Tab>Race Information</Tab>
-            <Tab>Education Information</Tab>
-            <Tab>Sex and Age Information</Tab>
-            <Tab>Socioeconomic Information</Tab>
+            <Tab>Race</Tab>
+            <Tab>Education</Tab>
+            <Tab>Sex and Age</Tab>
+            <Tab>Socioeconomic</Tab>
+            <Tab>Analytics</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -77,6 +81,26 @@ const InfoBox = ({ district }) => {
                 district={district}
                 state={params.state}
               />
+            </TabPanel>
+            <TabPanel>
+              <Center m="1em">
+                <Stack spacing="1em" height="100%">
+                  <Image
+                    border={"1px solid #E2E8F0"}
+                    borderRadius="lg"
+                    width="35vw"
+                    height="auto"
+                    src="https://cdn.discordapp.com/attachments/658712772313481246/1021982267792437288/unknown.png"
+                  />
+                  <Image
+                    border={"1px solid #E2E8F0"}
+                    borderRadius="lg"
+                    width="120%"
+                    height="auto"
+                    src="https://cdn.discordapp.com/attachments/658712772313481246/1021986731509174294/unknown.png"
+                  />
+                </Stack>
+              </Center>
             </TabPanel>
           </TabPanels>
         </Tabs>

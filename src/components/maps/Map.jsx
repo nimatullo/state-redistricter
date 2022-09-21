@@ -53,6 +53,7 @@ const Map = () => {
             }}
             center={stateCoordinates}
             zoom={zoom}
+            minZoom={7}
             loadingControl={true}
             scrollWheelZoom={true}
             whenReady={() => {

@@ -14,7 +14,7 @@ interface State {
   coordinates: number[];
   population: number;
   partyBreakdown: string;
-  districtType: string;
+  dimensions: number[];
   json: any;
   icon: () => ReactJSXElement;
 }
@@ -32,7 +32,7 @@ const OUR_STATES: StateMap = {
     coordinates: [34.7464809, -92.2895948],
     population: 3.012,
     partyBreakdown: "R: 54%, D: 46%",
-    districtType: "Single-Member",
+    dimensions: [240, 270],
     json: ArkansasJSON,
     icon: ArkansasIcon,
   },
@@ -43,7 +43,7 @@ const OUR_STATES: StateMap = {
     coordinates: [28.5383355, -81.3792365],
     population: 21.477,
     partyBreakdown: "R: 49%, D: 51%",
-    districtType: "Single-Member",
+    dimensions: [447, 361],
     json: FloridaJSON,
     icon: FloridaIcon,
   },
@@ -54,7 +54,7 @@ const OUR_STATES: StateMap = {
     coordinates: [35.7821694, -80.793457],
     population: 10.488,
     partyBreakdown: "R: 48%, D: 52%",
-    districtType: "Single-Member",
+    dimensions: [500, 184],
     json: NorthCarolinaJSON,
     icon: NorthCarolinaIcon,
   },

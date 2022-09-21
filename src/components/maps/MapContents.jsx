@@ -35,6 +35,8 @@ const MapContents = ({ geoData, setDistrict }) => {
   const hightlight = (e) => {
     const layer = e.target;
     layer.setStyle(HIGHLIGHT_STYLE);
+    const districtNumber = layer.feature.properties.name.split("-")[1];
+    layer.bindTooltip(`District ${districtNumber}`).openTooltip();
   };
 
   const resetHighlight = (e) => {

@@ -46,9 +46,15 @@ const StateBreakdown = ({ state }) => {
                         </Td>
                       </Tr>
                       <Tr>
-                        <Td>District type</Td>
+                        <Td>Length</Td>
                         <Td isNumeric>
-                          <Text as="b">{state.districtType}</Text>
+                          <Text as="b">{state.dimensions[0]} mi</Text>
+                        </Td>
+                      </Tr>
+                      <Tr>
+                        <Td>Width</Td>
+                        <Td isNumeric>
+                          <Text as="b">{state.dimensions[1]} mi</Text>
                         </Td>
                       </Tr>
                     </Tbody>
