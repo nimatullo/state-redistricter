@@ -11,7 +11,7 @@ import MapContents from "./MapContents";
 import "../../assets/styles/map.css";
 
 import OUR_STATES from "../../assets/ourStates";
-import MapContext, { MapProvider } from "../../services/mapContext";
+import { MapProvider } from "../../services/mapContext";
 
 const Map = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
