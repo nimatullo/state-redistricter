@@ -13,7 +13,7 @@ import OUR_STATES from "../../assets/ourStates";
 export default function Sidebar({ setPage }) {
   return (
     <>
-      <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+      <Box minH="100vh" bg={"brand.main"} color={"brand.white"}>
         <SidebarContent setPage={setPage} />
       </Box>
     </>
@@ -68,13 +68,13 @@ const NavItem = ({ state, children, setPage, setActive, active, ...rest }) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: "blue.300",
+          bg: "#282F3B",
           color: "white",
         }}
         style={
           active === state.name
             ? {
-                backgroundColor: "var(--chakra-colors-blue-400)",
+                backgroundColor: "var(--chakra-colors-brand-secondary)",
                 color: "white",
               }
             : null
@@ -85,8 +85,9 @@ const NavItem = ({ state, children, setPage, setActive, active, ...rest }) => {
           <Icon
             mr="4"
             fontSize="35"
+            fill={"whiteAlpha.700"}
             _groupHover={{
-              color: "white",
+              color: "brand.secondary",
             }}
             as={state.icon}
           />
