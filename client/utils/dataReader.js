@@ -35,7 +35,42 @@ const getDistrictData = () => {
   return result;
 };
 
-fs.writeFile("data.json", JSON.stringify(getDistrictData()), (err) => {
-  if (err) throw err;
-  console.log("The file has been saved!");
-});
+const getGeoJSONForState = async (state, totalDistricts) => {
+  const districts = [];
+
+  for (let i = 1; i <= totalDistricts; i++) {
+    const district = await _fetchDistrict(state, i);
+    districts.push(district);
+  }
+
+  return districts;
+};
+
+const _fetchDistrict = async (state, district) => {
+  const GH_RAW_URL =
+    "https://raw.githubusercontent.com/unitedstates/districts/gh-pages/cds/2012";
+  const url = `${GH_RAW_URL}/${state}-${district}/shape.geojson`;
+  const response = await fetch(url);
+  const districtGeoJSON = await response.json();
+
+  return {
+    type: "Feature",
+    id: district,
+    properties: {
+      name: `${state}-${district}`,
+    },
+    geometry: districtGeoJSON,
+  };
+};
+
+const savePath =
+  "/Users/sherzodnimatullo/code/projects/416/states-redistrictor/src/main/resources/json/northcarolina.geojson";
+
+fs.writeFile(
+  savePath,
+  JSON.stringify(await getGeoJSONForState("NC", 13)),
+  (err) => {
+    if (err) throw err;
+    console.log("The file has been saved!");
+  }
+);

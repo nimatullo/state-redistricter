@@ -11,7 +11,7 @@ import MapContents from "./MapContents";
 import "../../assets/styles/map.css";
 
 import OUR_STATES from "../../assets/ourStates";
-import MapContext, { MapProvider } from "../../services/mapContext";
+import { MapProvider } from "../../services/mapContext";
 
 const Map = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
@@ -29,13 +29,10 @@ const Map = () => {
   }, []);
 
   const getData = async (state) => {
-    let geojson = [];
     const stateDistricts = await DistrictsService.getGeoJSONForState(
-      state.abrv,
-      state.districts
+      state.name
     );
-    geojson = geojson.concat(stateDistricts);
-    setGeoData(geojson);
+    setGeoData(stateDistricts);
   };
 
   return (
@@ -49,7 +46,7 @@ const Map = () => {
           <MapContainer
             style={{
               height: "100%",
-              width: "50%",
+              width: "100%",
             }}
             center={stateCoordinates}
             zoom={zoom}
@@ -75,18 +72,7 @@ const Map = () => {
               </>
             )}
           </MapContainer>
-          <InfoBox district={selectedDistrict} />
-          <HStack
-            bg="blue.500"
-            color={"white"}
-            className="multi-member-view"
-            shadow={"md"}
-            borderRadius={"md"}
-            padding={"1rem"}
-          >
-            <Text>Switch to MMD view</Text>
-            <Switch colorScheme="green" />
-          </HStack>
+          {/* <InfoBox district={selectedDistrict} /> */}
         </MapProvider>
       </div>
     )
