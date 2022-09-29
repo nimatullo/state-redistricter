@@ -74,7 +74,7 @@ const NavItem = ({ state, children, setPage, setActive, active, ...rest }) => {
         style={
           active === state.name
             ? {
-                backgroundColor: "var(--chakra-colors-brand-secondary)",
+                backgroundColor: "var(--chakra-colors-brand-tertiary)",
                 color: "white",
               }
             : null

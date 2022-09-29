@@ -5,7 +5,8 @@ const theme = extendTheme({
     brand: {
       main: "#111825",
       white: "#F0F4F9",
-      secondary: "#434A55",
+      secondary: "#767c85",
+      tertiary: "#E63F4E",
     },
   },
 });

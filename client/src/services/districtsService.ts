@@ -1,4 +1,3 @@
-
 interface District {
   type: string;
   id: number;
@@ -22,7 +21,15 @@ class DistrictsService {
 
   async getGeoJSONForState(state: string): Promise<District[]> {
     return fetch(`${this.API}/states/${state}/shape`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Failed to fetch geojson");
+        }
+      }).catch((error) => {
+        throw new Error("Failed to fetch geojson");
+    });
   }
 }
 

@@ -1,7 +1,7 @@
 // Base
 import { React, useState, useEffect, useRef, useContext } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { Text, Spinner, Switch, HStack } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 // Custom
@@ -12,6 +12,7 @@ import "../../assets/styles/map.css";
 
 import OUR_STATES from "../../assets/ourStates";
 import { MapProvider } from "../../services/mapContext";
+import { useAlert } from "../../services/alertservice";
 
 const Map = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
@@ -21,6 +22,7 @@ const Map = () => {
   const [zoom, setZoom] = useState(7);
 
   const params = useParams();
+  const { setMessage } = useAlert();
 
   useEffect(() => {
     const stateFromDict = OUR_STATES[params.state];
@@ -29,10 +31,19 @@ const Map = () => {
   }, []);
 
   const getData = async (state) => {
-    const stateDistricts = await DistrictsService.getGeoJSONForState(
-      state.name
-    );
-    setGeoData(stateDistricts);
+    DistrictsService.getGeoJSONForState(state.name)
+      .then((data) => {
+        setGeoData(data);
+      })
+      .catch((err) => {
+        setMessage({
+          type: "error",
+          data: err.message,
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
