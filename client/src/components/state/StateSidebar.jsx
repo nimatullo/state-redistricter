@@ -21,7 +21,7 @@ const StateSidebar = ({ currentView, setView }) => {
   const params = useParams();
 
   React.useEffect(() => {
-    setCurrentState(OUR_STATES[params.state].name);
+    setCurrentState(OUR_STATES[params.state].fullName);
   });
 
   const setActiveClass = (view) => {
@@ -37,7 +37,7 @@ const StateSidebar = ({ currentView, setView }) => {
         {sidebarLinks.map((link) => {
           if (!link.children) {
             return (
-              <Box p={2} ml={2}>
+              <Box p={2} ml={2} key={link.view}>
                 <HStack className={setActiveClass(link.view)}>
                   <Icon as={link.icon} color={"brand.secondary"} />
                   <Link onClick={() => setView(link.view)}>{link.name}</Link>
@@ -46,7 +46,7 @@ const StateSidebar = ({ currentView, setView }) => {
             );
           } else {
             return (
-              <AccordionItem borderColor={"transparent"}>
+              <AccordionItem borderColor={"transparent"} key={link.view}>
                 <h2>
                   <AccordionButton>
                     <Box flex="1" textAlign="left">
@@ -63,6 +63,7 @@ const StateSidebar = ({ currentView, setView }) => {
                     {link.children.map((child) => {
                       return (
                         <Link
+                          key={child.view}
                           onClick={() => setView(child.view)}
                           className={setActiveClass(child.view)}
                         >

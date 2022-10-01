@@ -8,7 +8,7 @@ import ArkansasJSON from "../../dummy_json/arkansas/data.json";
 import NorthCarolinaJSON from "../../dummy_json/north_carolina/data.json";
 
 interface State {
-  name: string;
+  fullName: string;
   abrv: string;
   districts: number;
   coordinates: number[];
@@ -23,10 +23,9 @@ interface StateMap {
   [key: string]: State;
 }
 
-
 const OUR_STATES: StateMap = {
   ar: {
-    name: "Arkansas",
+    fullName: "Arkansas",
     abrv: "AR",
     districts: 4,
     coordinates: [34.7464809, -92.2895948],
@@ -37,7 +36,7 @@ const OUR_STATES: StateMap = {
     icon: ArkansasIcon,
   },
   fl: {
-    name: "Florida",
+    fullName: "Florida",
     abrv: "FL",
     districts: 27,
     coordinates: [28.5383355, -81.3792365],
@@ -48,7 +47,7 @@ const OUR_STATES: StateMap = {
     icon: FloridaIcon,
   },
   nc: {
-    name: "North Carolina",
+    fullName: "North Carolina",
     abrv: "NC",
     districts: 13,
     coordinates: [35.7821694, -80.793457],

@@ -30,7 +30,16 @@ export const sidebarLinks: SidebarLink[] = [
   {
     name: "Analysis",
     icon: BsGraphUp,
-    view: "analysis",
+    children: [
+      {
+        name: "Voter Prediction",
+        view: "voter-prediction",
+      },
+      {
+        name: "Box & Whisker",
+        view: "box-whisker",
+      },
+    ],
   },
   {
     name: "Fairness",

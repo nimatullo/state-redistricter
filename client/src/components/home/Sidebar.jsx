@@ -34,13 +34,13 @@ const SidebarContent = ({ setPage }) => {
         const stateInfo = OUR_STATES[state];
         return (
           <NavItem
-            key={stateInfo.name}
+            key={stateInfo.fullName}
             state={stateInfo}
             setPage={setPage}
             setActive={setActive}
             active={active}
           >
-            {stateInfo.name}
+            {stateInfo.fullName}
           </NavItem>
         );
       })}
@@ -51,7 +51,7 @@ const SidebarContent = ({ setPage }) => {
 const NavItem = ({ state, children, setPage, setActive, active, ...rest }) => {
   const handleClick = () => {
     setPage(state.abrv);
-    setActive(state.name);
+    setActive(state.fullName);
   };
   return (
     <Link
@@ -72,7 +72,7 @@ const NavItem = ({ state, children, setPage, setActive, active, ...rest }) => {
           color: "white",
         }}
         style={
-          active === state.name
+          active === state.fullName
             ? {
                 backgroundColor: "var(--chakra-colors-brand-tertiary)",
                 color: "white",

@@ -1,9 +1,11 @@
+import percentages from "../../utils/percentages.json";
+
 interface District {
   type: string;
   id: number;
   properties: {
     name: string;
-  },
+  };
   geometry: Geometry;
 }
 
@@ -12,8 +14,8 @@ interface Geometry {
   coordinates: number[];
 }
 
-class DistrictsService {
-  API: string
+class StateService {
+  API: string;
 
   constructor() {
     this.API = "http://localhost:8080/api";
@@ -25,13 +27,19 @@ class DistrictsService {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error("Failed to fetch geojson");
+          throw new Error(response.statusText);
         }
-      }).catch((error) => {
-        throw new Error("Failed to fetch geojson");
-    });
+      })
+      .catch((error) => {
+        throw new Error("Error fetching geojson. Is the server running?");
+      });
+  }
+
+  getStateData(state: string) {
+    return percentages.find(
+      (stateData) => stateData.state.toLowerCase() === state.toLowerCase()
+    );
   }
 }
 
-export default new DistrictsService();
-
+export default new StateService();

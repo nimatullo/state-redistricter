@@ -1,0 +1,77 @@
+[
+  {
+    "state": "florida",
+    "percentages": [
+      {
+        "Sex and Age": [
+          { "title": "Male", "percentage": 48.87854339588943 },
+          { "title": "Female", "percentage": 51.12145660411057 }
+        ]
+      },
+      {
+        "Race": [
+          { "title": "White", "percentage": 74.54267179079434 },
+          {
+            "title": "Black or African American",
+            "percentage": 16.021529642531707
+          },
+          { "title": "Asian", "percentage": 2.7926545520135573 },
+          {
+            "title": "Hispanic or Latino (of any race)",
+            "percentage": 25.71975343584848
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "arkansas",
+    "percentages": [
+      {
+        "Sex and Age": [
+          { "title": "Male", "percentage": 48.8668250158062 },
+          { "title": "Female", "percentage": 51.13317498419381 }
+        ]
+      },
+      {
+        "Race": [
+          { "title": "White", "percentage": 76.7120727522397 },
+          {
+            "title": "Black or African American",
+            "percentage": 15.49033668190512
+          },
+          { "title": "Asian", "percentage": 1.5268718578144902 },
+          {
+            "title": "Hispanic or Latino (of any race)",
+            "percentage": 7.6860856437329925
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "north carolina",
+    "percentages": [
+      {
+        "Sex and Age": [
+          { "title": "Male", "percentage": 48.64776207953091 },
+          { "title": "Female", "percentage": 51.3522379204691 }
+        ]
+      },
+      {
+        "Race": [
+          { "title": "White", "percentage": 70.74853072246543 },
+          {
+            "title": "Black or African American",
+            "percentage": 23.037643987561605
+          },
+          { "title": "Asian", "percentage": 3.638029478847323 },
+          {
+            "title": "Hispanic or Latino (of any race)",
+            "percentage": 9.541973230509983
+          }
+        ]
+      }
+    ]
+  }
+]

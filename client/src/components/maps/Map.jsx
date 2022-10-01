@@ -5,8 +5,7 @@ import { Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 // Custom
-import DistrictsService from "../../services/districtsService";
-import InfoBox from "../InfoBox";
+import StateService from "../../services/stateService";
 import MapContents from "./MapContents";
 import "../../assets/styles/map.css";
 
@@ -31,7 +30,7 @@ const Map = () => {
   }, []);
 
   const getData = async (state) => {
-    DistrictsService.getGeoJSONForState(state.name)
+    StateService.getGeoJSONForState(state.fullName)
       .then((data) => {
         setGeoData(data);
       })

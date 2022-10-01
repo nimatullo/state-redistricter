@@ -20,7 +20,7 @@ const StateBreakdown = ({ state }) => {
     state && (
       <Center>
         <Stack alignItems={"center"}>
-          <Heading size={"xl"}>{state.name}</Heading>
+          <Heading size={"xl"}>{state.fullName}</Heading>
           <Box>
             <Grid templateColumns="1fr 1fr" gap={6}>
               <GridItem>
@@ -28,7 +28,7 @@ const StateBreakdown = ({ state }) => {
                   <Table variant="simple">
                     <Tbody>
                       <Tr>
-                        <Td>Number of districts</Td>
+                        <Td>Number of representatives</Td>
                         <Td isNumeric>
                           <Text as="b">{state.districts}</Text>
                         </Td>
