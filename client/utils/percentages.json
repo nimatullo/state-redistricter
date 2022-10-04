@@ -3,7 +3,7 @@
     "state": "florida",
     "percentages": [
       {
-        "Sex and Age": [
+        "Sex": [
           { "title": "Male", "percentage": 48.87854339588943 },
           { "title": "Female", "percentage": 51.12145660411057 }
         ]
@@ -28,7 +28,7 @@
     "state": "arkansas",
     "percentages": [
       {
-        "Sex and Age": [
+        "Sex": [
           { "title": "Male", "percentage": 48.8668250158062 },
           { "title": "Female", "percentage": 51.13317498419381 }
         ]
@@ -53,7 +53,7 @@
     "state": "north carolina",
     "percentages": [
       {
-        "Sex and Age": [
+        "Sex": [
           { "title": "Male", "percentage": 48.64776207953091 },
           { "title": "Female", "percentage": 51.3522379204691 }
         ]
