@@ -4,20 +4,21 @@ import Homepage from "./components/home/Homepage";
 import theme from "./assets/styles/theme";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Map from "./components/maps/Map";
-import StateSidebar from "./components/state/StateSidebar";
 import StateContainer from "./components/state/StateContainer";
+import { AlertServiceProvider } from "./services/alertservice";
 
 function App() {
   return (
     <BrowserRouter>
       <ChakraProvider theme={theme}>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/map">
-            <Route path=":state" element={<StateContainer />} />
-          </Route>
-        </Routes>
+        <AlertServiceProvider>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/map">
+              <Route path=":state" element={<StateContainer />} />
+            </Route>
+          </Routes>
+        </AlertServiceProvider>
       </ChakraProvider>
     </BrowserRouter>
   );
