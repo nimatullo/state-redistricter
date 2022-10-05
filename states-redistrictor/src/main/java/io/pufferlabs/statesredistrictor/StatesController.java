@@ -17,11 +17,10 @@ import java.util.List;
 @CrossOrigin(value = "*")
 public class StatesController {
 
-    @Autowired
     private final StatesService statesService;
+    @Autowired
     public StatesController(StatesService statesService) {
         this.statesService = statesService;
-
     }
 
     @GetMapping
