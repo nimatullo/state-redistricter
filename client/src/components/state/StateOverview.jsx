@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import React from "react";
 import stateService from "../../services/stateService";
