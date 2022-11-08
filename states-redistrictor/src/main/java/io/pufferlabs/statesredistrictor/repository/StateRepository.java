@@ -7,6 +7,7 @@ import com.mongodb.client.MongoClient;
 public interface StateRepository extends MongoRepository<State, String> {
 
     
+    
 }
     
 

@@ -1,15 +1,10 @@
-package io.pufferlabs.statesredistrictor;
+package io.pufferlabs.statesredistrictor.controller;
 
+import io.pufferlabs.statesredistrictor.service.StatesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.util.List;
 
 @RestController

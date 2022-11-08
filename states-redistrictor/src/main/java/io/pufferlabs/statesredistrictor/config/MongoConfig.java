@@ -1,4 +1,4 @@
-package io.pufferlabs.config;
+package io.pufferlabs.statesredistrictor.config;
 
 import java.util.Collection;
 import java.util.Collections;
