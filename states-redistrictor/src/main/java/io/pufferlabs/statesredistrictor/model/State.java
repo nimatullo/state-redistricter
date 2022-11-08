@@ -1,7 +1,6 @@
 package io.pufferlabs.statesredistrictor.model;
 
 import io.pufferlabs.statesredistrictor.enums.StateAbbreviation;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
