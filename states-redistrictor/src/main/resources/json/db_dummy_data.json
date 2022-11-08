@@ -35,9 +35,9 @@
                                 "party": "REPUBLICAN",
                                 "race": "WHITE",
                                 "votes": [
-                                    { "race": "WHITE", "count": 100 },
-                                    { "race": "BLACK", "count": 150 },
-                                    { "race": "HISPANIC", "count": 200 }
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
                                 ]
                             },
                             {
@@ -45,16 +45,16 @@
                                 "party": "DEMOCRAT",
                                 "race": "BLACK",
                                 "votes": [
-                                    { "race": "WHITE", "count": 342 },
-                                    { "race": "BLACK", "count": 152 },
-                                    { "race": "HISPANIC", "count": 241 }
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
                                 ]
                             }
                         ],
-                        "population": [
-                            { "race": "WHITE", "count": 100 },
-                            { "race": "BLACK", "count": 150 },
-                            { "race": "HISPANIC", "count": 200 }
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
                         ]
                     }
                 ]
@@ -79,9 +79,9 @@
                                 "party": "REPUBLICAN",
                                 "race": "HISPANIC",
                                 "votes": [
-                                    { "race": "WHITE", "count": 100 },
-                                    { "race": "BLACK", "count": 150 },
-                                    { "race": "HISPANIC", "count": 200 }
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
                                 ]
                             },
                             {
@@ -89,16 +89,16 @@
                                 "party": "DEMOCRAT",
                                 "race": "BLACK",
                                 "votes": [
-                                    { "race": "WHITE", "count": 342 },
-                                    { "race": "BLACK", "count": 152 },
-                                    { "race": "HISPANIC", "count": 241 }
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
                                 ]
                             }
                         ],
-                        "population": [
-                            { "race": "WHITE", "count": 100 },
-                            { "race": "BLACK", "count": 150 },
-                            { "race": "HISPANIC", "count": 200 }
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
                         ]
                     }
                 ]
@@ -141,9 +141,9 @@
                                 "party": "REPUBLICAN",
                                 "race": "WHITE",
                                 "votes": [
-                                    { "race": "WHITE", "count": 100 },
-                                    { "race": "BLACK", "count": 150 },
-                                    { "race": "HISPANIC", "count": 200 }
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
                                 ]
                             },
                             {
@@ -151,16 +151,16 @@
                                 "party": "DEMOCRAT",
                                 "race": "BLACK",
                                 "votes": [
-                                    { "race": "WHITE", "count": 342 },
-                                    { "race": "BLACK", "count": 152 },
-                                    { "race": "HISPANIC", "count": 241 }
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
                                 ]
                             }
                         ],
-                        "population": [
-                            { "race": "WHITE", "count": 100 },
-                            { "race": "BLACK", "count": 150 },
-                            { "race": "HISPANIC", "count": 200 }
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
                         ]
                     }
                 ]
@@ -185,9 +185,9 @@
                                 "party": "REPUBLICAN",
                                 "race": "HISPANIC",
                                 "votes": [
-                                    { "race": "WHITE", "count": 100 },
-                                    { "race": "BLACK", "count": 150 },
-                                    { "race": "HISPANIC", "count": 200 }
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
                                 ]
                             },
                             {
@@ -195,16 +195,16 @@
                                 "party": "DEMOCRAT",
                                 "race": "BLACK",
                                 "votes": [
-                                    { "race": "WHITE", "count": 342 },
-                                    { "race": "BLACK", "count": 152 },
-                                    { "race": "HISPANIC", "count": 241 }
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
                                 ]
                             }
                         ],
-                        "population": [
-                            { "race": "WHITE", "count": 100 },
-                            { "race": "BLACK", "count": 150 },
-                            { "race": "HISPANIC", "count": 200 }
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
                         ]
                     }
                 ]
@@ -247,9 +247,9 @@
                                 "party": "REPUBLICAN",
                                 "race": "WHITE",
                                 "votes": [
-                                    { "race": "WHITE", "count": 100 },
-                                    { "race": "BLACK", "count": 150 },
-                                    { "race": "HISPANIC", "count": 200 }
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
                                 ]
                             },
                             {
@@ -257,16 +257,16 @@
                                 "party": "DEMOCRAT",
                                 "race": "BLACK",
                                 "votes": [
-                                    { "race": "WHITE", "count": 342 },
-                                    { "race": "BLACK", "count": 152 },
-                                    { "race": "HISPANIC", "count": 241 }
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
                                 ]
                             }
                         ],
-                        "population": [
-                            { "race": "WHITE", "count": 100 },
-                            { "race": "BLACK", "count": 150 },
-                            { "race": "HISPANIC", "count": 200 }
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
                         ]
                     }
                 ]
@@ -291,9 +291,9 @@
                                 "party": "REPUBLICAN",
                                 "race": "HISPANIC",
                                 "votes": [
-                                    { "race": "WHITE", "count": 100 },
-                                    { "race": "BLACK", "count": 150 },
-                                    { "race": "HISPANIC", "count": 200 }
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
                                 ]
                             },
                             {
@@ -301,16 +301,16 @@
                                 "party": "DEMOCRAT",
                                 "race": "BLACK",
                                 "votes": [
-                                    { "race": "WHITE", "count": 342 },
-                                    { "race": "BLACK", "count": 152 },
-                                    { "race": "HISPANIC", "count": 241 }
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
                                 ]
                             }
                         ],
-                        "population": [
-                            { "race": "WHITE", "count": 100 },
-                            { "race": "BLACK", "count": 150 },
-                            { "race": "HISPANIC", "count": 200 }
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
                         ]
                     }
                 ]
