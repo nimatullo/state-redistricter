@@ -24,17 +24,16 @@ public class StatesController {
         this.stateRepository = stateRepository;
     }
 
-    @GetMapping("/{state}/shape")
-    public ResponseEntity<?> getGeoJsonForState(@PathVariable String state) {
-        return statesService.readGeoJsonFromDisk(state);
-    }
+    //DEPRECATED
+//    @GetMapping("/{state}/shape")
+//    public ResponseEntity<?> getGeoJsonForState(@PathVariable String state) {
+//        return statesService.readGeoJsonFromDisk(state);
+//    }
 
     //get all states
     @GetMapping
     public ResponseEntity<?> getStates() {
-        List<State> states = stateRepository.findAll();
-        System.out.println(states);
-        return ResponseEntity.ok(states.get(0));
+        return ResponseEntity.ok(statesService.getStates());
     }
 
 }
