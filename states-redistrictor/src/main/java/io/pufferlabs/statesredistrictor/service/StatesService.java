@@ -40,6 +40,11 @@ public class StatesService {
 //        }
 //    }
 
+    // get state by name
+    public State getStateByName(String state) {
+        return stateRepository.findByName(state);
+    }
+
     public List<State> getStates() {
         return stateRepository.findAll();
     }
