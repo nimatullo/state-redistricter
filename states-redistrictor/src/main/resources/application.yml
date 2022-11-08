@@ -3,3 +3,8 @@ server:
 spring:
   application:
     name: "states-redistrictor"
+  data:
+    mongodb:
+      database: "states-redistrictor"
+      host: "localhost"
+      port: 27017

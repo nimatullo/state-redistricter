@@ -1,7 +1,10 @@
 package io.pufferlabs.statesredistrictor.model;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class StateShape {
     private String type;
     private Geometry geometry;
