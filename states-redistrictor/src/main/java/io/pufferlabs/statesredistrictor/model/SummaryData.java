@@ -4,6 +4,7 @@ import io.pufferlabs.statesredistrictor.enums.PlanType;
 import lombok.Data;
 
 @Data
+
 public class SummaryData {
     private PlanType planType;
     private Double averageEfficiencyGap;

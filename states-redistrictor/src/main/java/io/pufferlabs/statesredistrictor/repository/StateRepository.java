@@ -7,10 +7,10 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import io.pufferlabs.statesredistrictor.model.State;
 
 
-public interface StateRepository extends MongoRepository<State, String>, QuerydslPredicateExecutor<State> {
+public interface StateRepository extends MongoRepository<State, String> {
 
-    @Query("{ 'stateName' : ?0 }")
-    State findByAbbreviation(String stateName);
+//    @Query("{ 'stateName' : ?0 }")
+//    State findByAbbreviation(String stateName);
     
 }
     

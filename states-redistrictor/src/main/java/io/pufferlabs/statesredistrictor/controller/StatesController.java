@@ -1,5 +1,7 @@
 package io.pufferlabs.statesredistrictor.controller;
 
+import io.pufferlabs.statesredistrictor.model.State;
+import io.pufferlabs.statesredistrictor.repository.StateRepository;
 import io.pufferlabs.statesredistrictor.service.StatesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,19 +15,26 @@ import java.util.List;
 public class StatesController {
 
     private final StatesService statesService;
-    @Autowired
-    public StatesController(StatesService statesService) {
-        this.statesService = statesService;
-    }
 
-    @GetMapping
-    public ResponseEntity<?> getStates() {
-        return ResponseEntity.ok(List.of("Florida", "Arkansas", "North Carolina"));
+    private final StateRepository stateRepository;
+
+    @Autowired
+    public StatesController(StatesService statesService, StateRepository stateRepository) {
+        this.statesService = statesService;
+        this.stateRepository = stateRepository;
     }
 
     @GetMapping("/{state}/shape")
     public ResponseEntity<?> getGeoJsonForState(@PathVariable String state) {
         return statesService.readGeoJsonFromDisk(state);
+    }
+
+    //get all states
+    @GetMapping
+    public ResponseEntity<?> getStates() {
+        List<State> states = stateRepository.findAll();
+        System.out.println(states);
+        return ResponseEntity.ok(states.get(0));
     }
 
 }
