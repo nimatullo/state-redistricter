@@ -18,8 +18,7 @@ const HIGHLIGHT_STYLE = {
   fillColor: "#63B3ED",
 };
 
-const MapContents = ({ geoData, setDistrict }) => {
-  const geoJsonRef = useRef();
+const MapContents = ({ geoData, setDistrict, geoJsonRef, district }) => {
   const map = useMap();
   let selectedDistrict = null;
 
@@ -30,7 +29,17 @@ const MapContents = ({ geoData, setDistrict }) => {
       map.fitBounds(geoJsonRef.current.getBounds());
       setDistrict(null);
     };
-  });
+  }, []);
+
+  useEffect(() => {
+    if (district) {
+      const dist = geoJsonRef.current
+        .getLayers()
+        .find((layer) => layer.feature.properties.name === district);
+
+      map.fitBounds(dist.getBounds());
+    }
+  }, [district]);
 
   const hightlight = (e) => {
     const layer = e.target;
@@ -67,6 +76,7 @@ const MapContents = ({ geoData, setDistrict }) => {
     map.fitBounds(e.target.getBounds());
 
     if (selectedDistrict) {
+      console.log("selectedDistrict", selectedDistrict);
       geoJsonRef.current.resetStyle(selectedDistrict);
     }
     e.target.setStyle({

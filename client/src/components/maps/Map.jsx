@@ -12,6 +12,7 @@ import "../../assets/styles/map.css";
 import OUR_STATES from "../../assets/ourStates";
 import { MapProvider } from "../../services/mapContext";
 import { useAlert } from "../../services/alertservice";
+import stateService from "../../services/stateService";
 
 const Map = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
@@ -20,6 +21,10 @@ const Map = () => {
   const [stateCoordinates, setCoordinates] = useState(null);
   const [zoom, setZoom] = useState(7);
 
+  const geoJsonRef = useRef();
+
+  const [interestingDistricts, setInterestingDistricts] = useState([]);
+
   const params = useParams();
   const { setMessage } = useAlert();
 
@@ -27,6 +32,8 @@ const Map = () => {
     const stateFromDict = OUR_STATES[params.state];
     setCoordinates(stateFromDict.coordinates);
     getData(stateFromDict);
+
+    setInterestingDistricts(stateService.getDistrictPlans(""));
   }, []);
 
   const getData = async (state) => {
@@ -76,7 +83,9 @@ const Map = () => {
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <MapContents
+                  geoJsonRef={geoJsonRef}
                   geoData={geoData}
+                  district={selectedDistrict}
                   setDistrict={setSelectedDistrict}
                 />
               </>
@@ -86,13 +95,18 @@ const Map = () => {
             <Select
               size="lg"
               variant="filled outline"
+              shadow={"md"}
               placeholder={"Select a district"}
+              onChange={(e) => {
+                console.log(e.target.value);
+                setSelectedDistrict(e.target.value);
+              }}
             >
-              <option value="1">District 1 (High republican percentage)</option>
-              <option value="2">
-                District 7 (Low Black population representation)
-              </option>
-              <option value="1">District 5 (No female representation)</option>
+              {interestingDistricts.map((district) => (
+                <option value={`FL-${district.district}`}>
+                  {district.quality}
+                </option>
+              ))}
             </Select>
           </div>
         </MapProvider>

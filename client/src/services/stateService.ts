@@ -65,6 +65,19 @@ class StateService {
       },
     };
   }
+
+  getDistrictPlans(state: string) {
+    return [
+      {
+        district: randomNumber(1, 18),
+        quality: "High Republican Concentration",
+      },
+      {
+        district: randomNumber(1, 18),
+        quality: "Low African American Representation",
+      },
+    ];
+  }
 }
 
 const randomNumber = (min: number, max: number) => {
