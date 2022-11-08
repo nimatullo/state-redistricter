@@ -12,6 +12,8 @@ public interface StateRepository extends MongoRepository<State, String> {
 //    @Query("{ 'stateName' : ?0 }")
 //    State findByAbbreviation(String stateName);
     
+    @Query("{ 'name' : ?0 }")
+    State findByName(String stateName);
 }
     
 

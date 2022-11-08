@@ -36,4 +36,12 @@ public class StatesController {
         return ResponseEntity.ok(statesService.getStates());
     }
 
+
+    // get state by name
+    @GetMapping("/{stateName}")
+    public ResponseEntity<?> getStateByName(@PathVariable String stateName) {
+        State state = statesService.getStateByName(stateName);
+        state.setDistrictPlans(null);
+        return ResponseEntity.ok(state);
+    }
 }
