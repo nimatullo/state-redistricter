@@ -77,12 +77,14 @@ const MapContents = ({ geoData, setDistrict }) => {
   };
 
   return (
-    <GeoJSON
-      ref={geoJsonRef}
-      data={geoData}
-      style={styleBasedOnParty}
-      onEachFeature={onEachFeature}
-    />
+    <>
+      <GeoJSON
+        ref={geoJsonRef}
+        data={geoData}
+        style={styleBasedOnParty}
+        onEachFeature={onEachFeature}
+      />
+    </>
   );
 };
 

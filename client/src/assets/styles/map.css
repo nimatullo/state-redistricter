@@ -12,8 +12,8 @@
 
 .multi-member-view {
   position: absolute !important;
-  bottom: 0;
-  left: 15vw;
+  top: 0;
+  left: 50%;
   margin: 1em;
   z-index: 10000;
 }

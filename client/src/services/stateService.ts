@@ -40,6 +40,35 @@ class StateService {
       (stateData) => stateData.state.toLowerCase() === state.toLowerCase()
     );
   }
+
+  getSummaryData(state: string) {
+    return {
+      numberOfDistricts: {
+        mmd: randomNumber(3, 18),
+        smd: randomNumber(3, 18),
+      },
+      majorityMinority: {
+        mmd: randomNumber(0, 100),
+        smd: randomNumber(0, 100),
+      },
+      equalPopMeasure: {
+        mmd: randomNumber(0, 100),
+        smd: randomNumber(0, 100),
+      },
+      polsbyPopper: {
+        mmd: randomNumber(0, 100),
+        smd: randomNumber(0, 100),
+      },
+      republicanDemocraticSplit: {
+        mmd: randomNumber(0, 100),
+        smd: randomNumber(0, 100),
+      },
+    };
+  }
 }
+
+const randomNumber = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
 
 export default new StateService();

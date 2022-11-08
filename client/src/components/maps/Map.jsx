@@ -1,7 +1,7 @@
 // Base
 import { React, useState, useEffect, useRef, useContext } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { Spinner } from "@chakra-ui/react";
+import { Select, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 // Custom
@@ -82,7 +82,19 @@ const Map = () => {
               </>
             )}
           </MapContainer>
-          {/* <InfoBox district={selectedDistrict} /> */}
+          <div className="multi-member-view">
+            <Select
+              size="lg"
+              variant="filled outline"
+              placeholder={"Select a district"}
+            >
+              <option value="1">District 1 (High republican percentage)</option>
+              <option value="2">
+                District 7 (Low Black population representation)
+              </option>
+              <option value="1">District 5 (No female representation)</option>
+            </Select>
+          </div>
         </MapProvider>
       </div>
     )

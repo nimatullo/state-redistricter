@@ -15,6 +15,7 @@ import {
 } from "chart.js";
 import { useParams } from "react-router-dom";
 import OUR_STATES from "../../assets/ourStates";
+import EnsembleSummary from "./EnsembleSummary";
 ChartJS.register(
   ArcElement,
   Tooltip,
@@ -112,22 +113,10 @@ const StateOverview = ({ state }) => {
             </Flex>
           </TabPanel>
           <TabPanel>
-            <Heading size="xl" my="16px">
+            <Heading size="lg" my="16px">
               Generated ensemble summary
             </Heading>
-            <Flex justifyContent={"space-between"}>
-              <Box>
-                <Heading size="lg" fontWeight={"medium"}>
-                  Multi-member ensemble
-                </Heading>
-              </Box>
-              <Box>
-                <Heading size="lg" fontWeight={"medium"}>
-                  Single-member ensemble
-                </Heading>
-                <Bar options={options} data={generateBarData()} />
-              </Box>
-            </Flex>
+            <EnsembleSummary />
           </TabPanel>
         </TabPanels>
       </Tabs>
