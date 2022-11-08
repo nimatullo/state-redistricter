@@ -1,0 +1,25 @@
+[
+  { "title": "One race", "percentage": 97.05950398778046 },
+  { "title": "White", "percentage": 74.54267179079434 },
+  { "title": "Black or African American", "percentage": 16.021529642531707 },
+  {
+    "title": "American Indian and Alaska Native",
+    "percentage": 0.27730109554838106
+  },
+  { "title": "Asian", "percentage": 2.7926545520135573 },
+  {
+    "title": "Native Hawaiian and Other Pacific Islander",
+    "percentage": 0.07525001353727351
+  },
+  { "title": "Some other race", "percentage": 3.3500968933551984 },
+  { "title": "Two or more races", "percentage": 2.940496012219537 },
+  {
+    "title": "Hispanic or Latino (of any race)",
+    "percentage": 25.71975343584848
+  },
+  { "title": "Mexican", "percentage": 3.45936352605491 },
+  { "title": "Puerto Rican", "percentage": 5.54476945126947 },
+  { "title": "Cuban", "percentage": 7.400477061433428 },
+  { "title": "Other Hispanic or Latino", "percentage": 9.96515601247934 },
+  { "title": "Not Hispanic or Latino", "percentage": 73.63023394876285 }
+]

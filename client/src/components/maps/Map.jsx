@@ -1,17 +1,17 @@
 // Base
 import { React, useState, useEffect, useRef, useContext } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { Text, Spinner, Switch, HStack } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 // Custom
-import DistrictsService from "../../services/districtsService";
-import InfoBox from "../InfoBox";
+import StateService from "../../services/stateService";
 import MapContents from "./MapContents";
 import "../../assets/styles/map.css";
 
 import OUR_STATES from "../../assets/ourStates";
-import MapContext, { MapProvider } from "../../services/mapContext";
+import { MapProvider } from "../../services/mapContext";
+import { useAlert } from "../../services/alertservice";
 
 const Map = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
@@ -21,6 +21,7 @@ const Map = () => {
   const [zoom, setZoom] = useState(7);
 
   const params = useParams();
+  const { setMessage } = useAlert();
 
   useEffect(() => {
     const stateFromDict = OUR_STATES[params.state];
@@ -29,13 +30,19 @@ const Map = () => {
   }, []);
 
   const getData = async (state) => {
-    let geojson = [];
-    const stateDistricts = await DistrictsService.getGeoJSONForState(
-      state.abrv,
-      state.districts
-    );
-    geojson = geojson.concat(stateDistricts);
-    setGeoData(geojson);
+    StateService.getGeoJSONForState(state.fullName)
+      .then((data) => {
+        setGeoData(data);
+      })
+      .catch((err) => {
+        setMessage({
+          type: "error",
+          data: err.message,
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -49,7 +56,7 @@ const Map = () => {
           <MapContainer
             style={{
               height: "100%",
-              width: "50%",
+              width: "100%",
             }}
             center={stateCoordinates}
             zoom={zoom}
@@ -75,18 +82,7 @@ const Map = () => {
               </>
             )}
           </MapContainer>
-          <InfoBox district={selectedDistrict} />
-          <HStack
-            bg="blue.500"
-            color={"white"}
-            className="multi-member-view"
-            shadow={"md"}
-            borderRadius={"md"}
-            padding={"1rem"}
-          >
-            <Text>Switch to MMD view</Text>
-            <Switch colorScheme="green" />
-          </HStack>
+          {/* <InfoBox district={selectedDistrict} /> */}
         </MapProvider>
       </div>
     )
