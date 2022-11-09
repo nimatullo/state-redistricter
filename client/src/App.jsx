@@ -6,8 +6,9 @@ import theme from "./assets/styles/theme";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import StateContainer from "./components/state/StateContainer";
 import StateOverview from "./components/state/StateOverview";
-import { AlertServiceProvider } from "./services/alertservice";
 import UniqueDistrictPlan from "./components/state/UniqueDistrictPlan";
+import GraphicalSummary from "./components/state/GraphicalSummary";
+import { AlertServiceProvider } from "./services/alertservice";
 import { MapContextProvider } from "./services/mapContext";
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
                 <Route path="unique" element={<UniqueDistrictPlan />}>
                   <Route path=":district" element={<UniqueDistrictPlan />} />
                 </Route>
+                <Route
+                  path="graphical-summary"
+                  element={<GraphicalSummary />}
+                />
               </Route>
             </Routes>
           </MapContextProvider>

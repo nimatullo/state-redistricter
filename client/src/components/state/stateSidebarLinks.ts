@@ -28,12 +28,12 @@ export const sidebarLinks: SidebarLink[] = [
     view: "unique",
   },
   {
-    name: "Analysis",
+    name: "Graphical Analysis",
     icon: BsGraphUp,
     children: [
       {
-        name: "Voter Prediction",
-        view: "voter-prediction",
+        name: "Summary",
+        view: "graphical-summary",
       },
       {
         name: "Box & Whisker",
