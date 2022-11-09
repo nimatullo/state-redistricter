@@ -13,12 +13,15 @@ import {
 import React from "react";
 import { useEffect } from "react";
 import stateService from "../../services/stateService";
+import { useParams } from "react-router-dom";
 
 const EnsembleSummary = () => {
   const [summaryData, setSummaryData] = React.useState({});
 
+  const params = useParams();
+
   useEffect(() => {
-    const data = stateService.getSummaryData("");
+    const data = stateService.getSummaryData(params.state);
     setSummaryData(data);
   }, []);
 
@@ -42,16 +45,20 @@ const EnsembleSummary = () => {
         data={summaryData.numberOfDistricts}
       />
       <Feature
-        stat="Majority-minority representatives per plan"
+        stat="Mean majority-minority representatives per plan"
         data={summaryData.majorityMinority}
       />
       <Feature
-        stat="Equal population measure"
+        stat="Mean equal population measure"
         data={summaryData.equalPopMeasure}
       />
-      <Feature stat="Polsby-Popper" data={summaryData.polsbyPopper} />
       <Feature
-        stat="Republican/Democratic split"
+        stat="Mean Polsby-Popper Score"
+        data={summaryData.polsbyPopper}
+        isMean
+      />
+      <Feature
+        stat="Mean Republican/Democratic split"
         data={summaryData.republicanDemocraticSplit}
       />
     </>

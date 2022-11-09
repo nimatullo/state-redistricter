@@ -58,7 +58,7 @@ export default function Card({ image, state }) {
         />
       </Box>
       <Stack pt={10} align={"center"}>
-        <LinkComponent as={Link} to={`/map/${state.toLowerCase()}`}>
+        <LinkComponent as={Link} to={`/map/${state.toLowerCase()}/overview`}>
           <HStack>
             <Text
               color={"gray.500"}

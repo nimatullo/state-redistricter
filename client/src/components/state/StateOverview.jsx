@@ -26,12 +26,13 @@ ChartJS.register(
   Title
 );
 
-const StateOverview = ({ state }) => {
+const StateOverview = () => {
   const [stateData, setStateData] = React.useState({});
   const params = useParams();
 
   React.useEffect(() => {
-    const data = stateService.getStateData(state);
+    const fullStateName = OUR_STATES[params.state].fullName;
+    const data = stateService.getStateData(fullStateName);
     setStateData(data.percentages);
   }, []);
 

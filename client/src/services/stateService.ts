@@ -18,7 +18,7 @@ class StateService {
   API: string;
 
   constructor() {
-    this.API = "http://localhost:8080/api";
+    this.API = "http://192.168.1.243:8080/api";
   }
 
   async getGeoJSONForState(state: string): Promise<District[]> {
@@ -69,14 +69,53 @@ class StateService {
   getDistrictPlans(state: string) {
     return [
       {
-        district: randomNumber(1, 18),
+        id: 1,
         quality: "High Republican Concentration",
       },
       {
-        district: randomNumber(1, 18),
+        id: 2,
         quality: "Low African American Representation",
       },
     ];
+  }
+
+  getUniqueDistrictPlan(planId: string) {
+    return {
+      id: 1,
+      quality: "High Republican Concentration",
+      districtData: [
+        {
+          districtId: 1,
+          population: randomNumber(100000, 1000000),
+          africanAmerican: randomNumber(2000, 100000),
+          republican: 54,
+          democrat: 46,
+          opportunityDistricts: randomNumber(0, 15),
+          safeDistricts: randomNumber(0, 20),
+          polsbyPopper: randomNumber(0, 100),
+        },
+        {
+          districtId: 2,
+          population: 100,
+          africanAmerican: 10,
+          republican: 80,
+          democrat: 20,
+          opportunityDistricts: randomNumber(0, 15),
+          safeDistricts: randomNumber(0, 20),
+          polsbyPopper: randomNumber(0, 100),
+        },
+        {
+          districtId: 3,
+          population: 100,
+          africanAmerican: 10,
+          republican: 80,
+          democrat: 20,
+          opportunityDistricts: randomNumber(0, 15),
+          safeDistricts: randomNumber(0, 20),
+          polsbyPopper: randomNumber(0, 100),
+        },
+      ],
+    };
   }
 }
 

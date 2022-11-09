@@ -1,5 +1,5 @@
 import { BiBookOpen } from "react-icons/bi";
-import { MdOutlineGridOn } from "react-icons/md";
+import { AiOutlineStar } from "react-icons/ai";
 import { FaBalanceScale, FaMoneyBillWaveAlt } from "react-icons/fa";
 import { BsFillPersonFill, BsGraphUp } from "react-icons/bs";
 import { IconType } from "react-icons/lib";
@@ -23,9 +23,9 @@ export const sidebarLinks: SidebarLink[] = [
     view: "overview",
   },
   {
-    name: "Compactness",
-    icon: MdOutlineGridOn,
-    view: "compactness",
+    name: "Unique Plans",
+    icon: AiOutlineStar,
+    view: "unique",
   },
   {
     name: "Analysis",
