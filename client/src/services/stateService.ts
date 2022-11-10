@@ -18,7 +18,7 @@ class StateService {
   API: string;
 
   constructor() {
-    this.API = "http://192.168.1.243:8080/api";
+    this.API = "http://localhost:8080/api";
   }
 
   async getGeoJSONForState(state: string): Promise<District[]> {
@@ -83,38 +83,23 @@ class StateService {
     return {
       id: 1,
       quality: "High Republican Concentration",
-      districtData: [
-        {
-          districtId: 1,
-          population: randomNumber(100000, 1000000),
-          africanAmerican: randomNumber(2000, 100000),
-          republican: 54,
-          democrat: 46,
-          opportunityDistricts: randomNumber(0, 15),
-          safeDistricts: randomNumber(0, 20),
-          polsbyPopper: randomNumber(0, 100),
-        },
-        {
-          districtId: 2,
-          population: 100,
-          africanAmerican: 10,
-          republican: 80,
-          democrat: 20,
-          opportunityDistricts: randomNumber(0, 15),
-          safeDistricts: randomNumber(0, 20),
-          polsbyPopper: randomNumber(0, 100),
-        },
-        {
-          districtId: 3,
-          population: 100,
-          africanAmerican: 10,
-          republican: 80,
-          democrat: 20,
-          opportunityDistricts: randomNumber(0, 15),
-          safeDistricts: randomNumber(0, 20),
-          polsbyPopper: randomNumber(0, 100),
-        },
-      ],
+      districtData: Array(30)
+        .fill(0)
+        .map((_, i) => {
+          return {
+            districtId: i + 1,
+            population: randomNumber(100000, 200000),
+            africanAmerican: randomNumber(2000, 10000),
+            hispanic: randomNumber(2000, 10000),
+            asian: randomNumber(2000, 10000),
+            white: randomNumber(2000, 10000),
+            republican: randomNumber(0, 100),
+            democrat: randomNumber(0, 100),
+            opportunityDistricts: randomNumber(0, 30),
+            safeDistricts: randomNumber(0, 30),
+            polsbyPopper: randomNumber(0, 100) / 100,
+          };
+        }),
     };
   }
 }

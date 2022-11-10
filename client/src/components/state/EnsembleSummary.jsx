@@ -9,16 +9,19 @@ import {
   Grid,
   GridItem,
   Heading,
+  Center,
+  Button,
 } from "@chakra-ui/react";
 import React from "react";
 import { useEffect } from "react";
 import stateService from "../../services/stateService";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EnsembleSummary = () => {
   const [summaryData, setSummaryData] = React.useState({});
 
   const params = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const data = stateService.getSummaryData(params.state);
@@ -61,6 +64,17 @@ const EnsembleSummary = () => {
         stat="Mean Republican/Democratic split"
         data={summaryData.republicanDemocraticSplit}
       />
+
+      <Center>
+        <Button
+          onClick={() => {
+            navigate("/map/" + params.state + "/graphical-summary");
+          }}
+          variant="outline"
+        >
+          Show Graphical Summary
+        </Button>
+      </Center>
     </>
   );
 };

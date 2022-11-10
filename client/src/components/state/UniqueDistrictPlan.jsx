@@ -55,7 +55,7 @@ const UniqueDistrictPlan = () => {
               Selected District: {mapContext.selectedDistrictNumber}
             </Heading>
           </Box>
-          <Heading size="md" mb="2">
+          <Heading size="md" mb="2" fontWeight="semibold">
             Populations
           </Heading>
           <SimpleGrid columns={3} spacing={GRID_SPACING}>
@@ -72,22 +72,22 @@ const UniqueDistrictPlan = () => {
             <Card label={"White Population"} value={10} />
           </SimpleGrid>
 
-          <Heading size="md" mb="2" mt={GRID_SPACING}>
+          <Heading size="md" mb="2" mt={GRID_SPACING} fontWeight="semibold">
             Party Splits
           </Heading>
 
           <SimpleGrid columns={3} spacing={GRID_SPACING}>
             <Card
               label={"Republican Population"}
-              value={selectedDistrictData.republican}
+              value={selectedDistrictData.republican + "%"}
             />
             <Card
               label={"Democratic Population"}
-              value={selectedDistrictData.democrat}
+              value={100 - selectedDistrictData.republican + "%"}
             />
           </SimpleGrid>
 
-          <Heading size="md" mb="2" mt={GRID_SPACING}>
+          <Heading size="md" mb="2" mt={GRID_SPACING} fontWeight="semibold">
             District Plan Quality
           </Heading>
           <SimpleGrid columns={3} spacing={GRID_SPACING}>
