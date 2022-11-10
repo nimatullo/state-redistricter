@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.3.2",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@sgratzl/chartjs-chart-boxplot": "^3.10.0",
     "chart.js": "^3.9.1",
     "framer-motion": "^7.3.5",
     "leaflet": "^1.8.0",

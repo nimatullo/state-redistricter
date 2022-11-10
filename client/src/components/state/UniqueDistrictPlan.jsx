@@ -94,7 +94,7 @@ const UniqueDistrictPlan = () => {
             <Card
               label={"Opportunity Districts"}
               value={selectedDistrictData.opportunityDistricts}
-              helpText="Districts where majority voters cross over to vote with minorities to elect minority-preferred candidate"
+              helpText="District where one or more racial minorities make up a majority of the local population."
             />
             <Card
               label={"Safe Districts"}
