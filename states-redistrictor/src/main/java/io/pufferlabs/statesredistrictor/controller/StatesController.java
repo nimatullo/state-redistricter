@@ -17,11 +17,9 @@ public class StatesController {
 
 
     @Autowired
-    public StatesController(StatesService statesService, StateRepository stateRepository) {
+    public StatesController(StatesService statesService) {
         this.statesService = statesService;
     }
-
-
 
     @GetMapping
     public ResponseEntity<?> getStates() {
@@ -34,4 +32,6 @@ public class StatesController {
         state.setDistrictPlans(null);
         return ResponseEntity.ok(state);
     }
+
+
 }

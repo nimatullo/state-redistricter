@@ -8,7 +8,6 @@ import io.pufferlabs.statesredistrictor.model.State;
 
 public interface StateRepository extends MongoRepository<State, String> {
 
-
     @Query("{ 'name' : ?0 }")
     State findByName(String stateName);
 }
