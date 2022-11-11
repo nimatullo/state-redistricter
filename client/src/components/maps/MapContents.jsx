@@ -1,6 +1,6 @@
 import { React, useContext, useEffect, useRef } from "react";
 import { useMap, GeoJSON } from "react-leaflet";
-import MapContext from "../../services/mapContext";
+import { useMapContext } from "../../services/mapContext";
 
 const DEFAULT_STYLE = {
   weight: 3,
@@ -18,19 +18,18 @@ const HIGHLIGHT_STYLE = {
   fillColor: "#63B3ED",
 };
 
-const MapContents = ({ geoData, setDistrict }) => {
-  const geoJsonRef = useRef();
+const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
   const map = useMap();
   let selectedDistrict = null;
 
-  const mapContext = useContext(MapContext);
+  const mapContext = useMapContext();
 
   useEffect(() => {
     mapContext.resetZoom = () => {
       map.fitBounds(geoJsonRef.current.getBounds());
       setDistrict(null);
     };
-  });
+  }, []);
 
   const hightlight = (e) => {
     const layer = e.target;
@@ -73,16 +72,21 @@ const MapContents = ({ geoData, setDistrict }) => {
       fillColor: "#2C5282",
     });
     selectedDistrict = e.target;
-    setDistrict(e.target.feature.properties.name);
+    console.log(e.target.feature.properties.name);
+    mapContext.setSelectedDistrictNumber(
+      e.target.feature.properties.name.split("-")[1]
+    );
   };
 
   return (
-    <GeoJSON
-      ref={geoJsonRef}
-      data={geoData}
-      style={styleBasedOnParty}
-      onEachFeature={onEachFeature}
-    />
+    <>
+      <GeoJSON
+        ref={geoJsonRef}
+        data={geoData}
+        style={styleBasedOnParty}
+        onEachFeature={onEachFeature}
+      />
+    </>
   );
 };
 
