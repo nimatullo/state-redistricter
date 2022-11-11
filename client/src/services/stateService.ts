@@ -203,6 +203,24 @@ class StateService {
 
     return graphInfo[type];
   }
+
+  getBoxAndWhiskerData(state: string, population: string) {
+    const data = {
+      labels: Array.from({ length: 27 }, (_, i) => i + 1),
+      datasets: [
+        {
+          label: population,
+          itemRadius: 2,
+          data: Array.from({ length: 27 }, () =>
+            Array.from({ length: 5 }, () => randomNumber(0, 100))
+          ),
+          borderColor: "#3e95cd",
+          backgroundColor: "#3e95cd",
+        },
+      ],
+    };
+    return data;
+  }
 }
 
 const randomNumber = (min: number, max: number) => {

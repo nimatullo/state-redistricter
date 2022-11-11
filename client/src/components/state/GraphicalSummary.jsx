@@ -1,12 +1,10 @@
 import {
   Heading,
   Box,
-  Tabs,
-  TabList,
-  Tab,
   useRadio,
   useRadioGroup,
   HStack,
+  Select,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import stateService from "../../services/stateService";
@@ -14,11 +12,16 @@ import BarChart from "../data display/BarChart";
 
 const GraphicalSummary = () => {
   const [graphData, setGraphData] = React.useState(null);
+  const [ensembleType, setEnsembleType] = React.useState("smd");
 
   useEffect(() => {
     const data = stateService.getGraphData("", options[0]);
     setGraphData(data);
   }, []);
+
+  useEffect(() => {
+    setGraphData(stateService.getGraphData("", options[0]), ensembleType);
+  }, [ensembleType]);
 
   const options = [
     "Opportunity Representatives",
@@ -39,6 +42,14 @@ const GraphicalSummary = () => {
       <Heading size="2xl" mb="1em">
         Graphical Summary
       </Heading>
+      <Select
+        mb="1em"
+        value={ensembleType}
+        onChange={(e) => setEnsembleType(e.target.value)}
+      >
+        <option value="smd">Single-member districts</option>
+        <option value="mmd">Multi-member districts</option>
+      </Select>
       <HStack {...group}>
         {options.map((value) => {
           const radio = getRadioProps({ value });
@@ -54,7 +65,7 @@ const GraphicalSummary = () => {
   );
 };
 
-const RadioTab = (props) => {
+export const RadioTab = (props) => {
   const { getInputProps, getCheckboxProps } = useRadio(props);
 
   const input = getInputProps();

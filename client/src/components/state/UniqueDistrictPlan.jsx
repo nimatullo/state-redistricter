@@ -2,8 +2,6 @@ import React from "react";
 import {
   Box,
   Heading,
-  Flex,
-  Text,
   SimpleGrid,
   Stat,
   StatLabel,
@@ -12,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import stateService from "../../services/stateService";
 import { useMapContext } from "../../services/mapContext";

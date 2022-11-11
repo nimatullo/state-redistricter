@@ -10,6 +10,7 @@ import UniqueDistrictPlan from "./components/state/UniqueDistrictPlan";
 import GraphicalSummary from "./components/state/GraphicalSummary";
 import { AlertServiceProvider } from "./services/alertservice";
 import { MapContextProvider } from "./services/mapContext";
+import BoxWhiskerPage from "./components/state/BoxWhiskerPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
                   path="graphical-summary"
                   element={<GraphicalSummary />}
                 />
+                <Route path="box-whisker" element={<BoxWhiskerPage />} />
               </Route>
             </Routes>
           </MapContextProvider>
