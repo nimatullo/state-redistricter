@@ -1,0 +1,320 @@
+[
+    {
+        "name": "North Carolina",
+        "abbreviation": "NC",
+        "stateShape": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-88.473701, 30.508257],
+                        [-88.473701, 34.99573]
+                    ]
+                ]
+            }
+        },
+        "districtPlans": [
+            {
+                "type": "SMD",
+                "districts": [
+                    {
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [-88.473701, 30.508257],
+                                    [-88.473701, 34.99573]
+                                ]
+                            ]
+                        },
+                        "id": 1,
+                        "reps": [
+                            {
+                                "name": "John Smith",
+                                "party": "REPUBLICAN",
+                                "race": "WHITE",
+                                "votes": [
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
+                                ]
+                            },
+                            {
+                                "name": "Jane Smith",
+                                "party": "DEMOCRAT",
+                                "race": "BLACK",
+                                "votes": [
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
+                                ]
+                            }
+                        ],
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "MMD",
+                "districts": [
+                    {
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [-88.473701, 30.508257],
+                                    [-88.473701, 34.99573]
+                                ]
+                            ]
+                        },
+                        "id": 1,
+                        "reps": [
+                            {
+                                "name": "Bohn Smith",
+                                "party": "REPUBLICAN",
+                                "race": "HISPANIC",
+                                "votes": [
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
+                                ]
+                            },
+                            {
+                                "name": "Jane John",
+                                "party": "DEMOCRAT",
+                                "race": "BLACK",
+                                "votes": [
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
+                                ]
+                            }
+                        ],
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Utah",
+        "abbreviation": "UT",
+        "stateShape": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-88.473701, 30.508257],
+                        [-88.473701, 34.99573]
+                    ]
+                ]
+            }
+        },
+        "districtPlans": [
+            {
+                "type": "SMD",
+                "districts": [
+                    {
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [-88.473701, 30.508257],
+                                    [-88.473701, 34.99573]
+                                ]
+                            ]
+                        },
+                        "id": 1,
+                        "reps": [
+                            {
+                                "name": "John Smith",
+                                "party": "REPUBLICAN",
+                                "race": "WHITE",
+                                "votes": [
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
+                                ]
+                            },
+                            {
+                                "name": "Jane Smith",
+                                "party": "DEMOCRAT",
+                                "race": "BLACK",
+                                "votes": [
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
+                                ]
+                            }
+                        ],
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "MMD",
+                "districts": [
+                    {
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [-88.473701, 30.508257],
+                                    [-88.473701, 34.99573]
+                                ]
+                            ]
+                        },
+                        "id": 1,
+                        "reps": [
+                            {
+                                "name": "Bohn Smith",
+                                "party": "REPUBLICAN",
+                                "race": "HISPANIC",
+                                "votes": [
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
+                                ]
+                            },
+                            {
+                                "name": "Jane John",
+                                "party": "DEMOCRAT",
+                                "race": "BLACK",
+                                "votes": [
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
+                                ]
+                            }
+                        ],
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Florida",
+        "abbreviation": "FL",
+        "stateShape": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [-88.473701, 30.508257],
+                        [-88.473701, 34.99573]
+                    ]
+                ]
+            }
+        },
+        "districtPlans": [
+            {
+                "type": "SMD",
+                "districts": [
+                    {
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [-88.473701, 30.508257],
+                                    [-88.473701, 34.99573]
+                                ]
+                            ]
+                        },
+                        "id": 1,
+                        "reps": [
+                            {
+                                "name": "John Smith",
+                                "party": "REPUBLICAN",
+                                "race": "WHITE",
+                                "votes": [
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
+                                ]
+                            },
+                            {
+                                "name": "Jane Smith",
+                                "party": "DEMOCRAT",
+                                "race": "BLACK",
+                                "votes": [
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
+                                ]
+                            }
+                        ],
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "MMD",
+                "districts": [
+                    {
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [-88.473701, 30.508257],
+                                    [-88.473701, 34.99573]
+                                ]
+                            ]
+                        },
+                        "id": 1,
+                        "reps": [
+                            {
+                                "name": "Bohn Smith",
+                                "party": "REPUBLICAN",
+                                "race": "HISPANIC",
+                                "votes": [
+                                    { "type": "WHITE", "count": 100 },
+                                    { "type": "BLACK", "count": 150 },
+                                    { "type": "HISPANIC", "count": 200 }
+                                ]
+                            },
+                            {
+                                "name": "Jane John",
+                                "party": "DEMOCRAT",
+                                "race": "BLACK",
+                                "votes": [
+                                    { "type": "WHITE", "count": 342 },
+                                    { "type": "BLACK", "count": 152 },
+                                    { "type": "HISPANIC", "count": 241 }
+                                ]
+                            }
+                        ],
+                        "populations": [
+                            { "type": "WHITE", "count": 100 },
+                            { "type": "BLACK", "count": 150 },
+                            { "type": "HISPANIC", "count": 200 }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
