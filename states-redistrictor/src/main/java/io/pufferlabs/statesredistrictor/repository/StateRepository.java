@@ -8,6 +8,7 @@ import io.pufferlabs.statesredistrictor.model.State;
 
 
 public interface StateRepository extends MongoRepository<State, String> {
+
     @Cacheable("states")
     @Query("{ 'name' : ?0 }")
     State findByName(String stateName);

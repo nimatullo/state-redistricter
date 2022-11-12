@@ -31,12 +31,14 @@ public class StatesController {
         return ResponseEntity.ok(statesService.getStates().stream().map(State::getName));
     }
 
+
     @GetMapping("/{stateName}")
     public ResponseEntity<?> getStateByName(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
         state.setDistrictPlans(null);
         return ResponseEntity.ok(state);
     }
+
 
     @GetMapping("/{stateName}/enacted")
     public ResponseEntity<?> getEnactedPlan(@PathVariable String stateName) {
@@ -61,9 +63,6 @@ public class StatesController {
         State state = statesService.getStateByName(stateName);
         return ResponseEntity.ok(state.getAnalysis());
     }
-
-
-
 
 
 }
