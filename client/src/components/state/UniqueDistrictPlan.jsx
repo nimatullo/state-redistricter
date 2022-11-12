@@ -19,6 +19,9 @@ const UniqueDistrictPlan = () => {
   const [selectedDistrictPlan, setSelectedDistrictPlan] = useState(null);
   const [districtPlanData, setDPD] = useState(null);
   const [selectedDistrictData, setSDD] = useState(null);
+  const [safeDistricts, setSafeDistricts] = useState(null);
+  const [opportunityDistricts, setOpportunityDistricts] = useState(null);
+  const [polsbyPopperScore, setPolsbyPopperScore] = useState(null);
 
   const GRID_SPACING = 5;
 
@@ -28,8 +31,10 @@ const UniqueDistrictPlan = () => {
     const data = stateService.getUniqueDistrictPlan(selectedDistrictPlan);
 
     setDPD(data);
-    console.log(data);
     setSDD(data.districtData[0]);
+    setSafeDistricts(data.districtData[0].safeDistricts);
+    setOpportunityDistricts(data.districtData[0].opportunityDistricts);
+    setPolsbyPopperScore(data.districtData[0].polsbyPopper);
   }, [selectedDistrictPlan]);
 
   useEffect(() => {
@@ -47,63 +52,73 @@ const UniqueDistrictPlan = () => {
       <DistrictPlanDropdown setSelectedPlan={setSelectedDistrictPlan} />
       {selectedDistrictPlan && (
         <>
-          <Box>
-            <Heading marginTop={"1em"} size="lg" mb="2">
-              Selected District: {mapContext.selectedDistrictNumber}
-            </Heading>
-          </Box>
-          <Heading size="md" mb="2" fontWeight="semibold">
-            Populations
-          </Heading>
-          <SimpleGrid columns={3} spacing={GRID_SPACING}>
-            <Card
-              label={"Total Population"}
-              value={selectedDistrictData.population}
-            />
-            <Card
-              label={"African American Population"}
-              value={selectedDistrictData.africanAmerican}
-            />
-            <Card label={"Hispanic Population"} value={10} />
-            <Card label={"Asian Population"} value={10} />
-            <Card label={"White Population"} value={10} />
-          </SimpleGrid>
-
-          <Heading size="md" mb="2" mt={GRID_SPACING} fontWeight="semibold">
-            Party Splits
-          </Heading>
-
-          <SimpleGrid columns={3} spacing={GRID_SPACING}>
-            <Card
-              label={"Republican Population"}
-              value={selectedDistrictData.republican + "%"}
-            />
-            <Card
-              label={"Democratic Population"}
-              value={100 - selectedDistrictData.republican + "%"}
-            />
-          </SimpleGrid>
-
-          <Heading size="md" mb="2" mt={GRID_SPACING} fontWeight="semibold">
+          <Heading size="lg" mb="2" mt={GRID_SPACING}>
             District Plan Quality
           </Heading>
           <SimpleGrid columns={3} spacing={GRID_SPACING}>
             <Card
               label={"Opportunity Districts"}
-              value={selectedDistrictData.opportunityDistricts}
+              value={opportunityDistricts}
               helpText="District where one or more racial minorities make up a majority of the local population."
             />
             <Card
               label={"Safe Districts"}
-              value={selectedDistrictData.safeDistricts}
+              value={safeDistricts}
               helpText="Districts where expected margin of victory for one party is greater than 15%"
             />
             <Card
               label={"Polsby Popper Score"}
-              value={selectedDistrictData.polsbyPopper}
+              value={polsbyPopperScore}
               helpText="A measure of compactness, with a higher score indicating a more compact district"
             />
           </SimpleGrid>
+          <>
+            <Box>
+              <Heading marginTop={"1em"} size="lg" mb="2">
+                Selected District: {mapContext.selectedDistrictNumber}
+              </Heading>
+            </Box>
+            <Heading size="md" mb="2" fontWeight="semibold">
+              Populations
+            </Heading>
+            <SimpleGrid columns={3} spacing={GRID_SPACING}>
+              <Card
+                label={"Total Population"}
+                value={selectedDistrictData.population}
+              />
+              <Card
+                label={"African American Population"}
+                value={selectedDistrictData.africanAmerican}
+              />
+              <Card
+                label={"Hispanic Population"}
+                value={selectedDistrictData.hispanic}
+              />
+              <Card
+                label={"Asian Population"}
+                value={selectedDistrictData.asian}
+              />
+              <Card
+                label={"White Population"}
+                value={selectedDistrictData.white}
+              />
+            </SimpleGrid>
+
+            <Heading size="md" mb="2" mt={GRID_SPACING} fontWeight="semibold">
+              Party Splits
+            </Heading>
+
+            <SimpleGrid columns={3} spacing={GRID_SPACING}>
+              <Card
+                label={"Republican Population"}
+                value={selectedDistrictData.republican + "%"}
+              />
+              <Card
+                label={"Democratic Population"}
+                value={100 - selectedDistrictData.republican + "%"}
+              />
+            </SimpleGrid>
+          </>
         </>
       )}
     </Box>

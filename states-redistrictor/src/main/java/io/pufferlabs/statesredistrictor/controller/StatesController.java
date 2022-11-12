@@ -39,6 +39,11 @@ public class StatesController {
         return ResponseEntity.ok(state);
     }
 
+    @GetMapping("/{state}/shape")
+    public ResponseEntity<?> getGeoJsonForState(@PathVariable String state) {
+        return statesService.readGeoJsonFromDisk(state);
+    }
+
 
     @GetMapping("/{stateName}/enacted")
     public ResponseEntity<?> getEnactedPlan(@PathVariable String stateName) {

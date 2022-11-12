@@ -11,6 +11,8 @@ public class Overview {
     private Integer totalPopulation;
     private Double percentDem;
     private Double percentRep;
-    private Double length;
-    private Double width;
+    private Integer opportunityDistricts;
+    private Integer safeDistricts;
+    private Double polsbyPopperScore;
+
 }

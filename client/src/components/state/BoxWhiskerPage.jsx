@@ -51,7 +51,6 @@ const BoxWhiskerPage = (props) => {
       <HStack
         {...group}
         overflowX="scroll"
-        width="100%"
         whiteSpace="nowrap"
         css={{
           "&::-webkit-scrollbar": {
