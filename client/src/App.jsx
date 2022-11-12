@@ -5,19 +5,34 @@ import theme from "./assets/styles/theme";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import StateContainer from "./components/state/StateContainer";
+import StateOverview from "./components/state/StateOverview";
+import UniqueDistrictPlan from "./components/state/UniqueDistrictPlan";
+import GraphicalSummary from "./components/state/GraphicalSummary";
 import { AlertServiceProvider } from "./services/alertservice";
+import { MapContextProvider } from "./services/mapContext";
+import BoxWhiskerPage from "./components/state/BoxWhiskerPage";
 
 function App() {
   return (
     <BrowserRouter>
       <ChakraProvider theme={theme}>
         <AlertServiceProvider>
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/map">
-              <Route path=":state" element={<StateContainer />} />
-            </Route>
-          </Routes>
+          <MapContextProvider>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/map/:state" element={<StateContainer />}>
+                <Route index path="overview" element={<StateOverview />} />
+                <Route path="unique" element={<UniqueDistrictPlan />}>
+                  <Route path=":district" element={<UniqueDistrictPlan />} />
+                </Route>
+                <Route
+                  path="graphical-summary"
+                  element={<GraphicalSummary />}
+                />
+                <Route path="box-whisker" element={<BoxWhiskerPage />} />
+              </Route>
+            </Routes>
+          </MapContextProvider>
         </AlertServiceProvider>
       </ChakraProvider>
     </BrowserRouter>

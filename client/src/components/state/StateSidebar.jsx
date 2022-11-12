@@ -12,20 +12,25 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import * as React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import OUR_STATES from "../../assets/ourStates";
 import { sidebarLinks } from "./stateSidebarLinks";
 
-const StateSidebar = ({ currentView, setView }) => {
+import { Link as ReactRouterLink } from "react-router-dom";
+import { useEffect } from "react";
+
+const StateSidebar = () => {
   const [currentState, setCurrentState] = React.useState("");
+  const location = useLocation();
   const params = useParams();
 
-  React.useEffect(() => {
+  useEffect(() => {
     setCurrentState(OUR_STATES[params.state].fullName);
-  });
+  }, []);
 
   const setActiveClass = (view) => {
-    return currentView === view ? "state-sidebar-active" : "";
+    const currentLocation = location.pathname.split("/").pop();
+    return currentLocation === view ? "state-sidebar-active" : "";
   };
 
   return (
@@ -40,7 +45,13 @@ const StateSidebar = ({ currentView, setView }) => {
               <Box p={2} ml={2} key={link.view}>
                 <HStack className={setActiveClass(link.view)}>
                   <Icon as={link.icon} color={"brand.secondary"} />
-                  <Link onClick={() => setView(link.view)}>{link.name}</Link>
+                  <Link
+                    as={ReactRouterLink}
+                    to={link.view}
+                    className={setActiveClass(link.view)}
+                  >
+                    {link.name}
+                  </Link>
                 </HStack>
               </Box>
             );
@@ -63,9 +74,10 @@ const StateSidebar = ({ currentView, setView }) => {
                     {link.children.map((child) => {
                       return (
                         <Link
+                          as={ReactRouterLink}
                           key={child.view}
-                          onClick={() => setView(child.view)}
                           className={setActiveClass(child.view)}
+                          to={child.view}
                         >
                           {child.name}
                         </Link>
