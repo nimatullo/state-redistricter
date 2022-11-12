@@ -7,6 +7,10 @@ import lombok.Data;
 
 public class SummaryData {
     private PlanType planType;
-    private Double averageEfficiencyGap;
-    private Double averageMajorityMinorityDistrictCount;
+    private Integer totalDistrictPlans;
+    private Double avgOpportunityReps;
+    private Double avgEqualPopMeasure;
+    private Double avgPolsbyPopperMeasure;
+    private Double avgRepDemSplit;
+
 }

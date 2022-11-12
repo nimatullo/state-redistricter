@@ -1,18 +1,23 @@
 package io.pufferlabs.statesredistrictor.model;
 
+import io.pufferlabs.statesredistrictor.enums.Race;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 @Document(collection = "analyzes")
 public class Analysis {
     @Id
     private String state;
-    private List<List<Double>> boxAndWhiskerPlots;
+    private Map<Race, List<List<Double>>> SMDBoxAndWhiskerPlots;
+    private Map<Race, List<List<Double>>> MMDBoxAndWhiskerPlots;
     private List<List<Double>> voteSeatSharePlots;
+    private List<Integer> demRepSplits;
+    private List<Integer> opportunityRepCounts;
     private Double partisanFairness;
     private Double averageRacialFairness;
 }
