@@ -1,5 +1,5 @@
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
-import ArkansasIcon from "./img/ArkansasIcon";
+import UtahIcon from "./img/UtahIcon";
 import FloridaIcon from "./img/FloridaIcon";
 import NorthCarolinaIcon from "./img/NorthCarolinaIcon";
 
@@ -24,16 +24,16 @@ interface StateMap {
 }
 
 const OUR_STATES: StateMap = {
-  ar: {
-    fullName: "Arkansas",
-    abrv: "AR",
+  ut: {
+    fullName: "Utah",
+    abrv: "UT",
     districts: 4,
-    coordinates: [34.7464809, -92.2895948],
-    population: 3.012,
+    coordinates: [39.321, 111.0937],
+    population: 3.338,
     partyBreakdown: "R: 54%, D: 46%",
     dimensions: [240, 270],
     json: ArkansasJSON,
-    icon: ArkansasIcon,
+    icon: UtahIcon,
   },
   fl: {
     fullName: "Florida",

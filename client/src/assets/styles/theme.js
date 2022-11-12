@@ -9,6 +9,9 @@ const theme = extendTheme({
       tertiary: "#E63F4E",
     },
   },
+  fonts: {
+    body: `"Helvetica Neue", Helvetica, sans-serif`,
+  },
 });
 
 export default theme;

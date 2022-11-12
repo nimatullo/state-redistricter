@@ -17,16 +17,20 @@ public class StatesController {
 
 
     @Autowired
-    public StatesController(StatesService statesService, StateRepository stateRepository) {
+    public StatesController(StatesService statesService) {
         this.statesService = statesService;
     }
-
-
 
     @GetMapping
     public ResponseEntity<?> getStates() {
         return ResponseEntity.ok(statesService.getStates());
     }
+
+    @GetMapping("/names")
+    public ResponseEntity<?> getStateNames() {
+        return ResponseEntity.ok(statesService.getStates().stream().map(State::getName));
+    }
+
 
     @GetMapping("/{stateName}")
     public ResponseEntity<?> getStateByName(@PathVariable String stateName) {
@@ -34,4 +38,31 @@ public class StatesController {
         state.setDistrictPlans(null);
         return ResponseEntity.ok(state);
     }
+
+
+    @GetMapping("/{stateName}/enacted")
+    public ResponseEntity<?> getEnactedPlan(@PathVariable String stateName) {
+        State state = statesService.getStateByName(stateName);
+        return ResponseEntity.ok(state.getDistrictPlans().get(0));
+    }
+
+    @GetMapping("/{stateName}/unique-plans")
+    public ResponseEntity<?> getUniquePlans(@PathVariable String stateName) {
+        State state = statesService.getStateByName(stateName);
+        return ResponseEntity.ok(state.getUniqueDistrictPlans());
+    }
+
+    @GetMapping("/{stateName}/ensemble-summary")
+    public ResponseEntity<?> getEnsembleSummary(@PathVariable String stateName) {
+        State state = statesService.getStateByName(stateName);
+        return ResponseEntity.ok(state.getEnsembleSummaryData());
+    }
+
+    @GetMapping("/{stateName}/analysis")
+    public ResponseEntity<?> getAnalysis(@PathVariable String stateName) {
+        State state = statesService.getStateByName(stateName);
+        return ResponseEntity.ok(state.getAnalysis());
+    }
+
+
 }
