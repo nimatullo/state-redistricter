@@ -11,6 +11,7 @@ const theme = extendTheme({
   },
   fonts: {
     body: `"Helvetica Neue", Helvetica, sans-serif`,
+    heading: `"Helvetica Neue", Helvetica, sans-serif`,
   },
 });
 

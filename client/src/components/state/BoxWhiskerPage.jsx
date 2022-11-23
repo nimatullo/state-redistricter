@@ -48,9 +48,11 @@ const BoxWhiskerPage = (props) => {
         <option value="mmd">Multi-member districts</option>
       </Select>
 
-      <HStack
+      <Box
         {...group}
-        overflowX="scroll"
+        display="flex"
+        width="800px"
+        overflowX="auto"
         whiteSpace="nowrap"
         css={{
           "&::-webkit-scrollbar": {
@@ -66,7 +68,7 @@ const BoxWhiskerPage = (props) => {
             </RadioTab>
           );
         })}
-      </HStack>
+      </Box>
 
       {boxAndWhiskerData && <BoxPlot boxPlotData={boxAndWhiskerData} />}
     </Box>
