@@ -82,7 +82,13 @@ const EnsembleSummary = () => {
 const Feature = (props) => {
   return (
     props.data && (
-      <Grid gridTemplateColumns={"1fr 1fr 1fr"} marginY="3" gap="3">
+      <Grid
+        gridTemplateColumns={"1fr 1fr 1fr"}
+        marginY="3"
+        gap="3"
+        borderBottom="1px solid"
+        borderColor="gray.200"
+      >
         <GridItem>
           <Text fontWeight={"semibold"}>{props.stat}</Text>
         </GridItem>

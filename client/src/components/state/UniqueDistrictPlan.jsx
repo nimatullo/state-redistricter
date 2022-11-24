@@ -64,12 +64,12 @@ const UniqueDistrictPlan = () => {
             <Card
               label={"Safe Districts"}
               value={safeDistricts}
-              helpText="Districts where expected margin of victory for one party is greater than 15%"
+              helpText="Districts where expected margin of victory for one party is greater than 15%."
             />
             <Card
               label={"Polsby Popper Score"}
               value={polsbyPopperScore}
-              helpText="A measure of compactness, with a higher score indicating a more compact district"
+              helpText="A measure of compactness, with a higher score indicating a more compact district."
             />
           </SimpleGrid>
           <>
