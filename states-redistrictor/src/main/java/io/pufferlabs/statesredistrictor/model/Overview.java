@@ -7,8 +7,7 @@ import org.springframework.data.annotation.Id;
 public class Overview {
     @Id
     private String state;
-    private Integer numReps;
-    private Integer totalPopulation;
+    private List<Population> populations;
     private Double percentDem;
     private Double percentRep;
     private Integer opportunityDistricts;
