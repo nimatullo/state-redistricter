@@ -14,8 +14,7 @@ public class Analysis {
     private Map<Race, List<List<Double>>> SMDBoxAndWhiskerPlots;
     private Map<Race, List<List<Double>>> MMDBoxAndWhiskerPlots;
     private List<List<Double>> voteSeatSharePlots;
-    private List<Integer> demRepSplits;
-    private List<Integer> opportunityRepCounts;
-    private Double partisanFairness;
-    private Double averageRacialFairness;
+    private List<Integer> demRepSplits; //list of splits per plan
+    private List<Integer> opportunityRepCounts; //list of opportunity reps per plan
+
 }

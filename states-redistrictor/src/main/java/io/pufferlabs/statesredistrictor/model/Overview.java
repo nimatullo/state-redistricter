@@ -12,7 +12,7 @@ public class Overview {
     private Double percentDem;
     private Double percentRep;
     private Integer opportunityDistricts;
-    private Integer safeDistricts;
+    private Integer safeDistricts; //margin of victory > 15% (50% win + 15% margin)
     private Double polsbyPopperScore;
 
 }
