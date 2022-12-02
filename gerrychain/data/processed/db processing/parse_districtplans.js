@@ -447,15 +447,15 @@ function calculateAveragePolsbyPopper(plan) {
 function castCategory(category) {
   switch (category) {
     case "wt_pop":
-      return "WHITE"
+      return "WHITE";
     case "blk_pop":
-      return "BLACK"
+      return "BLACK";
     case "hsp_pop":
-      return "HISPANIC"
+      return "HISPANIC";
     case "asn_pop":
-      return "ASIAN"
+      return "ASIAN";
     case "Other":
-      return "ignore"
+      return "ignore";
   }
 }
 
@@ -470,7 +470,10 @@ function calculateTotalPops(plan) {
     for (let j = 1; j <= totalDistricts; j++) {
       totalPop += plan[categories[i]][j];
     }
-    totalPopsByCategory.push({ "type": castCategory(categories[i]), "count": totalPop });
+    totalPopsByCategory.push({
+      type: castCategory(categories[i]),
+      count: totalPop,
+    });
   }
 
   return totalPopsByCategory;
@@ -486,7 +489,10 @@ function generateDistricts(plan) {
     district["id"] = i;
     let pops = [];
     for (let j = 0; j < categories.length; j++) {
-      pops.push({ "type": castCategory(categories[j]), count: plan[categories[j]][i] });
+      pops.push({
+        type: castCategory(categories[j]),
+        count: plan[categories[j]][i],
+      });
     }
     district["populations"] = pops;
     popsByDistrict.push(district);
@@ -500,23 +506,22 @@ function generateNewPlan(plan, state, type, desc) {
   let percentDem = splits.percent_dem;
   let percentRep = splits.percent_rep;
   let overview = {
-    "state": state,
-    "populations": calculateTotalPops(plan),
-    "percentDem" : percentDem,
-    "percentRep" : percentRep,
-    "opportunityDistricts": plan.opportunity_reps,
-    "safeDistricts": plan.safe_districts,
-    "polsbyPopperScore": calculateAveragePolsbyPopper(plan)
-  }
+    state: state,
+    populations: calculateTotalPops(plan),
+    percentDem: percentDem,
+    percentRep: percentRep,
+    opportunityDistricts: plan.opportunity_reps,
+    safeDistricts: plan.safe_districts,
+    polsbyPopperScore: calculateAveragePolsbyPopper(plan),
+  };
   let districts = generateDistricts(plan);
 
   return {
-    "description": desc,
-    "overview": overview,
-    "districts": districts,
-    "type": type,
-  }
-
+    description: desc,
+    overview: overview,
+    districts: districts,
+    type: type,
+  };
 }
 
 function generateNewPlans(plans, state, type) {
@@ -529,5 +534,5 @@ function generateNewPlans(plans, state, type) {
 }
 
 let newPlans = generateNewPlans(plans, "North Carolina", "SMD");
-//print json 
+//print json
 console.log(JSON.stringify(newPlans));
