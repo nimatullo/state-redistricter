@@ -1,0 +1,15 @@
+
+{
+  "SMD": {
+    "planType": "SMD",
+    "totalDistrictPlans": 10000,
+    "avgOpportunityReps": 0,
+    "avgEqualPopMeasure": 25588.9375,
+    "avgPolsbyPopperMeasure": 0.19264715028091303,
+    "avgRepSplit": 0.5019224276802722,
+    "avgDemSplit": 0.4980775723197278
+  },
+    "MMD": {
+    "planType": "MMD"
+    }
+}

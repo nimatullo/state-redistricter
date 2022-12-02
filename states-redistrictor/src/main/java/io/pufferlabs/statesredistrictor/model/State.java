@@ -14,7 +14,6 @@ public class State {
     private String name;
     private StateAbbreviation abbreviation;
     private StateShape stateShape;
-    private List<DistrictPlan> districtPlans;
     private List<DistrictPlan> uniqueDistrictPlans;
     private Analysis analysis;
     private Map<PlanType, SummaryData> ensembleSummaryData;

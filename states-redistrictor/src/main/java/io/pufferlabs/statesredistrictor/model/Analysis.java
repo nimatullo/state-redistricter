@@ -11,8 +11,8 @@ import java.util.Map;
 public class Analysis {
     @Id
     private String state;
-    private Map<Race, List<List<Double>>> SMDBoxAndWhiskerPlots;
-    private Map<Race, List<List<Double>>> MMDBoxAndWhiskerPlots;
+    private Map<Race, Map<String, Map<String, Double>>> SMDBoxAndWhiskerPlots;
+    private Map<Race, Map<String, Map<String, Double>>> MMDBoxAndWhiskerPlots;
     private List<List<Double>> voteSeatSharePlots;
     private List<Integer> demRepSplits; //list of splits per plan
     private List<Integer> opportunityRepCounts; //list of opportunity reps per plan
