@@ -1,0 +1,4 @@
+geojson conversion for Java (just stringify?)
+missing rep/dem splits among plans
+missing vote seat share plots among plans
+fix dem/rep percents

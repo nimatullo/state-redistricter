@@ -418,12 +418,9 @@ let plans = {
   },
 };
 
-//for each plan, calculate the total percent of dems and reps
 function calculateTotalSplit(plan) {
   let dems = 0;
   let reps = 0;
-  //get total number of districts from a plan
-  //by getting the length of items in total pop key
   let totalDistricts = Object.keys(plan["tot_pop"]).length;
   for (let i = 1; i <= totalDistricts; i++) {
     dems += plan.dem_split[i];
@@ -434,7 +431,26 @@ function calculateTotalSplit(plan) {
   return { percent_dem, percent_rep };
 }
 
-//for each plan, calculate the average polsby popper score
+//print the winning percentage of each party
+function printWinningPercentage(plan) {
+  //count number of districts won by each party
+  let dems = 0;
+  let reps = 0;
+  let totalDistricts = Object.keys(plan["tot_pop"]).length;
+  for (let i = 1; i <= totalDistricts; i++) {
+    if (plan.dem_split[i] > plan.rep_split[i]) {
+      dems++;
+    } else {
+      reps++;
+    }
+  }
+  let percent_dem = dems / totalDistricts;  
+  let percent_rep = reps / totalDistricts;
+  console.log("Democrats won " + percent_dem * 100 + "% of districts");
+  console.log("Republicans won " + percent_rep * 100 + "% of districts");
+}
+
+
 function calculateAveragePolsbyPopper(plan) {
   let totalScore = 0;
   let totalDistricts = Object.keys(plan["tot_pop"]).length;
@@ -459,9 +475,7 @@ function castCategory(category) {
   }
 }
 
-//for each district's populations, sum each category
 function calculateTotalPops(plan) {
-  let totalPop = 0;
   let totalDistricts = Object.keys(plan["tot_pop"]).length;
   let categories = ["wt_pop", "blk_pop", "hsp_pop", "asn_pop"];
   let totalPopsByCategory = [];
@@ -476,7 +490,6 @@ function calculateTotalPops(plan) {
   return totalPopsByCategory;
 }
 
-//create object for each district for their populations
 function generateDistricts(plan) {
   let totalDistricts = Object.keys(plan["tot_pop"]).length;
   let categories = ["wt_pop", "blk_pop", "hsp_pop", "asn_pop"];
@@ -494,7 +507,6 @@ function generateDistricts(plan) {
   return popsByDistrict;
 }
 
-//generate new plan for each plan
 function generateNewPlan(plan, state, type, desc) {
   let splits = calculateTotalSplit(plan);
   let percentDem = splits.percent_dem;
@@ -520,14 +532,14 @@ function generateNewPlan(plan, state, type, desc) {
 }
 
 function generateNewPlans(plans, state, type) {
-  //plans is a table of plans with the description being the key
   let newPlans = [];
   for (let key in plans) {
-    newPlans.push(generateNewPlan(plans[key], state, type, key));
+    printWinningPercentage(plans[key]);
+    console.log();
+    //newPlans.push(generateNewPlan(plans[key], state, type, key));
   }
   return newPlans;
 }
 
 let newPlans = generateNewPlans(plans, "North Carolina", "SMD");
-//print json 
 console.log(JSON.stringify(newPlans));

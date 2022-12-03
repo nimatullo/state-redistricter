@@ -148,5 +148,4 @@ function compute_avgs(data) {
   return avgs;
 }
 
-//jsonify output
 console.log(JSON.stringify(compute_avgs(data)));
