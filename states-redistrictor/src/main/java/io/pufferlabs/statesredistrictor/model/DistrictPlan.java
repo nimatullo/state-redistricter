@@ -10,5 +10,6 @@ public class DistrictPlan {
     private List<District> districts;
     private PlanType type;
     private Overview overview;
+    private String shape; //lmao
     private String description;
 }

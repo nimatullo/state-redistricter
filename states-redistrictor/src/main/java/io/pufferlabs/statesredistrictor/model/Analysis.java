@@ -13,8 +13,8 @@ public class Analysis {
     private String state;
     private Map<Race, Map<String, Map<String, Double>>> SMDBoxAndWhiskerPlots;
     private Map<Race, Map<String, Map<String, Double>>> MMDBoxAndWhiskerPlots;
-    private List<List<Double>> voteSeatSharePlots;
-    private List<Integer> demRepSplits; //list of splits per plan
-    private List<Integer> opportunityRepCounts; //list of opportunity reps per plan
+    private Map<Party, Map<String, Double>> voteSeatSharePercentages;
+    private List<List<Double>> demRepSplits; //list of splits per plan
+    private Double avgOpportunityReps; 
 
 }

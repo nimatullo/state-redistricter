@@ -444,12 +444,11 @@ function printWinningPercentage(plan) {
       reps++;
     }
   }
-  let percent_dem = dems / totalDistricts;  
+  let percent_dem = dems / totalDistricts;
   let percent_rep = reps / totalDistricts;
   console.log("Democrats won " + percent_dem * 100 + "% of districts");
   console.log("Republicans won " + percent_rep * 100 + "% of districts");
 }
-
 
 function calculateAveragePolsbyPopper(plan) {
   let totalScore = 0;
@@ -513,6 +512,15 @@ function generateDistricts(plan) {
   return popsByDistrict;
 }
 
+function zipSplits(plan) {
+  let totalDistricts = Object.keys(plan["tot_pop"]).length;
+  let districts = [];
+  for (let i = 1; i <= totalDistricts; i++) {
+    districts.push([plan.dem_splits[i], plan.rep_splits[i]]);
+  }
+  return districts;
+}
+
 function generateNewPlan(plan, state, type, desc) {
   let splits = calculateTotalSplit(plan);
   let percentDem = splits.percent_dem;
@@ -547,5 +555,3 @@ function generateNewPlans(plans, state, type) {
 }
 
 let newPlans = generateNewPlans(plans, "North Carolina", "SMD");
-//print json
-console.log(JSON.stringify(newPlans));
