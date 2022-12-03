@@ -444,12 +444,11 @@ function printWinningPercentage(plan) {
       reps++;
     }
   }
-  let percent_dem = dems / totalDistricts;  
+  let percent_dem = dems / totalDistricts;
   let percent_rep = reps / totalDistricts;
   console.log("Democrats won " + percent_dem * 100 + "% of districts");
   console.log("Republicans won " + percent_rep * 100 + "% of districts");
 }
-
 
 function calculateAveragePolsbyPopper(plan) {
   let totalScore = 0;
