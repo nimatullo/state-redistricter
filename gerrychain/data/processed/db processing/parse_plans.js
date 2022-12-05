@@ -366,5 +366,3 @@ let newPlans = generateNewPlans(plans, "North Carolina", "MMD");
 //console.log(newPlans);
 //output the new plans to a json file called "nc unique plans MMD.json"
 fs.writeFileSync("nc unique plans MMD.json", JSON.stringify(newPlans));
-
-

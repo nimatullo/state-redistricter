@@ -1111,7 +1111,7 @@ function convertPatterns(patterns) {
     newPatterns[pattern]["planType"] = "MMD";
     newPatterns[pattern]["totalDistrictPlans"] = 10000;
     newPatterns[pattern]["pattern"] = pattern;
-    
+
     patternArray.push(newPatterns[pattern]);
   }
   return patternArray;
@@ -1123,7 +1123,6 @@ function castCategory(category) {
   if (category.toLowerCase().includes("asian")) return "ASIAN";
   if (category.toLowerCase().includes("white")) return "WHITE";
   return "total_pop";
-
 }
 
 function separateBoxPlots(patterns) {
@@ -1144,7 +1143,7 @@ function separateBoxPlots(patterns) {
 }
 
 let newPatterns = convertPatterns(patterns);
-let newPatternsBoxPlots= separateBoxPlots(newPatterns);
+let newPatternsBoxPlots = separateBoxPlots(newPatterns);
 
 console.log(JSON.stringify(newPatterns));
 console.log();
