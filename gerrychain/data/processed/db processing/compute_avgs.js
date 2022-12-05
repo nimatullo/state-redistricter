@@ -1,4 +1,863 @@
-data = {
+let patterns = {
+  chain445: {
+    polsby_popper_scores: {
+      1: 0.23861483004655376,
+      2: 0.22298870577859975,
+      3: 0.1750177787524177,
+    },
+    dem_splits: {
+      0: 0.5037128648363732,
+      1: 0.5027651556598813,
+      2: 0.4993076889401883,
+    },
+    rep_splits: {
+      0: 0.49628713516362677,
+      1: 0.4972348443401187,
+      2: 0.5006923110598118,
+    },
+    black_pop: {
+      1: 696748.6,
+      2: 761190.2,
+      3: 561915.2,
+    },
+    asian_pop: {
+      1: 67800.4,
+      2: 74000.2,
+      3: 64778.4,
+    },
+    hisp_pop: {
+      1: 271415.4,
+      2: 269905.7,
+      3: 258798.9,
+    },
+    white_pop: {
+      1: 2090266.5,
+      2: 2017922.4,
+      3: 2115806.1,
+    },
+    total_pop: {
+      1: 3219624.6,
+      2: 3225193.5,
+      3: 3090664.9,
+    },
+    minority_pop: {
+      1: 1035964.4,
+      2: 1105096.1,
+      3: 885492.5,
+    },
+    opportunity_reps: 0.0,
+    equal_pop: {
+      0: 744541.9,
+    },
+    dem_vote_share_percentage: 0.5019285698121475,
+    dem_seat_share_percentage: 0.6,
+    rep_vote_share_percentage: 0.4980714301878524,
+    rep_seat_share_percentage: 0.4,
+    black_pop_box_data: {
+      1: {
+        min: 440187.0,
+        "25%": 477903.5,
+        "50%": 638614.5,
+        mean: 696748.6,
+        "75%": 937913.75,
+        max: 965426.0,
+      },
+      2: {
+        min: 450728.0,
+        "25%": 632666.75,
+        "50%": 718684.0,
+        mean: 761190.2,
+        "75%": 958243.75,
+        max: 972106.0,
+      },
+      3: {
+        min: 436858.0,
+        "25%": 436858.0,
+        "50%": 446776.5,
+        mean: 561915.2,
+        "75%": 624906.25,
+        max: 950964.0,
+      },
+    },
+    asian_pop_box_data: {
+      1: {
+        min: 47094.0,
+        "25%": 64318.25,
+        "50%": 64688.0,
+        mean: 67800.4,
+        "75%": 65779.0,
+        max: 89652.0,
+      },
+      2: {
+        min: 51506.0,
+        "25%": 70944.0,
+        "50%": 75450.0,
+        mean: 74000.2,
+        "75%": 76963.0,
+        max: 94064.0,
+      },
+      3: {
+        min: 48356.0,
+        "25%": 65421.0,
+        "50%": 65421.0,
+        mean: 64778.4,
+        "75%": 67108.5,
+        max: 72039.0,
+      },
+    },
+    hispanic_pop_box_data: {
+      1: {
+        min: 233157.0,
+        "25%": 236535.75,
+        "50%": 257933.5,
+        mean: 271415.4,
+        "75%": 309940.5,
+        max: 322502.0,
+      },
+      2: {
+        min: 218566.0,
+        "25%": 244378.5,
+        "50%": 260120.5,
+        mean: 269905.7,
+        "75%": 303476.0,
+        max: 317113.0,
+      },
+      3: {
+        min: 236335.0,
+        "25%": 236335.0,
+        "50%": 238710.5,
+        mean: 258798.9,
+        "75%": 260675.0,
+        max: 348397.0,
+      },
+    },
+    white_pop_box_data: {
+      1: {
+        min: 1884178.0,
+        "25%": 1961977.5,
+        "50%": 2102184.0,
+        mean: 2090266.5,
+        "75%": 2195833.75,
+        max: 2269087.0,
+      },
+      2: {
+        min: 1773114.0,
+        "25%": 1896687.0,
+        "50%": 2011066.5,
+        mean: 2017922.4,
+        "75%": 2180500.0,
+        max: 2207412.0,
+      },
+      3: {
+        min: 1864901.0,
+        "25%": 2128253.0,
+        "50%": 2128253.0,
+        mean: 2115806.1,
+        "75%": 2151551.0,
+        max: 2348697.0,
+      },
+    },
+    total_pop_box_data: {
+      1: {
+        min: 2902936.0,
+        "25%": 2906329.0,
+        "50%": 2945215.0,
+        mean: 3219624.6,
+        "75%": 3665524.75,
+        max: 3693862.0,
+      },
+      2: {
+        min: 2907885.0,
+        "25%": 2928294.75,
+        "50%": 2981145.0,
+        mean: 3225193.5,
+        "75%": 3639520.0,
+        max: 3673544.0,
+      },
+      3: {
+        min: 2927580.0,
+        "25%": 2933736.0,
+        "50%": 2933736.0,
+        mean: 3090664.9,
+        "75%": 2992178.75,
+        max: 3672321.0,
+      },
+    },
+    chain445_dem_seats: {
+      1: {
+        0: 1,
+        1: 1,
+        2: 2,
+        3: 2,
+        4: 2,
+        5: 2,
+        6: 1,
+        7: 0,
+        8: 2,
+        9: 2,
+      },
+      2: {
+        0: 2,
+        1: 2,
+        2: 1,
+        3: 1,
+        4: 1,
+        5: 1,
+        6: 2,
+        7: 4,
+        8: 1,
+        9: 2,
+      },
+      3: {
+        0: 3,
+        1: 3,
+        2: 3,
+        3: 3,
+        4: 3,
+        5: 3,
+        6: 3,
+        7: 3,
+        8: 3,
+        9: 3,
+      },
+    },
+    chain445_rep_seats: {
+      1: {
+        0: 3,
+        1: 3,
+        2: 2,
+        3: 2,
+        4: 2,
+        5: 2,
+        6: 3,
+        7: 4,
+        8: 2,
+        9: 2,
+      },
+      2: {
+        0: 2,
+        1: 2,
+        2: 3,
+        3: 3,
+        4: 3,
+        5: 3,
+        6: 2,
+        7: 0,
+        8: 3,
+        9: 2,
+      },
+      3: {
+        0: 2,
+        1: 2,
+        2: 2,
+        3: 2,
+        4: 2,
+        5: 2,
+        6: 2,
+        7: 2,
+        8: 2,
+        9: 2,
+      },
+    },
+  },
+  chain355: {
+    polsby_popper_scores: {
+      1: 0.26650955037409074,
+      2: 0.19215012891592737,
+      3: 0.19213246875419815,
+    },
+    dem_splits: {
+      0: 0.49521219527813604,
+      1: 0.5162839044751238,
+      2: 0.49267848871974185,
+    },
+    rep_splits: {
+      0: 0.5047878047218639,
+      1: 0.48371609552487616,
+      2: 0.5073215112802583,
+    },
+    black_pop: {
+      1: 781789.5,
+      2: 717931.4,
+      3: 520133.1,
+    },
+    asian_pop: {
+      1: 60420.8,
+      2: 79633.35,
+      3: 66524.85,
+    },
+    hisp_pop: {
+      1: 270726.0,
+      2: 272399.1,
+      3: 256994.9,
+    },
+    white_pop: {
+      1: 2017034.25,
+      2: 2001521.15,
+      3: 2205439.6,
+    },
+    total_pop: {
+      1: 3235320.0,
+      2: 3171010.7,
+      3: 3129152.3,
+    },
+    minority_pop: {
+      1: 1112936.3,
+      2: 1069963.85,
+      3: 843652.85,
+    },
+    opportunity_reps: 0.0,
+    equal_pop: {
+      0: 1098661.3,
+    },
+    dem_vote_share_percentage: 0.5013915294910005,
+    dem_seat_share_percentage: 0.5666666666666667,
+    rep_vote_share_percentage: 0.4986084705089994,
+    rep_seat_share_percentage: 0.4333333333333333,
+    black_pop_box_data: {
+      1: {
+        min: 440187.0,
+        "25%": 607200.25,
+        "50%": 876940.0,
+        mean: 781789.5,
+        "75%": 964631.75,
+        max: 1016871.0,
+      },
+      2: {
+        min: 450728.0,
+        "25%": 600917.75,
+        "50%": 645606.5,
+        mean: 717931.4,
+        "75%": 865224.75,
+        max: 972106.0,
+      },
+      3: {
+        min: 181867.0,
+        "25%": 436858.0,
+        "50%": 522601.0,
+        mean: 520133.1,
+        "75%": 545683.0,
+        max: 950964.0,
+      },
+    },
+    asian_pop_box_data: {
+      1: {
+        min: 21237.0,
+        "25%": 61085.0,
+        "50%": 63063.0,
+        mean: 60420.8,
+        "75%": 65637.0,
+        max: 89652.0,
+      },
+      2: {
+        min: 51506.0,
+        "25%": 69103.5,
+        "50%": 76277.5,
+        mean: 79633.35,
+        "75%": 87570.5,
+        max: 116249.0,
+      },
+      3: {
+        min: 28694.0,
+        "25%": 65421.0,
+        "50%": 67000.0,
+        mean: 66524.85,
+        "75%": 72773.5,
+        max: 77866.0,
+      },
+    },
+    hispanic_pop_box_data: {
+      1: {
+        min: 146433.0,
+        "25%": 233157.0,
+        "50%": 309761.0,
+        mean: 270726.0,
+        "75%": 314592.0,
+        max: 322502.0,
+      },
+      2: {
+        min: 187022.0,
+        "25%": 232962.25,
+        "50%": 277798.0,
+        mean: 272399.1,
+        "75%": 306885.25,
+        max: 361340.0,
+      },
+      3: {
+        min: 136826.0,
+        "25%": 236335.0,
+        "50%": 257863.0,
+        mean: 256994.9,
+        "75%": 292347.0,
+        max: 348397.0,
+      },
+    },
+    white_pop_box_data: {
+      1: {
+        min: 1332742.0,
+        "25%": 1908514.0,
+        "50%": 2160060.0,
+        mean: 2017034.25,
+        "75%": 2165890.25,
+        max: 2279387.0,
+      },
+      2: {
+        min: 1370542.0,
+        "25%": 1813269.75,
+        "50%": 2135253.5,
+        mean: 2001521.15,
+        "75%": 2216233.0,
+        max: 2689073.0,
+      },
+      3: {
+        min: 1372952.0,
+        "25%": 2081517.5,
+        "50%": 2143785.0,
+        mean: 2205439.6,
+        "75%": 2559503.0,
+        max: 2680740.0,
+      },
+    },
+    total_pop_box_data: {
+      1: {
+        min: 2147009.0,
+        "25%": 2906329.0,
+        "50%": 3604857.0,
+        mean: 3235320.0,
+        "75%": 3688860.0,
+        max: 3703821.0,
+      },
+      2: {
+        min: 2194281.0,
+        "25%": 2912502.0,
+        "50%": 3305796.0,
+        mean: 3171010.7,
+        "75%": 3652910.0,
+        max: 3736132.0,
+      },
+      3: {
+        min: 2122162.0,
+        "25%": 2933736.0,
+        "50%": 2991330.5,
+        mean: 3129152.3,
+        "75%": 3652342.0,
+        max: 3672321.0,
+      },
+    },
+    chain355_dem_seats: {
+      1: {
+        0: 0,
+        1: 0,
+        2: 3,
+        3: 0,
+        4: 3,
+        5: 3,
+        6: 3,
+        7: 0,
+        8: 3,
+        9: 3,
+      },
+      2: {
+        0: 2,
+        1: 2,
+        2: 0,
+        3: 1,
+        4: 0,
+        5: 3,
+        6: 3,
+        7: 2,
+        8: 1,
+        9: 3,
+      },
+      3: {
+        0: 4,
+        1: 4,
+        2: 4,
+        3: 4,
+        4: 4,
+        5: 1,
+        6: 0,
+        7: 3,
+        8: 3,
+        9: 1,
+      },
+    },
+    chain355_rep_seats: {
+      1: {
+        0: 3,
+        1: 3,
+        2: 0,
+        3: 3,
+        4: 0,
+        5: 0,
+        6: 0,
+        7: 3,
+        8: 0,
+        9: 0,
+      },
+      2: {
+        0: 3,
+        1: 3,
+        2: 5,
+        3: 4,
+        4: 5,
+        5: 2,
+        6: 2,
+        7: 3,
+        8: 4,
+        9: 2,
+      },
+      3: {
+        0: 1,
+        1: 1,
+        2: 1,
+        3: 1,
+        4: 1,
+        5: 4,
+        6: 5,
+        7: 2,
+        8: 2,
+        9: 4,
+      },
+    },
+  },
+  chain3334: {
+    polsby_popper_scores: {
+      1: 0.23340522678004605,
+      2: 0.187168805766411,
+      3: 0.18157770425910533,
+      4: 0.17133396626882902,
+    },
+    dem_splits: {
+      0: 0.4892450813827329,
+      1: 0.5129568592231684,
+      2: 0.5093709350972513,
+      3: 0.49105663262595406,
+    },
+    rep_splits: {
+      0: 0.5107549186172671,
+      1: 0.4870431407768316,
+      2: 0.49062906490274877,
+      3: 0.508943367374046,
+    },
+    black_pop: {
+      1: 689673.7333333333,
+      2: 682499.3333333334,
+      3: 471706.43333333335,
+      4: 527923.5,
+    },
+    asian_pop: {
+      1: 56939.23333333333,
+      2: 70918.93333333333,
+      3: 62504.8,
+      4: 48648.1,
+    },
+    hisp_pop: {
+      1: 247628.16666666666,
+      2: 252114.03333333333,
+      3: 233609.73333333334,
+      4: 200304.2,
+    },
+    white_pop: {
+      1: 1869701.6333333333,
+      2: 1863289.9333333333,
+      3: 1998168.2333333334,
+      4: 1478505.6,
+    },
+    total_pop: {
+      1: 2958760.3333333335,
+      2: 2961066.3666666667,
+      3: 2837443.4,
+      4: 2334638.7,
+    },
+    minority_pop: {
+      1: 994241.1333333333,
+      2: 1005532.3,
+      3: 767820.9666666667,
+      4: 776875.8,
+    },
+    opportunity_reps: 0.0,
+    equal_pop: {
+      0: 971604.7666666667,
+    },
+    dem_vote_share_percentage: 0.5023798598931177,
+    dem_seat_share_percentage: 0.45,
+    rep_vote_share_percentage: 0.49762014010688227,
+    rep_seat_share_percentage: 0.38333333333333336,
+    black_pop_box_data: {
+      1: {
+        min: 354928.0,
+        "25%": 512680.25,
+        "50%": 643221.0,
+        mean: 689673.7333333333,
+        "75%": 937913.75,
+        max: 1016871.0,
+      },
+      2: {
+        min: 450728.0,
+        "25%": 544003.25,
+        "50%": 643416.0,
+        mean: 682499.3333333334,
+        "75%": 813515.25,
+        max: 972106.0,
+      },
+      3: {
+        min: 181867.0,
+        "25%": 381141.0,
+        "50%": 436858.0,
+        mean: 471706.43333333335,
+        "75%": 522601.0,
+        max: 950964.0,
+      },
+      4: {
+        min: 355745.0,
+        "25%": 409566.75,
+        "50%": 571032.0,
+        mean: 527923.5,
+        "75%": 603785.0,
+        max: 645667.0,
+      },
+    },
+    asian_pop_box_data: {
+      1: {
+        min: 21237.0,
+        "25%": 42722.5,
+        "50%": 61636.0,
+        mean: 56939.23333333333,
+        "75%": 65779.0,
+        max: 89652.0,
+      },
+      2: {
+        min: 32641.0,
+        "25%": 53025.0,
+        "50%": 69566.5,
+        mean: 70918.93333333333,
+        "75%": 76963.0,
+        max: 116249.0,
+      },
+      3: {
+        min: 28694.0,
+        "25%": 55605.5,
+        "50%": 65421.0,
+        mean: 62504.8,
+        "75%": 70063.25,
+        max: 77866.0,
+      },
+      4: {
+        min: 23644.0,
+        "25%": 40873.0,
+        "50%": 43821.0,
+        mean: 48648.1,
+        "75%": 67451.25,
+        max: 75328.0,
+      },
+    },
+    hispanic_pop_box_data: {
+      1: {
+        min: 146433.0,
+        "25%": 185070.75,
+        "50%": 241096.5,
+        mean: 247628.16666666666,
+        "75%": 311948.5,
+        max: 322502.0,
+      },
+      2: {
+        min: 170999.0,
+        "25%": 215993.5,
+        "50%": 235997.0,
+        mean: 252114.03333333333,
+        "75%": 302982.5,
+        max: 361340.0,
+      },
+      3: {
+        min: 136826.0,
+        "25%": 186094.5,
+        "50%": 236335.0,
+        mean: 233609.73333333334,
+        "75%": 289552.75,
+        max: 348397.0,
+      },
+      4: {
+        min: 148001.0,
+        "25%": 182308.0,
+        "50%": 195789.0,
+        mean: 200304.2,
+        "75%": 209270.0,
+        max: 266153.0,
+      },
+    },
+    white_pop_box_data: {
+      1: {
+        min: 1276123.0,
+        "25%": 1575157.0,
+        "50%": 1987828.0,
+        mean: 1869701.6333333333,
+        "75%": 2161970.0,
+        max: 2279387.0,
+      },
+      2: {
+        min: 1258222.0,
+        "25%": 1385105.0,
+        "50%": 1904205.0,
+        mean: 1863289.9333333333,
+        "75%": 2180500.0,
+        max: 2689073.0,
+      },
+      3: {
+        min: 1372952.0,
+        "25%": 1587945.25,
+        "50%": 2034782.0,
+        mean: 1998168.2333333334,
+        "75%": 2312165.25,
+        max: 2680740.0,
+      },
+      4: {
+        min: 1246430.0,
+        "25%": 1274359.0,
+        "50%": 1441319.0,
+        mean: 1478505.6,
+        "75%": 1608279.0,
+        max: 1822141.0,
+      },
+    },
+    total_pop_box_data: {
+      1: {
+        min: 2147009.0,
+        "25%": 2263447.0,
+        "50%": 2906329.0,
+        mean: 2958760.3333333335,
+        "75%": 3666857.25,
+        max: 3703821.0,
+      },
+      2: {
+        min: 2177835.0,
+        "25%": 2286631.0,
+        "50%": 2910963.0,
+        mean: 2961066.3666666667,
+        "75%": 3639520.0,
+        max: 3736132.0,
+      },
+      3: {
+        min: 2122162.0,
+        "25%": 2234504.0,
+        "50%": 2933736.0,
+        mean: 2837443.4,
+        "75%": 3525220.5,
+        max: 3672321.0,
+      },
+      4: {
+        min: 2140104.0,
+        "25%": 2179825.0,
+        "50%": 2206065.5,
+        mean: 2334638.7,
+        "75%": 2232306.0,
+        max: 2914893.0,
+      },
+    },
+    chain3334_dem_seats: {
+      1: {
+        0: 0,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 2,
+        5: 3,
+        6: 3,
+        7: 3,
+        8: 0,
+        9: 0,
+      },
+      2: {
+        0: 0,
+        1: 3,
+        2: 3,
+        3: 3,
+        4: 2,
+        5: 2,
+        6: 3,
+        7: 3,
+        8: 3,
+        9: 2,
+      },
+      3: {
+        0: 3,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0,
+        7: 0,
+        8: 0,
+        9: 0,
+      },
+      4: {
+        0: 4,
+        1: 4,
+        2: 4,
+        3: 4,
+        4: 4,
+        5: 3,
+        6: 1,
+        7: 1,
+        8: 4,
+        9: 4,
+      },
+    },
+    chain3334_rep_seats: {
+      1: {
+        0: 3,
+        1: 3,
+        2: 3,
+        3: 3,
+        4: 1,
+        5: 0,
+        6: 0,
+        7: 0,
+        8: 3,
+        9: 3,
+      },
+      2: {
+        0: 3,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 1,
+        5: 1,
+        6: 0,
+        7: 0,
+        8: 0,
+        9: 1,
+      },
+      3: {
+        0: 0,
+        1: 3,
+        2: 3,
+        3: 3,
+        4: 3,
+        5: 3,
+        6: 3,
+        7: 3,
+        8: 3,
+        9: 3,
+      },
+      4: {
+        0: 0,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 1,
+        6: 3,
+        7: 3,
+        8: 0,
+        9: 0,
+      },
+    },
+  },
+};
+
+let data = {
   polsby_popper_scores: {
     13: 0.19432690858158946,
     5: 0.19067062674558524,
@@ -136,16 +995,158 @@ data = {
   },
 };
 
-function compute_avgs(data) {
-  let avgs = {};
-  for (let key in data) {
-    let sum = 0;
-    for (let inner_key in data[key]) {
-      sum += data[key][inner_key];
+//for every pattern, save the average of each field except the ones that have the word "box_data" in them or aren't objects
+function averageFields(patterns) {
+  let averages = {};
+  for (let pattern in patterns) {
+    let patternData = patterns[pattern];
+    let patternAverages = {};
+    for (let field in patternData) {
+      if (
+        typeof patternData[field] !== "object" ||
+        field.includes("box_data")
+      ) {
+        patternAverages[field] = patternData[field];
+        continue;
+      }
+      let sum = 0;
+      let count = 0;
+      for (let district in patternData[field]) {
+        sum += patternData[field][district];
+        count++;
+      }
+      patternAverages[field] = sum / count;
     }
-    avgs["avg_" + key] = sum / Object.keys(data[key]).length;
+    averages[pattern] = patternAverages;
   }
-  return avgs;
+  return averages;
 }
 
-console.log(JSON.stringify(compute_avgs(data)));
+//take the average of each district in the dem and rep seats
+function averageSeats(patterns) {
+  //get all objects that have the word "seats" in them
+  let seatObjects = [];
+  for (let pattern in patterns) {
+    let patternData = patterns[pattern];
+    let patternSeats = {};
+    for (let field in patternData) {
+      if (field.includes("seats")) {
+        field.includes("dem")
+          ? (patternSeats["dem_seats"] = patternData[field])
+          : (patternSeats["rep_seats"] = patternData[field]);
+
+        //if the length of pattern seats is 2, we have both dem and rep seats
+        if (Object.keys(patternSeats).length === 2) {
+          patternSeats["pattern"] = pattern;
+          seatObjects.push(patternSeats);
+          break;
+        }
+      }
+    }
+  }
+  //for each set of seats, average the dem and rep seats for each district
+  let averages = {};
+  for (let seats of seatObjects) {
+    let demSeats = seats.dem_seats;
+    let repSeats = seats.rep_seats;
+    let demAverages = {};
+    let repAverages = {};
+
+    for (let district in demSeats) {
+      let demSum = 0;
+      let demCount = 0;
+      let repSum = 0;
+      let repCount = 0;
+      for (let iteration in demSeats[district]) {
+        demSum += demSeats[district][iteration];
+        demCount++;
+        repSum += repSeats[district][iteration];
+        repCount++;
+      }
+
+      demAverages[district] = demSum / demCount;
+      repAverages[district] = repSum / repCount;
+    }
+    let dem_field = seats.pattern + "_dem_seats";
+    let rep_field = seats.pattern + "_rep_seats";
+    //add the averages to the averages object with the field name being the pattern name
+    averages[dem_field] = demAverages;
+    averages[rep_field] = repAverages;
+  }
+  return averages;
+}
+
+function convertPatterns(patterns) {
+  let newPatterns = averageFields(patterns);
+  let newSeats = averageSeats(patterns);
+
+  //for each new seat object, overwrite the old seat object
+  for (let pattern in newPatterns) {
+    //add new field called planType and totalDistrictPlans
+    for (let field in newSeats) {
+      if (field.includes(pattern)) {
+        newPatterns[pattern][field] = newSeats[field];
+      }
+    }
+
+    let patternData = newPatterns[pattern];
+    for (let field in patternData) {
+      //rename fields
+      //convert all fields to camel case
+      let newField = field
+        .split("_")
+        .map((word, index) => {
+          if (index === 0) return "avg" + word[0].toUpperCase() + word.slice(1);
+          return word[0].toUpperCase() + word.slice(1);
+        })
+        .join("");
+      newPatterns[pattern][newField] = patternData[field];
+      delete newPatterns[pattern][field];
+    }
+  }
+
+  //convert the new patterns object to an array
+  let patternArray = [];
+  for (let pattern in newPatterns) {
+    newPatterns[pattern]["planType"] = "MMD";
+    newPatterns[pattern]["totalDistrictPlans"] = 10000;
+    newPatterns[pattern]["pattern"] = pattern;
+    
+    patternArray.push(newPatterns[pattern]);
+  }
+  return patternArray;
+}
+
+function castCategory(category) {
+  if (category.toLowerCase().includes("black")) return "BLACK";
+  if (category.toLowerCase().includes("hispanic")) return "HISPANIC";
+  if (category.toLowerCase().includes("asian")) return "ASIAN";
+  if (category.toLowerCase().includes("white")) return "WHITE";
+  return "total_pop";
+
+}
+
+function separateBoxPlots(patterns) {
+  let newPatternsBoxPlots = [];
+  for (let pattern of newPatterns) {
+    let newPattern = {};
+    newPattern["pattern"] = pattern.pattern;
+    for (let field in pattern) {
+      if (field.toLowerCase().includes("boxdata")) {
+        let newField = castCategory(field);
+        newPattern[newField] = pattern[field];
+        delete pattern[field];
+      }
+    }
+    newPatternsBoxPlots.push(newPattern);
+  }
+  return newPatternsBoxPlots;
+}
+
+let newPatterns = convertPatterns(patterns);
+let newPatternsBoxPlots= separateBoxPlots(newPatterns);
+
+console.log(JSON.stringify(newPatterns));
+console.log();
+console.log(JSON.stringify(newPatternsBoxPlots));
+//console.log(JSON.stringify(newPatterns));

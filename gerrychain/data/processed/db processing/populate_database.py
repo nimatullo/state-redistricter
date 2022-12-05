@@ -7,7 +7,8 @@ if __name__ == "__main__":
     #Make sure you're in the same directory as the script
     state="nc"
     state_file = "./{state}/{state} state.json".format(state=state)
-    unique_plans_dir = "./{state}/unique plans/".format(state=state)
+    smd_unique_plans_dir = "./{state}/unique plans/smd/".format(state=state)
+    mmd_unique_plans_dir = "./{state}/unique plans/mmd/".format(state=state)
     state_shape_file = "./{state}/{state} state.geojson".format(state=state)
 
     json_data = json.load(open(state_file))
@@ -17,13 +18,20 @@ if __name__ == "__main__":
     col = db["states"]
     col.insert_many(json_data)
 
-    col = db["unique_plan_shapes"]
-    for file in os.listdir(unique_plans_dir):
+    col = db["smd_unique_plan_shapes"]
+    for file in os.listdir(smd_unique_plans_dir):
         files = []
         if file.endswith(".geojson"):
-            json_data = json.load(open(unique_plans_dir+ file))
+            json_data = json.load(open(smd_unique_plans_dir+ file))
             files.append(json_data)
-    
+    col.insert_many(files)
+
+    col = db["mmd_unique_plan_shapes"]
+    for file in os.listdir(mmd_unique_plans_dir):
+        files = []
+        if file.endswith(".geojson"):
+            json_data = json.load(open(mmd_unique_plans_dir+ file))
+            files.append(json_data)
     col.insert_many(files)
 
     col = db["state_shapes"]
