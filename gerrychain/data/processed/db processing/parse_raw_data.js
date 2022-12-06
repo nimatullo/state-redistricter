@@ -1302,7 +1302,8 @@ function getUniquePlansData(rawData, state, planType) {
       for (let district in plan[field]) {
         if (field === "rep_split" || field === "dem_split") {
           //need to adjust offset in file
-          let newDistrictId = planType === "MMD" ? Number(district) + 1 + "": district;
+          let newDistrictId =
+            planType === "MMD" ? Number(district) + 1 + "" : district;
           districtMap[newDistrictId][field] = plan[field][district];
         } else
           districtMap[district]["populations"].push({
@@ -1342,7 +1343,6 @@ for (let subEnsemble in rawMMDSubEnsembles) {
 
   let subEnsembleData = rawMMDSubEnsembles[subEnsemble];
   let subEnsemblePattern = subEnsemble;
-  
 
   let subEnsembleSummaryData = getEnsembleSummaryData(
     subEnsembleData,
@@ -1353,16 +1353,14 @@ for (let subEnsemble in rawMMDSubEnsembles) {
   let subEnsembleAnalysisData = getAnalysisData(
     subEnsembleData,
     fieldsToAnalyze,
-    subEnsemblePattern,
+    subEnsemblePattern
   );
   //push to array
   MMDEnsembles.push(subEnsembleSummaryData);
   MMDAnalysisData.push(subEnsembleAnalysisData);
 }
 //console.log(JSON.stringify({"MMD": MMDEnsembles}));
-console.log(JSON.stringify({"MMD": MMDAnalysisData}));
-
-
+console.log(JSON.stringify({ MMD: MMDAnalysisData }));
 
 //console.log(JSON.stringify(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")));
 // //print out full object using util.inspect
