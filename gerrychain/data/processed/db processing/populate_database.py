@@ -6,10 +6,10 @@ import os
 if __name__ == "__main__":
     #Make sure you're in the same directory as the script
     state="nc"
-    state_file = "./{state}/{state} state.json".format(state=state)
-    smd_unique_plans_dir = "./{state}/unique plans/smd/".format(state=state)
-    mmd_unique_plans_dir = "./{state}/unique plans/mmd/".format(state=state)
-    state_shape_file = "./{state}/{state} state.geojson".format(state=state)
+    state_file = "./{state} (final format)/{state} state.json".format(state=state)
+    smd_unique_plans_dir = "./{state} (final format)/unique plans/smd/".format(state=state)
+    mmd_unique_plans_dir = "./{state} (final format)/unique plans/mmd/".format(state=state)
+    state_shape_file = "./{state} (final format)/{state} state.geojson".format(state=state)
 
     json_data = json.load(open(state_file))
     client = pymongo.MongoClient("mongodb://localhost:27017/")

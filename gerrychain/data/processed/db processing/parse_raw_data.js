@@ -1118,10 +1118,26 @@ function convertPatterns(patterns) {
 }
 
 function castCategory(category) {
-  if (category.toLowerCase().includes("black")) return "BLACK";
-  if (category.toLowerCase().includes("hispanic")) return "HISPANIC";
-  if (category.toLowerCase().includes("asian")) return "ASIAN";
-  if (category.toLowerCase().includes("white")) return "WHITE";
+  if (
+    category.toLowerCase().includes("black") ||
+    category.toLowerCase().includes("blk_")
+  )
+    return "BLACK";
+  if (
+    category.toLowerCase().includes("hispanic") ||
+    category.toLowerCase().includes("hsp_")
+  )
+    return "HISPANIC";
+  if (
+    category.toLowerCase().includes("asian") ||
+    category.toLowerCase().includes("asn_")
+  )
+    return "ASIAN";
+  if (
+    category.toLowerCase().includes("white") ||
+    category.toLowerCase().includes("wt_")
+  )
+    return "WHITE";
   return category;
 }
 
@@ -1155,8 +1171,15 @@ function separateBoxPlots(patterns) {
 //import fs here
 let fs = require("fs");
 
-let inputData = fs.readFileSync("../north carolina/nc smd data.json");
-let rawSMDData = JSON.parse(inputData);
+let rawSMDData = JSON.parse(
+  fs.readFileSync("../north carolina/nc smd data.json")
+);
+let rawMMDData = JSON.parse(
+  fs.readFileSync("../north carolina/nc mmd data.json")
+);
+//get all the objects in the "all_data" field
+let rawMMDSubEnsembles = rawMMDData.all_data;
+
 let fieldsToAvg = [
   "polsby_popper_scores",
   "rep_splits",
@@ -1165,28 +1188,28 @@ let fieldsToAvg = [
   "equal_pop",
 ];
 
-function getEnsembleSummaryData(rawData, fieldsToAvg) {
+function getEnsembleSummaryData(rawData, fieldsToAvg, pattern, planType) {
   let SMDSummaryData = {};
 
   for (let field of fieldsToAvg) {
     let sum = 0;
     let count = 0;
     //if field's value is 0, then save it as is
-    if (rawSMDData[field] === 0) {
+    if (rawData[field] === 0) {
       SMDSummaryData[field] = 0;
       continue;
     }
 
-    for (let district in rawSMDData[field]) {
-      sum += rawSMDData[field][district];
+    for (let district in rawData[field]) {
+      sum += rawData[field][district];
       count++;
     }
     SMDSummaryData[field] = sum / count;
   }
   SMDSummaryData = convertFieldsToCamelCase(SMDSummaryData, "avg");
-  SMDSummaryData["planType"] = "SMD";
+  SMDSummaryData["planType"] = planType === undefined ? "SMD" : planType;
   SMDSummaryData["totalDistrictPlans"] = 10000;
-  SMDSummaryData["pattern"] = "SMD";
+  SMDSummaryData["pattern"] = pattern === undefined ? "SMD" : pattern;
   return SMDSummaryData;
 }
 
@@ -1209,8 +1232,6 @@ function convertFieldsToCamelCase(object, prefixWord) {
   return newObject;
 }
 
-//console.log(JSON.stringify(getEnsembleSummaryData(rawSMDData, fieldsToAvg)));
-
 let fieldsToAnalyze = [
   "black_pop_box_data",
   "white_pop_box_data",
@@ -1218,7 +1239,7 @@ let fieldsToAnalyze = [
   "hispanic_pop_box_data",
 ];
 
-function getAnalysisData(rawData, fieldsToAnalyze) {
+function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
   let analysisData = {};
   analysisData["boxAndWhiskerPlots"] = {};
   for (let field of fieldsToAnalyze) {
@@ -1232,8 +1253,118 @@ function getAnalysisData(rawData, fieldsToAnalyze) {
   analysisData["voteSeatSharePercentages"] = {};
   analysisData["demRepSplitCounts"] = [];
   analysisData["opportunityRepCounts"] = [];
+  analysisData["pattern"] = pattern === undefined ? "SMD" : pattern;
   return analysisData;
 }
 
-console.log(JSON.stringify(getAnalysisData(rawSMDData, fieldsToAnalyze)));
+function getUniquePlansData(rawData, state, planType) {
+  let rawUniquePlans = rawData["unique_plans_data"];
+  let uniquePlansData = {};
+  uniquePlansData["uniqueDistrictPlans"] = [];
+  for (let plan in rawUniquePlans) {
+    let newPlan = {};
+    newPlan["planType"] = planType === undefined ? "SMD" : planType;
+    newPlan["description"] = plan;
+    newPlan["shape"] = "polygon";
+
+    plan = rawUniquePlans[plan]; //convert plan from string to object
+
+    let overview = {};
+    overview["state"] = state;
+    overview["opportunityDistricts"] = plan["opportunity_reps"];
+    overview["safeDistricts"] = plan["safe_districts"];
+    //avg polsby popper score
+    overview["polsbyPopperScore"] = Object.values(
+      plan["polsby_popper_scores"]
+    ).reduce((a, b) => a + b, 0);
+    overview["polsbyPopperScore"] /= Object.keys(
+      plan["polsby_popper_scores"]
+    ).length;
+    newPlan["overview"] = overview;
+
+    let numDistricts = Object.keys(plan["tot_pop"]).length;
+    //create a map with district number as key and district data as value
+    let districtMap = {};
+    for (let i = 0; i < numDistricts; i++) {
+      districtMap[i + 1] = {};
+      districtMap[i + 1]["populations"] = [];
+    }
+    let fieldsToParse = [
+      "blk_pop",
+      "wt_pop",
+      "asn_pop",
+      "hsp_pop",
+      "rep_split",
+      "dem_split",
+    ];
+    //for each field to parse, map the number key to the numbered district
+    for (let field of fieldsToParse) {
+      for (let district in plan[field]) {
+        if (field === "rep_split" || field === "dem_split") {
+          //need to adjust offset in file
+          let newDistrictId = planType === "MMD" ? Number(district) + 1 + "": district;
+          districtMap[newDistrictId][field] = plan[field][district];
+        } else
+          districtMap[district]["populations"].push({
+            type: castCategory(field),
+            count: plan[field][district],
+          });
+      }
+    }
+
+    //add district map to new plan
+    //convert district map to an array of objects with an id field equal to their key
+    let districtArray = [];
+    for (let district in districtMap) {
+      districtMap[district]["id"] = district;
+      districtArray.push(districtMap[district]);
+    }
+    newPlan["districts"] = districtArray;
+    uniquePlansData["uniqueDistrictPlans"].push(newPlan);
+  }
+  return uniquePlansData;
+}
+
+////////////////////////////////// SMD Parsing //////////////////////////////////
+//console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
 //console.log(JSON.stringify(getAnalysisData(rawSMDData, fieldsToAnalyze)));
+// console.log(
+//   JSON.stringify(getUniquePlansData(rawSMDData, "North Carolina"))
+// );
+
+////////////////////////////////// MMD Parsing //////////////////////////////////
+let MMDEnsembles = [];
+let MMDAnalysisData = [];
+
+for (let subEnsemble in rawMMDSubEnsembles) {
+  //if field contains "unique_plans_data ignore"
+  if (subEnsemble === "unique_plans_data") continue;
+
+  let subEnsembleData = rawMMDSubEnsembles[subEnsemble];
+  let subEnsemblePattern = subEnsemble;
+  
+
+  let subEnsembleSummaryData = getEnsembleSummaryData(
+    subEnsembleData,
+    fieldsToAvg,
+    subEnsemblePattern,
+    "MMD"
+  );
+  let subEnsembleAnalysisData = getAnalysisData(
+    subEnsembleData,
+    fieldsToAnalyze,
+    subEnsemblePattern,
+  );
+  //push to array
+  MMDEnsembles.push(subEnsembleSummaryData);
+  MMDAnalysisData.push(subEnsembleAnalysisData);
+}
+//console.log(JSON.stringify({"MMD": MMDEnsembles}));
+console.log(JSON.stringify({"MMD": MMDAnalysisData}));
+
+
+
+//console.log(JSON.stringify(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")));
+// //print out full object using util.inspect
+// let util = require("util");
+// console.log(util.inspect(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD"), false, null, true));
