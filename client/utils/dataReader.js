@@ -124,7 +124,38 @@ const _fetchDistrict = async (state, district) => {
 // const savePath =
 //   "/Users/sherzodnimatullo/code/projects/416/states-redistrictor/src/main/resources/json/northcarolina.geojson";
 
-fs.writeFile("percentages.json", JSON.stringify(getPercentages()), (err) => {
-  if (err) throw err;
-  console.log("The file has been saved!");
-});
+const assignPartiesToDistricts = () => {
+  const geojsonpath =
+    "/Users/sherzodnimatullo/code/projects/416/states-redistrictor/src/main/resources/json/virginia.geojson";
+  const geojson = JSON.parse(fs.readFileSync(geojsonpath, "utf8"));
+  const features = geojson.features;
+  const assignment = {
+    8: "D",
+    11: "D",
+    2: "D",
+    4: "D",
+    3: "D",
+    7: "D",
+    10: "D",
+    6: "R",
+    1: "R",
+    5: "R",
+    9: "R",
+  };
+
+  features.forEach((district) => {
+    district.properties.party =
+      assignment[Number(district.properties.DISTRICT)];
+  });
+
+  geojson.features = features;
+
+  fs.writeFileSync(geojsonpath, JSON.stringify(geojson), "utf8");
+};
+
+assignPartiesToDistricts();
+
+// fs.writeFile("percentages.json", JSON.stringify(getPercentages()), (err) => {
+//   if (err) throw err;
+//   console.log("The file has been saved!");
+// });

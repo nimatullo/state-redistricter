@@ -12,10 +12,10 @@ const DEFAULT_STYLE = {
 
 const HIGHLIGHT_STYLE = {
   weight: 3,
-  color: "#3182CE",
+  color: "#008000",
   dashArray: "",
   fillOpacity: 0.5,
-  fillColor: "#63B3ED",
+  fillColor: "#006400",
 };
 
 const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
@@ -59,7 +59,8 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
   };
 
   const styleBasedOnParty = (feature) => {
-    DEFAULT_STYLE.fillColor = Math.random() < 0.5 ? "#E53E3E" : "#2C5282";
+    DEFAULT_STYLE.fillColor =
+      feature.properties.party === "R" ? "#E53E3E" : "#2C5282";
 
     return DEFAULT_STYLE;
   };
