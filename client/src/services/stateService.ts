@@ -18,7 +18,10 @@ class StateService {
   API: string;
 
   constructor() {
-    this.API = "http://localhost:8080/api";
+    // Get the API URL from the current URL
+    const url = new URL(window.location.href);
+    this.API = `${url.protocol}//${url.hostname}:8080/api`;
+    console.log(this.API);
   }
 
   async getGeoJSONForState(state: string): Promise<District[]> {

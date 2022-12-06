@@ -25,6 +25,7 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
   const mapContext = useMapContext();
 
   useEffect(() => {
+    map.fitBounds(geoJsonRef.current.getBounds());
     mapContext.resetZoom = () => {
       map.fitBounds(geoJsonRef.current.getBounds());
       setDistrict(null);
@@ -34,7 +35,8 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
   const hightlight = (e) => {
     const layer = e.target;
     layer.setStyle(HIGHLIGHT_STYLE);
-    const districtNumber = layer.feature.properties.name.split("-")[1];
+    const districtNumber =
+      layer.feature.properties.district || layer.feature.properties.DISTRICT;
     layer.bindTooltip(`District ${districtNumber}`).openTooltip();
   };
 

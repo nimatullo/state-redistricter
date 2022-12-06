@@ -1,5 +1,6 @@
 package io.pufferlabs.statesredistrictor.model;
 
+import io.pufferlabs.statesredistrictor.enums.Party;
 import io.pufferlabs.statesredistrictor.enums.Race;
 import lombok.Data;
 import org.springframework.data.annotation.Id;

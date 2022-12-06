@@ -35,12 +35,13 @@ public class StatesController {
     @GetMapping("/{stateName}")
     public ResponseEntity<?> getStateByName(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
-        state.setDistrictPlans(null);
+//        state.setDistrictPlans(null);
         return ResponseEntity.ok(state);
     }
 
     @GetMapping("/{state}/shape")
     public ResponseEntity<?> getGeoJsonForState(@PathVariable String state) {
+        System.out.println(state);
         return statesService.readGeoJsonFromDisk(state);
     }
 
@@ -48,7 +49,8 @@ public class StatesController {
     @GetMapping("/{stateName}/enacted")
     public ResponseEntity<?> getEnactedPlan(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
-        return ResponseEntity.ok(state.getDistrictPlans().get(0));
+        return ResponseEntity.ok(state);
+//        return ResponseEntity.ok(state.getDistrictPlans().get(0));
     }
 
     @GetMapping("/{stateName}/unique-plans")

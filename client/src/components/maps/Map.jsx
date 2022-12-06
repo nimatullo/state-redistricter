@@ -17,7 +17,7 @@ const Map = () => {
   const [geoData, setGeoData] = useState();
   const [loading, setLoading] = useState(true);
   const [stateCoordinates, setCoordinates] = useState(null);
-  const [zoom, setZoom] = useState(7);
+  const [zoom, setZoom] = useState(6);
 
   const geoJsonRef = useRef();
   const params = useParams();
@@ -55,7 +55,7 @@ const Map = () => {
           }}
           center={stateCoordinates}
           zoom={zoom}
-          // minZoom={7}
+          minZoom={6}
           loadingControl={true}
           scrollWheelZoom={true}
           whenReady={() => {
