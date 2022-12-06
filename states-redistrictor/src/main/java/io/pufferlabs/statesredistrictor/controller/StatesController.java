@@ -1,7 +1,6 @@
 package io.pufferlabs.statesredistrictor.controller;
 
 import io.pufferlabs.statesredistrictor.model.State;
-import io.pufferlabs.statesredistrictor.repository.StateRepository;
 import io.pufferlabs.statesredistrictor.service.StatesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +34,7 @@ public class StatesController {
     @GetMapping("/{stateName}")
     public ResponseEntity<?> getStateByName(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
-        state.setDistrictPlans(null);
+        state.setUniqueDistrictPlans(null);
         return ResponseEntity.ok(state);
     }
 
@@ -48,7 +47,7 @@ public class StatesController {
     @GetMapping("/{stateName}/enacted")
     public ResponseEntity<?> getEnactedPlan(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
-        return ResponseEntity.ok(state.getDistrictPlans().get(0));
+        return ResponseEntity.ok(state.getUniqueDistrictPlans().get(0));
     }
 
     @GetMapping("/{stateName}/unique-plans")

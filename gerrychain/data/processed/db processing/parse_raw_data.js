@@ -995,7 +995,7 @@ let data = {
   },
 };
 
-//for every pattern, save the average of each field except the ones that have the word "box_data" in them or aren't objects
+//for every pattern, save the average of each field except the ones that have the word "boxdata" in them or aren't objects
 function averageFields(patterns) {
   let averages = {};
   for (let pattern in patterns) {
@@ -1111,7 +1111,7 @@ function convertPatterns(patterns) {
     newPatterns[pattern]["planType"] = "MMD";
     newPatterns[pattern]["totalDistrictPlans"] = 10000;
     newPatterns[pattern]["pattern"] = pattern;
-    
+
     patternArray.push(newPatterns[pattern]);
   }
   return patternArray;
@@ -1122,8 +1122,7 @@ function castCategory(category) {
   if (category.toLowerCase().includes("hispanic")) return "HISPANIC";
   if (category.toLowerCase().includes("asian")) return "ASIAN";
   if (category.toLowerCase().includes("white")) return "WHITE";
-  return "total_pop";
-
+  return category;
 }
 
 function separateBoxPlots(patterns) {
@@ -1143,10 +1142,98 @@ function separateBoxPlots(patterns) {
   return newPatternsBoxPlots;
 }
 
-let newPatterns = convertPatterns(patterns);
-let newPatternsBoxPlots= separateBoxPlots(newPatterns);
+// let newPatterns = convertPatterns(patterns);
+// let newPatternsBoxPlots= separateBoxPlots(newPatterns);
 
-console.log(JSON.stringify(newPatterns));
-console.log();
-console.log(JSON.stringify(newPatternsBoxPlots));
+// console.log(JSON.stringify(newPatterns));
+// console.log();
+// console.log(JSON.stringify(newPatternsBoxPlots));
 //console.log(JSON.stringify(newPatterns));
+
+/////////////////////////////////////////////////////////////
+//New code parsing
+//import fs here
+let fs = require("fs");
+
+let inputData = fs.readFileSync("../north carolina/nc smd data.json");
+let rawSMDData = JSON.parse(inputData);
+let fieldsToAvg = [
+  "polsby_popper_scores",
+  "rep_splits",
+  "dem_splits",
+  "opportunity_reps",
+  "equal_pop",
+];
+
+function getEnsembleSummaryData(rawData, fieldsToAvg) {
+  let SMDSummaryData = {};
+
+  for (let field of fieldsToAvg) {
+    let sum = 0;
+    let count = 0;
+    //if field's value is 0, then save it as is
+    if (rawSMDData[field] === 0) {
+      SMDSummaryData[field] = 0;
+      continue;
+    }
+
+    for (let district in rawSMDData[field]) {
+      sum += rawSMDData[field][district];
+      count++;
+    }
+    SMDSummaryData[field] = sum / count;
+  }
+  SMDSummaryData = convertFieldsToCamelCase(SMDSummaryData, "avg");
+  SMDSummaryData["planType"] = "SMD";
+  SMDSummaryData["totalDistrictPlans"] = 10000;
+  SMDSummaryData["pattern"] = "SMD";
+  return SMDSummaryData;
+}
+
+function convertFieldsToCamelCase(object, prefixWord) {
+  let newObject = {};
+  for (let field in object) {
+    let newField = field
+      .split("_")
+      .map((word, index) => {
+        if (index === 0) {
+          if (prefixWord === undefined)
+            return word[0].toLowerCase() + word.slice(1);
+          else return prefixWord + word[0].toUpperCase() + word.slice(1);
+        }
+        return word[0].toUpperCase() + word.slice(1);
+      })
+      .join("");
+    newObject[newField] = object[field];
+  }
+  return newObject;
+}
+
+//console.log(JSON.stringify(getEnsembleSummaryData(rawSMDData, fieldsToAvg)));
+
+let fieldsToAnalyze = [
+  "black_pop_box_data",
+  "white_pop_box_data",
+  "asian_pop_box_data",
+  "hispanic_pop_box_data",
+];
+
+function getAnalysisData(rawData, fieldsToAnalyze) {
+  let analysisData = {};
+  analysisData["boxAndWhiskerPlots"] = {};
+  for (let field of fieldsToAnalyze) {
+    let newField = castCategory(field);
+    if (field.toLowerCase().includes("box_data")) {
+      analysisData["boxAndWhiskerPlots"][newField] = rawData[field];
+    } else analysisData[newField] = rawData[field];
+  }
+
+  ////////STUBS FOR MISSING DATA
+  analysisData["voteSeatSharePercentages"] = {};
+  analysisData["demRepSplitCounts"] = [];
+  analysisData["opportunityRepCounts"] = [];
+  return analysisData;
+}
+
+console.log(JSON.stringify(getAnalysisData(rawSMDData, fieldsToAnalyze)));
+//console.log(JSON.stringify(getAnalysisData(rawSMDData, fieldsToAnalyze)));
