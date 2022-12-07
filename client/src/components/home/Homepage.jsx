@@ -6,7 +6,6 @@ import "../../assets/styles/homepage.css";
 import Sidebar from "./Sidebar.jsx";
 
 import OUR_STATES from "../../assets/ourStates";
-import StateBreakdown from "../data display/StateBreakdown.jsx";
 import {
   ComposableMap,
   Geographies,
@@ -14,13 +13,14 @@ import {
   Marker,
 } from "react-simple-maps";
 import { geoCentroid } from "d3-geo";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = ({ setTooltipContent }) => {
   const [page, setPage] = React.useState();
+  const navigator = useNavigate();
 
   const renderPage = () => {
-    const stateData = OUR_STATES[page.toLowerCase()];
-    return <StateBreakdown state={stateData} />;
+    navigator(`/map/${page.toLowerCase()}/overview`);
   };
 
   return (

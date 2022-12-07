@@ -49,31 +49,13 @@ const StateOverview = () => {
     },
   };
 
-  const generateBarData = () => {
-    const totalDistrictNumber = OUR_STATES[params.state].districts;
-    const districtsList = [...Array(totalDistrictNumber).keys()].map(
-      (x) => x + 1
-    );
-
-    return {
-      labels: districtsList.map((x) => `District ${x}`),
-      datasets: [
-        {
-          label: "avg. efficiency gap",
-          data: districtsList.map((x) => Math.random()),
-          backgroundColor: generateColor(),
-        },
-      ],
-    };
-  };
-
   const convertToChartJSDataset = (data) => {
     return {
       labels: data.map((d) => d.title),
       datasets: [
         {
           data: data.map((d) => `${Number(d.percentage).toFixed(1)}`),
-          backgroundColor: data.map((d) => generateColor()),
+          backgroundColor: data.map((d) => d.color),
         },
       ],
     };
@@ -90,7 +72,7 @@ const StateOverview = () => {
       </Heading>
       <Tabs variant={"soft-rounded"} colorScheme={"gray"}>
         <TabList>
-          <Tab>State Demographics</Tab>
+          <Tab>Enacted Plan Demographics</Tab>
           <Tab>Ensemble Summary Comparison</Tab>
         </TabList>
 
@@ -99,11 +81,11 @@ const StateOverview = () => {
             <Heading size="xl" my="16px">
               Demographic breakdown
             </Heading>
-            <Flex justifyContent={"space-between"}>
+            <Flex justifyContent={"space-evenly"}>
               {stateData.length > 0 &&
                 stateData.map((data) => {
                   return (
-                    <Box>
+                    <Box width={"100%"}>
                       <Heading size="md">{Object.keys(data)[0]} (%)</Heading>
                       <Pie
                         data={convertToChartJSDataset(Object.values(data)[0])}
@@ -114,7 +96,7 @@ const StateOverview = () => {
             </Flex>
           </TabPanel>
           <TabPanel>
-            <Heading size="lg" my="16px">
+            <Heading size="xl" my="16px">
               Generated ensemble summary
             </Heading>
             <EnsembleSummary />

@@ -3,22 +3,25 @@
     "state": "virginia",
     "percentages": [
       {
-        "Sex": [
-          { "title": "Male", "percentage": 48.87854339588943 },
-          { "title": "Female", "percentage": 51.12145660411057 }
+        "Party Splits": [
+          { "title": "Republican", "percentage": 43, "color": "#ff725c" },
+          { "title": "Democrat", "percentage": 39, "color": "#2d82b7" },
+          { "title": "No Lean", "percentage": 18, "color": "#61c9a8" }
         ]
       },
       {
         "Race": [
-          { "title": "White", "percentage": 74.54267179079434 },
+          { "title": "White", "percentage": 67.8, "color": "#ff725c" },
           {
             "title": "Black or African American",
-            "percentage": 16.021529642531707
+            "percentage": 20.9,
+            "color": "#2d82b7"
           },
-          { "title": "Asian", "percentage": 2.7926545520135573 },
+          { "title": "Asian", "percentage": 8.8, "color": "#61c9a8" },
           {
-            "title": "Hispanic or Latino (of any race)",
-            "percentage": 25.71975343584848
+            "title": "Hispanic or Latino",
+            "percentage": 10.5,
+            "color": "#4c3b4d"
           }
         ]
       }
@@ -28,22 +31,25 @@
     "state": "utah",
     "percentages": [
       {
-        "Sex": [
-          { "title": "Male", "percentage": 48.8668250158062 },
-          { "title": "Female", "percentage": 51.13317498419381 }
+        "Party Splits": [
+          { "title": "Republican", "percentage": 54, "color": "#ff725c" },
+          { "title": "Democrat", "percentage": 30, "color": "#2d82b7" },
+          { "title": "No Lean", "percentage": 16, "color": "#61c9a8" }
         ]
       },
       {
         "Race": [
-          { "title": "White", "percentage": 76.7120727522397 },
+          { "title": "White", "percentage": 86.8, "color": "#ff725c" },
           {
             "title": "Black or African American",
-            "percentage": 15.49033668190512
+            "percentage": 2.1,
+            "color": "#2d82b7"
           },
-          { "title": "Asian", "percentage": 1.5268718578144902 },
+          { "title": "Asian", "percentage": 3.8, "color": "#61c9a8" },
           {
-            "title": "Hispanic or Latino (of any race)",
-            "percentage": 7.6860856437329925
+            "title": "Hispanic or Latino",
+            "percentage": 15.1,
+            "color": "#4c3b4d"
           }
         ]
       }
@@ -53,22 +59,25 @@
     "state": "north carolina",
     "percentages": [
       {
-        "Sex": [
-          { "title": "Male", "percentage": 48.64776207953091 },
-          { "title": "Female", "percentage": 51.3522379204691 }
+        "Party Splits": [
+          { "title": "Republican", "percentage": 41, "color": "#ff725c" },
+          { "title": "Democrat", "percentage": 43, "color": "#2d82b7" },
+          { "title": "No Lean", "percentage": 16, "color": "#61c9a8" }
         ]
       },
       {
         "Race": [
-          { "title": "White", "percentage": 70.74853072246543 },
+          { "title": "White", "percentage": 62.2, "color": "#ff725c" },
           {
             "title": "Black or African American",
-            "percentage": 23.037643987561605
+            "percentage": 22.5,
+            "color": "#2d82b7"
           },
-          { "title": "Asian", "percentage": 3.638029478847323 },
+          { "title": "Asian", "percentage": 3.3, "color": "#61c9a8" },
           {
-            "title": "Hispanic or Latino (of any race)",
-            "percentage": 9.541973230509983
+            "title": "Hispanic or Latino ",
+            "percentage": 10.7,
+            "color": "#4c3b4d"
           }
         ]
       }
