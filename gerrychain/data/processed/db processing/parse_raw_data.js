@@ -1304,7 +1304,8 @@ function getUniquePlansData(rawData, state, planType) {
       for (let district in plan[field]) {
         if (field === "rep_split" || field === "dem_split") {
           //need to adjust offset in file
-          let newDistrictId = planType === "MMD" ? Number(district) + 1 + "": district;
+          let newDistrictId =
+            planType === "MMD" ? Number(district) + 1 + "" : district;
           let newField = field === "rep_split" ? "repSplit" : "demSplit";
           districtMap[newDistrictId][newField] = plan[field][district];
         } else
@@ -1363,7 +1364,7 @@ for (let subEnsemble in rawMMDSubEnsembles) {
   MMDAnalysisData.push(subEnsembleAnalysisData);
 }
 //console.log(JSON.stringify({"MMD": MMDEnsembles}));
-//console.log(JSON.stringify({"MMD": MMDAnalysisData}));
+//console.log(JSON.stringify({ MMD: MMDAnalysisData }));
 
 
 console.log();
