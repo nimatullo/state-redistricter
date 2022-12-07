@@ -13,7 +13,7 @@ import java.util.Map;
 public class State {
     private String name;
     private StateAbbreviation abbreviation;
-    private StateShape stateShape;
+    private String stateShape;
     private List<DistrictPlan> uniqueDistrictPlans;
     private Map<PlanType, List<Analysis>> analyses; 
     private Map<PlanType, List<SummaryData>> ensembleSummaryData;

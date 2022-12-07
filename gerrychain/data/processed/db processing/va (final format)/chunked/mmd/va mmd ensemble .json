@@ -1,0 +1,34 @@
+{
+  "MMD": [
+    {
+      "avgPolsbyPopperScores": 0.2122071048591904,
+      "avgRepSplits": 0.49807143018785244,
+      "avgDemSplits": 0.5019285698121476,
+      "avgOpportunityReps": 0,
+      "avgEqualPop": 744541.9,
+      "planType": "MMD",
+      "totalDistrictPlans": 10000,
+      "pattern": "chain445"
+    },
+    {
+      "avgPolsbyPopperScores": 0.21693071601473876,
+      "avgRepSplits": 0.4986084705089994,
+      "avgDemSplits": 0.5013915294910006,
+      "avgOpportunityReps": 0,
+      "avgEqualPop": 1098661.3,
+      "planType": "MMD",
+      "totalDistrictPlans": 10000,
+      "pattern": "chain355"
+    },
+    {
+      "avgPolsbyPopperScores": 0.19337142576859787,
+      "avgRepSplits": 0.49934262291772336,
+      "avgDemSplits": 0.5006573770822766,
+      "avgOpportunityReps": 0,
+      "avgEqualPop": 971604.7666666667,
+      "planType": "MMD",
+      "totalDistrictPlans": 10000,
+      "pattern": "chain3334"
+    }
+  ]
+}

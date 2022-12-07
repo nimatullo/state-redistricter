@@ -1170,6 +1170,7 @@ function separateBoxPlots(patterns) {
 //New code parsing
 //import fs here
 let fs = require("fs");
+let uniqueDistrictPlanIdCounter = 0;
 
 let rawSMDData = JSON.parse(
   fs.readFileSync("../north carolina/nc smd data.json")
@@ -1266,6 +1267,7 @@ function getUniquePlansData(rawData, state, planType) {
     newPlan["planType"] = planType === undefined ? "SMD" : planType;
     newPlan["description"] = plan;
     newPlan["shape"] = "polygon";
+    newPlan["id"] = uniqueDistrictPlanIdCounter++;
 
     plan = rawUniquePlans[plan]; //convert plan from string to object
 
@@ -1303,7 +1305,8 @@ function getUniquePlansData(rawData, state, planType) {
         if (field === "rep_split" || field === "dem_split") {
           //need to adjust offset in file
           let newDistrictId = planType === "MMD" ? Number(district) + 1 + "": district;
-          districtMap[newDistrictId][field] = plan[field][district];
+          let newField = field === "rep_split" ? "repSplit" : "demSplit";
+          districtMap[newDistrictId][newField] = plan[field][district];
         } else
           districtMap[district]["populations"].push({
             type: castCategory(field),
@@ -1328,9 +1331,9 @@ function getUniquePlansData(rawData, state, planType) {
 ////////////////////////////////// SMD Parsing //////////////////////////////////
 //console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
 //console.log(JSON.stringify(getAnalysisData(rawSMDData, fieldsToAnalyze)));
-// console.log(
-//   JSON.stringify(getUniquePlansData(rawSMDData, "North Carolina"))
-// );
+console.log(
+  JSON.stringify(getUniquePlansData(rawSMDData, "North Carolina"))
+);
 
 ////////////////////////////////// MMD Parsing //////////////////////////////////
 let MMDEnsembles = [];
@@ -1360,11 +1363,11 @@ for (let subEnsemble in rawMMDSubEnsembles) {
   MMDAnalysisData.push(subEnsembleAnalysisData);
 }
 //console.log(JSON.stringify({"MMD": MMDEnsembles}));
-console.log(JSON.stringify({"MMD": MMDAnalysisData}));
+//console.log(JSON.stringify({"MMD": MMDAnalysisData}));
 
 
-
-//console.log(JSON.stringify(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")));
+console.log();
+console.log(JSON.stringify(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")));
 // //print out full object using util.inspect
 // let util = require("util");
 // console.log(util.inspect(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD"), false, null, true));
