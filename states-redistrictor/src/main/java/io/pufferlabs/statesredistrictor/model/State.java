@@ -15,7 +15,7 @@ public class State {
     private StateAbbreviation abbreviation;
     private StateShape stateShape;
     private List<DistrictPlan> uniqueDistrictPlans;
-    private Analysis analysis;
+    private Map<PlanType, List<Analysis>> analyses; 
     private Map<PlanType, List<SummaryData>> ensembleSummaryData;
 
 }

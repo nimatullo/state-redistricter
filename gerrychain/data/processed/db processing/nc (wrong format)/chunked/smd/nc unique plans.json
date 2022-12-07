@@ -1,0 +1,413 @@
+[
+  {
+    "description": "democrat split > .90",
+    "overview": {
+      "state": "North Carolina",
+      "populations": [
+        { "type": "WHITE", "count": 6223995 },
+        { "type": "BLACK", "count": 2019854 },
+        { "type": "HISPANIC", "count": 800120 },
+        { "type": "ASIAN", "count": 206579 }
+      ],
+      "percentDem": 0.49954887604289794,
+      "percentRep": 0.5004511239571021,
+      "opportunityDistricts": 1,
+      "safeDistricts": 3,
+      "polsbyPopperScore": 0.17937928728779884
+    },
+    "districts": [
+      {
+        "id": 1,
+        "populations": [
+          { "type": "WHITE", "count": 444404 },
+          { "type": "BLACK", "count": 193066 },
+          { "type": "HISPANIC", "count": 53149 },
+          { "type": "ASIAN", "count": 21434 }
+        ]
+      },
+      {
+        "id": 2,
+        "populations": [
+          { "type": "WHITE", "count": 372232 },
+          { "type": "BLACK", "count": 188847 },
+          { "type": "HISPANIC", "count": 81752 },
+          { "type": "ASIAN", "count": 9440 }
+        ]
+      },
+      {
+        "id": 3,
+        "populations": [
+          { "type": "WHITE", "count": 390158 },
+          { "type": "BLACK", "count": 271769 },
+          { "type": "HISPANIC", "count": 38408 },
+          { "type": "ASIAN", "count": 4155 }
+        ]
+      },
+      {
+        "id": 4,
+        "populations": [
+          { "type": "WHITE", "count": 538157 },
+          { "type": "BLACK", "count": 100531 },
+          { "type": "HISPANIC", "count": 65050 },
+          { "type": "ASIAN", "count": 16675 }
+        ]
+      },
+      {
+        "id": 5,
+        "populations": [
+          { "type": "WHITE", "count": 632178 },
+          { "type": "BLACK", "count": 28391 },
+          { "type": "HISPANIC", "count": 40051 },
+          { "type": "ASIAN", "count": 5543 }
+        ]
+      },
+      {
+        "id": 6,
+        "populations": [
+          { "type": "WHITE", "count": 451202 },
+          { "type": "BLACK", "count": 166350 },
+          { "type": "HISPANIC", "count": 77211 },
+          { "type": "ASIAN", "count": 29194 }
+        ]
+      },
+      {
+        "id": 7,
+        "populations": [
+          { "type": "WHITE", "count": 436391 },
+          { "type": "BLACK", "count": 205404 },
+          { "type": "HISPANIC", "count": 58285 },
+          { "type": "ASIAN", "count": 8602 }
+        ]
+      },
+      {
+        "id": 8,
+        "populations": [
+          { "type": "WHITE", "count": 578219 },
+          { "type": "BLACK", "count": 80155 },
+          { "type": "HISPANIC", "count": 42540 },
+          { "type": "ASIAN", "count": 11791 }
+        ]
+      },
+      {
+        "id": 9,
+        "populations": [
+          { "type": "WHITE", "count": 323567 },
+          { "type": "BLACK", "count": 264562 },
+          { "type": "HISPANIC", "count": 100870 },
+          { "type": "ASIAN", "count": 31597 }
+        ]
+      },
+      {
+        "id": 10,
+        "populations": [
+          { "type": "WHITE", "count": 437414 },
+          { "type": "BLACK", "count": 172056 },
+          { "type": "HISPANIC", "count": 70845 },
+          { "type": "ASIAN", "count": 41503 }
+        ]
+      },
+      {
+        "id": 11,
+        "populations": [
+          { "type": "WHITE", "count": 503186 },
+          { "type": "BLACK", "count": 155279 },
+          { "type": "HISPANIC", "count": 53570 },
+          { "type": "ASIAN", "count": 6648 }
+        ]
+      },
+      {
+        "id": 12,
+        "populations": [
+          { "type": "WHITE", "count": 541668 },
+          { "type": "BLACK", "count": 105311 },
+          { "type": "HISPANIC", "count": 62952 },
+          { "type": "ASIAN", "count": 8409 }
+        ]
+      },
+      {
+        "id": 13,
+        "populations": [
+          { "type": "WHITE", "count": 575219 },
+          { "type": "BLACK", "count": 88133 },
+          { "type": "HISPANIC", "count": 55437 },
+          { "type": "ASIAN", "count": 11588 }
+        ]
+      }
+    ],
+    "type": "SMD"
+  },
+  {
+    "description": "high opportunity rep count",
+    "overview": {
+      "state": "North Carolina",
+      "populations": [
+        { "type": "WHITE", "count": 6223995 },
+        { "type": "BLACK", "count": 2019854 },
+        { "type": "HISPANIC", "count": 800120 },
+        { "type": "ASIAN", "count": 206579 }
+      ],
+      "percentDem": 0.4967831087694564,
+      "percentRep": 0.5032168912305436,
+      "opportunityDistricts": 0,
+      "safeDistricts": 1,
+      "polsbyPopperScore": 0.17937928728779884
+    },
+    "districts": [
+      {
+        "id": 1,
+        "populations": [
+          { "type": "WHITE", "count": 442853 },
+          { "type": "BLACK", "count": 150972 },
+          { "type": "HISPANIC", "count": 74395 },
+          { "type": "ASIAN", "count": 51109 }
+        ]
+      },
+      {
+        "id": 2,
+        "populations": [
+          { "type": "WHITE", "count": 542510 },
+          { "type": "BLACK", "count": 112126 },
+          { "type": "HISPANIC", "count": 63162 },
+          { "type": "ASIAN", "count": 13269 }
+        ]
+      },
+      {
+        "id": 3,
+        "populations": [
+          { "type": "WHITE", "count": 542677 },
+          { "type": "BLACK", "count": 110106 },
+          { "type": "HISPANIC", "count": 45787 },
+          { "type": "ASIAN", "count": 14341 }
+        ]
+      },
+      {
+        "id": 4,
+        "populations": [
+          { "type": "WHITE", "count": 444155 },
+          { "type": "BLACK", "count": 202957 },
+          { "type": "HISPANIC", "count": 54054 },
+          { "type": "ASIAN", "count": 16594 }
+        ]
+      },
+      {
+        "id": 5,
+        "populations": [
+          { "type": "WHITE", "count": 377072 },
+          { "type": "BLACK", "count": 208938 },
+          { "type": "HISPANIC", "count": 69699 },
+          { "type": "ASIAN", "count": 10284 }
+        ]
+      },
+      {
+        "id": 6,
+        "populations": [
+          { "type": "WHITE", "count": 447182 },
+          { "type": "BLACK", "count": 164584 },
+          { "type": "HISPANIC", "count": 72844 },
+          { "type": "ASIAN", "count": 23437 }
+        ]
+      },
+      {
+        "id": 7,
+        "populations": [
+          { "type": "WHITE", "count": 547558 },
+          { "type": "BLACK", "count": 94667 },
+          { "type": "HISPANIC", "count": 61803 },
+          { "type": "ASIAN", "count": 7549 }
+        ]
+      },
+      {
+        "id": 8,
+        "populations": [
+          { "type": "WHITE", "count": 440563 },
+          { "type": "BLACK", "count": 172430 },
+          { "type": "HISPANIC", "count": 88656 },
+          { "type": "ASIAN", "count": 16994 }
+        ]
+      },
+      {
+        "id": 9,
+        "populations": [
+          { "type": "WHITE", "count": 641109 },
+          { "type": "BLACK", "count": 30534 },
+          { "type": "HISPANIC", "count": 40760 },
+          { "type": "ASIAN", "count": 5607 }
+        ]
+      },
+      {
+        "id": 10,
+        "populations": [
+          { "type": "WHITE", "count": 448534 },
+          { "type": "BLACK", "count": 158162 },
+          { "type": "HISPANIC", "count": 79001 },
+          { "type": "ASIAN", "count": 25765 }
+        ]
+      },
+      {
+        "id": 11,
+        "populations": [
+          { "type": "WHITE", "count": 423676 },
+          { "type": "BLACK", "count": 223255 },
+          { "type": "HISPANIC", "count": 68169 },
+          { "type": "ASIAN", "count": 7397 }
+        ]
+      },
+      {
+        "id": 12,
+        "populations": [
+          { "type": "WHITE", "count": 500030 },
+          { "type": "BLACK", "count": 129012 },
+          { "type": "HISPANIC", "count": 48971 },
+          { "type": "ASIAN", "count": 7800 }
+        ]
+      },
+      {
+        "id": 13,
+        "populations": [
+          { "type": "WHITE", "count": 426076 },
+          { "type": "BLACK", "count": 262111 },
+          { "type": "HISPANIC", "count": 32819 },
+          { "type": "ASIAN", "count": 6433 }
+        ]
+      }
+    ],
+    "type": "SMD"
+  },
+  {
+    "description": "high vote seat share skew",
+    "overview": {
+      "state": "North Carolina",
+      "populations": [
+        { "type": "WHITE", "count": 6223995 },
+        { "type": "BLACK", "count": 2019854 },
+        { "type": "HISPANIC", "count": 800120 },
+        { "type": "ASIAN", "count": 206579 }
+      ],
+      "percentDem": 0.49685144878424575,
+      "percentRep": 0.5031485512157543,
+      "opportunityDistricts": 0,
+      "safeDistricts": 4,
+      "polsbyPopperScore": 0.17937928728779884
+    },
+    "districts": [
+      {
+        "id": 1,
+        "populations": [
+          { "type": "WHITE", "count": 441574 },
+          { "type": "BLACK", "count": 162844 },
+          { "type": "HISPANIC", "count": 80881 },
+          { "type": "ASIAN", "count": 23882 }
+        ]
+      },
+      {
+        "id": 2,
+        "populations": [
+          { "type": "WHITE", "count": 454897 },
+          { "type": "BLACK", "count": 190033 },
+          { "type": "HISPANIC", "count": 53447 },
+          { "type": "ASIAN", "count": 9040 }
+        ]
+      },
+      {
+        "id": 3,
+        "populations": [
+          { "type": "WHITE", "count": 432505 },
+          { "type": "BLACK", "count": 205517 },
+          { "type": "HISPANIC", "count": 55083 },
+          { "type": "ASIAN", "count": 21349 }
+        ]
+      },
+      {
+        "id": 4,
+        "populations": [
+          { "type": "WHITE", "count": 598166 },
+          { "type": "BLACK", "count": 75785 },
+          { "type": "HISPANIC", "count": 41776 },
+          { "type": "ASIAN", "count": 10633 }
+        ]
+      },
+      {
+        "id": 5,
+        "populations": [
+          { "type": "WHITE", "count": 453340 },
+          { "type": "BLACK", "count": 163081 },
+          { "type": "HISPANIC", "count": 67199 },
+          { "type": "ASIAN", "count": 46156 }
+        ]
+      },
+      {
+        "id": 6,
+        "populations": [
+          { "type": "WHITE", "count": 499566 },
+          { "type": "BLACK", "count": 112177 },
+          { "type": "HISPANIC", "count": 72759 },
+          { "type": "ASIAN", "count": 21933 }
+        ]
+      },
+      {
+        "id": 7,
+        "populations": [
+          { "type": "WHITE", "count": 402688 },
+          { "type": "BLACK", "count": 267407 },
+          { "type": "HISPANIC", "count": 39959 },
+          { "type": "ASIAN", "count": 4959 }
+        ]
+      },
+      {
+        "id": 8,
+        "populations": [
+          { "type": "WHITE", "count": 518699 },
+          { "type": "BLACK", "count": 116032 },
+          { "type": "HISPANIC", "count": 68389 },
+          { "type": "ASIAN", "count": 9380 }
+        ]
+      },
+      {
+        "id": 9,
+        "populations": [
+          { "type": "WHITE", "count": 648211 },
+          { "type": "BLACK", "count": 29539 },
+          { "type": "HISPANIC", "count": 40427 },
+          { "type": "ASIAN", "count": 5758 }
+        ]
+      },
+      {
+        "id": 10,
+        "populations": [
+          { "type": "WHITE", "count": 373496 },
+          { "type": "BLACK", "count": 227594 },
+          { "type": "HISPANIC", "count": 80008 },
+          { "type": "ASIAN", "count": 29691 }
+        ]
+      },
+      {
+        "id": 11,
+        "populations": [
+          { "type": "WHITE", "count": 440990 },
+          { "type": "BLACK", "count": 156324 },
+          { "type": "HISPANIC", "count": 45841 },
+          { "type": "ASIAN", "count": 5447 }
+        ]
+      },
+      {
+        "id": 12,
+        "populations": [
+          { "type": "WHITE", "count": 405792 },
+          { "type": "BLACK", "count": 215704 },
+          { "type": "HISPANIC", "count": 86955 },
+          { "type": "ASIAN", "count": 10129 }
+        ]
+      },
+      {
+        "id": 13,
+        "populations": [
+          { "type": "WHITE", "count": 554071 },
+          { "type": "BLACK", "count": 97817 },
+          { "type": "HISPANIC", "count": 67396 },
+          { "type": "ASIAN", "count": 8222 }
+        ]
+      }
+    ],
+    "type": "SMD"
+  }
+]

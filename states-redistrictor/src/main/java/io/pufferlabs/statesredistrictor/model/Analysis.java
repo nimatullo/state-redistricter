@@ -12,10 +12,9 @@ import java.util.Map;
 public class Analysis {
     @Id
     private String state;
-    private Map<Race, Map<String, Map<String, Double>>> SMDBoxAndWhiskerPlots;
-    private Map<Race, Map<String, Map<String, Double>>> MMDBoxAndWhiskerPlots;
+    private Map<Race, Map<String, Map<String, Double>>> boxAndWhiskerPlots;
     private Map<Party, Map<String, Double>> voteSeatSharePercentages;
-    private List<List<Double>> demRepSplits; //list of splits per plan
-    private Double avgOpportunityReps; 
+    private List<Integer> demRepSplitCounts; //list of tallies for each time a # of dems and reps are in a plan, for an ensemble
+    private List<Integer> opportunityRepCounts; //number of times that an opp rep occured per district
 
 }

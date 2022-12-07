@@ -10,8 +10,8 @@ public class SummaryData {
     private PlanType planType;
     private Integer totalDistrictPlans;
     private Double avgOpportunityReps;
-    private Double avgEqualPopMeasure;
-    private Double avgPolsbyPopperMeasure;
+    private Double avgEqualPop;
+    private Double avgPolsbyPopperScores;
     private Double avgRepSplit;
     private Double avgDemSplit;
 
