@@ -11,6 +11,7 @@ import {
   Heading,
   Center,
   Button,
+  Select,
 } from "@chakra-ui/react";
 import React from "react";
 import { useEffect } from "react";
@@ -28,18 +29,36 @@ const EnsembleSummary = () => {
     setSummaryData(data);
   }, []);
 
+  const fetchSummaryData = (layout) => {
+    const data = stateService.getSummaryData(params.state, layout);
+    setSummaryData(data);
+  };
+
   return (
     <>
-      <Grid gridTemplateColumns={"1fr 1fr 1fr"}>
+      <Grid gridTemplateColumns={"1fr 1fr 1fr"} placeItems="center">
         <GridItem gridColumn={2}>
-          <Heading textAlign={"right"} as="h1" fontSize="xl">
+          <Heading textAlign={"left"} as="h1" fontSize="lg">
             Single-member districts
           </Heading>
         </GridItem>
         <GridItem>
-          <Heading textAlign={"right"} as="h1" fontSize="xl">
-            Multi-member districts
-          </Heading>
+          <Select
+            fontWeight={"700"}
+            textAlign={"right"}
+            fontSize="lg"
+            border={"transparent"}
+            _hover={{ cursor: "pointer" }}
+            onChange={(e) => {
+              fetchSummaryData(e.target.value);
+            }}
+          >
+            <option>Multi-member districts</option>
+            <optgroup label="MMD Layouts">
+              <option value="345">335</option>
+              <option value="333">333</option>
+            </optgroup>
+          </Select>
         </GridItem>
       </Grid>
 

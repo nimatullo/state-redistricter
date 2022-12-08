@@ -44,7 +44,7 @@ class StateService {
     );
   }
 
-  getSummaryData(state: string) {
+  getSummaryData(state: string, layout?: string) {
     return {
       numberOfDistricts: {
         mmd: randomNumber(3, 18),

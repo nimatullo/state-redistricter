@@ -4,7 +4,7 @@
     "percentages": [
       {
         "Party Splits": [
-          { "title": "Republican", "percentage": 43, "color": "#ff725c" },
+          { "title": "Republican", "percentage": 43, "color": "#E72B0D" },
           { "title": "Democrat", "percentage": 39, "color": "#2d82b7" },
           { "title": "No Lean", "percentage": 18, "color": "#61c9a8" }
         ]
@@ -32,14 +32,14 @@
     "percentages": [
       {
         "Party Splits": [
-          { "title": "Republican", "percentage": 54, "color": "#ff725c" },
+          { "title": "Republican", "percentage": 54, "color": "#EC5C46" },
           { "title": "Democrat", "percentage": 30, "color": "#2d82b7" },
           { "title": "No Lean", "percentage": 16, "color": "#61c9a8" }
         ]
       },
       {
         "Race": [
-          { "title": "White", "percentage": 86.8, "color": "#ff725c" },
+          { "title": "White", "percentage": 86.8, "color": "#E72B0D" },
           {
             "title": "Black or African American",
             "percentage": 2.1,
@@ -60,14 +60,14 @@
     "percentages": [
       {
         "Party Splits": [
-          { "title": "Republican", "percentage": 41, "color": "#ff725c" },
+          { "title": "Republican", "percentage": 41, "color": "#E72B0D" },
           { "title": "Democrat", "percentage": 43, "color": "#2d82b7" },
           { "title": "No Lean", "percentage": 16, "color": "#61c9a8" }
         ]
       },
       {
         "Race": [
-          { "title": "White", "percentage": 62.2, "color": "#ff725c" },
+          { "title": "White", "percentage": 62.2, "color": "#E72B0D" },
           {
             "title": "Black or African American",
             "percentage": 22.5,
