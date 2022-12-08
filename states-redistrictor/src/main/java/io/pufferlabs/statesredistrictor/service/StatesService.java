@@ -1,5 +1,6 @@
 package io.pufferlabs.statesredistrictor.service;
 
+import io.pufferlabs.statesredistrictor.enums.PlanType;
 import io.pufferlabs.statesredistrictor.model.State;
 import io.pufferlabs.statesredistrictor.repository.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,21 @@ public class StatesService {
         try {
             state = state.replace(" ", "").toLowerCase();
             String path = String.format("src/main/resources/json/%s.geojson", state);
+            file = ResourceUtils.getFile(path);
+            String content = new String(Files.readAllBytes(file.toPath()));
+            return ResponseEntity.ok(content);
+        } catch (FileNotFoundException e) {
+            return new ResponseEntity<>("The requested state " + state + " could not be fetched", HttpStatus.NOT_FOUND);
+        } catch (IOException e) {
+            return ResponseEntity.internalServerError().body(e.getMessage());
+        }
+    }
+
+    public ResponseEntity<?> readUniquePlanGeoJsonFromDisk(String state, String description, PlanType planType) {
+        File file;
+        try {
+            state = state.replace(" ", "").toLowerCase();
+            String path = String.format("src/main/resources/json/%s/%s/%s.geojson", state, planType.toString().toLowerCase(), description);
             file = ResourceUtils.getFile(path);
             String content = new String(Files.readAllBytes(file.toPath()));
             return ResponseEntity.ok(content);

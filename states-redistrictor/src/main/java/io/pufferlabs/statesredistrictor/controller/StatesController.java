@@ -79,6 +79,13 @@ public class StatesController {
         return ResponseEntity.ok(plan);
     }
 
+    @GetMapping("/{stateName}/unique-plans/geojson/{planType}/{description}")
+    public ResponseEntity<?> getUniquePlansGeoJson(@PathVariable String stateName, @PathVariable String planType,
+            @PathVariable String description) {
+        return statesService.readUniquePlanGeoJsonFromDisk(stateName, description, PlanType.valueOf(planType));
+
+    }
+
     @GetMapping("/{stateName}/ensemble-summaries")
     public ResponseEntity<?> getEnsembleSummaries(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
