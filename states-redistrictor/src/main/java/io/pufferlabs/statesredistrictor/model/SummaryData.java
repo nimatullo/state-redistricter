@@ -12,7 +12,7 @@ public class SummaryData {
     private Double avgOpportunityReps;
     private Double avgEqualPop;
     private Double avgPolsbyPopperScores;
-    private Double avgRepSplit;
-    private Double avgDemSplit;
+    private Double avgRepSplits;
+    private Double avgDemSplits;
 
 }

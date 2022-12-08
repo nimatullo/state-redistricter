@@ -2,9 +2,9 @@
   "uniqueDistrictPlans": [
     {
       "planType": "SMD",
-      "pattern": "SMD",
       "description": "democrat split > .90",
       "shape": "polygon",
+      "id": 0,
       "overview": {
         "state": "North Carolina",
         "opportunityDistricts": 1,
@@ -19,8 +19,8 @@
             { "type": "ASIAN", "count": 21434 },
             { "type": "HISPANIC", "count": 53149 }
           ],
-          "rep_split": 0.4483115076393954,
-          "dem_split": 0.5516884923606046,
+          "repSplit": 0.4483115076393954,
+          "demSplit": 0.5516884923606046,
           "id": "1"
         },
         {
@@ -30,8 +30,8 @@
             { "type": "ASIAN", "count": 9440 },
             { "type": "HISPANIC", "count": 81752 }
           ],
-          "rep_split": 0.5386285592910329,
-          "dem_split": 0.46137144070896713,
+          "repSplit": 0.5386285592910329,
+          "demSplit": 0.46137144070896713,
           "id": "2"
         },
         {
@@ -41,8 +41,8 @@
             { "type": "ASIAN", "count": 4155 },
             { "type": "HISPANIC", "count": 38408 }
           ],
-          "rep_split": 0.5074166130002289,
-          "dem_split": 0.49258338699977117,
+          "repSplit": 0.5074166130002289,
+          "demSplit": 0.49258338699977117,
           "id": "3"
         },
         {
@@ -52,8 +52,8 @@
             { "type": "ASIAN", "count": 16675 },
             { "type": "HISPANIC", "count": 65050 }
           ],
-          "rep_split": 0.5998201566867073,
-          "dem_split": 0.40017984331329276,
+          "repSplit": 0.5998201566867073,
+          "demSplit": 0.40017984331329276,
           "id": "4"
         },
         {
@@ -63,8 +63,8 @@
             { "type": "ASIAN", "count": 5543 },
             { "type": "HISPANIC", "count": 40051 }
           ],
-          "rep_split": 0.5598492598074645,
-          "dem_split": 0.4401507401925355,
+          "repSplit": 0.5598492598074645,
+          "demSplit": 0.4401507401925355,
           "id": "5"
         },
         {
@@ -74,8 +74,8 @@
             { "type": "ASIAN", "count": 29194 },
             { "type": "HISPANIC", "count": 77211 }
           ],
-          "rep_split": 0.36628366516627703,
-          "dem_split": 0.633716334833723,
+          "repSplit": 0.36628366516627703,
+          "demSplit": 0.633716334833723,
           "id": "6"
         },
         {
@@ -85,8 +85,8 @@
             { "type": "ASIAN", "count": 8602 },
             { "type": "HISPANIC", "count": 58285 }
           ],
-          "rep_split": 0.5675023450157756,
-          "dem_split": 0.43249765498422443,
+          "repSplit": 0.5675023450157756,
+          "demSplit": 0.43249765498422443,
           "id": "7"
         },
         {
@@ -96,8 +96,8 @@
             { "type": "ASIAN", "count": 11791 },
             { "type": "HISPANIC", "count": 42540 }
           ],
-          "rep_split": 0.6915487714072971,
-          "dem_split": 0.3084512285927029,
+          "repSplit": 0.6915487714072971,
+          "demSplit": 0.3084512285927029,
           "id": "8"
         },
         {
@@ -107,8 +107,8 @@
             { "type": "ASIAN", "count": 31597 },
             { "type": "HISPANIC", "count": 100870 }
           ],
-          "rep_split": 0.09215797111689666,
-          "dem_split": 0.9078420288831033,
+          "repSplit": 0.09215797111689666,
+          "demSplit": 0.9078420288831033,
           "id": "9"
         },
         {
@@ -118,8 +118,8 @@
             { "type": "ASIAN", "count": 41503 },
             { "type": "HISPANIC", "count": 70845 }
           ],
-          "rep_split": 0.33684565997837124,
-          "dem_split": 0.6631543400216288,
+          "repSplit": 0.33684565997837124,
+          "demSplit": 0.6631543400216288,
           "id": "10"
         },
         {
@@ -129,8 +129,8 @@
             { "type": "ASIAN", "count": 6648 },
             { "type": "HISPANIC", "count": 53570 }
           ],
-          "rep_split": 0.5838490828429843,
-          "dem_split": 0.4161509171570157,
+          "repSplit": 0.5838490828429843,
+          "demSplit": 0.4161509171570157,
           "id": "11"
         },
         {
@@ -140,8 +140,8 @@
             { "type": "ASIAN", "count": 8409 },
             { "type": "HISPANIC", "count": 62952 }
           ],
-          "rep_split": 0.5844598932904951,
-          "dem_split": 0.4155401067095049,
+          "repSplit": 0.5844598932904951,
+          "demSplit": 0.4155401067095049,
           "id": "12"
         },
         {
@@ -151,17 +151,17 @@
             { "type": "ASIAN", "count": 11588 },
             { "type": "HISPANIC", "count": 55437 }
           ],
-          "rep_split": 0.6291911261994012,
-          "dem_split": 0.3708088738005988,
+          "repSplit": 0.6291911261994012,
+          "demSplit": 0.3708088738005988,
           "id": "13"
         }
       ]
     },
     {
       "planType": "SMD",
-      "pattern": "SMD",
       "description": "high opportunity rep count",
       "shape": "polygon",
+      "id": 1,
       "overview": {
         "state": "North Carolina",
         "opportunityDistricts": 0,
@@ -176,8 +176,8 @@
             { "type": "ASIAN", "count": 51109 },
             { "type": "HISPANIC", "count": 74395 }
           ],
-          "rep_split": 0.2981685053590358,
-          "dem_split": 0.7018314946409643,
+          "repSplit": 0.2981685053590358,
+          "demSplit": 0.7018314946409643,
           "id": "1"
         },
         {
@@ -187,8 +187,8 @@
             { "type": "ASIAN", "count": 13269 },
             { "type": "HISPANIC", "count": 63162 }
           ],
-          "rep_split": 0.6508037187176307,
-          "dem_split": 0.34919628128236935,
+          "repSplit": 0.6508037187176307,
+          "demSplit": 0.34919628128236935,
           "id": "2"
         },
         {
@@ -198,8 +198,8 @@
             { "type": "ASIAN", "count": 14341 },
             { "type": "HISPANIC", "count": 45787 }
           ],
-          "rep_split": 0.5951588849374785,
-          "dem_split": 0.4048411150625215,
+          "repSplit": 0.5951588849374785,
+          "demSplit": 0.4048411150625215,
           "id": "3"
         },
         {
@@ -209,8 +209,8 @@
             { "type": "ASIAN", "count": 16594 },
             { "type": "HISPANIC", "count": 54054 }
           ],
-          "rep_split": 0.46285543850556304,
-          "dem_split": 0.5371445614944369,
+          "repSplit": 0.46285543850556304,
+          "demSplit": 0.5371445614944369,
           "id": "4"
         },
         {
@@ -220,8 +220,8 @@
             { "type": "ASIAN", "count": 10284 },
             { "type": "HISPANIC", "count": 69699 }
           ],
-          "rep_split": 0.49594301816791514,
-          "dem_split": 0.5040569818320848,
+          "repSplit": 0.49594301816791514,
+          "demSplit": 0.5040569818320848,
           "id": "5"
         },
         {
@@ -231,8 +231,8 @@
             { "type": "ASIAN", "count": 23437 },
             { "type": "HISPANIC", "count": 72844 }
           ],
-          "rep_split": 0.3875354965546002,
-          "dem_split": 0.6124645034453998,
+          "repSplit": 0.3875354965546002,
+          "demSplit": 0.6124645034453998,
           "id": "6"
         },
         {
@@ -242,8 +242,8 @@
             { "type": "ASIAN", "count": 7549 },
             { "type": "HISPANIC", "count": 61803 }
           ],
-          "rep_split": 0.622876863213374,
-          "dem_split": 0.377123136786626,
+          "repSplit": 0.622876863213374,
+          "demSplit": 0.377123136786626,
           "id": "7"
         },
         {
@@ -253,8 +253,8 @@
             { "type": "ASIAN", "count": 16994 },
             { "type": "HISPANIC", "count": 88656 }
           ],
-          "rep_split": 0.4309858658489302,
-          "dem_split": 0.5690141341510697,
+          "repSplit": 0.4309858658489302,
+          "demSplit": 0.5690141341510697,
           "id": "8"
         },
         {
@@ -264,8 +264,8 @@
             { "type": "ASIAN", "count": 5607 },
             { "type": "HISPANIC", "count": 40760 }
           ],
-          "rep_split": 0.5616560916601999,
-          "dem_split": 0.4383439083398001,
+          "repSplit": 0.5616560916601999,
+          "demSplit": 0.4383439083398001,
           "id": "9"
         },
         {
@@ -275,8 +275,8 @@
             { "type": "ASIAN", "count": 25765 },
             { "type": "HISPANIC", "count": 79001 }
           ],
-          "rep_split": 0.36171672795351645,
-          "dem_split": 0.6382832720464835,
+          "repSplit": 0.36171672795351645,
+          "demSplit": 0.6382832720464835,
           "id": "10"
         },
         {
@@ -286,8 +286,8 @@
             { "type": "ASIAN", "count": 7397 },
             { "type": "HISPANIC", "count": 68169 }
           ],
-          "rep_split": 0.5609938183278379,
-          "dem_split": 0.4390061816721621,
+          "repSplit": 0.5609938183278379,
+          "demSplit": 0.4390061816721621,
           "id": "11"
         },
         {
@@ -297,8 +297,8 @@
             { "type": "ASIAN", "count": 7800 },
             { "type": "HISPANIC", "count": 48971 }
           ],
-          "rep_split": 0.6046262556627929,
-          "dem_split": 0.395373744337207,
+          "repSplit": 0.6046262556627929,
+          "demSplit": 0.395373744337207,
           "id": "12"
         },
         {
@@ -308,17 +308,17 @@
             { "type": "ASIAN", "count": 6433 },
             { "type": "HISPANIC", "count": 32819 }
           ],
-          "rep_split": 0.5084989010881907,
-          "dem_split": 0.49150109891180926,
+          "repSplit": 0.5084989010881907,
+          "demSplit": 0.49150109891180926,
           "id": "13"
         }
       ]
     },
     {
       "planType": "SMD",
-      "pattern": "SMD",
       "description": "high vote seat share skew",
       "shape": "polygon",
+      "id": 2,
       "overview": {
         "state": "North Carolina",
         "opportunityDistricts": 0,
@@ -333,8 +333,8 @@
             { "type": "ASIAN", "count": 23882 },
             { "type": "HISPANIC", "count": 80881 }
           ],
-          "rep_split": 0.3930822376315158,
-          "dem_split": 0.6069177623684842,
+          "repSplit": 0.3930822376315158,
+          "demSplit": 0.6069177623684842,
           "id": "1"
         },
         {
@@ -344,8 +344,8 @@
             { "type": "ASIAN", "count": 9040 },
             { "type": "HISPANIC", "count": 53447 }
           ],
-          "rep_split": 0.5833278329569163,
-          "dem_split": 0.41667216704308374,
+          "repSplit": 0.5833278329569163,
+          "demSplit": 0.41667216704308374,
           "id": "2"
         },
         {
@@ -355,8 +355,8 @@
             { "type": "ASIAN", "count": 21349 },
             { "type": "HISPANIC", "count": 55083 }
           ],
-          "rep_split": 0.4494601787687054,
-          "dem_split": 0.5505398212312945,
+          "repSplit": 0.4494601787687054,
+          "demSplit": 0.5505398212312945,
           "id": "3"
         },
         {
@@ -366,8 +366,8 @@
             { "type": "ASIAN", "count": 10633 },
             { "type": "HISPANIC", "count": 41776 }
           ],
-          "rep_split": 0.6798800135618839,
-          "dem_split": 0.3201199864381161,
+          "repSplit": 0.6798800135618839,
+          "demSplit": 0.3201199864381161,
           "id": "4"
         },
         {
@@ -377,8 +377,8 @@
             { "type": "ASIAN", "count": 46156 },
             { "type": "HISPANIC", "count": 67199 }
           ],
-          "rep_split": 0.3160635297260349,
-          "dem_split": 0.6839364702739651,
+          "repSplit": 0.3160635297260349,
+          "demSplit": 0.6839364702739651,
           "id": "5"
         },
         {
@@ -388,8 +388,8 @@
             { "type": "ASIAN", "count": 21933 },
             { "type": "HISPANIC", "count": 72759 }
           ],
-          "rep_split": 0.5013161721753625,
-          "dem_split": 0.4986838278246375,
+          "repSplit": 0.5013161721753625,
+          "demSplit": 0.4986838278246375,
           "id": "6"
         },
         {
@@ -399,8 +399,8 @@
             { "type": "ASIAN", "count": 4959 },
             { "type": "HISPANIC", "count": 39959 }
           ],
-          "rep_split": 0.5022006198075972,
-          "dem_split": 0.49779938019240283,
+          "repSplit": 0.5022006198075972,
+          "demSplit": 0.49779938019240283,
           "id": "7"
         },
         {
@@ -410,8 +410,8 @@
             { "type": "ASIAN", "count": 9380 },
             { "type": "HISPANIC", "count": 68389 }
           ],
-          "rep_split": 0.5985667025514895,
-          "dem_split": 0.40143329744851053,
+          "repSplit": 0.5985667025514895,
+          "demSplit": 0.40143329744851053,
           "id": "8"
         },
         {
@@ -421,8 +421,8 @@
             { "type": "ASIAN", "count": 5758 },
             { "type": "HISPANIC", "count": 40427 }
           ],
-          "rep_split": 0.5643405359118155,
-          "dem_split": 0.43565946408818446,
+          "repSplit": 0.5643405359118155,
+          "demSplit": 0.43565946408818446,
           "id": "9"
         },
         {
@@ -432,8 +432,8 @@
             { "type": "ASIAN", "count": 29691 },
             { "type": "HISPANIC", "count": 80008 }
           ],
-          "rep_split": 0.1829242442429149,
-          "dem_split": 0.8170757557570851,
+          "repSplit": 0.1829242442429149,
+          "demSplit": 0.8170757557570851,
           "id": "10"
         },
         {
@@ -443,8 +443,8 @@
             { "type": "ASIAN", "count": 5447 },
             { "type": "HISPANIC", "count": 45841 }
           ],
-          "rep_split": 0.576442094439292,
-          "dem_split": 0.4235579055607081,
+          "repSplit": 0.576442094439292,
+          "demSplit": 0.4235579055607081,
           "id": "11"
         },
         {
@@ -454,8 +454,8 @@
             { "type": "ASIAN", "count": 10129 },
             { "type": "HISPANIC", "count": 86955 }
           ],
-          "rep_split": 0.5265579936945667,
-          "dem_split": 0.47344200630543337,
+          "repSplit": 0.5265579936945667,
+          "demSplit": 0.47344200630543337,
           "id": "12"
         },
         {
@@ -465,8 +465,8 @@
             { "type": "ASIAN", "count": 8222 },
             { "type": "HISPANIC", "count": 67396 }
           ],
-          "rep_split": 0.6667690103367107,
-          "dem_split": 0.33323098966328935,
+          "repSplit": 0.6667690103367107,
+          "demSplit": 0.33323098966328935,
           "id": "13"
         }
       ]

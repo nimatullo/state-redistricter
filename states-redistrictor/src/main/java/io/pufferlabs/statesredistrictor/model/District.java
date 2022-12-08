@@ -3,11 +3,14 @@ package io.pufferlabs.statesredistrictor.model;
 import lombok.Data;
 import java.util.List;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+
 @Data
 public class District {
-    private Integer id;
+    @Field("id")
+    private String id;
     private List<Population> populations;
     private List<Representative> reps;
-    private Integer demSplit;
-    private Integer repSplit;
+    private Double demSplit;
+    private Double repSplit;
 }
