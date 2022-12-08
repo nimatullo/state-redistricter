@@ -59,6 +59,7 @@ public class StatesController {
     @GetMapping("/{stateName}/unique-plans-brief")
     public ResponseEntity<?> getUniquePlansBrief(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
+        System.out.println("Fetching brief plans for " + stateName);
         List<DistrictPlan> plans = state.getUniqueDistrictPlans();
         // null all fields except for id and description
         plans = plans.stream().map(plan -> {

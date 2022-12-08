@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StateRepository extends MongoRepository<State, String> {
 
-    @Cacheable("states")
+//    @Cacheable("states")
     @Query("{ 'name' : ?0 }")
     State findByName(String stateName);
 }

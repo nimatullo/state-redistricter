@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import stateService from "../../services/stateService";
 import { useMapContext } from "../../services/mapContext";
 import DistrictPlanDropdown from "../maps/DistrictPlanDropdown";
+import { useParams } from "react-router-dom";
 
 const UniqueDistrictPlan = () => {
   const [selectedDistrictPlan, setSelectedDistrictPlan] = useState(null);
@@ -26,22 +27,27 @@ const UniqueDistrictPlan = () => {
   const GRID_SPACING = 5;
 
   const mapContext = useMapContext();
+  const params = useParams();
 
   useEffect(() => {
-    const data = stateService.getUniqueDistrictPlan(selectedDistrictPlan);
+    if (!selectedDistrictPlan) return;
 
-    setDPD(data);
-    setSDD(data.districtData[0]);
-    setSafeDistricts(data.districtData[0].safeDistricts);
-    setOpportunityDistricts(data.districtData[0].opportunityDistricts);
-    setPolsbyPopperScore(data.districtData[0].polsbyPopper);
+    stateService
+      .getUniqueDistrictPlan(params.state, selectedDistrictPlan)
+      .then((data) => {
+        console.log(data);
+        setDPD(data);
+        setSDD(data.districts[0]);
+        setSafeDistricts(data.safeDistricts);
+        setOpportunityDistricts(data.opportunityDistricts);
+        setPolsbyPopperScore(data.polsbyPopperScore);
+      });
   }, [selectedDistrictPlan]);
 
   useEffect(() => {
     if (!districtPlanData) return;
-
     const districtNumber = Number(mapContext.selectedDistrictNumber);
-    setSDD(districtPlanData.districtData[districtNumber - 1]);
+    setSDD(districtPlanData.districts[districtNumber - 1]);
   }, [mapContext]);
 
   return (
@@ -50,7 +56,7 @@ const UniqueDistrictPlan = () => {
         Unique District Plan
       </Heading>
       <DistrictPlanDropdown setSelectedPlan={setSelectedDistrictPlan} />
-      {selectedDistrictPlan && (
+      {selectedDistrictData && (
         <>
           <Heading size="lg" mb="2" mt={GRID_SPACING}>
             District Plan Quality
@@ -84,23 +90,23 @@ const UniqueDistrictPlan = () => {
             <SimpleGrid columns={3} spacing={GRID_SPACING}>
               <Card
                 label={"Total Population"}
-                value={selectedDistrictData.population}
-              />
-              <Card
-                label={"African American Population"}
-                value={selectedDistrictData.africanAmerican}
-              />
-              <Card
-                label={"Hispanic Population"}
-                value={selectedDistrictData.hispanic}
-              />
-              <Card
-                label={"Asian Population"}
-                value={selectedDistrictData.asian}
+                value={selectedDistrictData.totalPopulation}
               />
               <Card
                 label={"White Population"}
-                value={selectedDistrictData.white}
+                value={selectedDistrictData.whitePopulation}
+              />
+              <Card
+                label={"Hispanic Population"}
+                value={selectedDistrictData.hispanicPopulation}
+              />
+              <Card
+                label={"African American Population"}
+                value={selectedDistrictData.blackPopulation}
+              />
+              <Card
+                label={"Asian Population"}
+                value={selectedDistrictData.asianPopulation}
               />
             </SimpleGrid>
 
@@ -111,11 +117,11 @@ const UniqueDistrictPlan = () => {
             <SimpleGrid columns={3} spacing={GRID_SPACING}>
               <Card
                 label={"Republican Population"}
-                value={selectedDistrictData.republican + "%"}
+                value={selectedDistrictData.repSplit}
               />
               <Card
                 label={"Democratic Population"}
-                value={100 - selectedDistrictData.republican + "%"}
+                value={selectedDistrictData.demSplit}
               />
             </SimpleGrid>
           </>

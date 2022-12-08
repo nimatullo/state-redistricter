@@ -36,19 +36,6 @@ const StateOverview = () => {
     setStateData(data.percentages);
   }, []);
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "Average Efficiency Gap of Each District",
-      },
-    },
-  };
-
   const convertToChartJSDataset = (data) => {
     return {
       labels: data.map((d) => d.title),
@@ -59,10 +46,6 @@ const StateOverview = () => {
         },
       ],
     };
-  };
-
-  const generateColor = () => {
-    return "#" + Math.floor(Math.random() * 16777215).toString(16);
   };
 
   return (

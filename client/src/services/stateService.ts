@@ -1,4 +1,5 @@
 import percentages from "../../utils/percentages.json";
+import OUR_STATES from "../assets/ourStates";
 
 interface District {
   type: string;
@@ -44,66 +45,253 @@ class StateService {
     );
   }
 
-  getSummaryData(state: string, layout?: string) {
-    return {
-      numberOfDistricts: {
-        mmd: randomNumber(3, 18),
-        smd: randomNumber(3, 18),
-      },
-      majorityMinority: {
-        mmd: randomNumber(0, 100),
-        smd: randomNumber(0, 100),
-      },
-      equalPopMeasure: {
-        mmd: randomNumber(0, 100),
-        smd: randomNumber(0, 100),
-      },
-      polsbyPopper: {
-        mmd: randomNumber(0, 100),
-        smd: randomNumber(0, 100),
-      },
-      republicanDemocraticSplit: {
-        mmd: randomNumber(0, 100),
-        smd: randomNumber(0, 100),
-      },
-    };
+  async getSummaryData(state: string) {
+    const stateFullName = OUR_STATES[state].fullName;
+    return fetch(`${this.API}/states/${stateFullName}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((data) => {
+        const formattedData = {
+          totalDistrictPlans: {
+            mmd: 10000,
+            smd: 10000,
+          },
+          avgRepSplit: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD,
+              "avgRepSplits"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgRepSplits"
+            ),
+          },
+          avgDemSplit: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD,
+              "avgDemSplits"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgDemSplits"
+            ),
+          },
+          avgOpportunityReps: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD,
+              "avgOpportunityReps"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgOpportunityReps"
+            ),
+          },
+          avgEqualPop: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD,
+              "avgEqualPop"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgEqualPop"
+            ),
+          },
+          avgPolsbyPopperScores: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD,
+              "avgPolsbyPopperScores"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgPolsbyPopperScores"
+            ),
+          },
+          layoutList: data.ensembleSummaryData.MMD.map((mmd: any) => {
+            return mmd.pattern.split("chain")[1];
+          }),
+        };
+        return formattedData;
+      })
+      .catch((error) => {
+        throw new Error("Error fetching summary data. Is the server running?");
+      });
   }
 
-  getDistrictPlans(state: string) {
-    return [
-      {
-        id: 1,
-        quality: "High Republican Concentration",
-      },
-      {
-        id: 2,
-        quality: "Low African American Representation",
-      },
-    ];
+  async getSummaryDataForLayout(state: string, layout: string) {
+    const stateFullName = OUR_STATES[state].fullName;
+
+    return fetch(`${this.API}/states/${stateFullName}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((data) => {
+        const formattedData = {
+          totalDistrictPlans: {
+            mmd: 10000,
+            smd: 10000,
+          },
+          avgRepSplit: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD.filter(
+                (plan) => plan.pattern.split("chain")[1] === layout
+              ),
+              "avgRepSplits"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgRepSplits"
+            ),
+          },
+          avgDemSplit: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD.filter(
+                (plan) => plan.pattern.split("chain")[1] === layout
+              ),
+              "avgDemSplits"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgDemSplits"
+            ),
+          },
+          avgOpportunityReps: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD.filter(
+                (plan) => plan.pattern.split("chain")[1] === layout
+              ),
+              "avgOpportunityReps"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgOpportunityReps"
+            ),
+          },
+          avgEqualPop: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD.filter(
+                (plan) => plan.pattern.split("chain")[1] === layout
+              ),
+              "avgEqualPop"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgEqualPop"
+            ),
+          },
+          avgPolsbyPopperScores: {
+            mmd: this.computeAverage(
+              data.ensembleSummaryData.MMD.filter(
+                (plan) => plan.pattern.split("chain")[1] === layout
+              ),
+              "avgPolsbyPopperScores"
+            ),
+            smd: this.computeAverage(
+              data.ensembleSummaryData.SMD,
+              "avgPolsbyPopperScores"
+            ),
+          },
+        };
+        return formattedData;
+      })
+      .catch((error) => {
+        throw new Error("Error fetching summary data. Is the server running?");
+      });
   }
 
-  getUniqueDistrictPlan(planId: string) {
-    return {
-      id: 1,
-      quality: "High Republican Concentration",
-      districtData: Array(30)
-        .fill(0)
-        .map((_, i) => {
+  computeAverage(data: any, fieldToAverage: string) {
+    return (
+      data.reduce((acc: number, curr: any) => {
+        return acc + curr[fieldToAverage];
+      }, 0) / data.length
+    );
+  }
+
+  async getDistrictPlans(state: string) {
+    const stateFullName = OUR_STATES[state].fullName;
+
+    return fetch(`${this.API}/states/${stateFullName}/unique-plans-brief`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((data) => {
+        return data.map((plan: any) => {
           return {
-            districtId: i + 1,
-            population: randomNumber(100000, 200000),
-            africanAmerican: randomNumber(2000, 10000),
-            hispanic: randomNumber(2000, 10000),
-            asian: randomNumber(2000, 10000),
-            white: randomNumber(2000, 10000),
-            republican: randomNumber(0, 100),
-            democrat: randomNumber(0, 100),
-            opportunityDistricts: randomNumber(0, 30),
-            safeDistricts: randomNumber(0, 30),
-            polsbyPopper: randomNumber(0, 100) / 100,
+            id: plan.id,
+            description: plan.description,
+            planType: plan.planType,
           };
-        }),
-    };
+        });
+      })
+      .catch((error) => {
+        throw new Error(
+          "Error fetching district plans. Is the server running?"
+        );
+      });
+  }
+
+  async getUniqueDistrictPlan(state: string, planId: string) {
+    if (!planId) return;
+
+    const stateFullName = OUR_STATES[state].fullName;
+
+    return fetch(`${this.API}/states/${stateFullName}/unique-plans/${planId}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((data) => {
+        const formattedData = {
+          id: data.id,
+          safeDistricts: data.overview.safeDistricts,
+          opportunityDistricts: data.overview.opportunityDistricts,
+          polsbyPopperScore: data.overview.polsbyPopperScore,
+          districts: data.districts.map((district: any) => {
+            return {
+              districtNumber: district.id,
+              totalPopulation: district.populations.reduce(
+                (acc, cur) => acc + cur.count,
+                0
+              ),
+              blackPopulation: district.populations.find(
+                (pop: any) => pop.type === "BLACK"
+              ).count,
+              whitePopulation: district.populations.find(
+                (pop: any) => pop.type === "WHITE"
+              ).count,
+              asianPopulation: district.populations.find(
+                (pop: any) => pop.type === "ASIAN"
+              ).count,
+              hispanicPopulation: district.populations.find(
+                (pop: any) => pop.type === "HISPANIC"
+              ).count,
+              demSplit: (district.demSplit * 100).toFixed(2) + "%",
+              repSplit: (district.repSplit * 100).toFixed(2) + "%",
+            };
+          }),
+        };
+        return formattedData;
+      })
+      .catch((error) => {
+        throw new Error(
+          "Error fetching district plans. Is the server running?"
+        );
+      });
   }
 
   getGraphData(state: string, type: string) {
