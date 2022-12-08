@@ -1332,9 +1332,7 @@ function getUniquePlansData(rawData, state, planType) {
 ////////////////////////////////// SMD Parsing //////////////////////////////////
 //console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
 //console.log(JSON.stringify(getAnalysisData(rawSMDData, fieldsToAnalyze)));
-console.log(
-  JSON.stringify(getUniquePlansData(rawSMDData, "North Carolina"))
-);
+console.log(JSON.stringify(getUniquePlansData(rawSMDData, "North Carolina")));
 
 ////////////////////////////////// MMD Parsing //////////////////////////////////
 let MMDEnsembles = [];
@@ -1346,7 +1344,6 @@ for (let subEnsemble in rawMMDSubEnsembles) {
 
   let subEnsembleData = rawMMDSubEnsembles[subEnsemble];
   let subEnsemblePattern = subEnsemble;
-  
 
   let subEnsembleSummaryData = getEnsembleSummaryData(
     subEnsembleData,
@@ -1357,7 +1354,7 @@ for (let subEnsemble in rawMMDSubEnsembles) {
   let subEnsembleAnalysisData = getAnalysisData(
     subEnsembleData,
     fieldsToAnalyze,
-    subEnsemblePattern,
+    subEnsemblePattern
   );
   //push to array
   MMDEnsembles.push(subEnsembleSummaryData);
@@ -1366,9 +1363,12 @@ for (let subEnsemble in rawMMDSubEnsembles) {
 //console.log(JSON.stringify({"MMD": MMDEnsembles}));
 //console.log(JSON.stringify({ MMD: MMDAnalysisData }));
 
-
 console.log();
-console.log(JSON.stringify(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")));
+console.log(
+  JSON.stringify(
+    getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")
+  )
+);
 // //print out full object using util.inspect
 // let util = require("util");
 // console.log(util.inspect(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD"), false, null, true));
