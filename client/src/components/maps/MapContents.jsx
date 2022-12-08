@@ -3,19 +3,18 @@ import { useMap, GeoJSON } from "react-leaflet";
 import { useMapContext } from "../../services/mapContext";
 
 const DEFAULT_STYLE = {
-  weight: 3,
+  weight: 2,
   opacity: 1,
   color: "#666",
-  dashArray: "",
   fillOpacity: 0.5,
 };
 
 const HIGHLIGHT_STYLE = {
-  weight: 3,
-  color: "#008000",
-  dashArray: "",
-  fillOpacity: 0.5,
-  fillColor: "#006400",
+  // weight: 3,
+  // color: "#008000",
+  // dashArray: "",
+  fillOpacity: 0.8,
+  // fillColor: "#006400",
 };
 
 const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
@@ -44,9 +43,7 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
     geoJsonRef.current.resetStyle(e.target);
 
     if (selectedDistrict) {
-      selectedDistrict.setStyle({
-        fillColor: "#2C5282",
-      });
+      selectedDistrict.setStyle(HIGHLIGHT_STYLE);
     }
   };
 
@@ -60,7 +57,7 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
 
   const styleBasedOnParty = (feature) => {
     DEFAULT_STYLE.fillColor =
-      feature.properties.party === "R" ? "#E53E3E" : "#2C5282";
+      feature.properties.party === "R" ? "#E72B0D" : "#2C5282";
 
     return DEFAULT_STYLE;
   };
@@ -71,13 +68,13 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
     if (selectedDistrict) {
       geoJsonRef.current.resetStyle(selectedDistrict);
     }
-    e.target.setStyle({
-      fillColor: "#2C5282",
-    });
+    e.target.setStyle(HIGHLIGHT_STYLE);
     selectedDistrict = e.target;
-    mapContext.setSelectedDistrictNumber(
-      e.target.feature.properties.name.split("-")[1]
-    );
+
+    const districtNumber =
+      e.target.feature.properties.district ||
+      e.target.feature.properties.DISTRICT;
+    mapContext.setSelectedDistrictNumber(districtNumber);
   };
 
   return (
