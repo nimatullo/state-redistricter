@@ -224,6 +224,20 @@ class StateService {
     };
     return data;
   }
+
+  async getUniquePlanGeoJSON() {
+    return fetch(`${this.API}/states/deez`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .catch((error) => {
+        throw new Error("Error fetching geojson. Is the server running?");
+      });
+  }
 }
 
 const randomNumber = (min: number, max: number) => {

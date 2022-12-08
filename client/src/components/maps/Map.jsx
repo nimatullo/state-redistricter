@@ -12,6 +12,7 @@ import "../../assets/styles/map.css";
 import OUR_STATES from "../../assets/ourStates";
 import { useAlert } from "../../services/alertservice";
 import DistrictPlanDropdown from "./DistrictPlanDropdown";
+import { useMapContext } from "../../services/mapContext";
 
 const Map = () => {
   const [geoData, setGeoData] = useState();
@@ -19,9 +20,10 @@ const Map = () => {
   const [stateCoordinates, setCoordinates] = useState(null);
   const [zoom, setZoom] = useState(6);
 
-  const geoJsonRef = useRef();
+  const geoJsonRef = useRef(null);
   const params = useParams();
   const { setMessage } = useAlert();
+  const mapContext = useMapContext();
 
   useEffect(() => {
     const stateFromDict = OUR_STATES[params.state];
@@ -32,7 +34,7 @@ const Map = () => {
   const getData = async (state) => {
     StateService.getGeoJSONForState(state.fullName)
       .then((data) => {
-        setGeoData(data);
+        mapContext.setGeoJSON(data);
       })
       .catch((err) => {
         setMessage({
@@ -46,7 +48,7 @@ const Map = () => {
   };
 
   return (
-    geoData && (
+    mapContext.geoJSON && (
       <div className="map">
         <MapContainer
           style={{
@@ -70,7 +72,10 @@ const Map = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Puffer Labs, LLC.'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <MapContents geoJsonRef={geoJsonRef} geoData={geoData} />
+              <MapContents
+                geoJsonRef={mapContext.geoJsonRef}
+                geoData={mapContext.geoJSON}
+              />
             </>
           )}
         </MapContainer>

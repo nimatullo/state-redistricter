@@ -75,7 +75,6 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
       fillColor: "#2C5282",
     });
     selectedDistrict = e.target;
-    console.log(e.target.feature.properties.name);
     mapContext.setSelectedDistrictNumber(
       e.target.feature.properties.name.split("-")[1]
     );
@@ -84,6 +83,7 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
   return (
     <>
       <GeoJSON
+        key={geoData}
         ref={geoJsonRef}
         data={geoData}
         style={styleBasedOnParty}
