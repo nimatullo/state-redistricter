@@ -1172,9 +1172,7 @@ function separateBoxPlots(patterns) {
 let fs = require("fs");
 let uniqueDistrictPlanIdCounter = 0;
 
-let rawSMDData = JSON.parse(
-  fs.readFileSync("../north carolina/nc smd data.json")
-);
+let rawSMDData = JSON.parse(fs.readFileSync("../north carolina/data.json"));
 let rawMMDData = JSON.parse(
   fs.readFileSync("../north carolina/nc mmd data.json")
 );
@@ -1251,9 +1249,34 @@ function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
   }
 
   ////////STUBS FOR MISSING DATA
-  analysisData["voteSeatSharePercentages"] = {};
-  analysisData["demRepSplitCounts"] = [];
-  analysisData["opportunityRepCounts"] = [];
+  if (pattern === undefined) {
+    let oppReps = rawData.bar_data.opportunity_reps;
+    let demRepSplitCounts = rawData.bar_data.rep_total_count;
+    let demVoteShare = rawData.dem_vote_share_percentage;
+    let demSeatShare = rawData.dem_seat_share_percentage;
+    let repVoteShare = rawData.rep_vote_share_percentage;
+    let repSeatShare = rawData.rep_seat_share_percentage;
+
+    //convert opp reps from map to array where the index is the district number
+    let oppRepsArray = [];
+    let demRepSplitCountsArray = [];
+    for (let district in oppReps) {
+      oppRepsArray[district] = oppReps[district];
+      demRepSplitCountsArray[district] = demRepSplitCounts[district];
+    }
+    analysisData["opportunityRepCounts"] = oppRepsArray;
+    analysisData["demRepSplitCounts"] = demRepSplitCountsArray;
+    analysisData["voteSeatSharePercentages"] = {
+      DEMOCRAT: [demVoteShare, demSeatShare],
+      REPUBLICAN: [repVoteShare, repSeatShare],
+    };
+  } else {
+    //STUB FOR MMD
+    analysisData["opportunityRepCounts"] = [];
+    analysisData["demRepSplitCounts"] = [];
+    analysisData["voteSeatSharePercentages"] = {};
+  }
+
   analysisData["pattern"] = pattern === undefined ? "SMD" : pattern;
   return analysisData;
 }
@@ -1331,8 +1354,8 @@ function getUniquePlansData(rawData, state, planType) {
 
 ////////////////////////////////// SMD Parsing //////////////////////////////////
 //console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
-//console.log(JSON.stringify(getAnalysisData(rawSMDData, fieldsToAnalyze)));
-console.log(JSON.stringify(getUniquePlansData(rawSMDData, "North Carolina")));
+console.log(getAnalysisData(rawSMDData, fieldsToAnalyze));
+//console.log(getUniquePlansData(rawSMDData, "North Carolina"));
 
 ////////////////////////////////// MMD Parsing //////////////////////////////////
 let MMDEnsembles = [];
@@ -1363,12 +1386,12 @@ for (let subEnsemble in rawMMDSubEnsembles) {
 //console.log(JSON.stringify({"MMD": MMDEnsembles}));
 //console.log(JSON.stringify({ MMD: MMDAnalysisData }));
 
-console.log();
-console.log(
-  JSON.stringify(
-    getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")
-  )
-);
+// console.log();
+// console.log(
+//   JSON.stringify(
+//     getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")
+//   )
+// );
 // //print out full object using util.inspect
 // let util = require("util");
 // console.log(util.inspect(getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD"), false, null, true));
