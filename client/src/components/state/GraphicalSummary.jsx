@@ -5,14 +5,17 @@ import {
   useRadioGroup,
   HStack,
   Select,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import stateService from "../../services/stateService";
 import BarChart from "../data display/BarChart";
+import { Card } from "./UniqueDistrictPlan";
 
 const GraphicalSummary = () => {
   const [graphData, setGraphData] = React.useState(null);
   const [ensembleType, setEnsembleType] = React.useState("smd");
+  const [sharePercentages, setSharePercentages] = React.useState({});
 
   useEffect(() => {
     const data = stateService.getGraphData("", options[0]);
@@ -26,7 +29,6 @@ const GraphicalSummary = () => {
   const options = [
     "Opportunity Representatives",
     "Republican/Democratic Split",
-    "Vote Seat Share",
   ];
 
   const { getRootProps, getRadioProps } = useRadioGroup({
@@ -61,6 +63,33 @@ const GraphicalSummary = () => {
         })}
       </HStack>
       <BarChart data={graphData} />
+      <SimpleGrid columns={4} spacing={5}>
+        {ensembleType === "smd" ? (
+          <>
+            <Card label={"Democrat Vote Share"} value={"53%"} />
+            <Card label={"Democrat Seat Share"} value={"53%"} />
+            <Card label={"Republican Vote Share"} value={"53%"} />
+            <Card label={"Republican Seat Share"} value={"53%"} />
+          </>
+        ) : (
+          <>
+            <Card
+              label={"Democrat Vote Share"}
+              value={"53%"}
+              helpText={"5%"}
+              type="increase"
+            />
+            <Card
+              label={"Democrat Seat Share"}
+              value={"53%"}
+              helpText={"2%"}
+              type="decrease"
+            />
+            <Card label={"Republican Vote Share"} value={"53%"} />
+            <Card label={"Republican Seat Share"} value={"53%"} />
+          </>
+        )}
+      </SimpleGrid>
     </Box>
   );
 };

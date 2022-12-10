@@ -121,6 +121,17 @@ const EnsembleSummary = () => {
 };
 
 const Feature = (props) => {
+  const formatNumber = (num) => {
+    if (props.isPercentage) {
+      return (num * 100).toFixed(props.roundedTo) + "%";
+    } else {
+      return num.toLocaleString(undefined, {
+        maximumFractionDigits: props.roundedTo,
+        minimumFractionDigits: props.roundedTo,
+      });
+    }
+  };
+
   return (
     props.data && (
       <Grid
@@ -134,17 +145,9 @@ const Feature = (props) => {
           <Text fontWeight={"semibold"}>{props.stat}</Text>
         </GridItem>
 
-        <GridItem textAlign={"right"}>
-          {props.isPercentage
-            ? (props.data.smd * 100).toFixed(props.roundedTo) + "%"
-            : props.data.smd.toFixed(props.roundedTo)}
-        </GridItem>
+        <GridItem textAlign={"right"}>{formatNumber(props.data.smd)}</GridItem>
 
-        <GridItem textAlign={"right"}>
-          {props.isPercentage
-            ? (props.data.mmd * 100).toFixed(props.roundedTo) + "%"
-            : props.data.mmd.toFixed(props.roundedTo)}
-        </GridItem>
+        <GridItem textAlign={"right"}>{formatNumber(props.data.mmd)}</GridItem>
       </Grid>
     )
   );

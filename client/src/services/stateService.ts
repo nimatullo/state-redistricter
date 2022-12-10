@@ -294,6 +294,8 @@ class StateService {
       });
   }
 
+  getSharePercentages(state: string, planType: string) {}
+
   getGraphData(state: string, type: string) {
     const totalDistricts = randomNumber(5, 27);
 

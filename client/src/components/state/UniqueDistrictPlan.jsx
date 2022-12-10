@@ -7,6 +7,7 @@ import {
   StatLabel,
   StatNumber,
   StatHelpText,
+  StatArrow,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -131,13 +132,18 @@ const UniqueDistrictPlan = () => {
   );
 };
 
-const Card = (props) => {
+export const Card = (props) => {
   return (
     <Box p={5} shadow="sm" borderWidth={"1px"} borderRadius="5px">
       <Stat>
         <StatLabel>{props.label}</StatLabel>
         <StatNumber>{props.value.toLocaleString()}</StatNumber>
-        {props.helpText && <StatHelpText>{props.helpText}</StatHelpText>}
+        {props.helpText && (
+          <StatHelpText>
+            {props.type && <StatArrow type={props.type} />}
+            {props.helpText}
+          </StatHelpText>
+        )}
       </Stat>
     </Box>
   );
