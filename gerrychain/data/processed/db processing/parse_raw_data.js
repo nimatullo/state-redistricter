@@ -215,8 +215,14 @@ let SMDUniquePlansData = getUniquePlansData(rawSMDData, "North Carolina");
 ////////////////////////////////// MMD Parsing //////////////////////////////////
 let MMDEnsembles = [];
 let MMDAnalysisData = [];
-let MMDUniquePlansData = getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")
-let allUniquePlansData = SMDUniquePlansData.uniqueDistrictPlans.concat(MMDUniquePlansData.uniqueDistrictPlans); 
+let MMDUniquePlansData = getUniquePlansData(
+  rawMMDSubEnsembles,
+  "North Carolina",
+  "MMD"
+);
+let allUniquePlansData = SMDUniquePlansData.uniqueDistrictPlans.concat(
+  MMDUniquePlansData.uniqueDistrictPlans
+);
 
 for (let subEnsemble in rawMMDSubEnsembles) {
   //if field contains "unique_plans_data ignore"
@@ -242,17 +248,17 @@ for (let subEnsemble in rawMMDSubEnsembles) {
 }
 
 let finalExport = {
-  "name": "North Carolina",
-  "abbreviation": "NC",
-  "stateShape": "polygon",
-  "uniqueDistrictPlans": allUniquePlansData,
-  "analyses": {
-    "SMD": SMDAnalysisData,
-    "MMD": MMDAnalysisData,
+  name: "North Carolina",
+  abbreviation: "NC",
+  stateShape: "polygon",
+  uniqueDistrictPlans: allUniquePlansData,
+  analyses: {
+    SMD: SMDAnalysisData,
+    MMD: MMDAnalysisData,
   },
-  "ensembleSummaryData": {
-    "SMD": SMDEnsembles,
-    "MMD": MMDEnsembles,
+  ensembleSummaryData: {
+    SMD: SMDEnsembles,
+    MMD: MMDEnsembles,
   },
 };
 //console.log(finalExport);
