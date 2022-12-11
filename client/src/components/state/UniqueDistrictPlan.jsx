@@ -137,7 +137,7 @@ export const Card = (props) => {
     <Box p={5} shadow="sm" borderWidth={"1px"} borderRadius="5px">
       <Stat>
         <StatLabel>{props.label}</StatLabel>
-        <StatNumber>{props.value.toLocaleString()}</StatNumber>
+        <StatNumber>{props.value && props.value.toLocaleString()}</StatNumber>
         {props.helpText && (
           <StatHelpText>
             {props.type && <StatArrow type={props.type} />}

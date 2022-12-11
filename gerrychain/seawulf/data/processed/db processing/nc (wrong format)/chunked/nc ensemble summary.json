@@ -1,0 +1,81 @@
+{
+  "SMD": [
+    {
+      "planType": "SMD",
+      "totalDistrictPlans": 10000,
+      "avgOpportunityReps": 0,
+      "avgEqualPop": 25588.9375,
+      "avgPolsbyPopperScores": 0.19264715028091303,
+      "avgRepSplits": 0.5019224276802722,
+      "avgDemSplits": 0.4980775723197278
+    }
+  ],
+  "MMD": [
+    {
+      "avgPolsbyPopperScores": 0.2122071048591904,
+      "avgDemSplits": 0.5019285698121476,
+      "avgRepSplits": 0.49807143018785244,
+      "avgBlackPop": 673284.6666666666,
+      "avgAsianPop": 68859.66666666666,
+      "avgHispPop": 266706.6666666667,
+      "avgWhitePop": 2074665,
+      "avgTotalPop": 3178494.3333333335,
+      "avgMinorityPop": 1008851,
+      "avgOpportunityReps": 0,
+      "avgEqualPop": 744541.9,
+      "avgDemVoteSharePercentage": 0.5019285698121475,
+      "avgDemSeatSharePercentage": 0.6,
+      "avgRepVoteSharePercentage": 0.4980714301878524,
+      "avgRepSeatSharePercentage": 0.4,
+      "avgChain445DemSeats": { "1": 1.5, "2": 1.7, "3": 3 },
+      "avgChain445RepSeats": { "1": 2.5, "2": 2.3, "3": 2 },
+      "planType": "MMD",
+      "totalDistrictPlans": 10000,
+      "pattern": "chain445"
+    },
+    {
+      "avgPolsbyPopperScores": 0.21693071601473876,
+      "avgDemSplits": 0.5013915294910006,
+      "avgRepSplits": 0.4986084705089994,
+      "avgBlackPop": 673284.6666666666,
+      "avgAsianPop": 68859.66666666667,
+      "avgHispPop": 266706.6666666667,
+      "avgWhitePop": 2074665,
+      "avgTotalPop": 3178494.3333333335,
+      "avgMinorityPop": 1008851.0000000001,
+      "avgOpportunityReps": 0,
+      "avgEqualPop": 1098661.3,
+      "avgDemVoteSharePercentage": 0.5013915294910005,
+      "avgDemSeatSharePercentage": 0.5666666666666667,
+      "avgRepVoteSharePercentage": 0.4986084705089994,
+      "avgRepSeatSharePercentage": 0.4333333333333333,
+      "avgChain355DemSeats": { "1": 1.8, "2": 1.7, "3": 2.8 },
+      "avgChain355RepSeats": { "1": 1.2, "2": 3.3, "3": 2.2 },
+      "planType": "MMD",
+      "totalDistrictPlans": 10000,
+      "pattern": "chain355"
+    },
+    {
+      "avgPolsbyPopperScores": 0.19337142576859787,
+      "avgDemSplits": 0.5006573770822766,
+      "avgRepSplits": 0.49934262291772336,
+      "avgBlackPop": 592950.75,
+      "avgAsianPop": 59752.76666666667,
+      "avgHispPop": 233414.03333333333,
+      "avgWhitePop": 1802416.35,
+      "avgTotalPop": 2772977.2,
+      "avgMinorityPop": 886117.55,
+      "avgOpportunityReps": 0,
+      "avgEqualPop": 971604.7666666667,
+      "avgDemVoteSharePercentage": 0.5023798598931177,
+      "avgDemSeatSharePercentage": 0.45,
+      "avgRepVoteSharePercentage": 0.49762014010688227,
+      "avgRepSeatSharePercentage": 0.38333333333333336,
+      "avgChain3334DemSeats": { "1": 1.1, "2": 2.4, "3": 0.3, "4": 3.3 },
+      "avgChain3334RepSeats": { "1": 1.9, "2": 0.6, "3": 2.7, "4": 0.7 },
+      "planType": "MMD",
+      "totalDistrictPlans": 10000,
+      "pattern": "chain3334"
+    }
+  ]
+}

@@ -294,108 +294,177 @@ class StateService {
       });
   }
 
-  getSharePercentages(state: string, planType: string) {}
-
-  getGraphData(state: string, type: string) {
-    const totalDistricts = randomNumber(5, 27);
-
-    const graphInfo = {
-      "Republican/Democratic Split": {
-        data: {
-          labels: Array(27)
-            .fill(0)
-            .map((_, i) => `${i + 1}D/${27 - (i + 1)}R`),
-          datasets: [
-            {
-              label: "Districts with Democrat Winner",
-              data: Array(27)
-                .fill(0)
-                .map(() => Math.round(Math.random() * 100)),
-              backgroundColor: "#3e95cd",
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              display: false,
-            },
-            title: {
-              display: true,
-              text: "Number of times a split occurs within an ensemble",
-            },
-          },
-          scales: {
-            x: {
-              title: {
-                display: true,
-                text: "dem/rep",
+  async getSharePercentages(state: string) {
+    const fullStateName = OUR_STATES[state].fullName;
+    return fetch(`${this.API}/states/${fullStateName}/analysis`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error(response.statusText);
+      })
+      .then((data) => {
+        const formattedData = {
+          SMD: data.SMD[0].voteSeatSharePercentages,
+          MMD: {
+            DEMOCRAT: data.MMD.reduce(
+              (acc: any, curr: any) => {
+                return [
+                  acc[0] + curr.voteSeatSharePercentages.DEMOCRAT[0],
+                  acc[1] + curr.voteSeatSharePercentages.DEMOCRAT[1],
+                ];
               },
-            },
-            y: {
-              title: {
-                display: true,
-                text: "occurrences",
+              [0, 0]
+            ).map((val: number) => {
+              return val / data.MMD.length;
+            }),
+            REPUBLICAN: data.MMD.reduce(
+              (acc: any, curr: any) => {
+                return [
+                  acc[0] + curr.voteSeatSharePercentages.REPUBLICAN[0],
+                  acc[1] + curr.voteSeatSharePercentages.REPUBLICAN[1],
+                ];
               },
-            },
+              [0, 0]
+            ).map((val: number) => {
+              return val / data.MMD.length;
+            }),
           },
-        },
+        };
+        console.log(formattedData);
+        return formattedData;
+      })
+      .catch((error) => {
+        throw new Error(
+          "Error fetching district plans. Is the server running?"
+        );
+      });
+  }
+
+  async getGraphData(state: string, type: string, planType: string) {
+    const stateFullName = OUR_STATES[state].fullName;
+    return fetch(
+      `${this.API}/states/${stateFullName}/${planType}/analysis/${type}`
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((data) => {
+        switch (type) {
+          case "opp-reps":
+            return this._handleOppRepCall(data);
+          case "rep-dem-split":
+            return this._handleRepDemSplitCall(data);
+          default:
+            console.log("Error: invalid type");
+        }
+      })
+      .catch((error) => {
+        throw new Error("Error fetching graph data. Is the server running?");
+      });
+  }
+
+  _handleRepDemSplitCall = (data) => {
+    console.log(data);
+    const graphData = {
+      graph: {
+        labels: Array(data.length)
+          .fill(0)
+          .map((_, i) => `${i}D/${data.length - i}R`),
+        datasets: [
+          {
+            label: "Republican/Democrat Split",
+            data: data,
+            backgroundColor: "#3e95cd",
+          },
+        ],
       },
-      "Opportunity Representatives": {
-        data: {
-          labels: Array(3)
-            .fill(0)
-            .map((_, i) => 3 + i),
-          datasets: [
-            {
-              label: "Opportunity Representatives",
-              data: Array(3)
-                .fill(0)
-                .map(() => randomNumber(1, 10000)),
-              backgroundColor: "#3e95cd",
-            },
-          ],
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false,
+          },
+          title: {
+            display: true,
+            text: "Republican/Democrat Split",
+          },
         },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              display: false,
-            },
+        scales: {
+          x: {
             title: {
               display: true,
-              text: "Opportunity Representatives",
+              text: "R/D",
+            },
+            ticks: {
+              min: 3,
             },
           },
-          scales: {
-            x: {
-              title: {
-                display: true,
-                text: "district",
-              },
-              ticks: {
-                min: 3,
-              },
-            },
-            y: {
-              title: {
-                display: true,
-                text: "opportunity representatives",
-              },
-              ticks: {
-                stepSize: 1,
-              },
+          y: {
+            title: {
+              display: true,
+              text: "split type count",
             },
           },
         },
       },
     };
+    return graphData;
+  };
 
-    if (!graphInfo[type]) return null;
-
-    return graphInfo[type];
-  }
+  _handleOppRepCall = (data) => {
+    const graphData = {
+      graph: {
+        labels: Array(data.length)
+          .fill(0)
+          .map((_, i) => i + 1),
+        datasets: [
+          {
+            label: "Opportunity Representative Count",
+            data: data,
+            backgroundColor: "#3e95cd",
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false,
+          },
+          title: {
+            display: true,
+            text: "Opportunity Representative Count by District",
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "district",
+            },
+            ticks: {
+              min: 3,
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "count of opportunity representatives",
+            },
+            ticks: {
+              stepSize: 1,
+            },
+          },
+        },
+      },
+    };
+    return graphData;
+  };
 
   getBoxAndWhiskerData(state: string, population: string) {
     const data = {

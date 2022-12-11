@@ -1354,7 +1354,7 @@ function getUniquePlansData(rawData, state, planType) {
 
 ////////////////////////////////// SMD Parsing //////////////////////////////////
 //console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
-console.log(getAnalysisData(rawSMDData, fieldsToAnalyze));
+console.log(JSON.stringify(getAnalysisData(rawSMDData, fieldsToAnalyze)));
 //console.log(getUniquePlansData(rawSMDData, "North Carolina"));
 
 ////////////////////////////////// MMD Parsing //////////////////////////////////

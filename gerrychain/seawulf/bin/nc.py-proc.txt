@@ -1,0 +1,20 @@
+Sat Dec 10 23:44:32 2022    nc.py-profile.txt
+
+         11912153677 function calls (11904530124 primitive calls) in 4694.844 seconds
+
+   Ordered by: cumulative time
+   List reduced from 7925 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   1082/1    0.013    0.000 4697.090 4697.090 {built-in method builtins.exec}
+        1    0.000    0.000 4697.090 4697.090 <string>:1(<module>)
+    20002    1.321    0.000 4385.701    0.219 /gpfs/software/Anaconda/envs/gerrychain/lib/python3.11/site-packages/gerrychain/chain.py:61(__next__)
+    36627    1.261    0.000 3875.636    0.106 /gpfs/software/Anaconda/envs/gerrychain/lib/python3.11/site-packages/gerrychain/proposals/tree_proposals.py:11(recom)
+    36627    6.325    0.000 3413.085    0.093 /gpfs/software/Anaconda/envs/gerrychain/lib/python3.11/site-packages/gerrychain/tree.py:276(recursive_tree_part)
+    36627    3.224    0.000 3370.693    0.092 /gpfs/software/Anaconda/envs/gerrychain/lib/python3.11/site-packages/gerrychain/tree.py:162(bipartition_tree)
+    86784   61.720    0.001 2604.074    0.030 /gpfs/software/Anaconda/envs/gerrychain/lib/python3.11/site-packages/gerrychain/tree.py:16(random_spanning_tree)
+    86784    6.026    0.000 1558.662    0.018 /gpfs/software/Anaconda/envs/gerrychain/lib/python3.11/site-packages/networkx/algorithms/tree/mst.py:663(maximum_spanning_tree)
+ 35268032  180.529    0.000 1231.734    0.000 /gpfs/software/Anaconda/envs/gerrychain/lib/python3.11/site-packages/networkx/algorithms/tree/mst.py:140(kruskal_mst_edges)
+327422976  162.291    0.000  808.203    0.000 <frozen _collections_abc>:859(__iter__)
+
+
