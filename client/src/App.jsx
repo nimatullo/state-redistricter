@@ -11,6 +11,7 @@ import GraphicalSummary from "./components/state/GraphicalSummary";
 import { AlertServiceProvider } from "./services/alertservice";
 import { MapContextProvider } from "./services/mapContext";
 import BoxWhiskerPage from "./components/state/BoxWhiskerPage";
+import LineChart from "./components/data display/LineChart";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
                   element={<GraphicalSummary />}
                 />
                 <Route path="box-whisker" element={<BoxWhiskerPage />} />
+                <Route path="opp-rep" element={<LineChart />} />
               </Route>
             </Routes>
           </MapContextProvider>

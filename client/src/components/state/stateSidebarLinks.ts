@@ -39,6 +39,10 @@ export const sidebarLinks: SidebarLink[] = [
         name: "Box & Whisker",
         view: "box-whisker",
       },
+      {
+        name: "Opportunity Representative Threshold",
+        view: "opp-rep",
+      },
     ],
   },
 ];

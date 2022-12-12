@@ -80,7 +80,7 @@ const EnsembleSummary = () => {
         roundedTo={0}
       />
       <Feature
-        stat="Mean majority-minority representatives per plan"
+        stat="Mean majority-minority representatives"
         data={summaryData.avgOpportunityReps}
         roundedTo={1}
       />

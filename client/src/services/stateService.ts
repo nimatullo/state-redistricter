@@ -1,5 +1,6 @@
 import percentages from "../../utils/percentages.json";
 import OUR_STATES from "../assets/ourStates";
+import oppRepData from "../assets/threshold.json";
 
 interface District {
   type: string;
@@ -592,6 +593,64 @@ class StateService {
       .catch((error) => {
         throw new Error("Error fetching geojson. Is the server running?");
       });
+  }
+
+  async getOppRepGraph(state: string) {
+    const data = oppRepData[state];
+
+    const graphData = {
+      graph: {
+        labels: Object.keys(data)
+          // sort by decreasing order
+          .map((d) => Number(d).toFixed(2))
+          .sort((a, b) => {
+            return Number(b) - Number(a);
+          }),
+        datasets: [
+          {
+            label: "Opportunity Representative Count",
+            data: Object.keys(data)
+              .sort((a, b) => {
+                return Number(b) - Number(a);
+              })
+              .map((d) => data[d]),
+            backgroundColor: "#3e95cd",
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false,
+          },
+          title: {
+            display: true,
+            text: "Opportunity Representative Count by District",
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "threshold",
+            },
+            autoSkip: true,
+            ticks: {
+              max: 1,
+              stepSize: 0.2,
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "count of opportunity representatives",
+            },
+          },
+        },
+      },
+    };
+    return graphData;
   }
 }
 
