@@ -99,8 +99,7 @@ function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
     let newField = castCategory(field);
     if (field.toLowerCase().includes("box_data")) {
       if (pattern !== undefined)
-        analysisData["boxAndWhiskerPlots"][newField] =
-          rawData[pattern][field];
+        analysisData["boxAndWhiskerPlots"][newField] = rawData[pattern][field];
       else analysisData["boxAndWhiskerPlots"][newField] = rawData[field];
     } else analysisData[newField] = rawData[field];
   }
@@ -132,7 +131,7 @@ function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
   for (let district in oppReps) {
     oppRepsArray[district] = oppReps[district];
   }
-  if(pattern !== undefined) oppRepsArray = oppRepsArray.slice(1);
+  if (pattern !== undefined) oppRepsArray = oppRepsArray.slice(1);
   for (let district in demRepSplitCounts) {
     demRepSplitCountsArray[district] = demRepSplitCounts[district];
   }
