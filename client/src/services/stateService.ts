@@ -305,6 +305,7 @@ class StateService {
             };
           }),
         };
+        console.log(formattedData);
         return formattedData;
       })
       .catch((error) => {
@@ -568,14 +569,25 @@ class StateService {
       });
   }
 
-  async getUniquePlanGeoJSON() {
-    return fetch(`${this.API}/states/deez`)
+  async getUniquePlanGeoJSON(
+    state: string,
+    planType: string,
+    description: string
+  ) {
+    const stateFullName = OUR_STATES[state].fullName;
+    return fetch(
+      `${this.API}/states/${stateFullName}/unique-plans/geojson/${planType}/${description}`
+    )
       .then((response) => {
         if (response.ok) {
           return response.json();
         } else {
           throw new Error(response.statusText);
         }
+      })
+      .then((data) => {
+        console.log(data);
+        return data;
       })
       .catch((error) => {
         throw new Error("Error fetching geojson. Is the server running?");

@@ -22,26 +22,28 @@ const DistrictPlanDropdown = (props) => {
       placeholder={"Select a district plan"}
       onChange={(e) => {
         props.setSelectedPlan(e.target.value);
-        // stateService.getUniquePlanGeoJSON().then((data) => {
-        //   if (mapContext.geoJsonRef.current) {
-        //     mapContext.geoJsonRef.current.clearLayers().addData(data);
-        //     mapContext.setGeoJSON(data);
-        //   }
-        // });
+        stateService
+          .getUniquePlanGeoJSON(params.state, "MMD", e.target.value)
+          .then((data) => {
+            if (mapContext.geoJsonRef.current) {
+              mapContext.geoJsonRef.current.clearLayers().addData(data);
+              mapContext.setGeoJSON(data);
+            }
+          });
       }}
     >
       <optgroup label="SMD Unique Plans">
         {interestingDistricts
           .filter((plan) => plan.planType === "SMD")
           .map((plan) => (
-            <option value={plan.id}>{plan.description}</option>
+            <option value={plan.description}>{plan.description}</option>
           ))}
       </optgroup>
       <optgroup label="MMD Unique Plans">
         {interestingDistricts
           .filter((plan) => plan.planType === "MMD")
           .map((plan) => (
-            <option value={plan.id}>{plan.description}</option>
+            <option value={plan.description}>{plan.description}</option>
           ))}
       </optgroup>
     </Select>
