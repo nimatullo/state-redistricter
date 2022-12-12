@@ -108,17 +108,8 @@ public class StatesController {
             demRepSplitCounts = state.getAnalyses().get(PlanType.SMD).get(0).getDemRepSplitCounts();
         } else {
             List<Analysis> mmdAnalyses = state.getAnalyses().get(PlanType.MMD);
-            List<List<Integer>> demRepSplitCountsList = mmdAnalyses.stream().map(Analysis::getDemRepSplitCounts)
-                    .collect(Collectors.toList());
-            // sum all the lists as far as the smallest list
-            int minSize = demRepSplitCountsList.stream().mapToInt(List::size).min().getAsInt();
-            for (int i = 0; i < minSize; i++) {
-                int sum = 0;
-                for (List<Integer> list : demRepSplitCountsList) {
-                    sum += list.get(i);
-                }
-                demRepSplitCounts.add(sum);
-            }
+            demRepSplitCounts = mmdAnalyses.get(0).getDemRepSplitCounts(); //shhhh hehehe this is actually for the entire mmd 
+            
         }
         return ResponseEntity.ok(demRepSplitCounts);
     }
