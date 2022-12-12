@@ -92,42 +92,57 @@ let fieldsToAnalyze = [
 
 function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
   let analysisData = {};
+  //console.log(rawData);
+  console.log(pattern);
   analysisData["boxAndWhiskerPlots"] = {};
   for (let field of fieldsToAnalyze) {
     let newField = castCategory(field);
     if (field.toLowerCase().includes("box_data")) {
-      analysisData["boxAndWhiskerPlots"][newField] = rawData[field];
+      if (pattern !== undefined)
+        analysisData["boxAndWhiskerPlots"][newField] =
+          rawData[pattern][field];
+      else analysisData["boxAndWhiskerPlots"][newField] = rawData[field];
     } else analysisData[newField] = rawData[field];
   }
 
-  ////////STUBS FOR MISSING DATA
+  let oppReps;
+  let demRepSplitCounts;
+  let demVoteShare;
+  let demSeatShare;
+  let repVoteShare;
+  let repSeatShare;
+  let oppRepsArray = [];
+  let demRepSplitCountsArray = [];
   if (pattern === undefined) {
-    let oppReps = rawData.bar_data.opportunity_reps;
-    let demRepSplitCounts = rawData.bar_data.rep_total_count;
-    let demVoteShare = rawData.dem_vote_share_percentage;
-    let demSeatShare = rawData.dem_seat_share_percentage;
-    let repVoteShare = rawData.rep_vote_share_percentage;
-    let repSeatShare = rawData.rep_seat_share_percentage;
-
-    //convert opp reps from map to array where the index is the district number
-    let oppRepsArray = [];
-    let demRepSplitCountsArray = [];
-    for (let district in oppReps) {
-      oppRepsArray[district] = oppReps[district];
-      demRepSplitCountsArray[district] = demRepSplitCounts[district];
-    }
-    analysisData["opportunityRepCounts"] = oppRepsArray;
-    analysisData["demRepSplitCounts"] = demRepSplitCountsArray;
-    analysisData["voteSeatSharePercentages"] = {
-      DEMOCRAT: [demVoteShare, demSeatShare],
-      REPUBLICAN: [repVoteShare, repSeatShare],
-    };
+    oppReps = rawData.bar_data.opportunity_reps;
+    demRepSplitCounts = rawData.bar_data.rep_total_count;
+    demVoteShare = rawData.dem_vote_share_percentage;
+    demSeatShare = rawData.dem_seat_share_percentage;
+    repVoteShare = rawData.rep_vote_share_percentage;
+    repSeatShare = rawData.rep_seat_share_percentage;
   } else {
-    //STUB FOR MMD
-    analysisData["opportunityRepCounts"] = [];
-    analysisData["demRepSplitCounts"] = [];
-    analysisData["voteSeatSharePercentages"] = {};
+    oppReps = rawData.bar_data.opportunity_reps[pattern].opportunity_reps;
+    console.log(oppReps);
+    demRepSplitCounts = rawData.bar_data.rep_total_count;
+    demVoteShare = rawData[pattern].dem_vote_share_percentage;
+    demSeatShare = rawData[pattern].dem_seat_share_percentage;
+    repVoteShare = rawData[pattern].rep_vote_share_percentage;
+    repSeatShare = rawData[pattern].rep_seat_share_percentage;
   }
+  for (let district in oppReps) {
+    oppRepsArray[district] = oppReps[district];
+  }
+  if(pattern !== undefined) oppRepsArray = oppRepsArray.slice(1);
+  for (let district in demRepSplitCounts) {
+    demRepSplitCountsArray[district] = demRepSplitCounts[district];
+  }
+
+  analysisData["opportunityRepCounts"] = oppRepsArray;
+  analysisData["demRepSplitCounts"] = demRepSplitCountsArray;
+  analysisData["voteSeatSharePercentages"] = {
+    DEMOCRAT: [demVoteShare, demSeatShare],
+    REPUBLICAN: [repVoteShare, repSeatShare],
+  };
 
   analysisData["pattern"] = pattern === undefined ? "SMD" : pattern;
   return analysisData;
@@ -215,12 +230,19 @@ let SMDUniquePlansData = getUniquePlansData(rawSMDData, "North Carolina");
 ////////////////////////////////// MMD Parsing //////////////////////////////////
 let MMDEnsembles = [];
 let MMDAnalysisData = [];
-let MMDUniquePlansData = getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")
-let allUniquePlansData = SMDUniquePlansData.uniqueDistrictPlans.concat(MMDUniquePlansData.uniqueDistrictPlans); 
+let MMDUniquePlansData = getUniquePlansData(
+  rawMMDSubEnsembles,
+  "North Carolina",
+  "MMD"
+);
+let allUniquePlansData = SMDUniquePlansData.uniqueDistrictPlans.concat(
+  MMDUniquePlansData.uniqueDistrictPlans
+);
 
 for (let subEnsemble in rawMMDSubEnsembles) {
   //if field contains "unique_plans_data ignore"
-  if (subEnsemble === "unique_plans_data") continue;
+  if (subEnsemble === "unique_plans_data" || subEnsemble === "bar_data")
+    continue;
 
   let subEnsembleData = rawMMDSubEnsembles[subEnsemble];
   let subEnsemblePattern = subEnsemble;
@@ -232,7 +254,7 @@ for (let subEnsemble in rawMMDSubEnsembles) {
     "MMD"
   );
   let subEnsembleAnalysisData = getAnalysisData(
-    subEnsembleData,
+    rawMMDSubEnsembles,
     fieldsToAnalyze,
     subEnsemblePattern
   );
@@ -242,17 +264,17 @@ for (let subEnsemble in rawMMDSubEnsembles) {
 }
 
 let finalExport = {
-  "name": "North Carolina",
-  "abbreviation": "NC",
-  "stateShape": "polygon",
-  "uniqueDistrictPlans": allUniquePlansData,
-  "analyses": {
-    "SMD": SMDAnalysisData,
-    "MMD": MMDAnalysisData,
+  name: "North Carolina",
+  abbreviation: "NC",
+  stateShape: "polygon",
+  uniqueDistrictPlans: allUniquePlansData,
+  analyses: {
+    SMD: SMDAnalysisData,
+    MMD: MMDAnalysisData,
   },
-  "ensembleSummaryData": {
-    "SMD": SMDEnsembles,
-    "MMD": MMDEnsembles,
+  ensembleSummaryData: {
+    SMD: SMDEnsembles,
+    MMD: MMDEnsembles,
   },
 };
 //console.log(finalExport);
@@ -269,5 +291,5 @@ let finalExport = {
 //let util = require("util");
 
 fs.writeFileSync("NCtest.json", JSON.stringify(finalExport));
-console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
+//console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
 //console.log(util.inspect(finalExport, false, null, true));
