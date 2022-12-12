@@ -122,6 +122,26 @@ class StateService {
       });
   }
 
+  async getLayoutList(state: string) {
+    const stateFullName = OUR_STATES[state].fullName;
+    return fetch(`${this.API}/states/${stateFullName}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((data) => {
+        return data.ensembleSummaryData.MMD.map((mmd: any) => {
+          return mmd.pattern;
+        });
+      })
+      .catch((error) => {
+        throw new Error("Error fetching summary data. Is the server running?");
+      });
+  }
+
   async getSummaryDataForLayout(state: string, layout: string) {
     const stateFullName = OUR_STATES[state].fullName;
 
@@ -466,22 +486,86 @@ class StateService {
     return graphData;
   };
 
-  getBoxAndWhiskerData(state: string, population: string) {
-    const data = {
-      labels: Array.from({ length: 27 }, (_, i) => i + 1),
-      datasets: [
-        {
-          label: population,
-          itemRadius: 2,
-          data: Array.from({ length: 27 }, () =>
-            Array.from({ length: 5 }, () => randomNumber(0, 100))
-          ),
-          borderColor: "#3e95cd",
-          backgroundColor: "#3e95cd",
-        },
-      ],
-    };
-    return data;
+  async getBoxAndWhiskerData(
+    state: string,
+    population: string,
+    planType: string
+  ) {
+    const stateFullName = OUR_STATES[state].fullName;
+    let pattern = "none";
+
+    if (planType != "SMD") {
+      pattern = planType;
+      planType = "MMD";
+    }
+
+    return fetch(
+      `${this.API}/states/${stateFullName}/${planType}/${pattern}/analysis/box-whisker/${population}`
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(response.statusText);
+        }
+      })
+      .then((data) => {
+        const listData = Object.values(data);
+        const graphData = {
+          graph: {
+            labels: listData.map((_, i) => i + 1),
+            datasets: [
+              {
+                label: population,
+                itemRadius: 2,
+                // Sort the list by increasing mean value which is the 4th element in the list
+                data: listData
+                  .map((d: any) => Object.values(d))
+                  .sort((a, b) => {
+                    return a[4] - b[4];
+                  }),
+                backgroundColor: "#3e95cd",
+                borderColor: "#3e95cd",
+              },
+            ],
+          },
+          options: {
+            quantiles: "fivenum",
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false,
+              },
+              title: {
+                display: true,
+                text: `${
+                  population[0].toLocaleUpperCase() +
+                  population.slice(1, population.length).toLocaleLowerCase()
+                } Box and Whisker Plot`,
+              },
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "Indexed Districts",
+                },
+                ticks: {
+                  min: 3,
+                },
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: population,
+                },
+              },
+            },
+          },
+        };
+        console.log(graphData);
+        return graphData;
+      });
   }
 
   async getUniquePlanGeoJSON() {

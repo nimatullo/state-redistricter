@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Chart } from "react-chartjs-2";
 import {
@@ -15,6 +15,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { useParams } from "react-router-dom";
+import stateService from "../../services/stateService";
 
 ChartJS.register(
   CategoryScale,
@@ -27,35 +29,29 @@ ChartJS.register(
   BoxPlotController
 );
 
-const boxplotData = {
-  labels: ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
-  datasets: [
-    {
-      label: "Boxplot",
-      itemRadius: 2,
-      borderColor: "grey",
-      data: [
-        [10, 20, 30, 40, 50],
-        [20, 30, 40, 50, 60],
-      ],
-    },
-  ],
-};
-
 const BoxPlot = (props) => {
-  return (
+  const [boxPlotData, setBoxPlotData] = React.useState(null);
+
+  const params = useParams();
+
+  useEffect(() => {
+    stateService
+      .getBoxAndWhiskerData(params.state, props.population, props.planType)
+      .then((data) => {
+        setBoxPlotData(data);
+      });
+  }, [props.population, props.planType]);
+
+  return boxPlotData ? (
     <div>
       <Chart
         type="boxplot"
-        options={{
-          quantiles: "fivenum",
-        }}
-        legend={{
-          display: false,
-        }}
-        data={props.boxPlotData}
+        options={boxPlotData.options}
+        data={boxPlotData.graph}
       />
     </div>
+  ) : (
+    <p>Loading...</p>
   );
 };
 
