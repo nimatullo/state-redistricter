@@ -61,7 +61,6 @@ public class StatesController {
         State state = statesService.getStateByName(stateName);
         System.out.println("Fetching brief plans for " + stateName);
         List<DistrictPlan> plans = state.getUniqueDistrictPlans();
-        // null all fields except for id and description
         plans = plans.stream().map(plan -> {
             DistrictPlan briefPlan = new DistrictPlan();
             briefPlan.setId(plan.getId());

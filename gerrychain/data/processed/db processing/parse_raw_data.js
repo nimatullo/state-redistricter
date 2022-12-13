@@ -1,8 +1,9 @@
 let uniqueDistrictPlanIdCounter = 0;
 let fs = require("fs");
-let rawSMDData = JSON.parse(fs.readFileSync("../utah/data.json"));
-let rawMMDData = JSON.parse(fs.readFileSync("../utah/ut_data.json"));
-//get all the objects in the "all_data" field
+let rawSMDData = JSON.parse(fs.readFileSync("../north carolina/data.json"));
+let rawMMDData = JSON.parse(fs.readFileSync("../north carolina/nc_data.json"));
+let state = "North Carolina";
+let abbreviation = "NC";
 let rawMMDSubEnsembles = rawMMDData.all_data;
 
 let fieldsToAvg = [
@@ -34,6 +35,8 @@ function castCategory(category) {
     category.toLowerCase().includes("wt_")
   )
     return "WHITE";
+  if (category.toLowerCase().includes("dem_split_box")) return "DEMOCRAT";
+  if (category.toLowerCase().includes("rep_split_box")) return "REPUBLICAN";
   return category;
 }
 
@@ -86,17 +89,47 @@ let fieldsToAnalyze = [
   "white_pop_box_data",
   "asian_pop_box_data",
   "hispanic_pop_box_data",
+  "dem_split_box_data",
+  "rep_split_box_data",
 ];
+
+function convertBoxDataToPercents(rawData, boxDataField, pattern) {
+  let newBoxData = {};
+  let oldBoxData =
+    pattern === undefined
+      ? rawData[boxDataField]
+      : rawData[pattern][boxDataField];
+  let totalPops = pattern === undefined ? rawData.total_pop : rawData[pattern].total_pop;
+
+  for (let district in oldBoxData) {
+    newBoxData[district] = {};
+    for (let boxData in oldBoxData[district]) {
+      newBoxData[district][boxData] =
+        oldBoxData[district][boxData] / (totalPops[district]*1.0);
+    }
+  }
+  return newBoxData;
+}
 
 function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
   let analysisData = {};
   analysisData["boxAndWhiskerPlots"] = {};
+  analysisData["partyBoxAndWhiskerPlots"] = {};
   for (let field of fieldsToAnalyze) {
     let newField = castCategory(field);
-    if (field.toLowerCase().includes("box_data")) {
+    if (
+      field.toLowerCase().includes("box_data") &&
+      !field.toLowerCase().includes("split")
+    ) {
+      let boxData = convertBoxDataToPercents(rawData, field, pattern);
+      analysisData["boxAndWhiskerPlots"][newField] = boxData;
+    } else if (field.toLowerCase().includes("split_box_data")) {
       if (pattern !== undefined)
-        analysisData["boxAndWhiskerPlots"][newField] = rawData[pattern][field];
-      else analysisData["boxAndWhiskerPlots"][newField] = rawData[field];
+        analysisData["partyBoxAndWhiskerPlots"][newField] =
+          rawData[pattern][field];
+      else {
+        analysisData["partyBoxAndWhiskerPlots"][newField] = rawData[field];
+      }
     } else analysisData[newField] = rawData[field];
   }
 
@@ -216,12 +249,12 @@ function getUniquePlansData(rawData, state, planType) {
 ////////////////////////////////// SMD Parsing //////////////////////////////////
 let SMDEnsembles = [getEnsembleSummaryData(rawSMDData, fieldsToAvg)];
 let SMDAnalysisData = [getAnalysisData(rawSMDData, fieldsToAnalyze)];
-let SMDUniquePlansData = getUniquePlansData(rawSMDData, "Utah");
+let SMDUniquePlansData = getUniquePlansData(rawSMDData, state);
 
 ////////////////////////////////// MMD Parsing //////////////////////////////////
 let MMDEnsembles = [];
 let MMDAnalysisData = [];
-let MMDUniquePlansData = getUniquePlansData(rawMMDSubEnsembles, "Utah", "MMD");
+let MMDUniquePlansData = getUniquePlansData(rawMMDSubEnsembles, state, "MMD");
 let allUniquePlansData = SMDUniquePlansData.uniqueDistrictPlans.concat(
   MMDUniquePlansData.uniqueDistrictPlans
 );
@@ -251,8 +284,8 @@ for (let subEnsemble in rawMMDSubEnsembles) {
 }
 
 let finalExport = {
-  name: "Utah",
-  abbreviation: "UT",
+  name: state,
+  abbreviation: abbreviation,
   stateShape: "polygon",
   uniqueDistrictPlans: allUniquePlansData,
   analyses: {
@@ -264,4 +297,4 @@ let finalExport = {
     MMD: MMDEnsembles,
   },
 };
-fs.writeFileSync("UTtest.json", JSON.stringify(finalExport));
+fs.writeFileSync(state + " test boxdata.json", JSON.stringify(finalExport));
