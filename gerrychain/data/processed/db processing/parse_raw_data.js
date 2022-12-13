@@ -131,7 +131,7 @@ function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
   for (let district in oppReps) {
     oppRepsArray[district] = oppReps[district];
   }
-  if (pattern !== undefined) oppRepsArray = oppRepsArray.slice(1);
+  if (pattern !== undefined) oppRepsArray = oppRepsArray.slice(1); //import file was offset by 1
   for (let district in demRepSplitCounts) {
     demRepSplitCountsArray[district] = demRepSplitCounts[district];
   }
