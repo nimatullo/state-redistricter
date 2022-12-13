@@ -6,7 +6,7 @@
 #SBATCH -p short-40core
 #SBATCH --time 04:00:00
 #SBATCH --job-name utah-smd
-#SBATCH --output ut-%J.log
+#SBATCH --output /gpfs/home/snimatullo/gerrychain/logs/ut-%J.log
 
 # load modules or conda environments here
 module load gerrychain

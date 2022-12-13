@@ -13,7 +13,7 @@ filename = sys.argv[1]
 cProfile.run('exec(open(filename).read())', filename + '-profile.txt')
 
 with open(filename + '-proc.txt', 'w') as f:
-    p = pstats.Stats(filename + '-profile.txt', stream=f)
+    p = pstats.Stats("../logs/" + filename + '-profile.txt', stream=f)
     results = p.sort_stats('cumulative').print_stats(10)
 
 os.remove(filename + '-profile.txt')

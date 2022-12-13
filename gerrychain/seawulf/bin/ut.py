@@ -341,9 +341,7 @@ for reason in unique_plans:
     district_shapes = gdf.dissolve(by='assignment', aggfunc='sum') # Combine the precincts to form districts
     district_shapes = district_shapes.to_crs(epsg="4326")
     district_shapes = district_shapes.join(r_split)
-    district_shapes["R_votes"] = district_shapes["R_votes"].apply(lambda x: "R" if x > 0.5 else "D")
-    district_shapes = district_shapes.rename(columns={"R_votes": "party"})
-#     district_shapes.to_file(f"{EXPORT_PATH}/unique plans/{reason}.geojson", driver='GeoJSON')
+    district_shapes.to_file(f"{EXPORT_PATH}/unique plans/{reason}.geojson", driver='GeoJSON')
 
 
 # In[66]:
