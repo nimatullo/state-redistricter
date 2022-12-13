@@ -12,7 +12,14 @@ const StateContainer = () => {
   return (
     <Grid gridTemplateColumns={"1fr 3fr 2fr"}>
       <StateSidebar />
-      <Outlet />
+      <div
+        style={{
+          overflow: "auto",
+          height: "100vh",
+        }}
+      >
+        <Outlet />
+      </div>
       <Map />
     </Grid>
   );

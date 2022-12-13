@@ -17,7 +17,7 @@ const ElectionResults = () => {
   return (
     <Box p={"1em"}>
       <Heading size="2xl" mb="1em">
-        Election Results
+        Election Results (mmd)
       </Heading>
       <Tabs variant={"soft-rounded"} colorScheme={"gray"}>
         <TabList>
