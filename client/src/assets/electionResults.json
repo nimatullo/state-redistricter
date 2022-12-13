@@ -1,84 +1,186 @@
 {
-  "1": {
-    "Winners": [
-      ["Cramer, Kevin", "Democratic", 320212.36],
-      ["Yoder, Kevin", "Republican", 306896.4],
-      ["Cummings, Elijah E.", "Democratic", 298192.92],
-      ["Womack, Steve", "Republican", 279411.0]
-    ],
-    "Eliminated": [
-      ["Davis, Rodney", "Democratic", 167301],
-      ["Zengerle, Mark", "Republican", 196761],
-      ["DeLauro, Rosa L.", "Democratic", 226448.6],
-      ["Wright, Ron", "Republican", 277604.4]
-    ],
-    "Initial Votes": [
-      ["Yoder, Kevin", "Republican", 249330],
-      ["Wright, Ron", "Republican", 230434],
-      ["Womack, Steve", "Republican", 226739],
-      ["Zengerle, Mark", "Republican", 196761],
-      ["Cummings, Elijah E.", "Democratic", 193967],
-      ["Cramer, Kevin", "Democratic", 187365],
-      ["DeLauro, Rosa L.", "Democratic", 186991],
-      ["Davis, Rodney", "Democratic", 167301]
-    ],
-    "RepCountTotal": 4,
-    "VoteThreshold": 327777.6
+  "nc": {
+    "1": {
+      "Winners": [
+        ["Cramer, Kevin", "Democratic", 320212.36],
+        ["Yoder, Kevin", "Republican", 306896.4],
+        ["Cummings, Elijah E.", "Democratic", 298192.92],
+        ["Womack, Steve", "Republican", 279411.0]
+      ],
+      "Eliminated": [
+        ["Davis, Rodney", "Democratic", 167301],
+        ["Zengerle, Mark", "Republican", 196761],
+        ["DeLauro, Rosa L.", "Democratic", 226448.6],
+        ["Wright, Ron", "Republican", 277604.4]
+      ],
+      "Initial Votes": [
+        ["Yoder, Kevin", "Republican", 249330],
+        ["Wright, Ron", "Republican", 230434],
+        ["Womack, Steve", "Republican", 226739],
+        ["Zengerle, Mark", "Republican", 196761],
+        ["Cummings, Elijah E.", "Democratic", 193967],
+        ["Cramer, Kevin", "Democratic", 187365],
+        ["DeLauro, Rosa L.", "Democratic", 186991],
+        ["Davis, Rodney", "Democratic", 167301]
+      ],
+      "RepCountTotal": 4,
+      "VoteThreshold": 327777.6
+    },
+    "2": {
+      "Winners": [
+        ["Zimmerman, Jeff", "Democratic", 302686.4],
+        ["Bridenstine, Jim", "Democratic", 286891.12],
+        ["Murphy, Gregory", "Republican", 272928.4],
+        ["Stevens, Mark", "Republican", 264955.4]
+      ],
+      "Eliminated": [
+        ["Carter, Earl", "Democratic", 148411],
+        ["Cohen, Steve", "Democratic", 192602.4],
+        ["McHenry, Patrick T.", "Republican", 195282],
+        ["Rouzer, David", "Republican", 251889.8]
+      ],
+      "Initial Votes": [
+        ["Murphy, Gregory", "Republican", 220830],
+        ["Rouzer, David", "Republican", 206833],
+        ["Stevens, Mark", "Republican", 205885],
+        ["Zimmerman, Jeff", "Democratic", 204188],
+        ["McHenry, Patrick T.", "Republican", 195282],
+        ["Bridenstine, Jim", "Democratic", 193558],
+        ["Cohen, Steve", "Democratic", 157988],
+        ["Carter, Earl", "Democratic", 148411]
+      ],
+      "RepCountTotal": 4,
+      "VoteThreshold": 306595.0
+    },
+    "3": {
+      "Winners": [
+        ["Bishop, Dan", "Republican", 352583.984],
+        ["Butterfield, G.K.", "Democratic", 318724.0],
+        ["Budd, Ted", "Republican", 303841.96],
+        ["Manning, Kathy E.", "Democratic", 291809.2],
+        ["Adams, Alma S", "Democratic", 289452.8]
+      ],
+      "Eliminated": [
+        ["Foxx, Virginia", "Republican", 148960],
+        ["Hudson, Richard", "Republican", 195450.2],
+        ["Ross, Deborah K.", "Democratic", 230004],
+        ["Cawthorn, Madison", "Republican", 246572.28],
+        ["Price, David E.", "Democratic", 275638.2]
+      ],
+      "Initial Votes": [
+        ["Butterfield, G.K.", "Democratic", 259332],
+        ["Adams, Alma S", "Democratic", 250316],
+        ["Manning, Kathy E.", "Democratic", 246046],
+        ["Price, David E.", "Democratic", 235927],
+        ["Ross, Deborah K.", "Democratic", 230004],
+        ["Bishop, Dan", "Republican", 210814],
+        ["Cawthorn, Madison", "Republican", 190451],
+        ["Budd, Ted", "Republican", 182293],
+        ["Hudson, Richard", "Republican", 167279],
+        ["Foxx, Virginia", "Republican", 148960]
+      ],
+      "RepCountTotal": 5,
+      "VoteThreshold": 353570.3333333333
+    }
   },
-  "2": {
-    "Winners": [
-      ["Zimmerman, Jeff", "Democratic", 302686.4],
-      ["Bridenstine, Jim", "Democratic", 286891.12],
-      ["Murphy, Gregory", "Republican", 272928.4],
-      ["Stevens, Mark", "Republican", 264955.4]
-    ],
-    "Eliminated": [
-      ["Carter, Earl", "Democratic", 148411],
-      ["Cohen, Steve", "Democratic", 192602.4],
-      ["McHenry, Patrick T.", "Republican", 195282],
-      ["Rouzer, David", "Republican", 251889.8]
-    ],
-    "Initial Votes": [
-      ["Murphy, Gregory", "Republican", 220830],
-      ["Rouzer, David", "Republican", 206833],
-      ["Stevens, Mark", "Republican", 205885],
-      ["Zimmerman, Jeff", "Democratic", 204188],
-      ["McHenry, Patrick T.", "Republican", 195282],
-      ["Bridenstine, Jim", "Democratic", 193558],
-      ["Cohen, Steve", "Democratic", 157988],
-      ["Carter, Earl", "Democratic", 148411]
-    ],
-    "RepCountTotal": 4,
-    "VoteThreshold": 306595.0
+  "ut": {
+    "1": {
+      "Winners": [
+        ["Owens, Burgess", "Republican", 200342],
+        ["Stewart, Chris", "Republican", 197770],
+        ["Moore, Blake D.", "Republican", 187050],
+        ["Curtis, John R.", "Republican", 174325]
+      ],
+      "Eliminated": [
+        ["Williams, Abigail", "Democratic", 69917],
+        ["Kennedy, Robert J.", "Democratic", 90597.8],
+        ["Whipper, Snapper", "Democratic", 119787.68],
+        ["Rob Crok", "Democratic", 171094.544]
+      ],
+      "Initial Votes": [
+        ["Owens, Burgess", "Republican", 200342],
+        ["Stewart, Chris", "Republican", 197770],
+        ["Moore, Blake D.", "Republican", 187050],
+        ["Curtis, John R.", "Republican", 174325],
+        ["Rob Crok", "Democratic", 83798],
+        ["Whipper, Snapper", "Democratic", 75912],
+        ["Kennedy, Robert J.", "Democratic", 72325],
+        ["Williams, Abigail", "Democratic", 69917]
+      ],
+      "RepCountTotal": 4,
+      "VoteThreshold": 212287.8
+    }
   },
-  "3": {
-    "Winners": [
-      ["Bishop, Dan", "Republican", 352583.984],
-      ["Butterfield, G.K.", "Democratic", 318724.0],
-      ["Budd, Ted", "Republican", 303841.96],
-      ["Manning, Kathy E.", "Democratic", 291809.2],
-      ["Adams, Alma S", "Democratic", 289452.8]
-    ],
-    "Eliminated": [
-      ["Foxx, Virginia", "Republican", 148960],
-      ["Hudson, Richard", "Republican", 195450.2],
-      ["Ross, Deborah K.", "Democratic", 230004],
-      ["Cawthorn, Madison", "Republican", 246572.28],
-      ["Price, David E.", "Democratic", 275638.2]
-    ],
-    "Initial Votes": [
-      ["Butterfield, G.K.", "Democratic", 259332],
-      ["Adams, Alma S", "Democratic", 250316],
-      ["Manning, Kathy E.", "Democratic", 246046],
-      ["Price, David E.", "Democratic", 235927],
-      ["Ross, Deborah K.", "Democratic", 230004],
-      ["Bishop, Dan", "Republican", 210814],
-      ["Cawthorn, Madison", "Republican", 190451],
-      ["Budd, Ted", "Republican", 182293],
-      ["Hudson, Richard", "Republican", 167279],
-      ["Foxx, Virginia", "Republican", 148960]
-    ],
-    "RepCountTotal": 5,
-    "VoteThreshold": 353570.3333333333
+  "va": {
+    "1": {
+      "Winners": [
+        ["Stevens, Jax", "Republican", 268167.4],
+        ["Carter, James", "Democratic", 264329.0],
+        ["White, Steve", "Republican", 260787.8]
+      ],
+      "Eliminated": [
+        ["Rouzer, David", "Republican", 157149],
+        ["Smith, Steve", "Democratic", 181365],
+        ["Cramer, David", "Democratic", 259155.0]
+      ],
+      "Initial Votes": [
+        ["Stevens, Jax", "Republican", 204561],
+        ["White, Steve", "Republican", 198675],
+        ["Carter, James", "Democratic", 193881],
+        ["Cramer, David", "Democratic", 184511],
+        ["Smith, Steve", "Democratic", 181365],
+        ["Rouzer, David", "Republican", 157149]
+      ],
+      "RepCountTotal": 3,
+      "VoteThreshold": 280035.5
+    },
+    "2": {
+      "Winners": [
+        ["Murphy, Gregory", "Republican", 211254.8],
+        ["Bridenstine, Jimmy", "Democratic", 200083.0],
+        ["Beyer, Donald S. Jr.", "Democratic", 191720.0]
+      ],
+      "Eliminated": [
+        ["Connolly, Gerald E.", "Democratic", 129650],
+        ["McHenry, Patrick T.", "Republican", 133456],
+        ["Hudson, Richard", "Republican", 189207.0]
+      ],
+      "Initial Votes": [
+        ["Murphy, Gregory", "Republican", 158586],
+        ["Bridenstine, Jimmy", "Democratic", 145791],
+        ["Beyer, Donald S. Jr.", "Democratic", 142292],
+        ["Hudson, Richard", "Republican", 135111],
+        ["McHenry, Patrick T.", "Republican", 133456],
+        ["Connolly, Gerald E.", "Democratic", 129650]
+      ],
+      "RepCountTotal": 3,
+      "VoteThreshold": 211221.5
+    },
+    "3": {
+      "Winners": [
+        ["Scott, Robert C.", "Democratic", 368264.52],
+        ["Spanberger, Abigail Davis.", "Democratic", 356846.64],
+        ["Wittman, Robert J", "Republican", 312493.4],
+        ["Good, Bob", "Republican", 285823.2]
+      ],
+      "Eliminated": [
+        ["Giffith, H. Morgan", "Republican", 207164],
+        ["Luria, Elaine G.", "Democratic", 215149],
+        ["Wexton, Jennifer", "Democratic", 278455.2],
+        ["Cline, Ben", "Republican", 281528.6]
+      ],
+      "Initial Votes": [
+        ["Wittman, Robert J", "Republican", 245635],
+        ["Cline, Ben", "Republican", 235463],
+        ["Scott, Robert C.", "Democratic", 233057],
+        ["Good, Bob", "Republican", 233016],
+        ["Wexton, Jennifer", "Democratic", 223788],
+        ["Spanberger, Abigail Davis.", "Democratic", 216046],
+        ["Luria, Elaine G.", "Democratic", 215149],
+        ["Giffith, H. Morgan", "Republican", 207164]
+      ],
+      "RepCountTotal": 4,
+      "VoteThreshold": 361863.6
+    }
   }
 }

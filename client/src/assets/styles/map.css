@@ -29,3 +29,7 @@
 .state-sidebar-active svg {
   color: var(--chakra-colors-brand-tertiary);
 }
+
+*:focus {
+  outline: none;
+}

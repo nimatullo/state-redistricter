@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import { useEffect } from "react";
+import stateService from "../../services/stateService";
 import {
   Table,
   TableContainer,
@@ -8,16 +11,12 @@ import {
   Td,
   TableCaption,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import stateService from "../../services/stateService";
 
-const AllCandidates = () => {
+const AllCandidatesComparison = () => {
   const [candidates, setCandidates] = useState([]);
-  const params = useParams();
 
   useEffect(() => {
-    stateService.getCandidates(params.state, "all").then((candidates) => {
+    stateService.getCandidatesForComparison("all").then((candidates) => {
       console.log(candidates);
       setCandidates(candidates);
     });
@@ -34,6 +33,7 @@ const AllCandidates = () => {
             <Th>District</Th>
             <Th>Name</Th>
             <Th>Party</Th>
+            <Th>Simulation Type</Th>
             <Th isNumeric>Votes</Th>
           </Tr>
         </Thead>
@@ -49,6 +49,7 @@ const AllCandidates = () => {
                 {candidate.name}
               </Td>
               <Td>{candidate.party}</Td>
+              <Td>{candidate.type}</Td>
               <Td isNumeric>
                 {Math.round(candidate.totalVotes).toLocaleString()}
               </Td>
@@ -60,4 +61,4 @@ const AllCandidates = () => {
   );
 };
 
-export default AllCandidates;
+export default AllCandidatesComparison;

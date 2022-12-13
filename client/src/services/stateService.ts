@@ -1,7 +1,8 @@
 import percentages from "../../utils/percentages.json";
 import OUR_STATES from "../assets/ourStates";
 import oppRepData from "../assets/threshold.json";
-import electionData from "../assets/electionResults.json";
+import elections from "../assets/electionResults.json";
+import evenUneven from "../assets/even-uneven-election.json";
 
 import { faker } from "@faker-js/faker";
 
@@ -280,14 +281,21 @@ class StateService {
         }
       })
       .then((data) => {
+        console.log(data);
         const formattedData = {
           id: data.id,
           safeDistricts: data.overview.safeDistricts,
           opportunityDistricts: data.overview.opportunityDistricts,
           polsbyPopperScore: data.overview.polsbyPopperScore,
-          districts: data.districts.map((district: any) => {
+          planType: data.planType,
+          districts: data.districts.map((district: any, index: number) => {
             return {
               districtNumber: district.id,
+              opportunityDistrictThreshold:
+                data.planType === "MMD"
+                  ? 1 /
+                    Number(data.description.split("chain")[1].split("")[index])
+                  : 0.5,
               totalPopulation: district.populations.reduce(
                 (acc, cur) => acc + cur.count,
                 0
@@ -309,7 +317,6 @@ class StateService {
             };
           }),
         };
-        console.log(formattedData);
         return formattedData;
       })
       .catch((error) => {
@@ -603,7 +610,6 @@ class StateService {
     const graphData = {
       graph: {
         labels: Object.keys(data.smd)
-          // sort by decreasing order
           .map((d) => Number(d).toFixed(2))
           .sort((a, b) => {
             return Number(b) - Number(a);
@@ -611,11 +617,11 @@ class StateService {
         datasets: [
           {
             label: "Opportunity Representative Count For SMD",
-            data: Object.values(data.smd)
+            data: Object.keys(data.smd)
               .sort((a, b) => {
                 return Number(b) - Number(a);
               })
-              .map((d) => data[d]),
+              .map((d) => data.smd[d]),
             backgroundColor: "#3e95cd",
           },
           {
@@ -624,7 +630,7 @@ class StateService {
               .sort((a, b) => {
                 return Number(b) - Number(a);
               })
-              .map((d) => data[d]),
+              .map((d) => data.mmd[d]),
             backgroundColor: "#8e5ea2",
           },
         ],
@@ -633,7 +639,7 @@ class StateService {
         responsive: true,
         plugins: {
           legend: {
-            display: false,
+            display: true,
           },
           title: {
             display: true,
@@ -665,6 +671,8 @@ class StateService {
   }
 
   async getCandidates(state: string, fetchInfo: string) {
+    const electionData = elections[state];
+
     const winners = Object.keys(electionData).map((key) => {
       return electionData[key].Winners.map((winner) => {
         return {
@@ -762,6 +770,90 @@ class StateService {
       .sort((a, b) => {
         return a.district - b.district;
       });
+  }
+
+  async getCandidatesForComparison(fetchInfo: string) {
+    const even = evenUneven["even"];
+    const uneven = evenUneven["uneven"];
+
+    let winners = Object.keys(even).map((key) => {
+      return even[key].Winners.map((winner) => {
+        return {
+          name: winner[0],
+          party: winner[1],
+          district: Number(key),
+          totalVotes: winner[2],
+          isWinner: true,
+          type: "even",
+        };
+      });
+    });
+
+    winners = winners.concat(
+      Object.keys(uneven).map((key) => {
+        return uneven[key].Winners.map((winner) => {
+          return {
+            name: winner[0],
+            party: winner[1],
+            district: Number(key),
+            totalVotes: winner[2],
+            isWinner: true,
+            type: "uneven",
+          };
+        });
+      })
+    );
+
+    let losers = Object.keys(even).map((key) => {
+      return even[key].Eliminated.map((loser) => {
+        return {
+          name: loser[0],
+          party: loser[1],
+          district: Number(key),
+          totalVotes: loser[2],
+          isWinner: false,
+          threshold: even[key].VoteThreshold,
+          type: "even",
+        };
+      });
+    });
+
+    losers = losers.concat(
+      Object.keys(uneven).map((key) => {
+        return uneven[key].Eliminated.map((loser) => {
+          return {
+            name: loser[0],
+            party: loser[1],
+            district: Number(key),
+            totalVotes: loser[2],
+            isWinner: false,
+            threshold: uneven[key].VoteThreshold,
+            type: "uneven",
+          };
+        });
+      })
+    );
+
+    if (fetchInfo === "winners") {
+      return winners
+        .flatMap((w) => w)
+        .sort((a, b) => {
+          return a.district - b.district;
+        });
+    } else if (fetchInfo === "losers") {
+      return losers
+        .flatMap((w) => w)
+        .sort((a, b) => {
+          return a.district - b.district;
+        });
+    } else {
+      return winners
+        .concat(losers)
+        .flatMap((w) => w)
+        .sort((a, b) => {
+          return a.district - b.district;
+        });
+    }
   }
 }
 

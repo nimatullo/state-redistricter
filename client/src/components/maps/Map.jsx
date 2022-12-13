@@ -13,6 +13,7 @@ import OUR_STATES from "../../assets/ourStates";
 import { useAlert } from "../../services/alertservice";
 import DistrictPlanDropdown from "./DistrictPlanDropdown";
 import { useMapContext } from "../../services/mapContext";
+import Legend from "./Legend";
 
 const Map = () => {
   const [geoData, setGeoData] = useState();
@@ -20,7 +21,6 @@ const Map = () => {
   const [stateCoordinates, setCoordinates] = useState(null);
   const [zoom, setZoom] = useState(6);
 
-  const geoJsonRef = useRef(null);
   const params = useParams();
   const { setMessage } = useAlert();
   const mapContext = useMapContext();
@@ -80,6 +80,7 @@ const Map = () => {
             </>
           )}
         </MapContainer>
+        <Legend />
       </div>
     )
   );

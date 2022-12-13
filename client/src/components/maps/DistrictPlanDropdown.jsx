@@ -10,9 +10,13 @@ const DistrictPlanDropdown = (props) => {
 
   const mapContext = useMapContext();
   const [interestingDistricts, setInterestingDistricts] = useState([]);
+  const [interestingDistrictMap, setInterestingDistrictMap] = useState({});
 
   useEffect(() => {
     stateService.getDistrictPlans(params.state).then((data) => {
+      data.forEach((plan) => {
+        interestingDistrictMap[plan.id] = plan;
+      });
       setInterestingDistricts(data);
     });
   }, []);
@@ -21,13 +25,21 @@ const DistrictPlanDropdown = (props) => {
       variant="outline"
       placeholder={"Select a district plan"}
       onChange={(e) => {
-        props.setSelectedPlan(e.target.value);
+        console.log(interestingDistrictMap);
+        const planId = e.target.value;
+        props.setSelectedPlan(planId);
+
         stateService
-          .getUniquePlanGeoJSON(params.state, "MMD", e.target.value)
+          .getUniquePlanGeoJSON(
+            params.state,
+            interestingDistrictMap[planId].planType,
+            interestingDistrictMap[planId].description
+          )
           .then((data) => {
             if (mapContext.geoJsonRef.current) {
               mapContext.geoJsonRef.current.clearLayers().addData(data);
               mapContext.setGeoJSON(data);
+              mapContext.setSelectedDistrictNumber(1);
             }
           });
       }}
@@ -36,14 +48,14 @@ const DistrictPlanDropdown = (props) => {
         {interestingDistricts
           .filter((plan) => plan.planType === "SMD")
           .map((plan) => (
-            <option value={plan.description}>{plan.description}</option>
+            <option value={plan.id}>{plan.description}</option>
           ))}
       </optgroup>
       <optgroup label="MMD Unique Plans">
         {interestingDistricts
           .filter((plan) => plan.planType === "MMD")
           .map((plan) => (
-            <option value={plan.description}>{plan.description}</option>
+            <option value={plan.id}>{plan.description}</option>
           ))}
       </optgroup>
     </Select>

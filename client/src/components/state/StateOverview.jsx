@@ -1,5 +1,12 @@
 import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 import stateService from "../../services/stateService";
 import { Card } from "./UniqueDistrictPlan";
@@ -57,9 +64,14 @@ const StateOverview = () => {
 
   return (
     <Box p={"1em"}>
-      <Heading size="2xl" mb="1em">
+      <Heading size="2xl" mb="10px">
         Overview
       </Heading>
+      <Text mb="1em" color="gray.600">
+        General information about the state along with comparisions between the
+        enacted plan, average multi-member district plans and average single
+        member district plans.
+      </Text>
       <Tabs variant={"soft-rounded"} colorScheme={"gray"}>
         <TabList>
           <Tab>Demographic Breakdown</Tab>

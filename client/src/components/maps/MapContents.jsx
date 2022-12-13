@@ -33,17 +33,22 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
 
   const hightlight = (e) => {
     const layer = e.target;
+    let tooltipString = "";
     layer.setStyle(HIGHLIGHT_STYLE);
-    console.log(layer.feature.properties.assignment);
+
     const districtNumber =
       layer.feature.properties.district ||
       layer.feature.properties.DISTRICT ||
       layer.feature.properties.assignment;
-    layer
-      .bindTooltip(
-        `District ${districtNumber}\nReps: ${layer.feature.properties.Reps}`
-      )
-      .openTooltip();
+
+    if (layer.feature.properties.Reps) {
+      tooltipString = `District ${districtNumber}
+      <br/>Representatives: ${layer.feature.properties.Reps}`;
+    } else {
+      tooltipString = `District ${districtNumber}`;
+    }
+
+    layer.bindTooltip(tooltipString).openTooltip();
   };
 
   const resetHighlight = (e) => {
@@ -63,9 +68,17 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
   };
 
   const styleBasedOnParty = (feature) => {
-    console.log(feature.properties.Rep);
-    DEFAULT_STYLE.fillColor =
-      feature.properties.Rep > 0.5 ? "#E72B0D" : "#2C5282";
+    if (feature.properties.Rep || feature.properties.R_votes) {
+      const percentage = feature.properties.Rep || feature.properties.R_votes;
+      if (percentage === 0.5) {
+        DEFAULT_STYLE.fillColor = "#48c359";
+      } else {
+        DEFAULT_STYLE.fillColor = percentage > 0.5 ? "#E72B0D" : "#2C5282";
+      }
+    } else if (feature.properties.party) {
+      DEFAULT_STYLE.fillColor =
+        feature.properties.party === "R" ? "#E72B0D" : "#2C5282";
+    }
 
     return DEFAULT_STYLE;
   };
@@ -81,7 +94,8 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
 
     const districtNumber =
       e.target.feature.properties.district ||
-      e.target.feature.properties.DISTRICT;
+      e.target.feature.properties.DISTRICT ||
+      e.target.feature.properties.assignment;
     mapContext.setSelectedDistrictNumber(districtNumber);
   };
 

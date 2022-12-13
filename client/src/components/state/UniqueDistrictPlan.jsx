@@ -8,6 +8,7 @@ import {
   StatNumber,
   StatHelpText,
   StatArrow,
+  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -51,11 +52,26 @@ const UniqueDistrictPlan = () => {
     setSDD(districtPlanData.districts[districtNumber - 1]);
   }, [mapContext]);
 
+  const getOppDistrictThreshold = () => {
+    if (districtPlanData.planType === "SMD") {
+      return 0.5;
+    }
+
+    const district = Number(mapContext.selectedDistrictNumber);
+    const thresh =
+      districtPlanData.districts[district - 1].opportunityDistrictThreshold;
+    return thresh === 1 ? 0.5 : thresh;
+  };
+
   return (
     <Box p={"1em"}>
-      <Heading size="2xl" mb="1em">
+      <Heading size="2xl" mb="10px">
         Unique District Plan
       </Heading>
+      <Text mb="1em" color="gray.600">
+        List of unique district plans encountered throughout the generation of
+        multi-member and single-member ensembles.
+      </Text>
       <DistrictPlanDropdown setSelectedPlan={setSelectedDistrictPlan} />
       {selectedDistrictData && (
         <>
@@ -70,7 +86,7 @@ const UniqueDistrictPlan = () => {
             />
             <Card
               label={"Opportunity District Threshold"}
-              value={0.5}
+              value={getOppDistrictThreshold()}
               helpText="The threshold used to determine an opportunity districts."
             />
             <Card
