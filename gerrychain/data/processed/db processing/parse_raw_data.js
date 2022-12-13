@@ -1,8 +1,8 @@
 let uniqueDistrictPlanIdCounter = 0;
 let fs = require("fs");
-let rawSMDData = JSON.parse(fs.readFileSync("../north carolina/data.json"));
+let rawSMDData = JSON.parse(fs.readFileSync("../utah/data.json"));
 let rawMMDData = JSON.parse(
-  fs.readFileSync("../north carolina/nc mmd data.json")
+  fs.readFileSync("../utah/ut_data.json")
 );
 //get all the objects in the "all_data" field
 let rawMMDSubEnsembles = rawMMDData.all_data;
@@ -92,8 +92,6 @@ let fieldsToAnalyze = [
 
 function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
   let analysisData = {};
-  //console.log(rawData);
-  console.log(pattern);
   analysisData["boxAndWhiskerPlots"] = {};
   for (let field of fieldsToAnalyze) {
     let newField = castCategory(field);
@@ -121,7 +119,6 @@ function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
     repSeatShare = rawData.rep_seat_share_percentage;
   } else {
     oppReps = rawData.bar_data.opportunity_reps[pattern].opportunity_reps;
-    console.log(oppReps);
     demRepSplitCounts = rawData.bar_data.rep_total_count;
     demVoteShare = rawData[pattern].dem_vote_share_percentage;
     demSeatShare = rawData[pattern].dem_seat_share_percentage;
@@ -219,19 +216,16 @@ function getUniquePlansData(rawData, state, planType) {
 }
 
 ////////////////////////////////// SMD Parsing //////////////////////////////////
-//console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
-//console.log(getAnalysisData(rawSMDData, fieldsToAnalyze));
-//console.log(getUniquePlansData(rawSMDData, "North Carolina"));
 let SMDEnsembles = [getEnsembleSummaryData(rawSMDData, fieldsToAvg)];
 let SMDAnalysisData = [getAnalysisData(rawSMDData, fieldsToAnalyze)];
-let SMDUniquePlansData = getUniquePlansData(rawSMDData, "North Carolina");
+let SMDUniquePlansData = getUniquePlansData(rawSMDData, "Utah");
 
 ////////////////////////////////// MMD Parsing //////////////////////////////////
 let MMDEnsembles = [];
 let MMDAnalysisData = [];
 let MMDUniquePlansData = getUniquePlansData(
   rawMMDSubEnsembles,
-  "North Carolina",
+  "Utah",
   "MMD"
 );
 let allUniquePlansData = SMDUniquePlansData.uniqueDistrictPlans.concat(
@@ -263,8 +257,8 @@ for (let subEnsemble in rawMMDSubEnsembles) {
 }
 
 let finalExport = {
-  name: "North Carolina",
-  abbreviation: "NC",
+  name: "Utah",
+  abbreviation: "UT",
   stateShape: "polygon",
   uniqueDistrictPlans: allUniquePlansData,
   analyses: {
@@ -276,19 +270,4 @@ let finalExport = {
     MMD: MMDEnsembles,
   },
 };
-//console.log(finalExport);
-//console.log(JSON.stringify({"MMD": MMDEnsembles}));
-//console.log(JSON.stringify({ MMD: MMDAnalysisData }));
-
-// console.log();
-// console.log(
-//   JSON.stringify(
-//     getUniquePlansData(rawMMDSubEnsembles, "North Carolina", "MMD")
-//   )
-// );
-// //print out full object using util.inspect
-//let util = require("util");
-
-fs.writeFileSync("NCtest.json", JSON.stringify(finalExport));
-//console.log(getEnsembleSummaryData(rawSMDData, fieldsToAvg));
-//console.log(util.inspect(finalExport, false, null, true));
+fs.writeFileSync("UTtest.json", JSON.stringify(finalExport));

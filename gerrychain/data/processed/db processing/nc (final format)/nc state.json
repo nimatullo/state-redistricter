@@ -1,2116 +1,1960 @@
-[
-  {
-    "name": "North Carolina",
-    "abbreviation": "NC",
-    "stateShape": "polygon",
-    "uniqueDistrictPlans": [
-      {
-        "planType": "SMD",
-        "description": "High Democrat Concentration In District",
-        "shape": "polygon",
-        "id": 0,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 2,
-          "safeDistricts": 4,
-          "polsbyPopperScore": 0.18113600453154885
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 203914 },
-              { "type": "WHITE", "count": 436257 },
-              { "type": "ASIAN", "count": 6446 },
-              { "type": "HISPANIC", "count": 69385 }
-            ],
-            "repSplit": 0.5709226105179019,
-            "demSplit": 0.4290773894820981,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 177501 },
-              { "type": "WHITE", "count": 428010 },
-              { "type": "ASIAN", "count": 35184 },
-              { "type": "HISPANIC", "count": 79649 }
-            ],
-            "repSplit": 0.35343597869167215,
-            "demSplit": 0.6465640213083279,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 136040 },
-              { "type": "WHITE", "count": 503656 },
-              { "type": "ASIAN", "count": 6704 },
-              { "type": "HISPANIC", "count": 59999 }
-            ],
-            "repSplit": 0.5984896145396444,
-            "demSplit": 0.4015103854603555,
-            "id": "3"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 162927 },
-              { "type": "WHITE", "count": 454722 },
-              { "type": "ASIAN", "count": 35543 },
-              { "type": "HISPANIC", "count": 71673 }
-            ],
-            "repSplit": 0.3352384875478434,
-            "demSplit": 0.6647615124521566,
-            "id": "4"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 30525 },
-              { "type": "WHITE", "count": 622722 },
-              { "type": "ASIAN", "count": 5148 },
-              { "type": "HISPANIC", "count": 40104 }
-            ],
-            "repSplit": 0.5558190603725173,
-            "demSplit": 0.44418093962748273,
-            "id": "5"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 38840 },
-              { "type": "WHITE", "count": 640350 },
-              { "type": "ASIAN", "count": 9527 },
-              { "type": "HISPANIC", "count": 43133 }
-            ],
-            "repSplit": 0.702355886654059,
-            "demSplit": 0.29764411334594093,
-            "id": "6"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 258958 },
-              { "type": "WHITE", "count": 423694 },
-              { "type": "ASIAN", "count": 5710 },
-              { "type": "HISPANIC", "count": 32113 }
-            ],
-            "repSplit": 0.534361672784367,
-            "demSplit": 0.46563832721563303,
-            "id": "7"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 211420 },
-              { "type": "WHITE", "count": 357134 },
-              { "type": "ASIAN", "count": 10261 },
-              { "type": "HISPANIC", "count": 71772 }
-            ],
-            "repSplit": 0.5059723097963642,
-            "demSplit": 0.4940276902036358,
-            "id": "8"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 242133 },
-              { "type": "WHITE", "count": 351579 },
-              { "type": "ASIAN", "count": 28407 },
-              { "type": "HISPANIC", "count": 88877 }
-            ],
-            "repSplit": 0.07671855265500103,
-            "demSplit": 0.923281447344999,
-            "id": "9"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 182253 },
-              { "type": "WHITE", "count": 458841 },
-              { "type": "ASIAN", "count": 17048 },
-              { "type": "HISPANIC", "count": 50988 }
-            ],
-            "repSplit": 0.4816579406198924,
-            "demSplit": 0.5183420593801076,
-            "id": "10"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 102853 },
-              { "type": "WHITE", "count": 566587 },
-              { "type": "ASIAN", "count": 11739 },
-              { "type": "HISPANIC", "count": 50153 }
-            ],
-            "repSplit": 0.6690992755230993,
-            "demSplit": 0.33090072447690067,
-            "id": "11"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 125324 },
-              { "type": "WHITE", "count": 500946 },
-              { "type": "ASIAN", "count": 22602 },
-              { "type": "HISPANIC", "count": 68277 }
-            ],
-            "repSplit": 0.52802921185961,
-            "demSplit": 0.47197078814038995,
-            "id": "12"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 147166 },
-              { "type": "WHITE", "count": 479497 },
-              { "type": "ASIAN", "count": 12260 },
-              { "type": "HISPANIC", "count": 73997 }
-            ],
-            "repSplit": 0.5770462827138289,
-            "demSplit": 0.42295371728617115,
-            "id": "13"
-          }
-        ]
+{
+  "name": "North Carolina",
+  "abbreviation": "NC",
+  "stateShape": "polygon",
+  "uniqueDistrictPlans": [
+    {
+      "planType": "SMD",
+      "description": "High Democrat Concentration In District",
+      "shape": "polygon",
+      "id": 0,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 1,
+        "safeDistricts": 3,
+        "polsbyPopperScore": 0.17937928728779884
       },
-      {
-        "planType": "SMD",
-        "description": "High Opportunity Representative Count",
-        "shape": "polygon",
-        "id": 1,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 3,
-          "safeDistricts": 3,
-          "polsbyPopperScore": 0.18113600453154885
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 223207 },
-              { "type": "WHITE", "count": 453959 },
-              { "type": "ASIAN", "count": 6984 },
-              { "type": "HISPANIC", "count": 39884 }
-            ],
-            "repSplit": 0.5662457480519069,
-            "demSplit": 0.4337542519480932,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 69833 },
-              { "type": "WHITE", "count": 593770 },
-              { "type": "ASIAN", "count": 8793 },
-              { "type": "HISPANIC", "count": 54849 }
-            ],
-            "repSplit": 0.6536770421813348,
-            "demSplit": 0.3463229578186651,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 254062 },
-              { "type": "WHITE", "count": 393110 },
-              { "type": "ASIAN", "count": 5202 },
-              { "type": "HISPANIC", "count": 62179 }
-            ],
-            "repSplit": 0.5077613426857954,
-            "demSplit": 0.4922386573142046,
-            "id": "3"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 175096 },
-              { "type": "WHITE", "count": 435388 },
-              { "type": "ASIAN", "count": 21678 },
-              { "type": "HISPANIC", "count": 86077 }
-            ],
-            "repSplit": 0.4061656352314719,
-            "demSplit": 0.593834364768528,
-            "id": "4"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 253115 },
-              { "type": "WHITE", "count": 354292 },
-              { "type": "ASIAN", "count": 30538 },
-              { "type": "HISPANIC", "count": 87356 }
-            ],
-            "repSplit": 0.14913578969157523,
-            "demSplit": 0.8508642103084247,
-            "id": "5"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 27621 },
-              { "type": "WHITE", "count": 625605 },
-              { "type": "ASIAN", "count": 5199 },
-              { "type": "HISPANIC", "count": 39698 }
-            ],
-            "repSplit": 0.5586661657749394,
-            "demSplit": 0.4413338342250606,
-            "id": "6"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 224141 },
-              { "type": "WHITE", "count": 428537 },
-              { "type": "ASIAN", "count": 18939 },
-              { "type": "HISPANIC", "count": 54386 }
-            ],
-            "repSplit": 0.44056750834389447,
-            "demSplit": 0.5594324916561055,
-            "id": "7"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 79486 },
-              { "type": "WHITE", "count": 576192 },
-              { "type": "ASIAN", "count": 11945 },
-              { "type": "HISPANIC", "count": 40885 }
-            ],
-            "repSplit": 0.6897682896487566,
-            "demSplit": 0.3102317103512435,
-            "id": "8"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 155811 },
-              { "type": "WHITE", "count": 444413 },
-              { "type": "ASIAN", "count": 48964 },
-              { "type": "HISPANIC", "count": 66087 }
-            ],
-            "repSplit": 0.301769987276163,
-            "demSplit": 0.698230012723837,
-            "id": "9"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 130522 },
-              { "type": "WHITE", "count": 507319 },
-              { "type": "ASIAN", "count": 7304 },
-              { "type": "HISPANIC", "count": 53415 }
-            ],
-            "repSplit": 0.6035896926666998,
-            "demSplit": 0.39641030733330024,
-            "id": "10"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 105537 },
-              { "type": "WHITE", "count": 521127 },
-              { "type": "ASIAN", "count": 19902 },
-              { "type": "HISPANIC", "count": 69867 }
-            ],
-            "repSplit": 0.5364446186122753,
-            "demSplit": 0.4635553813877247,
-            "id": "11"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 212993 },
-              { "type": "WHITE", "count": 368416 },
-              { "type": "ASIAN", "count": 9820 },
-              { "type": "HISPANIC", "count": 70862 }
-            ],
-            "repSplit": 0.5135741412826496,
-            "demSplit": 0.48642585871735045,
-            "id": "12"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 108430 },
-              { "type": "WHITE", "count": 521867 },
-              { "type": "ASIAN", "count": 11311 },
-              { "type": "HISPANIC", "count": 74575 }
-            ],
-            "repSplit": 0.6017432256878638,
-            "demSplit": 0.39825677431213624,
-            "id": "13"
-          }
-        ]
-      },
-      {
-        "planType": "SMD",
-        "description": "Large Difference Between Democrat Vote Share and Seat Share",
-        "shape": "polygon",
-        "id": 2,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 3,
-          "safeDistricts": 3,
-          "polsbyPopperScore": 0.18113600453154885
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 223207 },
-              { "type": "WHITE", "count": 453959 },
-              { "type": "ASIAN", "count": 6984 },
-              { "type": "HISPANIC", "count": 39884 }
-            ],
-            "repSplit": 0.5662457480519069,
-            "demSplit": 0.4337542519480932,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 69833 },
-              { "type": "WHITE", "count": 593770 },
-              { "type": "ASIAN", "count": 8793 },
-              { "type": "HISPANIC", "count": 54849 }
-            ],
-            "repSplit": 0.6536770421813348,
-            "demSplit": 0.3463229578186651,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 254062 },
-              { "type": "WHITE", "count": 393110 },
-              { "type": "ASIAN", "count": 5202 },
-              { "type": "HISPANIC", "count": 62179 }
-            ],
-            "repSplit": 0.5077613426857954,
-            "demSplit": 0.4922386573142046,
-            "id": "3"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 175096 },
-              { "type": "WHITE", "count": 435388 },
-              { "type": "ASIAN", "count": 21678 },
-              { "type": "HISPANIC", "count": 86077 }
-            ],
-            "repSplit": 0.4061656352314719,
-            "demSplit": 0.593834364768528,
-            "id": "4"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 253115 },
-              { "type": "WHITE", "count": 354292 },
-              { "type": "ASIAN", "count": 30538 },
-              { "type": "HISPANIC", "count": 87356 }
-            ],
-            "repSplit": 0.14913578969157523,
-            "demSplit": 0.8508642103084247,
-            "id": "5"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 27621 },
-              { "type": "WHITE", "count": 625605 },
-              { "type": "ASIAN", "count": 5199 },
-              { "type": "HISPANIC", "count": 39698 }
-            ],
-            "repSplit": 0.5586661657749394,
-            "demSplit": 0.4413338342250606,
-            "id": "6"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 224141 },
-              { "type": "WHITE", "count": 428537 },
-              { "type": "ASIAN", "count": 18939 },
-              { "type": "HISPANIC", "count": 54386 }
-            ],
-            "repSplit": 0.44056750834389447,
-            "demSplit": 0.5594324916561055,
-            "id": "7"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 79486 },
-              { "type": "WHITE", "count": 576192 },
-              { "type": "ASIAN", "count": 11945 },
-              { "type": "HISPANIC", "count": 40885 }
-            ],
-            "repSplit": 0.6897682896487566,
-            "demSplit": 0.3102317103512435,
-            "id": "8"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 155811 },
-              { "type": "WHITE", "count": 444413 },
-              { "type": "ASIAN", "count": 48964 },
-              { "type": "HISPANIC", "count": 66087 }
-            ],
-            "repSplit": 0.301769987276163,
-            "demSplit": 0.698230012723837,
-            "id": "9"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 130522 },
-              { "type": "WHITE", "count": 507319 },
-              { "type": "ASIAN", "count": 7304 },
-              { "type": "HISPANIC", "count": 53415 }
-            ],
-            "repSplit": 0.6035896926666998,
-            "demSplit": 0.39641030733330024,
-            "id": "10"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 105537 },
-              { "type": "WHITE", "count": 521127 },
-              { "type": "ASIAN", "count": 19902 },
-              { "type": "HISPANIC", "count": 69867 }
-            ],
-            "repSplit": 0.5364446186122753,
-            "demSplit": 0.4635553813877247,
-            "id": "11"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 212993 },
-              { "type": "WHITE", "count": 368416 },
-              { "type": "ASIAN", "count": 9820 },
-              { "type": "HISPANIC", "count": 70862 }
-            ],
-            "repSplit": 0.5135741412826496,
-            "demSplit": 0.48642585871735045,
-            "id": "12"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 108430 },
-              { "type": "WHITE", "count": 521867 },
-              { "type": "ASIAN", "count": 11311 },
-              { "type": "HISPANIC", "count": 74575 }
-            ],
-            "repSplit": 0.6017432256878638,
-            "demSplit": 0.39825677431213624,
-            "id": "13"
-          }
-        ]
-      },
-      {
-        "planType": "SMD",
-        "description": "Large Difference Between Republican Vote Share and Seat Share",
-        "shape": "polygon",
-        "id": 3,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 3,
-          "safeDistricts": 3,
-          "polsbyPopperScore": 0.18113600453154885
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 223207 },
-              { "type": "WHITE", "count": 453959 },
-              { "type": "ASIAN", "count": 6984 },
-              { "type": "HISPANIC", "count": 39884 }
-            ],
-            "repSplit": 0.5662457480519069,
-            "demSplit": 0.4337542519480932,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 69833 },
-              { "type": "WHITE", "count": 593770 },
-              { "type": "ASIAN", "count": 8793 },
-              { "type": "HISPANIC", "count": 54849 }
-            ],
-            "repSplit": 0.6536770421813348,
-            "demSplit": 0.3463229578186651,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 254062 },
-              { "type": "WHITE", "count": 393110 },
-              { "type": "ASIAN", "count": 5202 },
-              { "type": "HISPANIC", "count": 62179 }
-            ],
-            "repSplit": 0.5077613426857954,
-            "demSplit": 0.4922386573142046,
-            "id": "3"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 175096 },
-              { "type": "WHITE", "count": 435388 },
-              { "type": "ASIAN", "count": 21678 },
-              { "type": "HISPANIC", "count": 86077 }
-            ],
-            "repSplit": 0.4061656352314719,
-            "demSplit": 0.593834364768528,
-            "id": "4"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 253115 },
-              { "type": "WHITE", "count": 354292 },
-              { "type": "ASIAN", "count": 30538 },
-              { "type": "HISPANIC", "count": 87356 }
-            ],
-            "repSplit": 0.14913578969157523,
-            "demSplit": 0.8508642103084247,
-            "id": "5"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 27621 },
-              { "type": "WHITE", "count": 625605 },
-              { "type": "ASIAN", "count": 5199 },
-              { "type": "HISPANIC", "count": 39698 }
-            ],
-            "repSplit": 0.5586661657749394,
-            "demSplit": 0.4413338342250606,
-            "id": "6"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 224141 },
-              { "type": "WHITE", "count": 428537 },
-              { "type": "ASIAN", "count": 18939 },
-              { "type": "HISPANIC", "count": 54386 }
-            ],
-            "repSplit": 0.44056750834389447,
-            "demSplit": 0.5594324916561055,
-            "id": "7"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 79486 },
-              { "type": "WHITE", "count": 576192 },
-              { "type": "ASIAN", "count": 11945 },
-              { "type": "HISPANIC", "count": 40885 }
-            ],
-            "repSplit": 0.6897682896487566,
-            "demSplit": 0.3102317103512435,
-            "id": "8"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 155811 },
-              { "type": "WHITE", "count": 444413 },
-              { "type": "ASIAN", "count": 48964 },
-              { "type": "HISPANIC", "count": 66087 }
-            ],
-            "repSplit": 0.301769987276163,
-            "demSplit": 0.698230012723837,
-            "id": "9"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 130522 },
-              { "type": "WHITE", "count": 507319 },
-              { "type": "ASIAN", "count": 7304 },
-              { "type": "HISPANIC", "count": 53415 }
-            ],
-            "repSplit": 0.6035896926666998,
-            "demSplit": 0.39641030733330024,
-            "id": "10"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 105537 },
-              { "type": "WHITE", "count": 521127 },
-              { "type": "ASIAN", "count": 19902 },
-              { "type": "HISPANIC", "count": 69867 }
-            ],
-            "repSplit": 0.5364446186122753,
-            "demSplit": 0.4635553813877247,
-            "id": "11"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 212993 },
-              { "type": "WHITE", "count": 368416 },
-              { "type": "ASIAN", "count": 9820 },
-              { "type": "HISPANIC", "count": 70862 }
-            ],
-            "repSplit": 0.5135741412826496,
-            "demSplit": 0.48642585871735045,
-            "id": "12"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 108430 },
-              { "type": "WHITE", "count": 521867 },
-              { "type": "ASIAN", "count": 11311 },
-              { "type": "HISPANIC", "count": 74575 }
-            ],
-            "repSplit": 0.6017432256878638,
-            "demSplit": 0.39825677431213624,
-            "id": "13"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "Large Difference Between Democrat Vote Share and Seat Share - chain445",
-        "shape": "polygon",
-        "id": 4,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.20636551630237107
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 639382 },
-              { "type": "WHITE", "count": 1816618 },
-              { "type": "ASIAN", "count": 71466 },
-              { "type": "HISPANIC", "count": 284113 }
-            ],
-            "repSplit": 0.46097974018737875,
-            "demSplit": 0.5390202598126212,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 417667 },
-              { "type": "WHITE", "count": 2186706 },
-              { "type": "ASIAN", "count": 46766 },
-              { "type": "HISPANIC", "count": 209026 }
-            ],
-            "repSplit": 0.5707572057943417,
-            "demSplit": 0.42924279420565825,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 962805 },
-              { "type": "WHITE", "count": 2220671 },
-              { "type": "ASIAN", "count": 88347 },
-              { "type": "HISPANIC", "count": 306981 }
-            ],
-            "repSplit": 0.4680817157571775,
-            "demSplit": 0.5319182842428225,
-            "id": "3"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "Large Difference Between Republican Vote Share and Seat Share - chain445",
-        "shape": "polygon",
-        "id": 5,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.20636551630237107
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 639382 },
-              { "type": "WHITE", "count": 1816618 },
-              { "type": "ASIAN", "count": 71466 },
-              { "type": "HISPANIC", "count": 284113 }
-            ],
-            "repSplit": 0.46097974018737875,
-            "demSplit": 0.5390202598126212,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 417667 },
-              { "type": "WHITE", "count": 2186706 },
-              { "type": "ASIAN", "count": 46766 },
-              { "type": "HISPANIC", "count": 209026 }
-            ],
-            "repSplit": 0.5707572057943417,
-            "demSplit": 0.42924279420565825,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 962805 },
-              { "type": "WHITE", "count": 2220671 },
-              { "type": "ASIAN", "count": 88347 },
-              { "type": "HISPANIC", "count": 306981 }
-            ],
-            "repSplit": 0.4680817157571775,
-            "demSplit": 0.5319182842428225,
-            "id": "3"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "High Republican Concentration In District - chain445",
-        "shape": "polygon",
-        "id": 6,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.22400048604565784
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 298141 },
-              { "type": "WHITE", "count": 2345189 },
-              { "type": "ASIAN", "count": 37675 },
-              { "type": "HISPANIC", "count": 196458 }
-            ],
-            "repSplit": 0.6111437140766932,
-            "demSplit": 0.3888562859233068,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 954193 },
-              { "type": "WHITE", "count": 2102298 },
-              { "type": "ASIAN", "count": 123181 },
-              { "type": "HISPANIC", "count": 366419 }
-            ],
-            "repSplit": 0.3922833214675636,
-            "demSplit": 0.6077166785324364,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 767520 },
-              { "type": "WHITE", "count": 1776508 },
-              { "type": "ASIAN", "count": 45723 },
-              { "type": "HISPANIC", "count": 237243 }
-            ],
-            "repSplit": 0.5156628722433668,
-            "demSplit": 0.4843371277566332,
-            "id": "3"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "High Democrat Concentration In District - chain445",
-        "shape": "polygon",
-        "id": 7,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.22400048604565784
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 298141 },
-              { "type": "WHITE", "count": 2345189 },
-              { "type": "ASIAN", "count": 37675 },
-              { "type": "HISPANIC", "count": 196458 }
-            ],
-            "repSplit": 0.6111437140766932,
-            "demSplit": 0.3888562859233068,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 954193 },
-              { "type": "WHITE", "count": 2102298 },
-              { "type": "ASIAN", "count": 123181 },
-              { "type": "HISPANIC", "count": 366419 }
-            ],
-            "repSplit": 0.3922833214675636,
-            "demSplit": 0.6077166785324364,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 767520 },
-              { "type": "WHITE", "count": 1776508 },
-              { "type": "ASIAN", "count": 45723 },
-              { "type": "HISPANIC", "count": 237243 }
-            ],
-            "repSplit": 0.5156628722433668,
-            "demSplit": 0.4843371277566332,
-            "id": "3"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "Large Difference Between Democrat Vote Share and Seat Share - chain355",
-        "shape": "polygon",
-        "id": 8,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.27525854754374196
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 876889 },
-              { "type": "WHITE", "count": 2251758 },
-              { "type": "ASIAN", "count": 110766 },
-              { "type": "HISPANIC", "count": 339250 }
-            ],
-            "repSplit": 0.4520074943390154,
-            "demSplit": 0.5479925056609846,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 574381 },
-              { "type": "WHITE", "count": 1316341 },
-              { "type": "ASIAN", "count": 18667 },
-              { "type": "HISPANIC", "count": 156086 }
-            ],
-            "repSplit": 0.5708819736816075,
-            "demSplit": 0.42911802631839246,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 568584 },
-              { "type": "WHITE", "count": 2655896 },
-              { "type": "ASIAN", "count": 77146 },
-              { "type": "HISPANIC", "count": 304784 }
-            ],
-            "repSplit": 0.5053857073644377,
-            "demSplit": 0.49461429263556234,
-            "id": "3"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "Large Difference Between Republican Vote Share and Seat Share - chain355",
-        "shape": "polygon",
-        "id": 9,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.27525854754374196
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 876889 },
-              { "type": "WHITE", "count": 2251758 },
-              { "type": "ASIAN", "count": 110766 },
-              { "type": "HISPANIC", "count": 339250 }
-            ],
-            "repSplit": 0.4520074943390154,
-            "demSplit": 0.5479925056609846,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 574381 },
-              { "type": "WHITE", "count": 1316341 },
-              { "type": "ASIAN", "count": 18667 },
-              { "type": "HISPANIC", "count": 156086 }
-            ],
-            "repSplit": 0.5708819736816075,
-            "demSplit": 0.42911802631839246,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 568584 },
-              { "type": "WHITE", "count": 2655896 },
-              { "type": "ASIAN", "count": 77146 },
-              { "type": "HISPANIC", "count": 304784 }
-            ],
-            "repSplit": 0.5053857073644377,
-            "demSplit": 0.49461429263556234,
-            "id": "3"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "High Democrat Concentration In District - chain355",
-        "shape": "polygon",
-        "id": 10,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.20318163162023506
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 901124 },
-              { "type": "WHITE", "count": 2337036 },
-              { "type": "ASIAN", "count": 48676 },
-              { "type": "HISPANIC", "count": 300070 }
-            ],
-            "repSplit": 0.5447323288804078,
-            "demSplit": 0.45526767111959227,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 554042 },
-              { "type": "WHITE", "count": 2602230 },
-              { "type": "ASIAN", "count": 75900 },
-              { "type": "HISPANIC", "count": 291525 }
-            ],
-            "repSplit": 0.5213679635761589,
-            "demSplit": 0.47863203642384106,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 564688 },
-              { "type": "WHITE", "count": 1284729 },
-              { "type": "ASIAN", "count": 82003 },
-              { "type": "HISPANIC", "count": 208525 }
-            ],
-            "repSplit": 0.38956540257409994,
-            "demSplit": 0.6104345974259,
-            "id": "3"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "High Republican Concentration In District - chain355",
-        "shape": "polygon",
-        "id": 11,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.2719217407879248
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 208023 },
-              { "type": "WHITE", "count": 1733260 },
-              { "type": "ASIAN", "count": 27985 },
-              { "type": "HISPANIC", "count": 127533 }
-            ],
-            "repSplit": 0.6059100088482192,
-            "demSplit": 0.3940899911517808,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 857902 },
-              { "type": "WHITE", "count": 2288517 },
-              { "type": "ASIAN", "count": 88780 },
-              { "type": "HISPANIC", "count": 344751 }
-            ],
-            "repSplit": 0.4693236270133951,
-            "demSplit": 0.5306763729866049,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 953929 },
-              { "type": "WHITE", "count": 2202218 },
-              { "type": "ASIAN", "count": 89814 },
-              { "type": "HISPANIC", "count": 327836 }
-            ],
-            "repSplit": 0.4617517946130311,
-            "demSplit": 0.5382482053869689,
-            "id": "3"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "High Republican Concentration In District - chain3334",
-        "shape": "polygon",
-        "id": 12,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.2007727146371296
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 698071 },
-              { "type": "WHITE", "count": 1793025 },
-              { "type": "ASIAN", "count": 96293 },
-              { "type": "HISPANIC", "count": 308112 }
-            ],
-            "repSplit": 0.42539147048074044,
-            "demSplit": 0.5746085295192596,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 599273 },
-              { "type": "WHITE", "count": 1314795 },
-              { "type": "ASIAN", "count": 21268 },
-              { "type": "HISPANIC", "count": 154604 }
-            ],
-            "repSplit": 0.5528117910267897,
-            "demSplit": 0.4471882089732103,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 195673 },
-              { "type": "WHITE", "count": 1765194 },
-              { "type": "ASIAN", "count": 24591 },
-              { "type": "HISPANIC", "count": 132113 }
-            ],
-            "repSplit": 0.6234134747933074,
-            "demSplit": 0.37658652520669256,
-            "id": "3"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 526837 },
-              { "type": "WHITE", "count": 1350981 },
-              { "type": "ASIAN", "count": 64427 },
-              { "type": "HISPANIC", "count": 205291 }
-            ],
-            "repSplit": 0.42185374744074444,
-            "demSplit": 0.5781462525592556,
-            "id": "4"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "Large Difference Between Democrat Vote Share and Seat Share - chain3334",
-        "shape": "polygon",
-        "id": 13,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.23611491728998724
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 639402 },
-              { "type": "WHITE", "count": 1954647 },
-              { "type": "ASIAN", "count": 71876 },
-              { "type": "HISPANIC", "count": 282305 }
-            ],
-            "repSplit": 0.503461210364876,
-            "demSplit": 0.49653878963512393,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 235349 },
-              { "type": "WHITE", "count": 1708664 },
-              { "type": "ASIAN", "count": 35396 },
-              { "type": "HISPANIC", "count": 142848 }
-            ],
-            "repSplit": 0.5460310483672928,
-            "demSplit": 0.45396895163270723,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 569928 },
-              { "type": "WHITE", "count": 1237676 },
-              { "type": "ASIAN", "count": 74884 },
-              { "type": "HISPANIC", "count": 198762 }
-            ],
-            "repSplit": 0.39213354617795854,
-            "demSplit": 0.6078664538220415,
-            "id": "3"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 575175 },
-              { "type": "WHITE", "count": 1323008 },
-              { "type": "ASIAN", "count": 24423 },
-              { "type": "HISPANIC", "count": 176205 }
-            ],
-            "repSplit": 0.5604517743464412,
-            "demSplit": 0.4395482256535588,
-            "id": "4"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "Large Difference Between Republican Vote Share and Seat Share - chain3334",
-        "shape": "polygon",
-        "id": 14,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.23611491728998724
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 639402 },
-              { "type": "WHITE", "count": 1954647 },
-              { "type": "ASIAN", "count": 71876 },
-              { "type": "HISPANIC", "count": 282305 }
-            ],
-            "repSplit": 0.503461210364876,
-            "demSplit": 0.49653878963512393,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 235349 },
-              { "type": "WHITE", "count": 1708664 },
-              { "type": "ASIAN", "count": 35396 },
-              { "type": "HISPANIC", "count": 142848 }
-            ],
-            "repSplit": 0.5460310483672928,
-            "demSplit": 0.45396895163270723,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 569928 },
-              { "type": "WHITE", "count": 1237676 },
-              { "type": "ASIAN", "count": 74884 },
-              { "type": "HISPANIC", "count": 198762 }
-            ],
-            "repSplit": 0.39213354617795854,
-            "demSplit": 0.6078664538220415,
-            "id": "3"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 575175 },
-              { "type": "WHITE", "count": 1323008 },
-              { "type": "ASIAN", "count": 24423 },
-              { "type": "HISPANIC", "count": 176205 }
-            ],
-            "repSplit": 0.5604517743464412,
-            "demSplit": 0.4395482256535588,
-            "id": "4"
-          }
-        ]
-      },
-      {
-        "planType": "MMD",
-        "description": "High Democrat Concentration In District - chain3334",
-        "shape": "polygon",
-        "id": 15,
-        "overview": {
-          "state": "North Carolina",
-          "opportunityDistricts": 0,
-          "safeDistricts": 0,
-          "polsbyPopperScore": 0.23611491728998724
-        },
-        "districts": [
-          {
-            "populations": [
-              { "type": "BLACK", "count": 639402 },
-              { "type": "WHITE", "count": 1954647 },
-              { "type": "ASIAN", "count": 71876 },
-              { "type": "HISPANIC", "count": 282305 }
-            ],
-            "repSplit": 0.503461210364876,
-            "demSplit": 0.49653878963512393,
-            "id": "1"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 235349 },
-              { "type": "WHITE", "count": 1708664 },
-              { "type": "ASIAN", "count": 35396 },
-              { "type": "HISPANIC", "count": 142848 }
-            ],
-            "repSplit": 0.5460310483672928,
-            "demSplit": 0.45396895163270723,
-            "id": "2"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 569928 },
-              { "type": "WHITE", "count": 1237676 },
-              { "type": "ASIAN", "count": 74884 },
-              { "type": "HISPANIC", "count": 198762 }
-            ],
-            "repSplit": 0.39213354617795854,
-            "demSplit": 0.6078664538220415,
-            "id": "3"
-          },
-          {
-            "populations": [
-              { "type": "BLACK", "count": 575175 },
-              { "type": "WHITE", "count": 1323008 },
-              { "type": "ASIAN", "count": 24423 },
-              { "type": "HISPANIC", "count": 176205 }
-            ],
-            "repSplit": 0.5604517743464412,
-            "demSplit": 0.4395482256535588,
-            "id": "4"
-          }
-        ]
-      }
-    ],
-    "analyses": {
-      "SMD": [
+      "districts": [
         {
-          "boxAndWhiskerPlots": {
-            "BLACK": {
-              "1": {
-                "min": 132651,
-                "25%": 191155,
-                "50%": 213208,
-                "mean": 213222.16,
-                "75%": 225335,
-                "max": 316261
-              },
-              "2": {
-                "min": 69833,
-                "25%": 110282,
-                "50%": 152150,
-                "mean": 147246.7,
-                "75%": 177501,
-                "max": 262875
-              },
-              "3": {
-                "min": 129597,
-                "25%": 136040,
-                "50%": 151650,
-                "mean": 183155,
-                "75%": 244103.5,
-                "max": 296000
-              },
-              "4": {
-                "min": 162927,
-                "25%": 163771,
-                "50%": 167899,
-                "mean": 179087.97,
-                "75%": 189122,
-                "max": 260017
-              },
-              "5": {
-                "min": 30525,
-                "25%": 30525,
-                "50%": 56758,
-                "mean": 111275.9,
-                "75%": 207689,
-                "max": 253115
-              },
-              "6": {
-                "min": 27621,
-                "25%": 27621,
-                "50%": 38011,
-                "mean": 72488.25,
-                "75%": 129348,
-                "max": 232329
-              },
-              "7": {
-                "min": 91732,
-                "25%": 169051.75,
-                "50%": 204887.5,
-                "mean": 197285.05,
-                "75%": 224141,
-                "max": 295650
-              },
-              "8": {
-                "min": 79486,
-                "25%": 133081,
-                "50%": 180665,
-                "mean": 177652.67,
-                "75%": 211420,
-                "max": 231275
-              },
-              "9": {
-                "min": 121066,
-                "25%": 134770,
-                "50%": 155811,
-                "mean": 185723.22,
-                "75%": 242133,
-                "max": 263344
-              },
-              "10": {
-                "min": 43022,
-                "25%": 129005,
-                "50%": 182253,
-                "mean": 159552.21,
-                "75%": 193109,
-                "max": 248374
-              },
-              "11": {
-                "min": 26936,
-                "25%": 86738.25,
-                "50%": 101816,
-                "mean": 106074.26,
-                "75%": 140262,
-                "max": 202166
-              },
-              "12": {
-                "min": 125324,
-                "25%": 134868,
-                "50%": 181618,
-                "mean": 180782.05,
-                "75%": 213337,
-                "max": 263442
-              },
-              "13": {
-                "min": 37365,
-                "25%": 71428,
-                "50%": 79303,
-                "mean": 106308.56,
-                "75%": 151301,
-                "max": 229364
-              }
-            },
-            "WHITE": {
-              "1": {
-                "min": 353095,
-                "25%": 437624,
-                "50%": 452016,
-                "mean": 448759.46,
-                "75%": 466782,
-                "max": 523848
-              },
-              "2": {
-                "min": 400057,
-                "25%": 428010,
-                "50%": 457432,
-                "mean": 483074.57,
-                "75%": 532071,
-                "max": 593770
-              },
-              "3": {
-                "min": 367420,
-                "25%": 393110,
-                "50%": 499193,
-                "mean": 454059.14,
-                "75%": 503656,
-                "max": 517700
-              },
-              "4": {
-                "min": 389611,
-                "25%": 427114,
-                "50%": 443763,
-                "mean": 438688.77,
-                "75%": 454722,
-                "max": 456536
-              },
-              "5": {
-                "min": 354292,
-                "25%": 360200,
-                "50%": 613753,
-                "mean": 513749.9,
-                "75%": 622722,
-                "max": 648465
-              },
-              "6": {
-                "min": 392388,
-                "25%": 513215.75,
-                "50%": 625605,
-                "mean": 578629.14,
-                "75%": 625605,
-                "max": 640350
-              },
-              "7": {
-                "min": 353308,
-                "25%": 423240.5,
-                "50%": 428537,
-                "mean": 436732.36,
-                "75%": 448325,
-                "max": 562223
-              },
-              "8": {
-                "min": 357134,
-                "25%": 368035,
-                "50%": 440492,
-                "mean": 431791.28,
-                "75%": 486076,
-                "max": 576192
-              },
-              "9": {
-                "min": 331927,
-                "25%": 392450,
-                "50%": 445018,
-                "mean": 436403.59,
-                "75%": 483017,
-                "max": 523618
-              },
-              "10": {
-                "min": 401856,
-                "25%": 458841,
-                "50%": 467481.5,
-                "mean": 485302.91,
-                "75%": 509262,
-                "max": 638270
-              },
-              "11": {
-                "min": 408737,
-                "25%": 504680,
-                "50%": 544582,
-                "mean": 549007.67,
-                "75%": 572312,
-                "max": 637265
-              },
-              "12": {
-                "min": 324149,
-                "25%": 369235,
-                "50%": 428870,
-                "mean": 422512.81,
-                "75%": 475864,
-                "max": 516533
-              },
-              "13": {
-                "min": 371893,
-                "25%": 490322,
-                "50%": 585724,
-                "mean": 545283.4,
-                "75%": 587889,
-                "max": 643927
-              }
-            },
-            "ASIAN": {
-              "1": {
-                "min": 4778,
-                "25%": 6846.5,
-                "50%": 7446,
-                "mean": 7483.16,
-                "75%": 7919.5,
-                "max": 9423
-              },
-              "2": {
-                "min": 4643,
-                "25%": 11377,
-                "50%": 11383,
-                "mean": 23010.37,
-                "75%": 35184,
-                "max": 43297
-              },
-              "3": {
-                "min": 4752,
-                "25%": 5202,
-                "50%": 6276,
-                "mean": 11952.26,
-                "75%": 7135.75,
-                "max": 38304
-              },
-              "4": {
-                "min": 5240,
-                "25%": 27435,
-                "50%": 34702,
-                "mean": 31096.79,
-                "75%": 35543,
-                "max": 36800
-              },
-              "5": {
-                "min": 5148,
-                "25%": 5148,
-                "50%": 8612,
-                "mean": 10395.62,
-                "75%": 10237,
-                "max": 35921
-              },
-              "6": {
-                "min": 5199,
-                "25%": 5199,
-                "50%": 9527,
-                "mean": 9289.78,
-                "75%": 13008,
-                "max": 23601
-              },
-              "7": {
-                "min": 4512,
-                "25%": 5705,
-                "50%": 10248,
-                "mean": 15853.12,
-                "75%": 18939,
-                "max": 35932
-              },
-              "8": {
-                "min": 10261,
-                "25%": 11945,
-                "50%": 13074,
-                "mean": 17597.66,
-                "75%": 21780,
-                "max": 34050
-              },
-              "9": {
-                "min": 5053,
-                "25%": 6357,
-                "50%": 15268,
-                "mean": 15998.71,
-                "75%": 17305,
-                "max": 48964
-              },
-              "10": {
-                "min": 6380,
-                "25%": 8799,
-                "50%": 16838,
-                "mean": 14617.87,
-                "75%": 17985.5,
-                "max": 35971
-              },
-              "11": {
-                "min": 5253,
-                "25%": 8717,
-                "50%": 11739,
-                "mean": 14924.64,
-                "75%": 21735,
-                "max": 25982
-              },
-              "12": {
-                "min": 9791,
-                "25%": 17240,
-                "50%": 20554.5,
-                "mean": 21328.98,
-                "75%": 24361.25,
-                "max": 35741
-              },
-              "13": {
-                "min": 7301,
-                "25%": 9676,
-                "50%": 11613,
-                "mean": 13030.04,
-                "75%": 12438,
-                "max": 33472
-              }
-            },
-            "HISPANIC": {
-              "1": {
-                "min": 35200,
-                "25%": 35242,
-                "50%": 37933,
-                "mean": 45683.94,
-                "75%": 58801,
-                "max": 69385
-              },
-              "2": {
-                "min": 54849,
-                "25%": 73068,
-                "50%": 75225,
-                "mean": 73105.52,
-                "75%": 79649,
-                "max": 84278
-              },
-              "3": {
-                "min": 41515,
-                "25%": 59999,
-                "50%": 60047,
-                "mean": 62174.01,
-                "75%": 62769.5,
-                "max": 84969
-              },
-              "4": {
-                "min": 53543,
-                "25%": 71673,
-                "50%": 74147,
-                "mean": 74961.83,
-                "75%": 77004,
-                "max": 86077
-              },
-              "5": {
-                "min": 35502,
-                "25%": 40104,
-                "50%": 40128,
-                "mean": 53980.88,
-                "75%": 64535,
-                "max": 87356
-              },
-              "6": {
-                "min": 39698,
-                "25%": 39698,
-                "50%": 41609,
-                "mean": 50149.84,
-                "75%": 59595,
-                "max": 74251
-              },
-              "7": {
-                "min": 31987,
-                "25%": 54386,
-                "50%": 58904,
-                "mean": 58563.13,
-                "75%": 69464,
-                "max": 80281
-              },
-              "8": {
-                "min": 40885,
-                "25%": 71772,
-                "50%": 72820,
-                "mean": 70829.08,
-                "75%": 76944,
-                "max": 84393
-              },
-              "9": {
-                "min": 37015,
-                "25%": 57888,
-                "50%": 66087,
-                "mean": 67515.11,
-                "75%": 70257,
-                "max": 100195
-              },
-              "10": {
-                "min": 42848,
-                "25%": 50132,
-                "50%": 52512,
-                "mean": 54796.96,
-                "75%": 58360,
-                "max": 73490
-              },
-              "11": {
-                "min": 35670,
-                "25%": 46012,
-                "50%": 56662,
-                "mean": 54852.32,
-                "75%": 63252,
-                "max": 88264
-              },
-              "12": {
-                "min": 55911,
-                "25%": 70862,
-                "50%": 76149,
-                "mean": 75658.42,
-                "75%": 77530.75,
-                "max": 100014
-              },
-              "13": {
-                "min": 40202,
-                "25%": 43013,
-                "50%": 57338,
-                "mean": 57848.96,
-                "75%": 73997,
-                "max": 83662
-              }
-            }
-          },
-          "opportunityRepCounts": [
-            26, 5, 48, 37, 3, 38, 26, 2, 21, 9, 0, 32, 43
+          "populations": [
+            { "type": "BLACK", "count": 193066 },
+            { "type": "WHITE", "count": 444404 },
+            { "type": "ASIAN", "count": 21434 },
+            { "type": "HISPANIC", "count": 53149 }
           ],
-          "demRepSplitCounts": [0, 0, 0, 0, 0, 0, 0, 9, 36, 55, 0, 0, 0, 0],
-          "voteSeatSharePercentages": {
-            "DEMOCRAT": [0.498859637966379, 0.3492307692307692],
-            "REPUBLICAN": [0.501140362033621, 0.6507692307692308]
-          },
-          "pattern": "SMD"
-        }
-      ],
-      "MMD": [
-        {
-          "boxAndWhiskerPlots": {
-            "BLACK": {
-              "1": {
-                "min": 298141,
-                "25%": 518264,
-                "50%": 677072,
-                "mean": 668550.8478847885,
-                "75%": 803633,
-                "max": 1048579
-              },
-              "2": {
-                "min": 313067,
-                "25%": 516839,
-                "50%": 674876,
-                "mean": 662939.7101710171,
-                "75%": 801065,
-                "max": 1061342
-              },
-              "3": {
-                "min": 308737,
-                "25%": 541198,
-                "50%": 704467,
-                "mean": 688363.4419441944,
-                "75%": 811942,
-                "max": 1041119
-              }
-            },
-            "WHITE": {
-              "1": {
-                "min": 1634977,
-                "25%": 1802841,
-                "50%": 2120956,
-                "mean": 2089359.0186018602,
-                "75%": 2254849,
-                "max": 2842272
-              },
-              "2": {
-                "min": 1620686,
-                "25%": 1790311,
-                "50%": 2084882,
-                "mean": 2064528.703870387,
-                "75%": 2228930,
-                "max": 2793312
-              },
-              "3": {
-                "min": 1604972,
-                "25%": 1788590,
-                "50%": 2096873,
-                "mean": 2070107.2775277528,
-                "75%": 2242368,
-                "max": 2854576
-              }
-            },
-            "ASIAN": {
-              "1": {
-                "min": 28546,
-                "25%": 54298,
-                "50%": 68804,
-                "mean": 69010.57575757576,
-                "75%": 82065,
-                "max": 135268
-              },
-              "2": {
-                "min": 28635,
-                "25%": 52584,
-                "50%": 68322,
-                "mean": 68350.53405340534,
-                "75%": 81481,
-                "max": 138096
-              },
-              "3": {
-                "min": 26312,
-                "25%": 53174,
-                "50%": 69210,
-                "mean": 69217.8901890189,
-                "75%": 83218,
-                "max": 135082
-              }
-            },
-            "HISPANIC": {
-              "1": {
-                "min": 188779,
-                "25%": 236983,
-                "50%": 258908,
-                "mean": 266841.8280828083,
-                "75%": 295666,
-                "max": 381237
-              },
-              "2": {
-                "min": 185912,
-                "25%": 234122,
-                "50%": 255162,
-                "mean": 264386.6129612961,
-                "75%": 292785,
-                "max": 381477
-              },
-              "3": {
-                "min": 188372,
-                "25%": 237243,
-                "50%": 263560,
-                "mean": 268891.5589558956,
-                "75%": 298163,
-                "max": 378278
-              }
-            }
-          },
-          "opportunityRepCounts": [3333, 3333, 3333],
-          "demRepSplitCounts": [
-            0, 0, 0, 0, 0, 225, 4600, 5045, 141, 0, 0, 0, 0, 0
-          ],
-          "voteSeatSharePercentages": {
-            "DEMOCRAT": [0.5018074590633826, 0.5076507650765076],
-            "REPUBLICAN": [0.49819254093661736, 0.49234923492349236]
-          },
-          "pattern": "chain445"
+          "repSplit": 0.4483115076393954,
+          "demSplit": 0.5516884923606046,
+          "id": "1"
         },
         {
-          "boxAndWhiskerPlots": {
-            "BLACK": {
-              "1": {
-                "min": 156108,
-                "25%": 519562,
-                "50%": 621420,
-                "mean": 658955.1540654065,
-                "75%": 819392,
-                "max": 1059552
-              },
-              "2": {
-                "min": 165241,
-                "25%": 527471.5,
-                "50%": 650442,
-                "mean": 678064.3862886289,
-                "75%": 831931,
-                "max": 1070071
-              },
-              "3": {
-                "min": 141976,
-                "25%": 529652,
-                "50%": 657448,
-                "mean": 682834.4596459646,
-                "75%": 840359.75,
-                "max": 1079487
-              }
-            },
-            "WHITE": {
-              "1": {
-                "min": 1097136,
-                "25%": 1764901,
-                "50%": 2160483.5,
-                "mean": 2082150.9363936393,
-                "75%": 2337945.75,
-                "max": 2901034
-              },
-              "2": {
-                "min": 1133399,
-                "25%": 1763840.25,
-                "50%": 2150399,
-                "mean": 2064765.4459945995,
-                "75%": 2295413.5,
-                "max": 2874214
-              },
-              "3": {
-                "min": 1102144,
-                "25%": 1761839,
-                "50%": 2154760,
-                "mean": 2077078.6176117612,
-                "75%": 2308906,
-                "max": 2877360
-              }
-            },
-            "ASIAN": {
-              "1": {
-                "min": 17836,
-                "25%": 52885,
-                "50%": 70422,
-                "mean": 68521.85748574858,
-                "75%": 81154.25,
-                "max": 137066
-              },
-              "2": {
-                "min": 17525,
-                "25%": 52609.25,
-                "50%": 70549.5,
-                "mean": 68811.15511551154,
-                "75%": 82083.25,
-                "max": 138096
-              },
-              "3": {
-                "min": 17510,
-                "25%": 52049.5,
-                "50%": 72806,
-                "mean": 69245.98739873988,
-                "75%": 82688.25,
-                "max": 135082
-              }
-            },
-            "HISPANIC": {
-              "1": {
-                "min": 124013,
-                "25%": 231225,
-                "50%": 274876,
-                "mean": 264562.8349834983,
-                "75%": 305584.25,
-                "max": 394477
-              },
-              "2": {
-                "min": 126867,
-                "25%": 231027.25,
-                "50%": 277326.5,
-                "mean": 266741.3277827783,
-                "75%": 306777,
-                "max": 400867
-              },
-              "3": {
-                "min": 117227,
-                "25%": 232942,
-                "50%": 282686,
-                "mean": 268815.8372337234,
-                "75%": 308604,
-                "max": 393895
-              }
-            }
-          },
-          "opportunityRepCounts": [3274, 3301, 3289],
-          "demRepSplitCounts": [
-            0, 0, 0, 0, 0, 225, 4600, 5045, 141, 0, 0, 0, 0, 0
+          "populations": [
+            { "type": "BLACK", "count": 188847 },
+            { "type": "WHITE", "count": 372232 },
+            { "type": "ASIAN", "count": 9440 },
+            { "type": "HISPANIC", "count": 81752 }
           ],
-          "voteSeatSharePercentages": {
-            "DEMOCRAT": [0.5015570706258108, 0.47679767976797677],
-            "REPUBLICAN": [0.49844292937418927, 0.5232023202320232]
-          },
-          "pattern": "chain355"
+          "repSplit": 0.5386285592910329,
+          "demSplit": 0.46137144070896713,
+          "id": "2"
         },
         {
-          "boxAndWhiskerPlots": {
-            "BLACK": {
-              "1": {
-                "min": 142132,
-                "25%": 485345,
-                "50%": 578115,
-                "mean": 610331.8062806281,
-                "75%": 768016,
-                "max": 1059552
-              },
-              "2": {
-                "min": 158203,
-                "25%": 477091,
-                "50%": 583281,
-                "mean": 617852.8968896889,
-                "75%": 781836.5,
-                "max": 1070071
-              },
-              "3": {
-                "min": 141976,
-                "25%": 487399.5,
-                "50%": 588781,
-                "mean": 622743.8221822182,
-                "75%": 789341,
-                "max": 1079487
-              },
-              "4": {
-                "min": 146109,
-                "25%": 422829,
-                "50%": 514412,
-                "mean": 506776.42394239426,
-                "75%": 613465,
-                "max": 852354
-              }
-            },
-            "WHITE": {
-              "1": {
-                "min": 1097136,
-                "25%": 1438021,
-                "50%": 1816782,
-                "mean": 1901404.288928893,
-                "75%": 2226168,
-                "max": 2901034
-              },
-              "2": {
-                "min": 1133399,
-                "25%": 1451203,
-                "50%": 1831441,
-                "mean": 1896824.4235423543,
-                "75%": 2213137,
-                "max": 2874214
-              },
-              "3": {
-                "min": 1102144,
-                "25%": 1487751,
-                "50%": 1825669,
-                "mean": 1905608.1833183318,
-                "75%": 2217885,
-                "max": 2877360
-              },
-              "4": {
-                "min": 1176814,
-                "25%": 1329429,
-                "50%": 1466052,
-                "mean": 1560474.3126312632,
-                "75%": 1750884,
-                "max": 2356835
-              }
-            },
-            "ASIAN": {
-              "1": {
-                "min": 17836,
-                "25%": 42388,
-                "50%": 65517,
-                "mean": 62428.02410241024,
-                "75%": 78463,
-                "max": 137066
-              },
-              "2": {
-                "min": 17525,
-                "25%": 45145,
-                "50%": 65959,
-                "mean": 63467.08330833083,
-                "75%": 78662,
-                "max": 138096
-              },
-              "3": {
-                "min": 17510,
-                "25%": 43290.5,
-                "50%": 66446,
-                "mean": 63226.47624762476,
-                "75%": 79072,
-                "max": 135082
-              },
-              "4": {
-                "min": 18636,
-                "25%": 32215,
-                "50%": 50449,
-                "mean": 52372.24902490249,
-                "75%": 69711,
-                "max": 103689
-              }
-            },
-            "HISPANIC": {
-              "1": {
-                "min": 119062,
-                "25%": 197150,
-                "50%": 239038,
-                "mean": 242375.38323832382,
-                "75%": 292977,
-                "max": 394477
-              },
-              "2": {
-                "min": 126496,
-                "25%": 201954.5,
-                "50%": 238731,
-                "mean": 244859.700570057,
-                "75%": 294431,
-                "max": 400867
-              },
-              "3": {
-                "min": 117227,
-                "25%": 201022,
-                "50%": 240867,
-                "mean": 245984.54425442545,
-                "75%": 295256,
-                "max": 393895
-              },
-              "4": {
-                "min": 118975,
-                "25%": 166525,
-                "50%": 201704,
-                "mean": 200701.11581158117,
-                "75%": 226746,
-                "max": 309694
-              }
-            }
-          },
-          "opportunityRepCounts": [3986, 3958, 3902, 3916],
-          "demRepSplitCounts": [
-            0, 0, 0, 0, 0, 225, 4600, 5045, 141, 0, 0, 0, 0, 0
+          "populations": [
+            { "type": "BLACK", "count": 271769 },
+            { "type": "WHITE", "count": 390158 },
+            { "type": "ASIAN", "count": 4155 },
+            { "type": "HISPANIC", "count": 38408 }
           ],
-          "voteSeatSharePercentages": {
-            "DEMOCRAT": [0.5010930558867833, 0.4016901690169017],
-            "REPUBLICAN": [0.4989069441132168, 0.4316431643164316]
-          },
-          "pattern": "chain3334"
+          "repSplit": 0.5074166130002289,
+          "demSplit": 0.49258338699977117,
+          "id": "3"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 100531 },
+            { "type": "WHITE", "count": 538157 },
+            { "type": "ASIAN", "count": 16675 },
+            { "type": "HISPANIC", "count": 65050 }
+          ],
+          "repSplit": 0.5998201566867073,
+          "demSplit": 0.40017984331329276,
+          "id": "4"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 28391 },
+            { "type": "WHITE", "count": 632178 },
+            { "type": "ASIAN", "count": 5543 },
+            { "type": "HISPANIC", "count": 40051 }
+          ],
+          "repSplit": 0.5598492598074645,
+          "demSplit": 0.4401507401925355,
+          "id": "5"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 166350 },
+            { "type": "WHITE", "count": 451202 },
+            { "type": "ASIAN", "count": 29194 },
+            { "type": "HISPANIC", "count": 77211 }
+          ],
+          "repSplit": 0.36628366516627703,
+          "demSplit": 0.633716334833723,
+          "id": "6"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 205404 },
+            { "type": "WHITE", "count": 436391 },
+            { "type": "ASIAN", "count": 8602 },
+            { "type": "HISPANIC", "count": 58285 }
+          ],
+          "repSplit": 0.5675023450157756,
+          "demSplit": 0.43249765498422443,
+          "id": "7"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 80155 },
+            { "type": "WHITE", "count": 578219 },
+            { "type": "ASIAN", "count": 11791 },
+            { "type": "HISPANIC", "count": 42540 }
+          ],
+          "repSplit": 0.6915487714072971,
+          "demSplit": 0.3084512285927029,
+          "id": "8"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 264562 },
+            { "type": "WHITE", "count": 323567 },
+            { "type": "ASIAN", "count": 31597 },
+            { "type": "HISPANIC", "count": 100870 }
+          ],
+          "repSplit": 0.09215797111689666,
+          "demSplit": 0.9078420288831033,
+          "id": "9"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 172056 },
+            { "type": "WHITE", "count": 437414 },
+            { "type": "ASIAN", "count": 41503 },
+            { "type": "HISPANIC", "count": 70845 }
+          ],
+          "repSplit": 0.33684565997837124,
+          "demSplit": 0.6631543400216288,
+          "id": "10"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 155279 },
+            { "type": "WHITE", "count": 503186 },
+            { "type": "ASIAN", "count": 6648 },
+            { "type": "HISPANIC", "count": 53570 }
+          ],
+          "repSplit": 0.5838490828429843,
+          "demSplit": 0.4161509171570157,
+          "id": "11"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 105311 },
+            { "type": "WHITE", "count": 541668 },
+            { "type": "ASIAN", "count": 8409 },
+            { "type": "HISPANIC", "count": 62952 }
+          ],
+          "repSplit": 0.5844598932904951,
+          "demSplit": 0.4155401067095049,
+          "id": "12"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 88133 },
+            { "type": "WHITE", "count": 575219 },
+            { "type": "ASIAN", "count": 11588 },
+            { "type": "HISPANIC", "count": 55437 }
+          ],
+          "repSplit": 0.6291911261994012,
+          "demSplit": 0.3708088738005988,
+          "id": "13"
         }
       ]
     },
-    "ensembleSummaryData": {
-      "SMD": [
+    {
+      "planType": "SMD",
+      "description": "Large Difference Between Democrat Vote Share and Seat Share",
+      "shape": "polygon",
+      "id": 1,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 4,
+        "polsbyPopperScore": 0.17937928728779884
+      },
+      "districts": [
         {
-          "avgPolsbyPopperScores": 0.21485014840673322,
-          "avgRepSplits": 0.501140362033621,
-          "avgDemSplits": 0.49885963796637905,
-          "avgOpportunityReps": 2.06,
-          "avgEqualPop": 0.035002696351697775,
-          "planType": "SMD",
-          "totalDistrictPlans": 10000,
-          "pattern": "SMD"
+          "populations": [
+            { "type": "BLACK", "count": 162844 },
+            { "type": "WHITE", "count": 441574 },
+            { "type": "ASIAN", "count": 23882 },
+            { "type": "HISPANIC", "count": 80881 }
+          ],
+          "repSplit": 0.3930822376315158,
+          "demSplit": 0.6069177623684842,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 190033 },
+            { "type": "WHITE", "count": 454897 },
+            { "type": "ASIAN", "count": 9040 },
+            { "type": "HISPANIC", "count": 53447 }
+          ],
+          "repSplit": 0.5833278329569163,
+          "demSplit": 0.41667216704308374,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 205517 },
+            { "type": "WHITE", "count": 432505 },
+            { "type": "ASIAN", "count": 21349 },
+            { "type": "HISPANIC", "count": 55083 }
+          ],
+          "repSplit": 0.4494601787687054,
+          "demSplit": 0.5505398212312945,
+          "id": "3"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 75785 },
+            { "type": "WHITE", "count": 598166 },
+            { "type": "ASIAN", "count": 10633 },
+            { "type": "HISPANIC", "count": 41776 }
+          ],
+          "repSplit": 0.6798800135618839,
+          "demSplit": 0.3201199864381161,
+          "id": "4"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 163081 },
+            { "type": "WHITE", "count": 453340 },
+            { "type": "ASIAN", "count": 46156 },
+            { "type": "HISPANIC", "count": 67199 }
+          ],
+          "repSplit": 0.3160635297260349,
+          "demSplit": 0.6839364702739651,
+          "id": "5"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 112177 },
+            { "type": "WHITE", "count": 499566 },
+            { "type": "ASIAN", "count": 21933 },
+            { "type": "HISPANIC", "count": 72759 }
+          ],
+          "repSplit": 0.5013161721753625,
+          "demSplit": 0.4986838278246375,
+          "id": "6"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 267407 },
+            { "type": "WHITE", "count": 402688 },
+            { "type": "ASIAN", "count": 4959 },
+            { "type": "HISPANIC", "count": 39959 }
+          ],
+          "repSplit": 0.5022006198075972,
+          "demSplit": 0.49779938019240283,
+          "id": "7"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 116032 },
+            { "type": "WHITE", "count": 518699 },
+            { "type": "ASIAN", "count": 9380 },
+            { "type": "HISPANIC", "count": 68389 }
+          ],
+          "repSplit": 0.5985667025514895,
+          "demSplit": 0.40143329744851053,
+          "id": "8"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 29539 },
+            { "type": "WHITE", "count": 648211 },
+            { "type": "ASIAN", "count": 5758 },
+            { "type": "HISPANIC", "count": 40427 }
+          ],
+          "repSplit": 0.5643405359118155,
+          "demSplit": 0.43565946408818446,
+          "id": "9"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 227594 },
+            { "type": "WHITE", "count": 373496 },
+            { "type": "ASIAN", "count": 29691 },
+            { "type": "HISPANIC", "count": 80008 }
+          ],
+          "repSplit": 0.1829242442429149,
+          "demSplit": 0.8170757557570851,
+          "id": "10"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 156324 },
+            { "type": "WHITE", "count": 440990 },
+            { "type": "ASIAN", "count": 5447 },
+            { "type": "HISPANIC", "count": 45841 }
+          ],
+          "repSplit": 0.576442094439292,
+          "demSplit": 0.4235579055607081,
+          "id": "11"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 215704 },
+            { "type": "WHITE", "count": 405792 },
+            { "type": "ASIAN", "count": 10129 },
+            { "type": "HISPANIC", "count": 86955 }
+          ],
+          "repSplit": 0.5265579936945667,
+          "demSplit": 0.47344200630543337,
+          "id": "12"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 97817 },
+            { "type": "WHITE", "count": 554071 },
+            { "type": "ASIAN", "count": 8222 },
+            { "type": "HISPANIC", "count": 67396 }
+          ],
+          "repSplit": 0.6667690103367107,
+          "demSplit": 0.33323098966328935,
+          "id": "13"
         }
-      ],
-      "MMD": [
+      ]
+    },
+    {
+      "planType": "SMD",
+      "description": "Large Difference Between Republican Vote Share and Seat Share",
+      "shape": "polygon",
+      "id": 2,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 4,
+        "polsbyPopperScore": 0.17937928728779884
+      },
+      "districts": [
         {
-          "avgPolsbyPopperScores": 0.2235946476663234,
-          "avgRepSplits": 0.4981925409366174,
-          "avgDemSplits": 0.5018074590633826,
-          "avgOpportunityReps": 3,
-          "avgEqualPop": 0.243161064,
-          "planType": "MMD",
-          "totalDistrictPlans": 10000,
-          "pattern": "chain445"
+          "populations": [
+            { "type": "BLACK", "count": 162844 },
+            { "type": "WHITE", "count": 441574 },
+            { "type": "ASIAN", "count": 23882 },
+            { "type": "HISPANIC", "count": 80881 }
+          ],
+          "repSplit": 0.3930822376315158,
+          "demSplit": 0.6069177623684842,
+          "id": "1"
         },
         {
-          "avgPolsbyPopperScores": 0.2244311285690912,
-          "avgRepSplits": 0.49844292937418927,
-          "avgDemSplits": 0.5015570706258107,
-          "avgOpportunityReps": 3,
-          "avgEqualPop": 0.375790944,
-          "planType": "MMD",
-          "totalDistrictPlans": 10000,
-          "pattern": "chain355"
+          "populations": [
+            { "type": "BLACK", "count": 190033 },
+            { "type": "WHITE", "count": 454897 },
+            { "type": "ASIAN", "count": 9040 },
+            { "type": "HISPANIC", "count": 53447 }
+          ],
+          "repSplit": 0.5833278329569163,
+          "demSplit": 0.41667216704308374,
+          "id": "2"
         },
         {
-          "avgPolsbyPopperScores": 0.21413520919417212,
-          "avgRepSplits": 0.4989010933138808,
-          "avgDemSplits": 0.5010989066861191,
-          "avgEqualPop": 0.35009203,
-          "planType": "MMD",
-          "totalDistrictPlans": 10000,
-          "pattern": "chain3334"
+          "populations": [
+            { "type": "BLACK", "count": 205517 },
+            { "type": "WHITE", "count": 432505 },
+            { "type": "ASIAN", "count": 21349 },
+            { "type": "HISPANIC", "count": 55083 }
+          ],
+          "repSplit": 0.4494601787687054,
+          "demSplit": 0.5505398212312945,
+          "id": "3"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 75785 },
+            { "type": "WHITE", "count": 598166 },
+            { "type": "ASIAN", "count": 10633 },
+            { "type": "HISPANIC", "count": 41776 }
+          ],
+          "repSplit": 0.6798800135618839,
+          "demSplit": 0.3201199864381161,
+          "id": "4"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 163081 },
+            { "type": "WHITE", "count": 453340 },
+            { "type": "ASIAN", "count": 46156 },
+            { "type": "HISPANIC", "count": 67199 }
+          ],
+          "repSplit": 0.3160635297260349,
+          "demSplit": 0.6839364702739651,
+          "id": "5"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 112177 },
+            { "type": "WHITE", "count": 499566 },
+            { "type": "ASIAN", "count": 21933 },
+            { "type": "HISPANIC", "count": 72759 }
+          ],
+          "repSplit": 0.5013161721753625,
+          "demSplit": 0.4986838278246375,
+          "id": "6"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 267407 },
+            { "type": "WHITE", "count": 402688 },
+            { "type": "ASIAN", "count": 4959 },
+            { "type": "HISPANIC", "count": 39959 }
+          ],
+          "repSplit": 0.5022006198075972,
+          "demSplit": 0.49779938019240283,
+          "id": "7"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 116032 },
+            { "type": "WHITE", "count": 518699 },
+            { "type": "ASIAN", "count": 9380 },
+            { "type": "HISPANIC", "count": 68389 }
+          ],
+          "repSplit": 0.5985667025514895,
+          "demSplit": 0.40143329744851053,
+          "id": "8"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 29539 },
+            { "type": "WHITE", "count": 648211 },
+            { "type": "ASIAN", "count": 5758 },
+            { "type": "HISPANIC", "count": 40427 }
+          ],
+          "repSplit": 0.5643405359118155,
+          "demSplit": 0.43565946408818446,
+          "id": "9"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 227594 },
+            { "type": "WHITE", "count": 373496 },
+            { "type": "ASIAN", "count": 29691 },
+            { "type": "HISPANIC", "count": 80008 }
+          ],
+          "repSplit": 0.1829242442429149,
+          "demSplit": 0.8170757557570851,
+          "id": "10"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 156324 },
+            { "type": "WHITE", "count": 440990 },
+            { "type": "ASIAN", "count": 5447 },
+            { "type": "HISPANIC", "count": 45841 }
+          ],
+          "repSplit": 0.576442094439292,
+          "demSplit": 0.4235579055607081,
+          "id": "11"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 215704 },
+            { "type": "WHITE", "count": 405792 },
+            { "type": "ASIAN", "count": 10129 },
+            { "type": "HISPANIC", "count": 86955 }
+          ],
+          "repSplit": 0.5265579936945667,
+          "demSplit": 0.47344200630543337,
+          "id": "12"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 97817 },
+            { "type": "WHITE", "count": 554071 },
+            { "type": "ASIAN", "count": 8222 },
+            { "type": "HISPANIC", "count": 67396 }
+          ],
+          "repSplit": 0.6667690103367107,
+          "demSplit": 0.33323098966328935,
+          "id": "13"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "Large Difference Between Democrat Vote Share and Seat Share - chain445",
+      "shape": "polygon",
+      "id": 3,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.20636551630237107
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 639382 },
+            { "type": "WHITE", "count": 1816618 },
+            { "type": "ASIAN", "count": 71466 },
+            { "type": "HISPANIC", "count": 284113 }
+          ],
+          "repSplit": 0.46097974018737875,
+          "demSplit": 0.5390202598126212,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 417667 },
+            { "type": "WHITE", "count": 2186706 },
+            { "type": "ASIAN", "count": 46766 },
+            { "type": "HISPANIC", "count": 209026 }
+          ],
+          "repSplit": 0.5707572057943417,
+          "demSplit": 0.42924279420565825,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 962805 },
+            { "type": "WHITE", "count": 2220671 },
+            { "type": "ASIAN", "count": 88347 },
+            { "type": "HISPANIC", "count": 306981 }
+          ],
+          "repSplit": 0.4680817157571775,
+          "demSplit": 0.5319182842428225,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "Large Difference Between Republican Vote Share and Seat Share - chain445",
+      "shape": "polygon",
+      "id": 4,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.20636551630237107
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 639382 },
+            { "type": "WHITE", "count": 1816618 },
+            { "type": "ASIAN", "count": 71466 },
+            { "type": "HISPANIC", "count": 284113 }
+          ],
+          "repSplit": 0.46097974018737875,
+          "demSplit": 0.5390202598126212,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 417667 },
+            { "type": "WHITE", "count": 2186706 },
+            { "type": "ASIAN", "count": 46766 },
+            { "type": "HISPANIC", "count": 209026 }
+          ],
+          "repSplit": 0.5707572057943417,
+          "demSplit": 0.42924279420565825,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 962805 },
+            { "type": "WHITE", "count": 2220671 },
+            { "type": "ASIAN", "count": 88347 },
+            { "type": "HISPANIC", "count": 306981 }
+          ],
+          "repSplit": 0.4680817157571775,
+          "demSplit": 0.5319182842428225,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "High Republican Concentration In District - chain445",
+      "shape": "polygon",
+      "id": 5,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.22400048604565784
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 298141 },
+            { "type": "WHITE", "count": 2345189 },
+            { "type": "ASIAN", "count": 37675 },
+            { "type": "HISPANIC", "count": 196458 }
+          ],
+          "repSplit": 0.6111437140766932,
+          "demSplit": 0.3888562859233068,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 954193 },
+            { "type": "WHITE", "count": 2102298 },
+            { "type": "ASIAN", "count": 123181 },
+            { "type": "HISPANIC", "count": 366419 }
+          ],
+          "repSplit": 0.3922833214675636,
+          "demSplit": 0.6077166785324364,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 767520 },
+            { "type": "WHITE", "count": 1776508 },
+            { "type": "ASIAN", "count": 45723 },
+            { "type": "HISPANIC", "count": 237243 }
+          ],
+          "repSplit": 0.5156628722433668,
+          "demSplit": 0.4843371277566332,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "High Democrat Concentration In District - chain445",
+      "shape": "polygon",
+      "id": 6,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.22400048604565784
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 298141 },
+            { "type": "WHITE", "count": 2345189 },
+            { "type": "ASIAN", "count": 37675 },
+            { "type": "HISPANIC", "count": 196458 }
+          ],
+          "repSplit": 0.6111437140766932,
+          "demSplit": 0.3888562859233068,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 954193 },
+            { "type": "WHITE", "count": 2102298 },
+            { "type": "ASIAN", "count": 123181 },
+            { "type": "HISPANIC", "count": 366419 }
+          ],
+          "repSplit": 0.3922833214675636,
+          "demSplit": 0.6077166785324364,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 767520 },
+            { "type": "WHITE", "count": 1776508 },
+            { "type": "ASIAN", "count": 45723 },
+            { "type": "HISPANIC", "count": 237243 }
+          ],
+          "repSplit": 0.5156628722433668,
+          "demSplit": 0.4843371277566332,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "Large Difference Between Democrat Vote Share and Seat Share - chain355",
+      "shape": "polygon",
+      "id": 7,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.27525854754374196
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 876889 },
+            { "type": "WHITE", "count": 2251758 },
+            { "type": "ASIAN", "count": 110766 },
+            { "type": "HISPANIC", "count": 339250 }
+          ],
+          "repSplit": 0.4520074943390154,
+          "demSplit": 0.5479925056609846,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 574381 },
+            { "type": "WHITE", "count": 1316341 },
+            { "type": "ASIAN", "count": 18667 },
+            { "type": "HISPANIC", "count": 156086 }
+          ],
+          "repSplit": 0.5708819736816075,
+          "demSplit": 0.42911802631839246,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 568584 },
+            { "type": "WHITE", "count": 2655896 },
+            { "type": "ASIAN", "count": 77146 },
+            { "type": "HISPANIC", "count": 304784 }
+          ],
+          "repSplit": 0.5053857073644377,
+          "demSplit": 0.49461429263556234,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "Large Difference Between Republican Vote Share and Seat Share - chain355",
+      "shape": "polygon",
+      "id": 8,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.27525854754374196
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 876889 },
+            { "type": "WHITE", "count": 2251758 },
+            { "type": "ASIAN", "count": 110766 },
+            { "type": "HISPANIC", "count": 339250 }
+          ],
+          "repSplit": 0.4520074943390154,
+          "demSplit": 0.5479925056609846,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 574381 },
+            { "type": "WHITE", "count": 1316341 },
+            { "type": "ASIAN", "count": 18667 },
+            { "type": "HISPANIC", "count": 156086 }
+          ],
+          "repSplit": 0.5708819736816075,
+          "demSplit": 0.42911802631839246,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 568584 },
+            { "type": "WHITE", "count": 2655896 },
+            { "type": "ASIAN", "count": 77146 },
+            { "type": "HISPANIC", "count": 304784 }
+          ],
+          "repSplit": 0.5053857073644377,
+          "demSplit": 0.49461429263556234,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "High Democrat Concentration In District - chain355",
+      "shape": "polygon",
+      "id": 9,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.20318163162023506
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 901124 },
+            { "type": "WHITE", "count": 2337036 },
+            { "type": "ASIAN", "count": 48676 },
+            { "type": "HISPANIC", "count": 300070 }
+          ],
+          "repSplit": 0.5447323288804078,
+          "demSplit": 0.45526767111959227,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 554042 },
+            { "type": "WHITE", "count": 2602230 },
+            { "type": "ASIAN", "count": 75900 },
+            { "type": "HISPANIC", "count": 291525 }
+          ],
+          "repSplit": 0.5213679635761589,
+          "demSplit": 0.47863203642384106,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 564688 },
+            { "type": "WHITE", "count": 1284729 },
+            { "type": "ASIAN", "count": 82003 },
+            { "type": "HISPANIC", "count": 208525 }
+          ],
+          "repSplit": 0.38956540257409994,
+          "demSplit": 0.6104345974259,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "High Republican Concentration In District - chain355",
+      "shape": "polygon",
+      "id": 10,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.2719217407879248
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 208023 },
+            { "type": "WHITE", "count": 1733260 },
+            { "type": "ASIAN", "count": 27985 },
+            { "type": "HISPANIC", "count": 127533 }
+          ],
+          "repSplit": 0.6059100088482192,
+          "demSplit": 0.3940899911517808,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 857902 },
+            { "type": "WHITE", "count": 2288517 },
+            { "type": "ASIAN", "count": 88780 },
+            { "type": "HISPANIC", "count": 344751 }
+          ],
+          "repSplit": 0.4693236270133951,
+          "demSplit": 0.5306763729866049,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 953929 },
+            { "type": "WHITE", "count": 2202218 },
+            { "type": "ASIAN", "count": 89814 },
+            { "type": "HISPANIC", "count": 327836 }
+          ],
+          "repSplit": 0.4617517946130311,
+          "demSplit": 0.5382482053869689,
+          "id": "3"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "High Republican Concentration In District - chain3334",
+      "shape": "polygon",
+      "id": 11,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.2007727146371296
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 698071 },
+            { "type": "WHITE", "count": 1793025 },
+            { "type": "ASIAN", "count": 96293 },
+            { "type": "HISPANIC", "count": 308112 }
+          ],
+          "repSplit": 0.42539147048074044,
+          "demSplit": 0.5746085295192596,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 599273 },
+            { "type": "WHITE", "count": 1314795 },
+            { "type": "ASIAN", "count": 21268 },
+            { "type": "HISPANIC", "count": 154604 }
+          ],
+          "repSplit": 0.5528117910267897,
+          "demSplit": 0.4471882089732103,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 195673 },
+            { "type": "WHITE", "count": 1765194 },
+            { "type": "ASIAN", "count": 24591 },
+            { "type": "HISPANIC", "count": 132113 }
+          ],
+          "repSplit": 0.6234134747933074,
+          "demSplit": 0.37658652520669256,
+          "id": "3"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 526837 },
+            { "type": "WHITE", "count": 1350981 },
+            { "type": "ASIAN", "count": 64427 },
+            { "type": "HISPANIC", "count": 205291 }
+          ],
+          "repSplit": 0.42185374744074444,
+          "demSplit": 0.5781462525592556,
+          "id": "4"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "Large Difference Between Democrat Vote Share and Seat Share - chain3334",
+      "shape": "polygon",
+      "id": 12,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.23611491728998724
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 639402 },
+            { "type": "WHITE", "count": 1954647 },
+            { "type": "ASIAN", "count": 71876 },
+            { "type": "HISPANIC", "count": 282305 }
+          ],
+          "repSplit": 0.503461210364876,
+          "demSplit": 0.49653878963512393,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 235349 },
+            { "type": "WHITE", "count": 1708664 },
+            { "type": "ASIAN", "count": 35396 },
+            { "type": "HISPANIC", "count": 142848 }
+          ],
+          "repSplit": 0.5460310483672928,
+          "demSplit": 0.45396895163270723,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 569928 },
+            { "type": "WHITE", "count": 1237676 },
+            { "type": "ASIAN", "count": 74884 },
+            { "type": "HISPANIC", "count": 198762 }
+          ],
+          "repSplit": 0.39213354617795854,
+          "demSplit": 0.6078664538220415,
+          "id": "3"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 575175 },
+            { "type": "WHITE", "count": 1323008 },
+            { "type": "ASIAN", "count": 24423 },
+            { "type": "HISPANIC", "count": 176205 }
+          ],
+          "repSplit": 0.5604517743464412,
+          "demSplit": 0.4395482256535588,
+          "id": "4"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "Large Difference Between Republican Vote Share and Seat Share - chain3334",
+      "shape": "polygon",
+      "id": 13,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.23611491728998724
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 639402 },
+            { "type": "WHITE", "count": 1954647 },
+            { "type": "ASIAN", "count": 71876 },
+            { "type": "HISPANIC", "count": 282305 }
+          ],
+          "repSplit": 0.503461210364876,
+          "demSplit": 0.49653878963512393,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 235349 },
+            { "type": "WHITE", "count": 1708664 },
+            { "type": "ASIAN", "count": 35396 },
+            { "type": "HISPANIC", "count": 142848 }
+          ],
+          "repSplit": 0.5460310483672928,
+          "demSplit": 0.45396895163270723,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 569928 },
+            { "type": "WHITE", "count": 1237676 },
+            { "type": "ASIAN", "count": 74884 },
+            { "type": "HISPANIC", "count": 198762 }
+          ],
+          "repSplit": 0.39213354617795854,
+          "demSplit": 0.6078664538220415,
+          "id": "3"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 575175 },
+            { "type": "WHITE", "count": 1323008 },
+            { "type": "ASIAN", "count": 24423 },
+            { "type": "HISPANIC", "count": 176205 }
+          ],
+          "repSplit": 0.5604517743464412,
+          "demSplit": 0.4395482256535588,
+          "id": "4"
+        }
+      ]
+    },
+    {
+      "planType": "MMD",
+      "description": "High Democrat Concentration In District - chain3334",
+      "shape": "polygon",
+      "id": 14,
+      "overview": {
+        "state": "North Carolina",
+        "opportunityDistricts": 0,
+        "safeDistricts": 0,
+        "polsbyPopperScore": 0.23611491728998724
+      },
+      "districts": [
+        {
+          "populations": [
+            { "type": "BLACK", "count": 639402 },
+            { "type": "WHITE", "count": 1954647 },
+            { "type": "ASIAN", "count": 71876 },
+            { "type": "HISPANIC", "count": 282305 }
+          ],
+          "repSplit": 0.503461210364876,
+          "demSplit": 0.49653878963512393,
+          "id": "1"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 235349 },
+            { "type": "WHITE", "count": 1708664 },
+            { "type": "ASIAN", "count": 35396 },
+            { "type": "HISPANIC", "count": 142848 }
+          ],
+          "repSplit": 0.5460310483672928,
+          "demSplit": 0.45396895163270723,
+          "id": "2"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 569928 },
+            { "type": "WHITE", "count": 1237676 },
+            { "type": "ASIAN", "count": 74884 },
+            { "type": "HISPANIC", "count": 198762 }
+          ],
+          "repSplit": 0.39213354617795854,
+          "demSplit": 0.6078664538220415,
+          "id": "3"
+        },
+        {
+          "populations": [
+            { "type": "BLACK", "count": 575175 },
+            { "type": "WHITE", "count": 1323008 },
+            { "type": "ASIAN", "count": 24423 },
+            { "type": "HISPANIC", "count": 176205 }
+          ],
+          "repSplit": 0.5604517743464412,
+          "demSplit": 0.4395482256535588,
+          "id": "4"
         }
       ]
     }
+  ],
+  "analyses": {
+    "SMD": [
+      {
+        "boxAndWhiskerPlots": {
+          "BLACK": {
+            "1": {
+              "min": 19566,
+              "25%": 124052,
+              "50%": 169890,
+              "mean": 164789.5385,
+              "75%": 206345,
+              "max": 316312
+            },
+            "2": {
+              "min": 27564,
+              "25%": 112836,
+              "50%": 159442,
+              "mean": 150849.5035,
+              "75%": 191143.75,
+              "max": 309330
+            },
+            "3": {
+              "min": 24983,
+              "25%": 126374,
+              "50%": 164322,
+              "mean": 159826.8004,
+              "75%": 197174,
+              "max": 307119
+            },
+            "4": {
+              "min": 25785,
+              "25%": 107932,
+              "50%": 160364,
+              "mean": 148640.883,
+              "75%": 194582,
+              "max": 301268
+            },
+            "5": {
+              "min": 25092,
+              "25%": 120155,
+              "50%": 163860,
+              "mean": 155661.7046,
+              "75%": 199474,
+              "max": 306407
+            },
+            "6": {
+              "min": 24158,
+              "25%": 101370,
+              "50%": 157350,
+              "mean": 146309.0663,
+              "75%": 191423,
+              "max": 303804
+            },
+            "7": {
+              "min": 25990,
+              "25%": 110659,
+              "50%": 161545,
+              "mean": 152337.5889,
+              "75%": 196110,
+              "max": 316740
+            },
+            "8": {
+              "min": 28068,
+              "25%": 139779,
+              "50%": 169502,
+              "mean": 169070.907,
+              "75%": 202960,
+              "max": 307109
+            },
+            "9": {
+              "min": 25897,
+              "25%": 132382.5,
+              "50%": 167359,
+              "mean": 162467.0349,
+              "75%": 200632,
+              "max": 315419
+            },
+            "10": {
+              "min": 25509,
+              "25%": 127267,
+              "50%": 164266,
+              "mean": 160503.3271,
+              "75%": 200096,
+              "max": 304121
+            },
+            "11": {
+              "min": 23409,
+              "25%": 81696,
+              "50%": 149308,
+              "mean": 135145.6957,
+              "75%": 182245,
+              "max": 309661
+            },
+            "12": {
+              "min": 27310,
+              "25%": 131417,
+              "50%": 170805,
+              "mean": 163461.7739,
+              "75%": 200111,
+              "max": 307520
+            },
+            "13": {
+              "min": 25879,
+              "25%": 105519.25,
+              "50%": 156914,
+              "mean": 150790.1762,
+              "75%": 198106,
+              "max": 303215
+            }
+          },
+          "WHITE": {
+            "1": {
+              "min": 334802,
+              "25%": 413037,
+              "50%": 450791,
+              "mean": 471675.9361,
+              "75%": 515396,
+              "max": 653539
+            },
+            "2": {
+              "min": 328693,
+              "25%": 431719,
+              "50%": 462944,
+              "mean": 484554.882,
+              "75%": 530135,
+              "max": 647856
+            },
+            "3": {
+              "min": 330300,
+              "25%": 422118,
+              "50%": 453420,
+              "mean": 473810.9511,
+              "75%": 518054,
+              "max": 646784
+            },
+            "4": {
+              "min": 325317,
+              "25%": 425550,
+              "50%": 463175.5,
+              "mean": 485340.2452,
+              "75%": 537277,
+              "max": 650023
+            },
+            "5": {
+              "min": 334499,
+              "25%": 427244,
+              "50%": 456369,
+              "mean": 477147.3566,
+              "75%": 517207,
+              "max": 647781
+            },
+            "6": {
+              "min": 317193,
+              "25%": 431444,
+              "50%": 465959,
+              "mean": 490345.0727,
+              "75%": 548652,
+              "max": 651159
+            },
+            "7": {
+              "min": 333317,
+              "25%": 425940,
+              "50%": 459444,
+              "mean": 482959.4644,
+              "75%": 530232,
+              "max": 652439
+            },
+            "8": {
+              "min": 324847,
+              "25%": 423421,
+              "50%": 449412,
+              "mean": 461763.8328,
+              "75%": 495046.5,
+              "max": 646717
+            },
+            "9": {
+              "min": 320397,
+              "25%": 422240,
+              "50%": 450779,
+              "mean": 467989.1523,
+              "75%": 501577,
+              "max": 649439
+            },
+            "10": {
+              "min": 330478,
+              "25%": 424093,
+              "50%": 454061,
+              "mean": 471262.4603,
+              "75%": 508567,
+              "max": 652200
+            },
+            "11": {
+              "min": 320475,
+              "25%": 435275,
+              "50%": 471742,
+              "mean": 499314.5216,
+              "75%": 578927,
+              "max": 652817
+            },
+            "12": {
+              "min": 315760,
+              "25%": 420731,
+              "50%": 452699,
+              "mean": 469912.8557,
+              "75%": 501474,
+              "max": 647787
+            },
+            "13": {
+              "min": 330728,
+              "25%": 424167,
+              "50%": 464951.5,
+              "mean": 487918.2692,
+              "75%": 546241,
+              "max": 647352
+            }
+          },
+          "ASIAN": {
+            "1": {
+              "min": 4021,
+              "25%": 6609,
+              "50%": 10021,
+              "mean": 14124.7444,
+              "75%": 18539,
+              "max": 55015
+            },
+            "2": {
+              "min": 4126,
+              "25%": 7199,
+              "50%": 11580,
+              "mean": 15306.84,
+              "75%": 20183,
+              "max": 53798
+            },
+            "3": {
+              "min": 3846,
+              "25%": 7814,
+              "50%": 11879,
+              "mean": 15920.7771,
+              "75%": 20118,
+              "max": 53940
+            },
+            "4": {
+              "min": 4296,
+              "25%": 8071,
+              "50%": 12487,
+              "mean": 16752.3103,
+              "75%": 23415,
+              "max": 55325
+            },
+            "5": {
+              "min": 4246,
+              "25%": 7193,
+              "50%": 11175,
+              "mean": 15108.8547,
+              "75%": 20033,
+              "max": 54036
+            },
+            "6": {
+              "min": 3345,
+              "25%": 7950,
+              "50%": 11677,
+              "mean": 15948.784,
+              "75%": 21092,
+              "max": 55226
+            },
+            "7": {
+              "min": 4202,
+              "25%": 7233.75,
+              "50%": 11070.5,
+              "mean": 15477.8413,
+              "75%": 20281,
+              "max": 54091
+            },
+            "8": {
+              "min": 4169,
+              "25%": 8501,
+              "50%": 13766,
+              "mean": 17115.0242,
+              "75%": 22181,
+              "max": 54644
+            },
+            "9": {
+              "min": 3374,
+              "25%": 8424,
+              "50%": 13449,
+              "mean": 16903.3139,
+              "75%": 22210,
+              "max": 55785
+            },
+            "10": {
+              "min": 4158,
+              "25%": 7911,
+              "50%": 12592.5,
+              "mean": 16408.1329,
+              "75%": 21450,
+              "max": 55999
+            },
+            "11": {
+              "min": 3954,
+              "25%": 7805.25,
+              "50%": 13097,
+              "mean": 16386.0296,
+              "75%": 22975,
+              "max": 54654
+            },
+            "12": {
+              "min": 4316,
+              "25%": 7750,
+              "50%": 11601,
+              "mean": 15913.5728,
+              "75%": 21029,
+              "max": 55268
+            },
+            "13": {
+              "min": 3352,
+              "25%": 7578,
+              "50%": 11382,
+              "mean": 15212.7748,
+              "75%": 20328,
+              "max": 56773
+            }
+          },
+          "HISPANIC": {
+            "1": {
+              "min": 28825,
+              "25%": 45203,
+              "50%": 60442.5,
+              "mean": 59842.8484,
+              "75%": 72282,
+              "max": 99547
+            },
+            "2": {
+              "min": 29586,
+              "25%": 45796,
+              "50%": 59608,
+              "mean": 60209.4046,
+              "75%": 71405,
+              "max": 99555
+            },
+            "3": {
+              "min": 29349,
+              "25%": 50016,
+              "50%": 62482,
+              "mean": 61818.9965,
+              "75%": 72718,
+              "max": 100265
+            },
+            "4": {
+              "min": 29822,
+              "25%": 47368,
+              "50%": 63668.5,
+              "mean": 62353.378,
+              "75%": 73867,
+              "max": 103033
+            },
+            "5": {
+              "min": 31332,
+              "25%": 49511,
+              "50%": 61941,
+              "mean": 61093.9822,
+              "75%": 72395,
+              "max": 99627
+            },
+            "6": {
+              "min": 30672,
+              "25%": 46314,
+              "50%": 60404,
+              "mean": 60578.9314,
+              "75%": 71557,
+              "max": 103963
+            },
+            "7": {
+              "min": 30880,
+              "25%": 45811,
+              "50%": 61747,
+              "mean": 60373.0769,
+              "75%": 71882,
+              "max": 101070
+            },
+            "8": {
+              "min": 30945,
+              "25%": 53174,
+              "50%": 65158,
+              "mean": 64151.0348,
+              "75%": 74440,
+              "max": 100337
+            },
+            "9": {
+              "min": 29647,
+              "25%": 51823,
+              "50%": 65033,
+              "mean": 63869.3935,
+              "75%": 75474,
+              "max": 101059
+            },
+            "10": {
+              "min": 29223,
+              "25%": 52074,
+              "50%": 64090,
+              "mean": 62373.49,
+              "75%": 72091,
+              "max": 101871
+            },
+            "11": {
+              "min": 28790,
+              "25%": 44530,
+              "50%": 61000,
+              "mean": 61048.6783,
+              "75%": 73194,
+              "max": 99155
+            },
+            "12": {
+              "min": 30253,
+              "25%": 49668,
+              "50%": 63281,
+              "mean": 62278.0693,
+              "75%": 73615,
+              "max": 100148
+            },
+            "13": {
+              "min": 30354,
+              "25%": 44871,
+              "50%": 61328,
+              "mean": 60128.7161,
+              "75%": 71508,
+              "max": 101032
+            }
+          }
+        },
+        "opportunityRepCounts": [
+          40, 23, 11, 109, 61, 35, 129, 100, 61, 48, 59, 98, 163
+        ],
+        "demRepSplitCounts": [
+          0, 0, 0, 0, 0, 50, 1458, 4089, 3443, 918, 42, 0, 0, 0
+        ],
+        "voteSeatSharePercentages": {
+          "DEMOCRAT": [0.49807757231972793, 0.4319461538461539],
+          "REPUBLICAN": [0.5019224276802721, 0.5680538461538461]
+        },
+        "pattern": "SMD"
+      }
+    ],
+    "MMD": [
+      {
+        "boxAndWhiskerPlots": {
+          "BLACK": {
+            "1": {
+              "min": 298141,
+              "25%": 518264,
+              "50%": 677072,
+              "mean": 668550.8478847885,
+              "75%": 803633,
+              "max": 1048579
+            },
+            "2": {
+              "min": 313067,
+              "25%": 516839,
+              "50%": 674876,
+              "mean": 662939.7101710171,
+              "75%": 801065,
+              "max": 1061342
+            },
+            "3": {
+              "min": 308737,
+              "25%": 541198,
+              "50%": 704467,
+              "mean": 688363.4419441944,
+              "75%": 811942,
+              "max": 1041119
+            }
+          },
+          "WHITE": {
+            "1": {
+              "min": 1634977,
+              "25%": 1802841,
+              "50%": 2120956,
+              "mean": 2089359.0186018602,
+              "75%": 2254849,
+              "max": 2842272
+            },
+            "2": {
+              "min": 1620686,
+              "25%": 1790311,
+              "50%": 2084882,
+              "mean": 2064528.703870387,
+              "75%": 2228930,
+              "max": 2793312
+            },
+            "3": {
+              "min": 1604972,
+              "25%": 1788590,
+              "50%": 2096873,
+              "mean": 2070107.2775277528,
+              "75%": 2242368,
+              "max": 2854576
+            }
+          },
+          "ASIAN": {
+            "1": {
+              "min": 28546,
+              "25%": 54298,
+              "50%": 68804,
+              "mean": 69010.57575757576,
+              "75%": 82065,
+              "max": 135268
+            },
+            "2": {
+              "min": 28635,
+              "25%": 52584,
+              "50%": 68322,
+              "mean": 68350.53405340534,
+              "75%": 81481,
+              "max": 138096
+            },
+            "3": {
+              "min": 26312,
+              "25%": 53174,
+              "50%": 69210,
+              "mean": 69217.8901890189,
+              "75%": 83218,
+              "max": 135082
+            }
+          },
+          "HISPANIC": {
+            "1": {
+              "min": 188779,
+              "25%": 236983,
+              "50%": 258908,
+              "mean": 266841.8280828083,
+              "75%": 295666,
+              "max": 381237
+            },
+            "2": {
+              "min": 185912,
+              "25%": 234122,
+              "50%": 255162,
+              "mean": 264386.6129612961,
+              "75%": 292785,
+              "max": 381477
+            },
+            "3": {
+              "min": 188372,
+              "25%": 237243,
+              "50%": 263560,
+              "mean": 268891.5589558956,
+              "75%": 298163,
+              "max": 378278
+            }
+          }
+        },
+        "opportunityRepCounts": [3333, 3333, 3333],
+        "demRepSplitCounts": [
+          0, 0, 0, 0, 0, 225, 4600, 5045, 141, 0, 0, 0, 0, 0
+        ],
+        "voteSeatSharePercentages": {
+          "DEMOCRAT": [0.5018074590633826, 0.5076507650765076],
+          "REPUBLICAN": [0.49819254093661736, 0.49234923492349236]
+        },
+        "pattern": "chain445"
+      },
+      {
+        "boxAndWhiskerPlots": {
+          "BLACK": {
+            "1": {
+              "min": 156108,
+              "25%": 519562,
+              "50%": 621420,
+              "mean": 658955.1540654065,
+              "75%": 819392,
+              "max": 1059552
+            },
+            "2": {
+              "min": 165241,
+              "25%": 527471.5,
+              "50%": 650442,
+              "mean": 678064.3862886289,
+              "75%": 831931,
+              "max": 1070071
+            },
+            "3": {
+              "min": 141976,
+              "25%": 529652,
+              "50%": 657448,
+              "mean": 682834.4596459646,
+              "75%": 840359.75,
+              "max": 1079487
+            }
+          },
+          "WHITE": {
+            "1": {
+              "min": 1097136,
+              "25%": 1764901,
+              "50%": 2160483.5,
+              "mean": 2082150.9363936393,
+              "75%": 2337945.75,
+              "max": 2901034
+            },
+            "2": {
+              "min": 1133399,
+              "25%": 1763840.25,
+              "50%": 2150399,
+              "mean": 2064765.4459945995,
+              "75%": 2295413.5,
+              "max": 2874214
+            },
+            "3": {
+              "min": 1102144,
+              "25%": 1761839,
+              "50%": 2154760,
+              "mean": 2077078.6176117612,
+              "75%": 2308906,
+              "max": 2877360
+            }
+          },
+          "ASIAN": {
+            "1": {
+              "min": 17836,
+              "25%": 52885,
+              "50%": 70422,
+              "mean": 68521.85748574858,
+              "75%": 81154.25,
+              "max": 137066
+            },
+            "2": {
+              "min": 17525,
+              "25%": 52609.25,
+              "50%": 70549.5,
+              "mean": 68811.15511551154,
+              "75%": 82083.25,
+              "max": 138096
+            },
+            "3": {
+              "min": 17510,
+              "25%": 52049.5,
+              "50%": 72806,
+              "mean": 69245.98739873988,
+              "75%": 82688.25,
+              "max": 135082
+            }
+          },
+          "HISPANIC": {
+            "1": {
+              "min": 124013,
+              "25%": 231225,
+              "50%": 274876,
+              "mean": 264562.8349834983,
+              "75%": 305584.25,
+              "max": 394477
+            },
+            "2": {
+              "min": 126867,
+              "25%": 231027.25,
+              "50%": 277326.5,
+              "mean": 266741.3277827783,
+              "75%": 306777,
+              "max": 400867
+            },
+            "3": {
+              "min": 117227,
+              "25%": 232942,
+              "50%": 282686,
+              "mean": 268815.8372337234,
+              "75%": 308604,
+              "max": 393895
+            }
+          }
+        },
+        "opportunityRepCounts": [3274, 3301, 3289],
+        "demRepSplitCounts": [
+          0, 0, 0, 0, 0, 225, 4600, 5045, 141, 0, 0, 0, 0, 0
+        ],
+        "voteSeatSharePercentages": {
+          "DEMOCRAT": [0.5015570706258108, 0.47679767976797677],
+          "REPUBLICAN": [0.49844292937418927, 0.5232023202320232]
+        },
+        "pattern": "chain355"
+      },
+      {
+        "boxAndWhiskerPlots": {
+          "BLACK": {
+            "1": {
+              "min": 142132,
+              "25%": 485345,
+              "50%": 578115,
+              "mean": 610331.8062806281,
+              "75%": 768016,
+              "max": 1059552
+            },
+            "2": {
+              "min": 158203,
+              "25%": 477091,
+              "50%": 583281,
+              "mean": 617852.8968896889,
+              "75%": 781836.5,
+              "max": 1070071
+            },
+            "3": {
+              "min": 141976,
+              "25%": 487399.5,
+              "50%": 588781,
+              "mean": 622743.8221822182,
+              "75%": 789341,
+              "max": 1079487
+            },
+            "4": {
+              "min": 146109,
+              "25%": 422829,
+              "50%": 514412,
+              "mean": 506776.42394239426,
+              "75%": 613465,
+              "max": 852354
+            }
+          },
+          "WHITE": {
+            "1": {
+              "min": 1097136,
+              "25%": 1438021,
+              "50%": 1816782,
+              "mean": 1901404.288928893,
+              "75%": 2226168,
+              "max": 2901034
+            },
+            "2": {
+              "min": 1133399,
+              "25%": 1451203,
+              "50%": 1831441,
+              "mean": 1896824.4235423543,
+              "75%": 2213137,
+              "max": 2874214
+            },
+            "3": {
+              "min": 1102144,
+              "25%": 1487751,
+              "50%": 1825669,
+              "mean": 1905608.1833183318,
+              "75%": 2217885,
+              "max": 2877360
+            },
+            "4": {
+              "min": 1176814,
+              "25%": 1329429,
+              "50%": 1466052,
+              "mean": 1560474.3126312632,
+              "75%": 1750884,
+              "max": 2356835
+            }
+          },
+          "ASIAN": {
+            "1": {
+              "min": 17836,
+              "25%": 42388,
+              "50%": 65517,
+              "mean": 62428.02410241024,
+              "75%": 78463,
+              "max": 137066
+            },
+            "2": {
+              "min": 17525,
+              "25%": 45145,
+              "50%": 65959,
+              "mean": 63467.08330833083,
+              "75%": 78662,
+              "max": 138096
+            },
+            "3": {
+              "min": 17510,
+              "25%": 43290.5,
+              "50%": 66446,
+              "mean": 63226.47624762476,
+              "75%": 79072,
+              "max": 135082
+            },
+            "4": {
+              "min": 18636,
+              "25%": 32215,
+              "50%": 50449,
+              "mean": 52372.24902490249,
+              "75%": 69711,
+              "max": 103689
+            }
+          },
+          "HISPANIC": {
+            "1": {
+              "min": 119062,
+              "25%": 197150,
+              "50%": 239038,
+              "mean": 242375.38323832382,
+              "75%": 292977,
+              "max": 394477
+            },
+            "2": {
+              "min": 126496,
+              "25%": 201954.5,
+              "50%": 238731,
+              "mean": 244859.700570057,
+              "75%": 294431,
+              "max": 400867
+            },
+            "3": {
+              "min": 117227,
+              "25%": 201022,
+              "50%": 240867,
+              "mean": 245984.54425442545,
+              "75%": 295256,
+              "max": 393895
+            },
+            "4": {
+              "min": 118975,
+              "25%": 166525,
+              "50%": 201704,
+              "mean": 200701.11581158117,
+              "75%": 226746,
+              "max": 309694
+            }
+          }
+        },
+        "opportunityRepCounts": [3986, 3958, 3902, 3916],
+        "demRepSplitCounts": [
+          0, 0, 0, 0, 0, 225, 4600, 5045, 141, 0, 0, 0, 0, 0
+        ],
+        "voteSeatSharePercentages": {
+          "DEMOCRAT": [0.5010930558867833, 0.4016901690169017],
+          "REPUBLICAN": [0.4989069441132168, 0.4316431643164316]
+        },
+        "pattern": "chain3334"
+      }
+    ]
+  },
+  "ensembleSummaryData": {
+    "SMD": [
+      {
+        "avgPolsbyPopperScores": 0.19264715028091303,
+        "avgRepSplits": 0.5019224276802722,
+        "avgDemSplits": 0.4980775723197278,
+        "avgOpportunityReps": 0.0598,
+        "avgEqualPop": 0.03489073457116015,
+        "planType": "SMD",
+        "totalDistrictPlans": 10000,
+        "pattern": "SMD"
+      }
+    ],
+    "MMD": [
+      {
+        "avgPolsbyPopperScores": 0.2235946476663234,
+        "avgRepSplits": 0.4981925409366174,
+        "avgDemSplits": 0.5018074590633826,
+        "avgOpportunityReps": 3,
+        "avgEqualPop": 0.243161064,
+        "planType": "MMD",
+        "totalDistrictPlans": 10000,
+        "pattern": "chain445"
+      },
+      {
+        "avgPolsbyPopperScores": 0.2244311285690912,
+        "avgRepSplits": 0.49844292937418927,
+        "avgDemSplits": 0.5015570706258107,
+        "avgOpportunityReps": 3,
+        "avgEqualPop": 0.375790944,
+        "planType": "MMD",
+        "totalDistrictPlans": 10000,
+        "pattern": "chain355"
+      },
+      {
+        "avgPolsbyPopperScores": 0.21413520919417212,
+        "avgRepSplits": 0.4989010933138808,
+        "avgDemSplits": 0.5010989066861191,
+        "avgOpportunityReps": 3.3333333333333335,
+        "avgEqualPop": 0.35009203,
+        "planType": "MMD",
+        "totalDistrictPlans": 10000,
+        "pattern": "chain3334"
+      }
+    ]
   }
-]
+}
