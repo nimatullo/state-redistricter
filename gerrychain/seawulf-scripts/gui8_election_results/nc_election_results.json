@@ -1,0 +1,292 @@
+{
+    "1": {
+        "Winners": [
+            [
+                "Cramer, Kevin",
+                "Democratic",
+                320212.36
+            ],
+            [
+                "Yoder, Kevin",
+                "Republican",
+                306896.4
+            ],
+            [
+                "Cummings, Elijah E.",
+                "Democratic",
+                298192.92
+            ],
+            [
+                "Womack, Steve",
+                "Republican",
+                279411.0
+            ]
+        ],
+        "Eliminated": [
+            [
+                "Davis, Rodney",
+                "Democratic",
+                167301
+            ],
+            [
+                "Zengerle, Mark",
+                "Republican",
+                196761
+            ],
+            [
+                "DeLauro, Rosa L.",
+                "Democratic",
+                226448.6
+            ],
+            [
+                "Wright, Ron",
+                "Republican",
+                277604.4
+            ]
+        ],
+        "Initial Votes": [
+            [
+                "Yoder, Kevin",
+                "Republican",
+                249330
+            ],
+            [
+                "Wright, Ron",
+                "Republican",
+                230434
+            ],
+            [
+                "Womack, Steve",
+                "Republican",
+                226739
+            ],
+            [
+                "Zengerle, Mark",
+                "Republican",
+                196761
+            ],
+            [
+                "Cummings, Elijah E.",
+                "Democratic",
+                193967
+            ],
+            [
+                "Cramer, Kevin",
+                "Democratic",
+                187365
+            ],
+            [
+                "DeLauro, Rosa L.",
+                "Democratic",
+                186991
+            ],
+            [
+                "Davis, Rodney",
+                "Democratic",
+                167301
+            ]
+        ],
+        "RepCountTotal": 4,
+        "VoteThreshold": 327777.6
+    },
+    "2": {
+        "Winners": [
+            [
+                "Zimmerman, Jeff",
+                "Democratic",
+                302686.4
+            ],
+            [
+                "Bridenstine, Jim",
+                "Democratic",
+                286891.12
+            ],
+            [
+                "Murphy, Gregory",
+                "Republican",
+                272928.4
+            ],
+            [
+                "Stevens, Mark",
+                "Republican",
+                264955.4
+            ]
+        ],
+        "Eliminated": [
+            [
+                "Carter, Earl",
+                "Democratic",
+                148411
+            ],
+            [
+                "Cohen, Steve",
+                "Democratic",
+                192602.4
+            ],
+            [
+                "McHenry, Patrick T.",
+                "Republican",
+                195282
+            ],
+            [
+                "Rouzer, David",
+                "Republican",
+                251889.8
+            ]
+        ],
+        "Initial Votes": [
+            [
+                "Murphy, Gregory",
+                "Republican",
+                220830
+            ],
+            [
+                "Rouzer, David",
+                "Republican",
+                206833
+            ],
+            [
+                "Stevens, Mark",
+                "Republican",
+                205885
+            ],
+            [
+                "Zimmerman, Jeff",
+                "Democratic",
+                204188
+            ],
+            [
+                "McHenry, Patrick T.",
+                "Republican",
+                195282
+            ],
+            [
+                "Bridenstine, Jim",
+                "Democratic",
+                193558
+            ],
+            [
+                "Cohen, Steve",
+                "Democratic",
+                157988
+            ],
+            [
+                "Carter, Earl",
+                "Democratic",
+                148411
+            ]
+        ],
+        "RepCountTotal": 4,
+        "VoteThreshold": 306595.0
+    },
+    "3": {
+        "Winners": [
+            [
+                "Bishop, Dan",
+                "Republican",
+                352583.984
+            ],
+            [
+                "Butterfield, G.K.",
+                "Democratic",
+                318724.0
+            ],
+            [
+                "Budd, Ted",
+                "Republican",
+                303841.96
+            ],
+            [
+                "Manning, Kathy E.",
+                "Democratic",
+                291809.2
+            ],
+            [
+                "Adams, Alma S",
+                "Democratic",
+                289452.8
+            ]
+        ],
+        "Eliminated": [
+            [
+                "Foxx, Virginia",
+                "Republican",
+                148960
+            ],
+            [
+                "Hudson, Richard",
+                "Republican",
+                195450.2
+            ],
+            [
+                "Ross, Deborah K.",
+                "Democratic",
+                230004
+            ],
+            [
+                "Cawthorn, Madison",
+                "Republican",
+                246572.28
+            ],
+            [
+                "Price, David E.",
+                "Democratic",
+                275638.2
+            ]
+        ],
+        "Initial Votes": [
+            [
+                "Butterfield, G.K.",
+                "Democratic",
+                259332
+            ],
+            [
+                "Adams, Alma S",
+                "Democratic",
+                250316
+            ],
+            [
+                "Manning, Kathy E.",
+                "Democratic",
+                246046
+            ],
+            [
+                "Price, David E.",
+                "Democratic",
+                235927
+            ],
+            [
+                "Ross, Deborah K.",
+                "Democratic",
+                230004
+            ],
+            [
+                "Bishop, Dan",
+                "Republican",
+                210814
+            ],
+            [
+                "Cawthorn, Madison",
+                "Republican",
+                190451
+            ],
+            [
+                "Budd, Ted",
+                "Republican",
+                182293
+            ],
+            [
+                "Hudson, Richard",
+                "Republican",
+                167279
+            ],
+            [
+                "Foxx, Virginia",
+                "Republican",
+                148960
+            ]
+        ],
+        "RepCountTotal": 5,
+        "VoteThreshold": 353570.3333333333
+    }
+}

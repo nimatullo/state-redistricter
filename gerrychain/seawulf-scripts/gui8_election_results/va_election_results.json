@@ -1,0 +1,232 @@
+{
+    "1": {
+        "Winners": [
+            [
+                "Stevens, Jax",
+                "Republican",
+                268167.4
+            ],
+            [
+                "Carter, James",
+                "Democratic",
+                264329.0
+            ],
+            [
+                "White, Steve",
+                "Republican",
+                260787.8
+            ]
+        ],
+        "Eliminated": [
+            [
+                "Rouzer, David",
+                "Republican",
+                157149
+            ],
+            [
+                "Smith, Steve",
+                "Democratic",
+                181365
+            ],
+            [
+                "Cramer, David",
+                "Democratic",
+                259155.0
+            ]
+        ],
+        "Initial Votes": [
+            [
+                "Stevens, Jax",
+                "Republican",
+                204561
+            ],
+            [
+                "White, Steve",
+                "Republican",
+                198675
+            ],
+            [
+                "Carter, James",
+                "Democratic",
+                193881
+            ],
+            [
+                "Cramer, David",
+                "Democratic",
+                184511
+            ],
+            [
+                "Smith, Steve",
+                "Democratic",
+                181365
+            ],
+            [
+                "Rouzer, David",
+                "Republican",
+                157149
+            ]
+        ],
+        "RepCountTotal": 3,
+        "VoteThreshold": 280035.5
+    },
+    "2": {
+        "Winners": [
+            [
+                "Murphy, Gregory",
+                "Republican",
+                211254.8
+            ],
+            [
+                "Bridenstine, Jimmy",
+                "Democratic",
+                200083.0
+            ],
+            [
+                "Beyer, Donald S. Jr.",
+                "Democratic",
+                191720.0
+            ]
+        ],
+        "Eliminated": [
+            [
+                "Connolly, Gerald E.",
+                "Democratic",
+                129650
+            ],
+            [
+                "McHenry, Patrick T.",
+                "Republican",
+                133456
+            ],
+            [
+                "Hudson, Richard",
+                "Republican",
+                189207.0
+            ]
+        ],
+        "Initial Votes": [
+            [
+                "Murphy, Gregory",
+                "Republican",
+                158586
+            ],
+            [
+                "Bridenstine, Jimmy",
+                "Democratic",
+                145791
+            ],
+            [
+                "Beyer, Donald S. Jr.",
+                "Democratic",
+                142292
+            ],
+            [
+                "Hudson, Richard",
+                "Republican",
+                135111
+            ],
+            [
+                "McHenry, Patrick T.",
+                "Republican",
+                133456
+            ],
+            [
+                "Connolly, Gerald E.",
+                "Democratic",
+                129650
+            ]
+        ],
+        "RepCountTotal": 3,
+        "VoteThreshold": 211221.5
+    },
+    "3": {
+        "Winners": [
+            [
+                "Scott, Robert C.",
+                "Democratic",
+                368264.52
+            ],
+            [
+                "Spanberger, Abigail Davis.",
+                "Democratic",
+                356846.64
+            ],
+            [
+                "Wittman, Robert J",
+                "Republican",
+                312493.4
+            ],
+            [
+                "Good, Bob",
+                "Republican",
+                285823.2
+            ]
+        ],
+        "Eliminated": [
+            [
+                "Giffith, H. Morgan",
+                "Republican",
+                207164
+            ],
+            [
+                "Luria, Elaine G.",
+                "Democratic",
+                215149
+            ],
+            [
+                "Wexton, Jennifer",
+                "Democratic",
+                278455.2
+            ],
+            [
+                "Cline, Ben",
+                "Republican",
+                281528.6
+            ]
+        ],
+        "Initial Votes": [
+            [
+                "Wittman, Robert J",
+                "Republican",
+                245635
+            ],
+            [
+                "Cline, Ben",
+                "Republican",
+                235463
+            ],
+            [
+                "Scott, Robert C.",
+                "Democratic",
+                233057
+            ],
+            [
+                "Good, Bob",
+                "Republican",
+                233016
+            ],
+            [
+                "Wexton, Jennifer",
+                "Democratic",
+                223788
+            ],
+            [
+                "Spanberger, Abigail Davis.",
+                "Democratic",
+                216046
+            ],
+            [
+                "Luria, Elaine G.",
+                "Democratic",
+                215149
+            ],
+            [
+                "Giffith, H. Morgan",
+                "Republican",
+                207164
+            ]
+        ],
+        "RepCountTotal": 4,
+        "VoteThreshold": 361863.6
+    }
+}
