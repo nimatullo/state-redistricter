@@ -1,6 +1,9 @@
 import percentages from "../../utils/percentages.json";
 import OUR_STATES from "../assets/ourStates";
 import oppRepData from "../assets/threshold.json";
+import electionData from "../assets/electionResults.json";
+
+import { faker } from "@faker-js/faker";
 
 interface District {
   type: string;
@@ -651,6 +654,106 @@ class StateService {
       },
     };
     return graphData;
+  }
+
+  async getCandidates(state: string, fetchInfo: string) {
+    const winners = Object.keys(electionData).map((key) => {
+      return electionData[key].Winners.map((winner) => {
+        return {
+          name: winner[0],
+          party: winner[1],
+          district: Number(key),
+          totalVotes: winner[2],
+          isWinner: true,
+        };
+      });
+    });
+
+    const losers = Object.keys(electionData).map((key) => {
+      return electionData[key].Eliminated.map((loser) => {
+        return {
+          name: loser[0],
+          party: loser[1],
+          district: Number(key),
+          totalVotes: loser[2],
+          isWinner: false,
+          threshold: electionData[key].VoteThreshold,
+        };
+      });
+    });
+
+    if (fetchInfo === "winners") {
+      return winners.sort((a, b) => {
+        return a.district - b.district;
+      });
+    } else if (fetchInfo === "losers") {
+      return losers.sort((a, b) => {
+        return a.district - b.district;
+      });
+    } else {
+      return winners
+        .concat(losers)
+        .flatMap((w) => w)
+        .sort((a, b) => {
+          return a.district - b.district;
+        });
+    }
+
+    console.log(winners);
+    return winners;
+    // return Array(20)
+    //   .fill(0)
+    //   .map((_, i) => {
+    //     return {
+    //       name: faker.name.fullName(),
+    //       party: Math.random() > 0.5 ? "Democrat" : "Republican",
+    //       district: randomNumber(1, 13),
+    //       totalVotes: Number(faker.random.numeric(5)).toLocaleString(),
+    //       isWinner: Math.random() > 0.5,
+    //     };
+    //   })
+    //   .sort((a, b) => {
+    //     return a.district - b.district;
+    //   });
+  }
+
+  async getCandidateWinners(state: string) {
+    return Array(13)
+      .fill(0)
+      .map((_, i) => {
+        return {
+          name: faker.name.fullName(),
+          party: Math.random() > 0.5 ? "Democrat" : "Republican",
+          district: randomNumber(1, 13),
+          totalVotes: Number(faker.random.numeric(5)).toLocaleString(),
+          isWinner: Math.random() > 0.5,
+        };
+      })
+      .sort((a, b) => {
+        return a.district - b.district;
+      });
+  }
+
+  async getCandidateLosers(state: string) {
+    // Get the winners first then get the losers
+    // This is so that we can include who the losers lost to
+    const winners = await this.getCandidateWinners(state);
+
+    return Array(10)
+      .fill(0)
+      .map((_, i) => {
+        return {
+          name: faker.name.fullName(),
+          party: Math.random() > 0.5 ? "Democrat" : "Republican",
+          district: randomNumber(1, 13),
+          totalVotes: Number(faker.random.numeric(5)).toLocaleString(),
+          isWinner: Math.random() > 0.5,
+          lostTo: winners[randomNumber(0, winners.length - 1)].name,
+        };
+      })
+      .sort((a, b) => {
+        return a.district - b.district;
+      });
   }
 }
 

@@ -93,11 +93,11 @@ const StateOverview = () => {
               <Heading size="md">Enacted Plan</Heading>
               <Heading size="md">Average MMD Plan</Heading>
               <Card
-                label="Opportunity Districts"
+                label="Opportunity Represenatives"
                 value={stateData.opportunityReps}
               />
               <Card
-                label="Opportunity Districts"
+                label="Opportunity Represenatives"
                 value={mmdData.avgOpportunityReps?.mmd}
               />
               <Card
