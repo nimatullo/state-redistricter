@@ -64,7 +64,7 @@ const LosersComparison = () => {
                     {Math.round(
                       loser.threshold - loser.totalVotes
                     ).toLocaleString()}{" "}
-                    Votes Needed To Avoid Runoff
+                    Votes Needed To Avoid Elimination
                   </Text>
                   <Text color="gray.700" fontSize="md">
                     {Math.round(loser.totalVotes).toLocaleString()} Votes
@@ -104,7 +104,7 @@ const LosersComparison = () => {
                     {Math.round(
                       loser.threshold - loser.totalVotes
                     ).toLocaleString()}{" "}
-                    Votes Needed To Avoid Runoff
+                    Votes Needed To Avoid Elimination
                   </Text>
                   <Text color="gray.700" fontSize="md">
                     {Math.round(loser.totalVotes).toLocaleString()} Votes

@@ -24,6 +24,7 @@ import {
 import { useParams } from "react-router-dom";
 import OUR_STATES from "../../assets/ourStates";
 import EnsembleSummary from "./EnsembleSummary";
+import { useMapContext } from "../../services/mapContext";
 ChartJS.register(
   ArcElement,
   Tooltip,
@@ -38,6 +39,7 @@ const StateOverview = () => {
   const [stateData, setStateData] = React.useState({});
   const [mmdData, setMMDData] = React.useState({});
   const params = useParams();
+  const mapContext = useMapContext();
 
   React.useEffect(() => {
     const fullStateName = OUR_STATES[params.state].fullName;
@@ -45,8 +47,15 @@ const StateOverview = () => {
     setStateData(data);
 
     stateService.getSummaryData(params.state).then((data) => {
-      console.log(data);
       setMMDData(data);
+    });
+
+    stateService.getGeoJSONForState(fullStateName).then((data) => {
+      if (mapContext.geoJsonRef.current) {
+        mapContext.geoJsonRef.current.clearLayers().addData(data);
+        mapContext.setGeoJSON(data);
+        mapContext.setSelectedDistrictNumber(1);
+      }
     });
   }, []);
 

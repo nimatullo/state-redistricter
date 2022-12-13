@@ -38,11 +38,11 @@ const BoxWhiskerPage = (props) => {
     },
     {
       label: "Republican",
-      value: "REP",
+      value: "REPUBLICAN",
     },
     {
       label: "Democrat",
-      value: "DEM",
+      value: "DEMOCRAT",
     },
   ];
 

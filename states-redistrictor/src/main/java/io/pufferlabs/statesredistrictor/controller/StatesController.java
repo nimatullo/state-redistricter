@@ -150,8 +150,6 @@ public class StatesController {
             @PathVariable String pattern, @PathVariable String populationType) {
         State state = statesService.getStateByName(stateName);
         boolean isRace = true;
-        //listen to me, i need you to cast the populationType to the Population type and if that fails, then cast it to a Party type
-        //if that fails, then throw an error
         try {
             Race.valueOf(populationType);
         } catch (IllegalArgumentException e) {
