@@ -54,6 +54,7 @@ const Map = () => {
           style={{
             height: "100%",
             width: "100%",
+            overflow: "hidden",
           }}
           center={stateCoordinates}
           zoom={zoom}

@@ -27,7 +27,7 @@ const AllCandidates = () => {
   return (
     <TableContainer>
       <Table size="sm">
-        <TableCaption>
+        <TableCaption placement="top">
           Winners are highlighted in green, losers in red.
         </TableCaption>
         <Thead>
