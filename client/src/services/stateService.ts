@@ -590,7 +590,6 @@ class StateService {
         }
       })
       .then((data) => {
-        console.log(data);
         return data;
       })
       .catch((error) => {
@@ -603,7 +602,7 @@ class StateService {
 
     const graphData = {
       graph: {
-        labels: Object.keys(data)
+        labels: Object.keys(data.smd)
           // sort by decreasing order
           .map((d) => Number(d).toFixed(2))
           .sort((a, b) => {
@@ -611,13 +610,22 @@ class StateService {
           }),
         datasets: [
           {
-            label: "Opportunity Representative Count",
-            data: Object.keys(data)
+            label: "Opportunity Representative Count For SMD",
+            data: Object.values(data.smd)
               .sort((a, b) => {
                 return Number(b) - Number(a);
               })
               .map((d) => data[d]),
             backgroundColor: "#3e95cd",
+          },
+          {
+            label: "Opportunity Representative Count For MMD",
+            data: Object.keys(data.mmd)
+              .sort((a, b) => {
+                return Number(b) - Number(a);
+              })
+              .map((d) => data[d]),
+            backgroundColor: "#8e5ea2",
           },
         ],
       },
