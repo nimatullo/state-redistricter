@@ -34,9 +34,16 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
   const hightlight = (e) => {
     const layer = e.target;
     layer.setStyle(HIGHLIGHT_STYLE);
+    console.log(layer.feature.properties.assignment);
     const districtNumber =
-      layer.feature.properties.district || layer.feature.properties.DISTRICT;
-    layer.bindTooltip(`District ${districtNumber}`).openTooltip();
+      layer.feature.properties.district ||
+      layer.feature.properties.DISTRICT ||
+      layer.feature.properties.assignment;
+    layer
+      .bindTooltip(
+        `District ${districtNumber}\nReps: ${layer.feature.properties.Reps}`
+      )
+      .openTooltip();
   };
 
   const resetHighlight = (e) => {
@@ -56,8 +63,9 @@ const MapContents = ({ geoData, setDistrict, geoJsonRef }) => {
   };
 
   const styleBasedOnParty = (feature) => {
+    console.log(feature.properties.Rep);
     DEFAULT_STYLE.fillColor =
-      feature.properties.party === "R" ? "#E72B0D" : "#2C5282";
+      feature.properties.Rep > 0.5 ? "#E72B0D" : "#2C5282";
 
     return DEFAULT_STYLE;
   };

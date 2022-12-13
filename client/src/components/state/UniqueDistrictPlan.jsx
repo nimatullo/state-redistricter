@@ -62,11 +62,16 @@ const UniqueDistrictPlan = () => {
           <Heading size="lg" mb="2" mt={GRID_SPACING}>
             District Plan Quality
           </Heading>
-          <SimpleGrid columns={3} spacing={GRID_SPACING}>
+          <SimpleGrid columns={4} spacing={GRID_SPACING}>
             <Card
               label={"Opportunity Districts"}
               value={opportunityDistricts}
               helpText="District where one or more racial minorities make up a majority of the local population."
+            />
+            <Card
+              label={"Opportunity District Threshold"}
+              value={0.5}
+              helpText="The threshold used to determine an opportunity districts."
             />
             <Card
               label={"Safe Districts"}
@@ -137,7 +142,7 @@ export const Card = (props) => {
     <Box p={5} shadow="sm" borderWidth={"1px"} borderRadius="5px">
       <Stat>
         <StatLabel>{props.label}</StatLabel>
-        <StatNumber>{props.value.toLocaleString()}</StatNumber>
+        <StatNumber>{props.value && props.value.toLocaleString()}</StatNumber>
         {props.helpText && (
           <StatHelpText>
             {props.type && <StatArrow type={props.type} />}

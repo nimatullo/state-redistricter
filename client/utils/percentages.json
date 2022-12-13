@@ -1,6 +1,11 @@
 [
   {
     "state": "virginia",
+    "opportunityReps": 0,
+    "demVoteShare": 0.5408576341647199,
+    "demSeatShare": 0.5395653956539566,
+    "repVoteShare": 0.4591423658352801,
+    "repSeatShare": 0.45961459614596145,
     "percentages": [
       {
         "Party Splits": [
@@ -11,13 +16,13 @@
       },
       {
         "Race": [
-          { "title": "White", "percentage": 67.8, "color": "#ff725c" },
+          { "title": "White", "percentage": 67.8, "color": "#ec9a29" },
           {
             "title": "Black or African American",
             "percentage": 20.9,
-            "color": "#2d82b7"
+            "color": "#A8201A"
           },
-          { "title": "Asian", "percentage": 8.8, "color": "#61c9a8" },
+          { "title": "Asian", "percentage": 8.8, "color": "#DAD2D8" },
           {
             "title": "Hispanic or Latino",
             "percentage": 10.5,
@@ -29,6 +34,11 @@
   },
   {
     "state": "utah",
+    "demVoteShare": 0.2871627554114803,
+    "demSeatShare": 0.0,
+    "repVoteShare": 0.7128372445885197,
+    "repSeatShare": 1.0,
+    "opportunityReps": 0,
     "percentages": [
       {
         "Party Splits": [
@@ -39,13 +49,13 @@
       },
       {
         "Race": [
-          { "title": "White", "percentage": 86.8, "color": "#E72B0D" },
+          { "title": "White", "percentage": 86.8, "color": "#ec9a29" },
           {
             "title": "Black or African American",
             "percentage": 2.1,
-            "color": "#2d82b7"
+            "color": "#A8201A"
           },
-          { "title": "Asian", "percentage": 3.8, "color": "#61c9a8" },
+          { "title": "Asian", "percentage": 3.8, "color": "#DAD2D8" },
           {
             "title": "Hispanic or Latino",
             "percentage": 15.1,
@@ -57,6 +67,12 @@
   },
   {
     "state": "north carolina",
+    "opportunityReps": 1,
+    "repVoteShare": 0.5095957919539856,
+    "repSeatShare": 0.5464338781575037,
+    "demVoteShare": 0.4904042080460144,
+    "demSeatShare": 0.40304606240713226,
+
     "percentages": [
       {
         "Party Splits": [
@@ -67,13 +83,13 @@
       },
       {
         "Race": [
-          { "title": "White", "percentage": 62.2, "color": "#E72B0D" },
+          { "title": "White", "percentage": 62.2, "color": "#ec9a29" },
           {
             "title": "Black or African American",
             "percentage": 22.5,
-            "color": "#2d82b7"
+            "color": "#A8201A"
           },
-          { "title": "Asian", "percentage": 3.3, "color": "#61c9a8" },
+          { "title": "Asian", "percentage": 3.3, "color": "#DAD2D8" },
           {
             "title": "Hispanic or Latino ",
             "percentage": 10.7,

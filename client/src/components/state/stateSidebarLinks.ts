@@ -2,6 +2,7 @@ import { BiBookOpen } from "react-icons/bi";
 import { AiOutlineStar } from "react-icons/ai";
 import { FaBalanceScale, FaMoneyBillWaveAlt } from "react-icons/fa";
 import { BsFillPersonFill, BsGraphUp } from "react-icons/bs";
+import { FaVoteYea } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 
 interface ChildSidebarLink {
@@ -28,6 +29,11 @@ export const sidebarLinks: SidebarLink[] = [
     view: "unique",
   },
   {
+    name: "Election Results",
+    icon: FaVoteYea,
+    view: "election-results",
+  },
+  {
     name: "Graphical Analysis",
     icon: BsGraphUp,
     children: [
@@ -38,6 +44,10 @@ export const sidebarLinks: SidebarLink[] = [
       {
         name: "Box & Whisker",
         view: "box-whisker",
+      },
+      {
+        name: "Opportunity Representative Threshold",
+        view: "opp-rep",
       },
     ],
   },

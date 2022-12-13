@@ -11,6 +11,8 @@ import GraphicalSummary from "./components/state/GraphicalSummary";
 import { AlertServiceProvider } from "./services/alertservice";
 import { MapContextProvider } from "./services/mapContext";
 import BoxWhiskerPage from "./components/state/BoxWhiskerPage";
+import LineChart from "./components/data display/LineChart";
+import ElectionResults from "./components/state/ElectionResults";
 
 function App() {
   return (
@@ -25,11 +27,13 @@ function App() {
                 <Route path="unique" element={<UniqueDistrictPlan />}>
                   <Route path=":district" element={<UniqueDistrictPlan />} />
                 </Route>
+                <Route path="election-results" element={<ElectionResults />} />
                 <Route
                   path="graphical-summary"
                   element={<GraphicalSummary />}
                 />
                 <Route path="box-whisker" element={<BoxWhiskerPage />} />
+                <Route path="opp-rep" element={<LineChart />} />
               </Route>
             </Routes>
           </MapContextProvider>
