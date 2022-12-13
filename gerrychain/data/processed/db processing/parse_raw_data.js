@@ -99,13 +99,14 @@ function convertBoxDataToPercents(rawData, boxDataField, pattern) {
     pattern === undefined
       ? rawData[boxDataField]
       : rawData[pattern][boxDataField];
-  let totalPops = pattern === undefined ? rawData.total_pop : rawData[pattern].total_pop;
+  let totalPops =
+    pattern === undefined ? rawData.total_pop : rawData[pattern].total_pop;
 
   for (let district in oldBoxData) {
     newBoxData[district] = {};
     for (let boxData in oldBoxData[district]) {
       newBoxData[district][boxData] =
-        oldBoxData[district][boxData] / (totalPops[district]*1.0);
+        oldBoxData[district][boxData] / (totalPops[district] * 1.0);
     }
   }
   return newBoxData;
