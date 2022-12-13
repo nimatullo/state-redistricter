@@ -1,5 +1,6 @@
 package io.pufferlabs.statesredistrictor.controller;
 
+import io.pufferlabs.statesredistrictor.enums.Party;
 import io.pufferlabs.statesredistrictor.enums.PlanType;
 import io.pufferlabs.statesredistrictor.enums.Race;
 import io.pufferlabs.statesredistrictor.model.Analysis;
@@ -148,14 +149,27 @@ public class StatesController {
     public ResponseEntity<?> getBoxWhiskerAnalysis(@PathVariable String stateName, @PathVariable String planType,
             @PathVariable String pattern, @PathVariable String populationType) {
         State state = statesService.getStateByName(stateName);
+        boolean isRace = true;
+        //listen to me, i need you to cast the populationType to the Population type and if that fails, then cast it to a Party type
+        //if that fails, then throw an error
+        try {
+            Race.valueOf(populationType);
+        } catch (IllegalArgumentException e) {
+            try {
+                Party.valueOf(populationType);
+                isRace = false;
+            } catch (IllegalArgumentException e2) {
+                throw new IllegalArgumentException("Invalid population type");
+            }
+        }
         List<Analysis> analyses = state.getAnalyses().get(PlanType.valueOf(planType));
         if (planType.equals("MMD")) {
             analyses = analyses.stream().filter(a -> a.getPattern().equals(pattern)).collect(Collectors.toList());
         }
         Analysis analysis = analyses.get(0);
-        Race race = Race.valueOf(populationType);
-        Map<String, Map<String, Double>> boxData = analysis.getBoxAndWhiskerPlots().get(race);
-        return ResponseEntity.ok(boxData);
+        if (!isRace)
+            return ResponseEntity.ok(analysis.getPartyBoxAndWhiskerPlots().get(Party.valueOf(populationType)));
+        return ResponseEntity.ok(analysis.getBoxAndWhiskerPlots().get(Race.valueOf(populationType)));
     }
 
 }
