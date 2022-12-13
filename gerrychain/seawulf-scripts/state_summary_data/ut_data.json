@@ -28,13 +28,9 @@
             "minority_pop": {
                 "1": 438481.3615662864
             },
-            "opportunity_reps_count": 1.0,
-            "opportunity_reps": {
-                "1": 0
-            },
-            "equal_pop": {
-                "1": 0.0
-            },
+            "opportunity_reps": 1.0,
+
+            "equal_pop": 0.0,
             "dem_vote_share_percentage": 0.284474190226664,
             "dem_seat_share_percentage": 0.0,
             "rep_vote_share_percentage": 0.715525809773336,
