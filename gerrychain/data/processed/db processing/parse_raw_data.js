@@ -1,7 +1,7 @@
 let uniqueDistrictPlanIdCounter = 0;
 let fs = require("fs");
 let rawSMDData = JSON.parse(fs.readFileSync("../north carolina/data.json"));
-let rawMMDData = JSON.parse(fs.readFileSync("../north carolina/nc_data.json"));
+let rawMMDData = JSON.parse(fs.readFileSync("/home/niko/development/416/gerrychain/seawulf-scripts/state_summary_data/nc_data.json"));
 let state = "North Carolina";
 let abbreviation = "NC";
 let rawMMDSubEnsembles = rawMMDData.all_data;
@@ -125,10 +125,10 @@ function getAnalysisData(rawData, fieldsToAnalyze, pattern) {
       let boxData = convertBoxDataToPercents(rawData, field, pattern);
       analysisData["boxAndWhiskerPlots"][newField] = boxData;
     } else if (field.toLowerCase().includes("split_box_data")) {
-      if (pattern !== undefined)
+      if (pattern !== undefined) {
         analysisData["partyBoxAndWhiskerPlots"][newField] =
           rawData[pattern][field];
-      else {
+      } else {
         analysisData["partyBoxAndWhiskerPlots"][newField] = rawData[field];
       }
     } else analysisData[newField] = rawData[field];
@@ -298,4 +298,7 @@ let finalExport = {
     MMD: MMDEnsembles,
   },
 };
-fs.writeFileSync(state + " test boxdata.json", JSON.stringify(finalExport));
+fs.writeFileSync(
+  state + " boxplot data.json",
+  JSON.stringify(finalExport.ensembleSummaryData.MMD)
+);
