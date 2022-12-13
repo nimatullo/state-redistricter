@@ -1,7 +1,11 @@
 let uniqueDistrictPlanIdCounter = 0;
 let fs = require("fs");
 let rawSMDData = JSON.parse(fs.readFileSync("../north carolina/data.json"));
-let rawMMDData = JSON.parse(fs.readFileSync("/home/niko/development/416/gerrychain/seawulf-scripts/state_summary_data/nc_data.json"));
+let rawMMDData = JSON.parse(
+  fs.readFileSync(
+    "/home/niko/development/416/gerrychain/seawulf-scripts/state_summary_data/nc_data.json"
+  )
+);
 let state = "North Carolina";
 let abbreviation = "NC";
 let rawMMDSubEnsembles = rawMMDData.all_data;
