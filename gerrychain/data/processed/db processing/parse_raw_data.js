@@ -1,9 +1,7 @@
 let uniqueDistrictPlanIdCounter = 0;
 let fs = require("fs");
 let rawSMDData = JSON.parse(fs.readFileSync("../utah/data.json"));
-let rawMMDData = JSON.parse(
-  fs.readFileSync("../utah/ut_data.json")
-);
+let rawMMDData = JSON.parse(fs.readFileSync("../utah/ut_data.json"));
 //get all the objects in the "all_data" field
 let rawMMDSubEnsembles = rawMMDData.all_data;
 
@@ -223,11 +221,7 @@ let SMDUniquePlansData = getUniquePlansData(rawSMDData, "Utah");
 ////////////////////////////////// MMD Parsing //////////////////////////////////
 let MMDEnsembles = [];
 let MMDAnalysisData = [];
-let MMDUniquePlansData = getUniquePlansData(
-  rawMMDSubEnsembles,
-  "Utah",
-  "MMD"
-);
+let MMDUniquePlansData = getUniquePlansData(rawMMDSubEnsembles, "Utah", "MMD");
 let allUniquePlansData = SMDUniquePlansData.uniqueDistrictPlans.concat(
   MMDUniquePlansData.uniqueDistrictPlans
 );
