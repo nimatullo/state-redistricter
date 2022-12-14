@@ -1,5 +1,5 @@
 [![Contributors][contributors-shield]][contributors-url]
-[![MIT License][license-shield]][license-url]
+[![GPL 3.0 License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -63,8 +63,8 @@ Distributed under the MIT License.
 
 [contributors-shield]: https://img.shields.io/github/contributors/nimatullo/416.svg?style=for-the-badge
 [contributors-url]: https://github.com/nimatullo/416/graphs/contributors
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-shield]: https://img.shields.io/github/license/nimatullo/416.svg?style=for-the-badge
+[license-url]: https://github.com/nimatullo/416/blob/master/LICENSE.txt
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [spring]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
