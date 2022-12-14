@@ -64,7 +64,7 @@ Distributed under the MIT License.
 [contributors-shield]: https://img.shields.io/github/contributors/nimatullo/416.svg?style=for-the-badge
 [contributors-url]: https://github.com/nimatullo/416/graphs/contributors
 [license-shield]: https://img.shields.io/github/license/nimatullo/416.svg?style=for-the-badge
-[license-url]: https://github.com/nimatullo/416/blob/master/LICENSE.txt
+[license-url]: https://github.com/nimatullo/416/blob/main/LICENSE.txt
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [spring]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
