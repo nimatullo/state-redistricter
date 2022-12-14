@@ -22,7 +22,7 @@ const ElectionResults = () => {
   return (
     <Box p={"1em"}>
       <Heading size="2xl" mb="10px">
-        Election Results (mmd)
+        Election Results
       </Heading>
       <Text mb="1em" color="gray.600">
         Election results for running the multi-member ranked choice voting
@@ -30,7 +30,7 @@ const ElectionResults = () => {
         {params.state === "va" ? (
           <>
             {
-              "Information about the even vs. uneven candidate results canbe found "
+              " Information about the even vs. uneven candidate results can be found "
             }
             <Link color={"red.400"} href={`/map/${params.state}/even-uneven`}>
               here.
@@ -40,11 +40,6 @@ const ElectionResults = () => {
           ""
         )}
       </Text>
-      {params.state === "va" ? (
-        <Link href={`/map/${params.state}/even-uneven`}>
-          Even vs. Uneven Results
-        </Link>
-      ) : null}
       <Tabs variant={"soft-rounded"} colorScheme={"gray"}>
         <TabList>
           <Tab>All Candidates</Tab>

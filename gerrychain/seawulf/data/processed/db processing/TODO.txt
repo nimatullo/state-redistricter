@@ -1,2 +1,0 @@
-geojson conversion for Java (just stringify?)
-fix dem/rep percents

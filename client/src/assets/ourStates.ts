@@ -3,10 +3,6 @@ import UtahIcon from "./img/UtahIcon";
 import VirginiaIcon from "./img/VirginiaIcon";
 import NorthCarolinaIcon from "./img/NorthCarolinaIcon";
 
-import FloridaJSON from "../../dummy_json/florida/data.json";
-import ArkansasJSON from "../../dummy_json/arkansas/data.json";
-import NorthCarolinaJSON from "../../dummy_json/north_carolina/data.json";
-
 interface State {
   fullName: string;
   abrv: string;
@@ -15,7 +11,6 @@ interface State {
   population: number;
   partyBreakdown: string;
   dimensions: number[];
-  json: any;
   icon: () => ReactJSXElement;
 }
 
@@ -32,7 +27,6 @@ const OUR_STATES: StateMap = {
     population: 3.338,
     partyBreakdown: "R: 54%, D: 46%",
     dimensions: [240, 270],
-    json: ArkansasJSON,
     icon: UtahIcon,
   },
   va: {
@@ -43,7 +37,6 @@ const OUR_STATES: StateMap = {
     population: 21.477,
     partyBreakdown: "R: 49%, D: 51%",
     dimensions: [447, 361],
-    json: FloridaJSON,
     icon: VirginiaIcon,
   },
   nc: {
@@ -54,7 +47,6 @@ const OUR_STATES: StateMap = {
     population: 10.488,
     partyBreakdown: "R: 48%, D: 52%",
     dimensions: [500, 184],
-    json: NorthCarolinaJSON,
     icon: NorthCarolinaIcon,
   },
 };

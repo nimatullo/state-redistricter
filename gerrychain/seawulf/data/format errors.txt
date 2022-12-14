@@ -1,8 +1,0 @@
-1. analysis:
-    need dem/rep box plot data
-    need dem/rep split counts
-    need opp rep tally counts
-    need vote/seat share curve
-
-2. ensemble summary data:
-    need to fix avg equal pop value
