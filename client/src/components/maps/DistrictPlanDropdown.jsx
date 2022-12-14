@@ -25,7 +25,6 @@ const DistrictPlanDropdown = (props) => {
       variant="outline"
       placeholder={"Select a district plan"}
       onChange={(e) => {
-        console.log(interestingDistrictMap);
         const planId = e.target.value;
         props.setSelectedPlan(planId);
 
@@ -36,10 +35,10 @@ const DistrictPlanDropdown = (props) => {
             interestingDistrictMap[planId].description
           )
           .then((data) => {
+            mapContext.setSelectedDistrictNumber(1);
             if (mapContext.geoJsonRef.current) {
               mapContext.geoJsonRef.current.clearLayers().addData(data);
               mapContext.setGeoJSON(data);
-              mapContext.setSelectedDistrictNumber(1);
             }
           });
       }}

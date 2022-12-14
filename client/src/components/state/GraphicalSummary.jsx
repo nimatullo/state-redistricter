@@ -94,7 +94,7 @@ const GraphicalSummary = () => {
                   }
                 />
                 <Card
-                  label={"Democrat Vote Share"}
+                  label={"Democrat Seat Share"}
                   value={
                     (smdSharePercentages.DEMOCRAT[1] * 100).toFixed(2) + "%"
                   }

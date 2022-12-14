@@ -401,12 +401,12 @@ class StateService {
   }
 
   _handleRepDemSplitCall = (data) => {
-    console.log(data);
+    console.log("Rep dem", data);
     const graphData = {
       graph: {
         labels: Array(data.length)
           .fill(0)
-          .map((_, i) => `${i}D/${data.length - i}R`),
+          .map((_, i) => `${i}R/${data.length - i}D`),
         datasets: [
           {
             label: "Republican/Democrat Split",

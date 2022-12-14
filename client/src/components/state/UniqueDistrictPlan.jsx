@@ -58,6 +58,9 @@ const UniqueDistrictPlan = () => {
     }
 
     const district = Number(mapContext.selectedDistrictNumber);
+
+    if (districtPlanData.districts.length < district) return;
+
     const thresh =
       districtPlanData.districts[district - 1].opportunityDistrictThreshold;
     return thresh === 1 ? 0.5 : thresh;
