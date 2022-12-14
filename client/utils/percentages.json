@@ -1,24 +1,32 @@
 [
   {
-    "state": "florida",
+    "state": "virginia",
+    "opportunityReps": 0,
+    "demVoteShare": 0.5408576341647199,
+    "demSeatShare": 0.5395653956539566,
+    "repVoteShare": 0.4591423658352801,
+    "repSeatShare": 0.45961459614596145,
     "percentages": [
       {
-        "Sex": [
-          { "title": "Male", "percentage": 48.87854339588943 },
-          { "title": "Female", "percentage": 51.12145660411057 }
+        "Party Splits": [
+          { "title": "Republican", "percentage": 43, "color": "#E72B0D" },
+          { "title": "Democrat", "percentage": 39, "color": "#2d82b7" },
+          { "title": "No Lean", "percentage": 18, "color": "#61c9a8" }
         ]
       },
       {
         "Race": [
-          { "title": "White", "percentage": 74.54267179079434 },
+          { "title": "White", "percentage": 67.8, "color": "#ec9a29" },
           {
             "title": "Black or African American",
-            "percentage": 16.021529642531707
+            "percentage": 20.9,
+            "color": "#A8201A"
           },
-          { "title": "Asian", "percentage": 2.7926545520135573 },
+          { "title": "Asian", "percentage": 8.8, "color": "#DAD2D8" },
           {
-            "title": "Hispanic or Latino (of any race)",
-            "percentage": 25.71975343584848
+            "title": "Hispanic or Latino",
+            "percentage": 10.5,
+            "color": "#4c3b4d"
           }
         ]
       }
@@ -26,24 +34,32 @@
   },
   {
     "state": "utah",
+    "demVoteShare": 0.2871627554114803,
+    "demSeatShare": 0.0,
+    "repVoteShare": 0.7128372445885197,
+    "repSeatShare": 1.0,
+    "opportunityReps": 0,
     "percentages": [
       {
-        "Sex": [
-          { "title": "Male", "percentage": 48.8668250158062 },
-          { "title": "Female", "percentage": 51.13317498419381 }
+        "Party Splits": [
+          { "title": "Republican", "percentage": 54, "color": "#EC5C46" },
+          { "title": "Democrat", "percentage": 30, "color": "#2d82b7" },
+          { "title": "No Lean", "percentage": 16, "color": "#61c9a8" }
         ]
       },
       {
         "Race": [
-          { "title": "White", "percentage": 76.7120727522397 },
+          { "title": "White", "percentage": 86.8, "color": "#ec9a29" },
           {
             "title": "Black or African American",
-            "percentage": 15.49033668190512
+            "percentage": 2.1,
+            "color": "#A8201A"
           },
-          { "title": "Asian", "percentage": 1.5268718578144902 },
+          { "title": "Asian", "percentage": 3.8, "color": "#DAD2D8" },
           {
-            "title": "Hispanic or Latino (of any race)",
-            "percentage": 7.6860856437329925
+            "title": "Hispanic or Latino",
+            "percentage": 15.1,
+            "color": "#4c3b4d"
           }
         ]
       }
@@ -51,24 +67,33 @@
   },
   {
     "state": "north carolina",
+    "opportunityReps": 1,
+    "repVoteShare": 0.5095957919539856,
+    "repSeatShare": 0.5464338781575037,
+    "demVoteShare": 0.4904042080460144,
+    "demSeatShare": 0.40304606240713226,
+
     "percentages": [
       {
-        "Sex": [
-          { "title": "Male", "percentage": 48.64776207953091 },
-          { "title": "Female", "percentage": 51.3522379204691 }
+        "Party Splits": [
+          { "title": "Republican", "percentage": 41, "color": "#E72B0D" },
+          { "title": "Democrat", "percentage": 43, "color": "#2d82b7" },
+          { "title": "No Lean", "percentage": 16, "color": "#61c9a8" }
         ]
       },
       {
         "Race": [
-          { "title": "White", "percentage": 70.74853072246543 },
+          { "title": "White", "percentage": 62.2, "color": "#ec9a29" },
           {
             "title": "Black or African American",
-            "percentage": 23.037643987561605
+            "percentage": 22.5,
+            "color": "#A8201A"
           },
-          { "title": "Asian", "percentage": 3.638029478847323 },
+          { "title": "Asian", "percentage": 3.3, "color": "#DAD2D8" },
           {
-            "title": "Hispanic or Latino (of any race)",
-            "percentage": 9.541973230509983
+            "title": "Hispanic or Latino ",
+            "percentage": 10.7,
+            "color": "#4c3b4d"
           }
         ]
       }

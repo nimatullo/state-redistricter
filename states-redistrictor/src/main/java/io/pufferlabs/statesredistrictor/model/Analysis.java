@@ -1,21 +1,18 @@
 package io.pufferlabs.statesredistrictor.model;
 
+import io.pufferlabs.statesredistrictor.enums.Party;
 import io.pufferlabs.statesredistrictor.enums.Race;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-
 import java.util.List;
 import java.util.Map;
 
 @Data
 public class Analysis {
-    @Id
-    private String state;
-    private Map<Race, List<List<Double>>> SMDBoxAndWhiskerPlots;
-    private Map<Race, List<List<Double>>> MMDBoxAndWhiskerPlots;
-    private List<List<Double>> voteSeatSharePlots;
-    private List<Integer> demRepSplits;
-    private List<Integer> opportunityRepCounts;
-    private Double partisanFairness;
-    private Double averageRacialFairness;
+    private Map<Race, Map<String, Map<String, Double>>> boxAndWhiskerPlots;
+    private Map<Party, Map<String, Map<String, Double>>> partyBoxAndWhiskerPlots;
+    private Map<Party, List<Double>>voteSeatSharePercentages; //Party : [vote share, seat share]
+    private List<Integer> demRepSplitCounts; //list of tallies for each time a # of dems and reps are in a plan, for an ensemble
+    private List<Integer> opportunityRepCounts; //number of times that an opp rep occured per district
+    private String pattern;
+
 }

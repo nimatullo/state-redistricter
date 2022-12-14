@@ -1,0 +1,12 @@
+[
+  {
+    "avgPolsbyPopperScores": 0.2270298638945519,
+    "avgRepSplits": 0.715525809773336,
+    "avgDemSplits": 0.284474190226664,
+    "avgOpportunityReps": 1,
+    "avgEqualPop": 0,
+    "planType": "MMD",
+    "totalDistrictPlans": 10000,
+    "pattern": "chain1"
+  }
+]

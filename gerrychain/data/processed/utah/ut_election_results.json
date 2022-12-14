@@ -1,0 +1,92 @@
+{
+    "1": {
+        "Winners": [
+            [
+                "Owens, Burgess",
+                "Republican",
+                200342
+            ],
+            [
+                "Stewart, Chris",
+                "Republican",
+                197770
+            ],
+            [
+                "Moore, Blake D.",
+                "Republican",
+                187050
+            ],
+            [
+                "Curtis, John R.",
+                "Republican",
+                174325
+            ]
+        ],
+        "Eliminated": [
+            [
+                "Williams, Abigail",
+                "Democratic",
+                69917
+            ],
+            [
+                "Kennedy, Robert J.",
+                "Democratic",
+                90597.8
+            ],
+            [
+                "Whipper, Snapper",
+                "Democratic",
+                119787.68
+            ],
+            [
+                "Rob Crok",
+                "Democratic",
+                171094.544
+            ]
+        ],
+        "Initial Votes": [
+            [
+                "Owens, Burgess",
+                "Republican",
+                200342
+            ],
+            [
+                "Stewart, Chris",
+                "Republican",
+                197770
+            ],
+            [
+                "Moore, Blake D.",
+                "Republican",
+                187050
+            ],
+            [
+                "Curtis, John R.",
+                "Republican",
+                174325
+            ],
+            [
+                "Rob Crok",
+                "Democratic",
+                83798
+            ],
+            [
+                "Whipper, Snapper",
+                "Democratic",
+                75912
+            ],
+            [
+                "Kennedy, Robert J.",
+                "Democratic",
+                72325
+            ],
+            [
+                "Williams, Abigail",
+                "Democratic",
+                69917
+            ]
+        ],
+        "RepCountTotal": 4,
+        "VoteThreshold": 212287.8
+    }
+}

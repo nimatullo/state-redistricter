@@ -9,6 +9,9 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import stateService from "../../services/stateService";
 
 ChartJS.register(
   CategoryScale,
@@ -20,9 +23,23 @@ ChartJS.register(
 );
 
 const BarChart = (props) => {
-  return props.data ? (
-    <Bar data={props.data.data} options={props.data.options} />
-  ) : null;
+  const [graphData, setGraphData] = React.useState(null);
+
+  const params = useParams();
+
+  useEffect(() => {
+    stateService
+      .getGraphData(params.state, props.graphType, props.ensembleType)
+      .then((data) => {
+        setGraphData(data);
+      });
+  }, [props.graphType, props.ensembleType]);
+
+  return graphData ? (
+    <Bar data={graphData.graph} options={graphData.options} />
+  ) : (
+    <p>Loading...</p>
+  );
 };
 
 export default BarChart;

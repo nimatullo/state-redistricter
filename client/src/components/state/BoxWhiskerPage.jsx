@@ -1,35 +1,57 @@
 import { Box, Heading, HStack, Select, useRadioGroup } from "@chakra-ui/react";
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import stateService from "../../services/stateService";
 import BoxPlot from "../data display/BoxPlot";
 import { RadioTab } from "./GraphicalSummary";
 
 const BoxWhiskerPage = (props) => {
   const [boxAndWhiskerData, setBoxAndWhiskerData] = React.useState(null);
-  const [ensembleType, setEnsembleType] = React.useState("smd");
+  const [ensembleType, setEnsembleType] = React.useState("SMD");
+  const [population, setPopulation] = React.useState("BLACK");
+  const [layoutList, setLayoutList] = React.useState(null);
+
+  const params = useParams();
 
   useEffect(() => {
-    setBoxAndWhiskerData(stateService.getBoxAndWhiskerData("", options[0]));
+    stateService.getLayoutList(params.state).then((data) => {
+      setLayoutList(data);
+    });
   }, []);
 
-  useEffect(() => {
-    setBoxAndWhiskerData(stateService.getBoxAndWhiskerData("", options[0]));
-  }, [ensembleType]);
-
   const options = [
-    "African American Population",
-    "Hispanic Population",
-    "White Population",
-    "Asian Population",
-    "Democratic Population",
-    "Republican Population",
+    {
+      label: "African American",
+      value: "BLACK",
+    },
+    {
+      label: "Asian",
+      value: "ASIAN",
+    },
+    {
+      label: "Hispanic",
+      value: "HISPANIC",
+    },
+    {
+      label: "White",
+      value: "WHITE",
+    },
+    {
+      label: "Republican",
+      value: "REPUBLICAN",
+    },
+    {
+      label: "Democrat",
+      value: "DEMOCRAT",
+    },
   ];
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "dataset",
-    defaultValue: options[0],
-    onChange: (value) =>
-      setBoxAndWhiskerData(stateService.getBoxAndWhiskerData("", value)),
+    defaultValue: population,
+    onChange: (value) => {
+      setPopulation(value);
+    },
   });
 
   const group = getRootProps();
@@ -44,13 +66,22 @@ const BoxWhiskerPage = (props) => {
         value={ensembleType}
         onChange={(e) => setEnsembleType(e.target.value)}
       >
-        <option value="smd">Single-member districts</option>
-        <option value="mmd">Multi-member districts</option>
+        <option value="SMD">Single-member districts</option>
+        <optgroup label="MMD">
+          {layoutList &&
+            layoutList.map((layout) => (
+              <option key={layout} value={layout}>
+                {layout.split("chain")[1]}
+              </option>
+            ))}
+        </optgroup>
       </Select>
 
-      <HStack
+      <Box
         {...group}
-        overflowX="scroll"
+        display="flex"
+        width="800px"
+        overflowX="auto"
         whiteSpace="nowrap"
         css={{
           "&::-webkit-scrollbar": {
@@ -58,17 +89,17 @@ const BoxWhiskerPage = (props) => {
           },
         }}
       >
-        {options.map((value) => {
-          const radio = getRadioProps({ value });
+        {options.map((option) => {
+          const radio = getRadioProps({ value: option.value });
           return (
-            <RadioTab key={value} {...radio}>
-              {value}
+            <RadioTab key={option.value} {...radio}>
+              {option.label}
             </RadioTab>
           );
         })}
-      </HStack>
+      </Box>
 
-      {boxAndWhiskerData && <BoxPlot boxPlotData={boxAndWhiskerData} />}
+      <BoxPlot population={population} planType={ensembleType} />
     </Box>
   );
 };

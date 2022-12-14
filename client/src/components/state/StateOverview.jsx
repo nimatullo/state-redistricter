@@ -1,7 +1,15 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Text,
+} from "@chakra-ui/react";
 import React from "react";
 import stateService from "../../services/stateService";
+import { Card } from "./UniqueDistrictPlan";
 import { Bar, Pie } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -16,6 +24,7 @@ import {
 import { useParams } from "react-router-dom";
 import OUR_STATES from "../../assets/ourStates";
 import EnsembleSummary from "./EnsembleSummary";
+import { useMapContext } from "../../services/mapContext";
 ChartJS.register(
   ArcElement,
   Tooltip,
@@ -28,44 +37,27 @@ ChartJS.register(
 
 const StateOverview = () => {
   const [stateData, setStateData] = React.useState({});
+  const [mmdData, setMMDData] = React.useState({});
   const params = useParams();
+  const mapContext = useMapContext();
 
   React.useEffect(() => {
     const fullStateName = OUR_STATES[params.state].fullName;
     const data = stateService.getStateData(fullStateName);
-    setStateData(data.percentages);
+    setStateData(data);
+
+    stateService.getSummaryData(params.state).then((data) => {
+      setMMDData(data);
+    });
+
+    stateService.getGeoJSONForState(fullStateName).then((data) => {
+      if (mapContext.geoJsonRef.current) {
+        mapContext.geoJsonRef.current.clearLayers().addData(data);
+        mapContext.setGeoJSON(data);
+        mapContext.setSelectedDistrictNumber(1);
+      }
+    });
   }, []);
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "Average Efficiency Gap of Each District",
-      },
-    },
-  };
-
-  const generateBarData = () => {
-    const totalDistrictNumber = OUR_STATES[params.state].districts;
-    const districtsList = [...Array(totalDistrictNumber).keys()].map(
-      (x) => x + 1
-    );
-
-    return {
-      labels: districtsList.map((x) => `District ${x}`),
-      datasets: [
-        {
-          label: "avg. efficiency gap",
-          data: districtsList.map((x) => Math.random()),
-          backgroundColor: generateColor(),
-        },
-      ],
-    };
-  };
 
   const convertToChartJSDataset = (data) => {
     return {
@@ -73,24 +65,26 @@ const StateOverview = () => {
       datasets: [
         {
           data: data.map((d) => `${Number(d.percentage).toFixed(1)}`),
-          backgroundColor: data.map((d) => generateColor()),
+          backgroundColor: data.map((d) => d.color),
         },
       ],
     };
   };
 
-  const generateColor = () => {
-    return "#" + Math.floor(Math.random() * 16777215).toString(16);
-  };
-
   return (
     <Box p={"1em"}>
-      <Heading size="2xl" mb="1em">
+      <Heading size="2xl" mb="10px">
         Overview
       </Heading>
+      <Text mb="1em" color="gray.600">
+        General information about the state along with comparisions between the
+        enacted plan, average multi-member district plans and average single
+        member district plans.
+      </Text>
       <Tabs variant={"soft-rounded"} colorScheme={"gray"}>
         <TabList>
-          <Tab>State Demographics</Tab>
+          <Tab>Demographic Breakdown</Tab>
+          <Tab>Enacted Plan Comparison</Tab>
           <Tab>Ensemble Summary Comparison</Tab>
         </TabList>
 
@@ -99,22 +93,63 @@ const StateOverview = () => {
             <Heading size="xl" my="16px">
               Demographic breakdown
             </Heading>
-            <Flex justifyContent={"space-between"}>
-              {stateData.length > 0 &&
-                stateData.map((data) => {
+            <Flex justifyContent={"space-between"} height={"50%"}>
+              {stateData.percentages?.length > 0 &&
+                stateData?.percentages.map((data) => {
                   return (
-                    <Box>
-                      <Heading size="md">{Object.keys(data)[0]} (%)</Heading>
-                      <Pie
-                        data={convertToChartJSDataset(Object.values(data)[0])}
-                      />
-                    </Box>
+                    <>
+                      <Box width={"100%"}>
+                        <Heading size="md">{Object.keys(data)[0]} (%)</Heading>
+                        <Pie
+                          data={convertToChartJSDataset(Object.values(data)[0])}
+                        />
+                      </Box>
+                    </>
                   );
                 })}
             </Flex>
           </TabPanel>
           <TabPanel>
-            <Heading size="lg" my="16px">
+            <SimpleGrid columns={2} spacing={5}>
+              <Heading size="md">Enacted Plan</Heading>
+              <Heading size="md">Average MMD Plan</Heading>
+              <Card
+                label="Opportunity Represenatives"
+                value={stateData.opportunityReps}
+              />
+              <Card
+                label="Opportunity Represenatives"
+                value={mmdData.avgOpportunityReps?.mmd}
+              />
+              <Card
+                label="Republican Vote Share / Seat Share"
+                value={`${(stateData.repVoteShare * 100).toFixed(2) + "%"} / ${
+                  (stateData.repSeatShare * 100).toFixed(2) + "%"
+                }`}
+              />
+              <Card
+                label="Republican Vote Share / Seat Share"
+                value={`${
+                  (mmdData.avgRepSplit?.mmd * 100).toFixed(2) + "%"
+                } / ${(mmdData.avgRepSplit?.smd * 100).toFixed(2) + "%"}
+                `}
+              />
+              <Card
+                label="Democrat Vote Share / Seat Share"
+                value={`${(stateData.demVoteShare * 100).toFixed(2) + "%"} / ${
+                  (stateData.demSeatShare * 100).toFixed(2) + "%"
+                }`}
+              />
+              <Card
+                label="Democrat Vote Share / Seat Share"
+                value={`${
+                  (mmdData.avgDemSplit?.mmd * 100).toFixed(2) + "%"
+                } / ${(mmdData.avgDemSplit?.smd * 100).toFixed(2) + "%"}`}
+              />
+            </SimpleGrid>
+          </TabPanel>
+          <TabPanel>
+            <Heading size="xl" my="16px">
               Generated ensemble summary
             </Heading>
             <EnsembleSummary />

@@ -5,35 +5,54 @@ import {
   useRadioGroup,
   HStack,
   Select,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import stateService from "../../services/stateService";
 import BarChart from "../data display/BarChart";
+import { Card } from "./UniqueDistrictPlan";
 
 const GraphicalSummary = () => {
-  const [graphData, setGraphData] = React.useState(null);
-  const [ensembleType, setEnsembleType] = React.useState("smd");
+  const [ensembleType, setEnsembleType] = React.useState("SMD");
+  const [graphType, setGraphType] = React.useState("opp-reps");
+  const [mmdSharePercentages, setMmdSharePercentages] = React.useState(null);
+  const [smdSharePercentages, setSmdSharePercentages] = React.useState(null);
 
-  useEffect(() => {
-    const data = stateService.getGraphData("", options[0]);
-    setGraphData(data);
-  }, []);
-
-  useEffect(() => {
-    setGraphData(stateService.getGraphData("", options[0]), ensembleType);
-  }, [ensembleType]);
+  const params = useParams();
 
   const options = [
-    "Opportunity Representatives",
-    "Republican/Democratic Split",
-    "Vote Seat Share",
+    {
+      label: "Opportunity Representatives",
+      value: "opp-reps",
+    },
+    {
+      label: "Republican/Democratic Split",
+      value: "rep-dem-split",
+    },
   ];
+
+  useEffect(() => {
+    stateService.getSharePercentages(params.state).then((data) => {
+      setMmdSharePercentages(data.MMD);
+      setSmdSharePercentages(data.SMD);
+    });
+  }, []);
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: "dataset",
-    defaultValue: options[0],
-    onChange: (value) => setGraphData(stateService.getGraphData("", value)),
+    defaultValue: graphType,
+    onChange: (value) => setGraphType(value),
   });
+
+  // Return "increase" or "decrease" if MMD is greater than SMD
+  const calculateIncreaseOrDecrease = (party, index) => {
+    return mmdSharePercentages[party][index] -
+      smdSharePercentages[party][index] >
+      0
+      ? "increase"
+      : "decrease";
+  };
 
   const group = getRootProps();
 
@@ -45,22 +64,116 @@ const GraphicalSummary = () => {
       <Select
         mb="1em"
         value={ensembleType}
-        onChange={(e) => setEnsembleType(e.target.value)}
+        onChange={(e) => {
+          setEnsembleType(e.target.value);
+        }}
       >
-        <option value="smd">Single-member districts</option>
-        <option value="mmd">Multi-member districts</option>
+        <option value="SMD">Single-member districts</option>
+        <option value="MMD">Multi-member districts</option>
       </Select>
       <HStack {...group}>
-        {options.map((value) => {
-          const radio = getRadioProps({ value });
+        {options.map((option) => {
+          const label = option.label;
+          const radio = getRadioProps({ value: option.value });
           return (
-            <RadioTab key={value} {...radio}>
-              {value}
+            <RadioTab key={option.value} {...radio}>
+              {label}
             </RadioTab>
           );
         })}
       </HStack>
-      <BarChart data={graphData} />
+      <BarChart ensembleType={ensembleType} graphType={graphType} />
+      <SimpleGrid columns={4} spacing={5} mt={5}>
+        {ensembleType === "SMD"
+          ? smdSharePercentages && (
+              <>
+                <Card
+                  label={"Democrat Vote Share"}
+                  value={
+                    (smdSharePercentages.DEMOCRAT[0] * 100).toFixed(2) + "%"
+                  }
+                />
+                <Card
+                  label={"Democrat Seat Share"}
+                  value={
+                    (smdSharePercentages.DEMOCRAT[1] * 100).toFixed(2) + "%"
+                  }
+                />
+                <Card
+                  label={"Republican Vote Share"}
+                  value={
+                    (smdSharePercentages.REPUBLICAN[0] * 100).toFixed(2) + "%"
+                  }
+                />
+                <Card
+                  label={"Republican Seat Share"}
+                  value={
+                    (smdSharePercentages.REPUBLICAN[1] * 100).toFixed(2) + "%"
+                  }
+                />
+              </>
+            )
+          : mmdSharePercentages && (
+              <>
+                <Card
+                  label={"Democrat Vote Share"}
+                  value={
+                    (mmdSharePercentages?.DEMOCRAT[0] * 100).toFixed(2) + "%"
+                  }
+                  type={calculateIncreaseOrDecrease("DEMOCRAT", 0)}
+                  helpText={
+                    Math.abs(
+                      (mmdSharePercentages.DEMOCRAT[0] -
+                        smdSharePercentages.DEMOCRAT[0]) *
+                        100
+                    ).toFixed(2) + "%"
+                  }
+                />
+                <Card
+                  label={"Democrat Seat Share"}
+                  value={
+                    (mmdSharePercentages.DEMOCRAT[1] * 100).toFixed(2) + "%"
+                  }
+                  type={calculateIncreaseOrDecrease("DEMOCRAT", 1)}
+                  helpText={
+                    Math.abs(
+                      (mmdSharePercentages.DEMOCRAT[1] -
+                        smdSharePercentages.DEMOCRAT[1]) *
+                        100
+                    ).toFixed(2) + "%"
+                  }
+                />
+                <Card
+                  label={"Republican Vote Share"}
+                  value={
+                    (mmdSharePercentages.REPUBLICAN[0] * 100).toFixed(2) + "%"
+                  }
+                  type={calculateIncreaseOrDecrease("REPUBLICAN", 0)}
+                  helpText={
+                    Math.abs(
+                      (mmdSharePercentages.REPUBLICAN[0] -
+                        smdSharePercentages.REPUBLICAN[0]) *
+                        100
+                    ).toFixed(2) + "%"
+                  }
+                />
+                <Card
+                  label={"Republican Seat Share"}
+                  value={
+                    (mmdSharePercentages.REPUBLICAN[1] * 100).toFixed(2) + "%"
+                  }
+                  type={calculateIncreaseOrDecrease("REPUBLICAN", 1)}
+                  helpText={
+                    Math.abs(
+                      (mmdSharePercentages.REPUBLICAN[1] -
+                        smdSharePercentages.REPUBLICAN[1]) *
+                        100
+                    ).toFixed(2) + "%"
+                  }
+                />
+              </>
+            )}
+      </SimpleGrid>
     </Box>
   );
 };

@@ -1,12 +1,21 @@
 package io.pufferlabs.statesredistrictor.controller;
 
+import io.pufferlabs.statesredistrictor.enums.Party;
+import io.pufferlabs.statesredistrictor.enums.PlanType;
+import io.pufferlabs.statesredistrictor.enums.Race;
+import io.pufferlabs.statesredistrictor.model.Analysis;
+import io.pufferlabs.statesredistrictor.model.DistrictPlan;
 import io.pufferlabs.statesredistrictor.model.State;
-import io.pufferlabs.statesredistrictor.repository.StateRepository;
 import io.pufferlabs.statesredistrictor.service.StatesService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping(value = "/api/states")
@@ -14,7 +23,6 @@ import org.springframework.web.bind.annotation.*;
 public class StatesController {
 
     private final StatesService statesService;
-
 
     @Autowired
     public StatesController(StatesService statesService) {
@@ -31,11 +39,10 @@ public class StatesController {
         return ResponseEntity.ok(statesService.getStates().stream().map(State::getName));
     }
 
-
     @GetMapping("/{stateName}")
     public ResponseEntity<?> getStateByName(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
-        state.setDistrictPlans(null);
+        state.setUniqueDistrictPlans(null);
         return ResponseEntity.ok(state);
     }
 
@@ -44,21 +51,44 @@ public class StatesController {
         return statesService.readGeoJsonFromDisk(state);
     }
 
-
     @GetMapping("/{stateName}/enacted")
     public ResponseEntity<?> getEnactedPlan(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
-        return ResponseEntity.ok(state.getDistrictPlans().get(0));
+        return ResponseEntity.ok(state.getUniqueDistrictPlans().get(0));
     }
 
-    @GetMapping("/{stateName}/unique-plans")
-    public ResponseEntity<?> getUniquePlans(@PathVariable String stateName) {
+    @GetMapping("/{stateName}/unique-plans-brief")
+    public ResponseEntity<?> getUniquePlansBrief(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
-        return ResponseEntity.ok(state.getUniqueDistrictPlans());
+        System.out.println("Fetching brief plans for " + stateName);
+        List<DistrictPlan> plans = state.getUniqueDistrictPlans();
+        plans = plans.stream().map(plan -> {
+            DistrictPlan briefPlan = new DistrictPlan();
+            briefPlan.setId(plan.getId());
+            briefPlan.setPlanType(plan.getPlanType());
+            briefPlan.setDescription(plan.getDescription());
+            return briefPlan;
+        }).collect(Collectors.toList());
+        return ResponseEntity.ok(plans);
     }
 
-    @GetMapping("/{stateName}/ensemble-summary")
-    public ResponseEntity<?> getEnsembleSummary(@PathVariable String stateName) {
+    @GetMapping("/{stateName}/unique-plans/{planId}")
+    public ResponseEntity<?> getUniquePlans(@PathVariable String stateName, @PathVariable String planId) {
+        State state = statesService.getStateByName(stateName);
+        List<DistrictPlan> plans = state.getUniqueDistrictPlans();
+        DistrictPlan plan = plans.stream().filter(p -> p.getId().equals(planId)).findFirst().orElse(null);
+        return ResponseEntity.ok(plan);
+    }
+
+    @GetMapping("/{stateName}/unique-plans/geojson/{planType}/{description}")
+    public ResponseEntity<?> getUniquePlansGeoJson(@PathVariable String stateName, @PathVariable String planType,
+            @PathVariable String description) {
+        return statesService.readUniquePlanGeoJsonFromDisk(stateName, description, PlanType.valueOf(planType));
+
+    }
+
+    @GetMapping("/{stateName}/ensemble-summaries")
+    public ResponseEntity<?> getEnsembleSummaries(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
         return ResponseEntity.ok(state.getEnsembleSummaryData());
     }
@@ -66,8 +96,78 @@ public class StatesController {
     @GetMapping("/{stateName}/analysis")
     public ResponseEntity<?> getAnalysis(@PathVariable String stateName) {
         State state = statesService.getStateByName(stateName);
-        return ResponseEntity.ok(state.getAnalysis());
+        return ResponseEntity.ok(state.getAnalyses());
     }
 
+    @GetMapping("/{stateName}/{planType}/analysis/rep-dem-split")
+    public ResponseEntity<?> getRepDemSplitAnalysis(@PathVariable String stateName, @PathVariable String planType) {
+        State state = statesService.getStateByName(stateName);
+        List<Integer> demRepSplitCounts = new ArrayList<>();
+        if (planType.equals("SMD")) {
+            // get SMD key value pair
+            demRepSplitCounts = state.getAnalyses().get(PlanType.SMD).get(0).getDemRepSplitCounts();
+        } else {
+            List<Analysis> mmdAnalyses = state.getAnalyses().get(PlanType.MMD);
+            demRepSplitCounts = mmdAnalyses.get(0).getDemRepSplitCounts(); //shhhh hehehe this is actually for the entire mmd 
+            
+        }
+        return ResponseEntity.ok(demRepSplitCounts);
+    }
+
+    @GetMapping("/{stateName}/{planType}/analysis/opp-reps")
+    public ResponseEntity<?> getOpportunityRepAnalysis(@PathVariable String stateName, @PathVariable String planType) {
+        State state = statesService.getStateByName(stateName);
+        List<Integer> oppRepsCounts = new ArrayList<>();
+        if (planType.equals("SMD")) {
+            // get SMD key value pair
+            oppRepsCounts = state.getAnalyses().get(PlanType.SMD).get(0).getOpportunityRepCounts();
+        } else {
+            List<Analysis> mmdAnalyses = state.getAnalyses().get(PlanType.MMD);
+            List<List<Integer>> oppRepsCountsList = mmdAnalyses.stream().map(Analysis::getOpportunityRepCounts)
+                    .collect(Collectors.toList());
+            // sum all the lists as far as the smallest list
+            int minSize = oppRepsCountsList.stream().mapToInt(List::size).min().getAsInt();
+            for (int i = 0; i < minSize; i++) {
+                int sum = 0;
+                for (List<Integer> list : oppRepsCountsList) {
+                    sum += list.get(i);
+                }
+                oppRepsCounts.add(sum);
+            }
+        }
+        return ResponseEntity.ok(oppRepsCounts);
+    }
+
+    // @GetMapping("/{stateName}/{planType}/analysis/vote-seat-share")
+    // public ResponseEntity<?> getVoteSeatShareAnalysis(@PathVariable String
+    // stateName, @PathVariable String planType) {
+
+    // }
+
+    // get box and whisker plot data
+    @GetMapping("/{stateName}/{planType}/{pattern}/analysis/box-whisker/{populationType}")
+    public ResponseEntity<?> getBoxWhiskerAnalysis(@PathVariable String stateName, @PathVariable String planType,
+            @PathVariable String pattern, @PathVariable String populationType) {
+        State state = statesService.getStateByName(stateName);
+        boolean isRace = true;
+        try {
+            Race.valueOf(populationType);
+        } catch (IllegalArgumentException e) {
+            try {
+                Party.valueOf(populationType);
+                isRace = false;
+            } catch (IllegalArgumentException e2) {
+                throw new IllegalArgumentException("Invalid population type");
+            }
+        }
+        List<Analysis> analyses = state.getAnalyses().get(PlanType.valueOf(planType));
+        if (planType.equals("MMD")) {
+            analyses = analyses.stream().filter(a -> a.getPattern().equals(pattern)).collect(Collectors.toList());
+        }
+        Analysis analysis = analyses.get(0);
+        if (!isRace)
+            return ResponseEntity.ok(analysis.getPartyBoxAndWhiskerPlots().get(Party.valueOf(populationType)));
+        return ResponseEntity.ok(analysis.getBoxAndWhiskerPlots().get(Race.valueOf(populationType)));
+    }
 
 }

@@ -3,11 +3,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
-}
-
-.district-information-container {
-  width: 50vw;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .multi-member-view {
@@ -32,4 +28,8 @@
 
 .state-sidebar-active svg {
   color: var(--chakra-colors-brand-tertiary);
+}
+
+*:focus {
+  outline: none;
 }

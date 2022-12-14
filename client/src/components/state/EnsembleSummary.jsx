@@ -11,6 +11,7 @@ import {
   Heading,
   Center,
   Button,
+  Select,
 } from "@chakra-ui/react";
 import React from "react";
 import { useEffect } from "react";
@@ -19,52 +20,92 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const EnsembleSummary = () => {
   const [summaryData, setSummaryData] = React.useState({});
+  const [layoutList, setLayoutList] = React.useState([]);
 
   const params = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const data = stateService.getSummaryData(params.state);
-    setSummaryData(data);
+    fetchSummaryData();
   }, []);
+
+  const fetchSummaryDataForLayout = (layout) => {
+    stateService.getSummaryDataForLayout(params.state, layout).then((data) => {
+      setSummaryData(data);
+    });
+  };
+
+  const fetchSummaryData = () => {
+    stateService.getSummaryData(params.state).then((data) => {
+      setSummaryData(data);
+      setLayoutList(data.layoutList);
+    });
+  };
 
   return (
     <>
-      <Grid gridTemplateColumns={"1fr 1fr 1fr"}>
+      <Grid gridTemplateColumns={"1fr 1fr 1fr"} placeItems="center">
         <GridItem gridColumn={2}>
-          <Heading textAlign={"right"} as="h1" fontSize="xl">
+          <Heading textAlign={"left"} as="h1" fontSize="lg">
             Single-member districts
           </Heading>
         </GridItem>
         <GridItem>
-          <Heading textAlign={"right"} as="h1" fontSize="xl">
-            Multi-member districts
-          </Heading>
+          <Select
+            fontWeight={"700"}
+            textAlign={"right"}
+            fontSize="lg"
+            border={"transparent"}
+            _hover={{ cursor: "pointer" }}
+            onChange={(e) => {
+              if (e.target.value === "0") {
+                fetchSummaryData();
+              } else {
+                fetchSummaryDataForLayout(e.target.value);
+              }
+            }}
+          >
+            <option value="0">Multi-member districts</option>
+            <optgroup label="MMD Layouts">
+              {layoutList.map((layout) => (
+                <option value={layout}>{layout}</option>
+              ))}
+            </optgroup>
+          </Select>
         </GridItem>
       </Grid>
-
       <Feature
         stat="Number of district plans"
-        data={summaryData.numberOfDistricts}
+        data={summaryData.totalDistrictPlans}
+        roundedTo={0}
       />
       <Feature
-        stat="Mean majority-minority representatives per plan"
-        data={summaryData.majorityMinority}
+        stat="Mean majority-minority representatives"
+        data={summaryData.avgOpportunityReps}
+        roundedTo={1}
       />
       <Feature
         stat="Mean equal population measure"
-        data={summaryData.equalPopMeasure}
+        data={summaryData.avgEqualPop}
+        roundedTo={2}
       />
       <Feature
         stat="Mean Polsby-Popper Score"
-        data={summaryData.polsbyPopper}
-        isMean
+        data={summaryData.avgPolsbyPopperScores}
+        roundedTo={3}
       />
       <Feature
-        stat="Mean Republican/Democratic split"
-        data={summaryData.republicanDemocraticSplit}
+        stat="Mean Republican split"
+        data={summaryData.avgRepSplit}
+        roundedTo={2}
+        isPercentage
       />
-
+      <Feature
+        stat="Mean Democrat split"
+        data={summaryData.avgDemSplit}
+        roundedTo={2}
+        isPercentage
+      />
       <Center>
         <Button
           onClick={() => {
@@ -80,16 +121,33 @@ const EnsembleSummary = () => {
 };
 
 const Feature = (props) => {
+  const formatNumber = (num) => {
+    if (props.isPercentage) {
+      return (num * 100).toFixed(props.roundedTo) + "%";
+    } else {
+      return num.toLocaleString(undefined, {
+        maximumFractionDigits: props.roundedTo,
+        minimumFractionDigits: props.roundedTo,
+      });
+    }
+  };
+
   return (
     props.data && (
-      <Grid gridTemplateColumns={"1fr 1fr 1fr"} marginY="3" gap="3">
+      <Grid
+        gridTemplateColumns={"1fr 1fr 1fr"}
+        marginY="3"
+        gap="3"
+        borderBottom="1px solid"
+        borderColor="gray.200"
+      >
         <GridItem>
           <Text fontWeight={"semibold"}>{props.stat}</Text>
         </GridItem>
 
-        <GridItem textAlign={"right"}>{props.data.smd}</GridItem>
+        <GridItem textAlign={"right"}>{formatNumber(props.data.smd)}</GridItem>
 
-        <GridItem textAlign={"right"}>{props.data.mmd}</GridItem>
+        <GridItem textAlign={"right"}>{formatNumber(props.data.mmd)}</GridItem>
       </Grid>
     )
   );

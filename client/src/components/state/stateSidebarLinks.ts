@@ -2,6 +2,7 @@ import { BiBookOpen } from "react-icons/bi";
 import { AiOutlineStar } from "react-icons/ai";
 import { FaBalanceScale, FaMoneyBillWaveAlt } from "react-icons/fa";
 import { BsFillPersonFill, BsGraphUp } from "react-icons/bs";
+import { FaVoteYea } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 
 interface ChildSidebarLink {
@@ -28,6 +29,11 @@ export const sidebarLinks: SidebarLink[] = [
     view: "unique",
   },
   {
+    name: "Election Results",
+    icon: FaVoteYea,
+    view: "election-results",
+  },
+  {
     name: "Graphical Analysis",
     icon: BsGraphUp,
     children: [
@@ -39,63 +45,9 @@ export const sidebarLinks: SidebarLink[] = [
         name: "Box & Whisker",
         view: "box-whisker",
       },
-    ],
-  },
-  {
-    name: "Fairness",
-    icon: FaBalanceScale,
-    children: [
       {
-        name: "Partisan Fairness",
-        view: "partisan-fairness",
-      },
-      {
-        name: "Racial Fairness",
-        view: "racial-fairness",
-      },
-    ],
-  },
-  {
-    name: "Race Information",
-    icon: BsFillPersonFill,
-    children: [
-      {
-        name: "African American",
-        view: "af-population",
-      },
-      {
-        name: "Asian",
-        view: "asian-population",
-      },
-      {
-        name: "Hispanic",
-        view: "hispanic-population",
-      },
-      {
-        name: "White",
-        view: "white-population",
-      },
-    ],
-  },
-  {
-    name: "Socioeconomic Information",
-    icon: FaMoneyBillWaveAlt,
-    children: [
-      {
-        name: "African American",
-        view: "af-socioeconomic",
-      },
-      {
-        name: "Asian",
-        view: "asian-socioeconomic",
-      },
-      {
-        name: "Hispanic",
-        view: "hispanic-socioeconomic",
-      },
-      {
-        name: "White",
-        view: "white-soceoeconomic",
+        name: "Opportunity Representative Threshold",
+        view: "opp-rep",
       },
     ],
   },

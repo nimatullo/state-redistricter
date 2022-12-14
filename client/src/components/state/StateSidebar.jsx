@@ -5,11 +5,15 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
   Heading,
   HStack,
   Icon,
   Link,
   Stack,
+  Text,
 } from "@chakra-ui/react";
 import * as React from "react";
 import { useLocation, useParams } from "react-router-dom";
@@ -35,6 +39,21 @@ const StateSidebar = () => {
 
   return (
     <Box pt="1em" height={"100vh"} bgColor={"brand.main"} color={"brand.white"}>
+      <Breadcrumb px={3} color="gray.400" fontSize={"12px"}>
+        <BreadcrumbItem>
+          <BreadcrumbLink as={ReactRouterLink} to="/">
+            Home
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink
+            as={ReactRouterLink}
+            to={`/map/${params.state}/overview`}
+          >
+            <Text as="strong">{currentState}</Text>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
       <Heading p={3} size="md">
         {currentState}
       </Heading>

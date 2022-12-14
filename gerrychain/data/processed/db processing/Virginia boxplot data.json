@@ -1,0 +1,22 @@
+[
+  {
+    "avgPolsbyPopperScores": 0.1417998324248281,
+    "avgRepSplits": 0.5051602835088136,
+    "avgDemSplits": 0.4948397164911863,
+    "avgOpportunityReps": 2,
+    "avgEqualPop": 0.010663049,
+    "planType": "MMD",
+    "totalDistrictPlans": 10000,
+    "pattern": "chain55"
+  },
+  {
+    "avgPolsbyPopperScores": 0.17224926391316728,
+    "avgRepSplits": 0.5053548119713437,
+    "avgDemSplits": 0.49464518802865626,
+    "avgOpportunityReps": 2.5,
+    "avgEqualPop": 0.219324241,
+    "planType": "MMD",
+    "totalDistrictPlans": 10000,
+    "pattern": "chain334"
+  }
+]
