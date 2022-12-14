@@ -61,10 +61,10 @@ Distributed under the MIT License.
 - [Congressional Members](https://www.congress.gov/members)
 - [Harvard Election Data Archive](https://dataverse.harvard.edu/dataverse/medsl)
 
-[contributors-shield]: https://img.shields.io/github/contributors/nimatullo/416.svg?style=for-the-badge
-[contributors-url]: https://github.com/nimatullo/416/graphs/contributors
-[license-shield]: https://img.shields.io/github/license/nimatullo/416.svg?style=for-the-badge
-[license-url]: https://github.com/nimatullo/416/blob/main/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/nimatullo/state-redistricter.svg?style=for-the-badge
+[contributors-url]: https://github.com/nimatullo/state-redistricter/graphs/contributors
+[license-shield]: https://img.shields.io/github/license/nimatullo/state-redistricter.svg?style=for-the-badge
+[license-url]: https://github.com/nimatullo/state-redistricter/blob/main/LICENSE.txt
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [spring]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
