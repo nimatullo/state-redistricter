@@ -15,19 +15,37 @@
   </p>
 </div>
 
-## About The Project
+# About The Project
 
 <!-- Put image of webpage in assets folder -->
 
 ![webpage](assets/webpage.png)
 This project aims to simulate the effects of redistricting on election outcomes using a multi-member ranked choice voting algorithm. The ranked choice voting algorithm allows voters to rank their preferences among multiple candidates, and then uses these preferences to determine the winners in a fair and proportional way. In this project, we use the ranked choice voting algorithm to simulate elections in different states under different redistricting scenarios, and analyze the results to see how redistricting can influence the balance of power in a state's congressional delegation.
 
-### Built With
+## Built With
 
 - [![React][react.js]][react-url]
 - [![Spring][spring]][spring-url]
 - [![Jupyter][jupyter]][jupyter-url]
 - [![MongoDB][mongodb]][mongodb-url]
+
+## Screenshots
+
+### Overview
+
+![overview](assets/overview.png)
+
+### Graphical Analysis
+
+![graph](assets/graph.png)
+
+### Opportunity District Threshold Analysis
+
+![threshold](assets/threshold.png)
+
+### Box and Whisker
+
+![boxplot](assets/boxplot.png)
 
 ## License
 
