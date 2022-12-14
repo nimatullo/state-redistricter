@@ -37,15 +37,9 @@
                 "1": 1296887.7475816684,
                 "2": 1294939.2523797546
             },
-            "opportunity_reps_count": 2.0,
-            "opportunity_reps": {
-                "1": 4952,
-                "2": 4944
-            },
-            "equal_pop": {
-                "1": 0.010663921756990623,
-                "2": 0.01066217641334574
-            },
+            "opportunity_reps": 2.0,
+
+            "equal_pop": 0.010663049,
             "dem_vote_share_percentage": 0.4948397164911863,
             "dem_seat_share_percentage": 0.0361,
             "rep_vote_share_percentage": 0.5051602835088137,
@@ -50267,17 +50261,9 @@
                 "2": 1077825.0493829346,
                 "3": 862737.8609864437
             },
-            "opportunity_reps_count": 2.5,
-            "opportunity_reps": {
-                "1": 4670,
-                "2": 4649,
-                "3": 4622
-            },
-            "equal_pop": {
-                "1": 0.1672045456448016,
-                "2": 0.16686974448089284,
-                "3": 0.323898432650337
-            },
+            "opportunity_reps": 2.5,
+
+            "equal_pop": 0.219324241,
             "dem_vote_share_percentage": 0.4946803736018844,
             "dem_seat_share_percentage": 0.08436666666666665,
             "rep_vote_share_percentage": 0.5053196263981156,

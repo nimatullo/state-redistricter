@@ -1,13 +1,13 @@
 let uniqueDistrictPlanIdCounter = 0;
 let fs = require("fs");
-let rawSMDData = JSON.parse(fs.readFileSync("../utah/data.json"));
+let rawSMDData = JSON.parse(fs.readFileSync("../virginia/data.json"));
 let rawMMDData = JSON.parse(
   fs.readFileSync(
-    "/home/niko/development/416/gerrychain/seawulf-scripts/state_summary_data/ut_data.json"
+    "/home/niko/development/416/gerrychain/seawulf-scripts/state_summary_data/va_data.json"
   )
 );
-let state = "Utah";
-let abbreviation = "UT";
+let state = "Virginia";
+let abbreviation = "VA";
 let rawMMDSubEnsembles = rawMMDData.all_data;
 
 let fieldsToAvg = [
