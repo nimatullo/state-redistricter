@@ -1,7 +1,6 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![GPL 3.0 License][license-shield]][license-url]
 
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
     <img src="assets/logo.png" alt="Logo" width="80" height="80">
